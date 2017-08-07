@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "495380028128",
+    "firebase_url": "https://sapne-73809.firebaseio.com",
+    "project_id": "sapne-73809",
+    "storage_bucket": "sapne-73809.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495380028128:android:ed36cfbfa18586d4",
+        "android_client_info": {
+          "package_name": "com.example.intents.sapne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495380028128-5egvc625fmvo8n9kohsv0vvuhign29vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo519NER1ee_q5DTtMeiDqC8hX3830wCo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
