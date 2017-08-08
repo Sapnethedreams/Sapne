@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
-                if(groupPosition == 3||groupPosition == 5||groupPosition == 2) {
-                    return true;
-                }
+if(groupPosition==4||groupPosition==5){
+    return true;
+}
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
                 } else {
@@ -242,12 +242,12 @@ public class MainActivity extends AppCompatActivity {
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(40);
-        categoryDetails.setCatName("CONTACT US");
+        categoryDetails.setCatName("PRODUCT");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(50);
-        categoryDetails.setCatName("PRODUCTS");
+        categoryDetails.setCatName("CONTACT US");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
@@ -330,18 +330,6 @@ public class MainActivity extends AppCompatActivity {
 
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
-
-        subCategoryMatches = new ArrayList<SubCategory>();
-
-        subCategoryMatch = new SubCategory();
-
-        subCategoryMatch.setSubCatName("Address");
-        subCategoryMatch.setSubCatCode("2001");
-        subCategoryMatches.add(subCategoryMatch);
-        subCatCount.add(subCategoryMatches.size());
-
-
-
 
         subCategoryMatches = new ArrayList<SubCategory>();
 
