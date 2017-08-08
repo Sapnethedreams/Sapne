@@ -19,29 +19,62 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import static com.example.intents.sapne.R.drawable.lo;
 
-public class MainActivity extends AppCompatActivity  {
-Toolbar toolbar;
+public class MainActivity extends AppCompatActivity {
+    Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+    private ExpandableListView mCategoryList;
+    private ArrayList<Category> category_name = new ArrayList<Category>();
+    private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
+    private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
+    int previousGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.getCatData();
 
-    toolbar=(Toolbar)findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       getSupportActionBar().setHomeButtonEnabled(true);
+        mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
+        //set up the adapter for the expandablelistview to display the categories.
+
+        mCategoryList.setAdapter(new expandableListViewAdapter(MainActivity.this, category_name, subcategory_name, subCatCount));
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        //defining the behavior when any group is clicked in expandable listview
+        mCategoryList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View view,
+                                        int groupPosition, long id) {
+                if(groupPosition == 3||groupPosition == 5||groupPosition == 2) {
+                    return true;
+                }
+                else if(parent.isGroupExpanded(groupPosition)) {
+                    parent.collapseGroup(groupPosition);
+                } else {
+                    if (groupPosition != previousGroup) {
+                        parent.collapseGroup(previousGroup);
+                    }
+                    previousGroup = groupPosition;
+                    parent.expandGroup(groupPosition);
+                }
+
+                parent.smoothScrollToPosition(groupPosition);
+                return true;
+            }
+
+        });
 
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close ){
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
 
 
             @Override
@@ -64,11 +97,13 @@ Toolbar toolbar;
 
 
     }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
@@ -88,13 +123,244 @@ Toolbar toolbar;
     }
 
 
+    public class expandableListViewAdapter extends BaseExpandableListAdapter {
+
+        private LayoutInflater layoutInflater;
+        private ArrayList<Category> categoryName = new ArrayList<Category>();
+        ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
+        ArrayList<Integer> subCategoryCount = new ArrayList<Integer>();
+        int count;
+        Typeface type;
+
+        SubCategory singleChild = new SubCategory();
+
+        public expandableListViewAdapter(Context context, ArrayList<Category> categoryName, ArrayList<ArrayList<SubCategory>> subCategoryName, ArrayList<Integer> subCategoryCount) {
+
+            layoutInflater = LayoutInflater.from(context);
+            this.categoryName = categoryName;
+            this.subCategoryName = subCategoryName;
+            this.subCategoryCount = subCategoryCount;
+            this.count = categoryName.size();
+
+
+        }
+
+
+        @Override
+        public int getGroupCount() {
+            return categoryName.size();
+        }
+
+        @Override
+        public int getChildrenCount(int i) {
+            return (subCategoryCount.get(i));
+        }
+
+        @Override
+        public Object getGroup(int i) {
+            return categoryName.get(i).getCatName();
+        }
+
+        @Override
+        public SubCategory getChild(int i, int i1) {
+            ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+            tempList = subCategoryName.get(i);
+            return tempList.get(i1);
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
+            }
+
+            TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
+            textView.setText(getGroup(i).toString());
+            textView.setTypeface(type);
+
+            return view;
+        }
+
+        @Override
+        public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
+
+            }
+
+            singleChild = getChild(i, i1);
+
+            TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
+            childSubCategoryName.setTypeface(type);
+
+            childSubCategoryName.setText(singleChild.getSubCatName());
+
+            return view;
+
+        }
+
+        @Override
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return true;
+        }
+    }
+
+    public void getCatData()
+    {
+        category_name.clear();
+        Category categoryDetails = new Category();
+
+        categoryDetails.setCatCode(10);
+        categoryDetails.setCatName("WHO WE ARE");
+
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(20);
+        categoryDetails.setCatName("OUR BIT");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(30);
+        categoryDetails.setCatName("SUCCESS STORIES");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(40);
+        categoryDetails.setCatName("CONTACT US");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(50);
+        categoryDetails.setCatName("PRODUCTS");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(60);
+        categoryDetails.setCatName("DONATE");
+        category_name.add(categoryDetails);
+
+
+        //----Populate Sub Category Codes
+        subcategory_name.clear();
+
+        ArrayList<SubCategory> subCategoryMatches = new ArrayList<SubCategory>();
+
+        SubCategory subCategoryMatch = new SubCategory();
+
+        subCategoryMatch.setSubCatName("About Us");
+        subCategoryMatch.setSubCatCode("1001");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Our Mission");
+        subCategoryMatch.setSubCatCode("1002");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Our Vision");
+        subCategoryMatch.setSubCatCode("1003");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Our Team");
+        subCategoryMatch.setSubCatCode("1004");
+        subCategoryMatches.add(subCategoryMatch);
+
+
+        subcategory_name.add(subCategoryMatches);
+        subCatCount.add(subCategoryMatches.size());
+        //---
+
+        subCategoryMatches = new ArrayList<SubCategory>();
+
+        subCategoryMatch = new SubCategory();
+
+        subCategoryMatch.setSubCatName("Events Corner");
+        subCategoryMatch.setSubCatCode("2001");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Activities Corner");
+        subCategoryMatch.setSubCatCode("2002");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Birthday Corner");
+        subCategoryMatch.setSubCatCode("2003");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Volume of Month");
+        subCategoryMatch.setSubCatCode("2004");
+        subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Regular Camps");
+        subCategoryMatch.setSubCatCode("2005");
+        subCategoryMatches.add(subCategoryMatch);
+
+
+        subcategory_name.add(subCategoryMatches);
+        subCatCount.add(subCategoryMatches.size());
+
+        subCategoryMatches = new ArrayList<SubCategory>();
+
+        subCategoryMatch = new SubCategory();
+
+        subCategoryMatch.setSubCatName("RECENT");
+        subCategoryMatch.setSubCatCode("2001");
+        subCategoryMatches.add(subCategoryMatch);
+        subCatCount.add(subCategoryMatches.size());
+
+        subcategory_name.add(subCategoryMatches);
+        subCatCount.add(subCategoryMatches.size());
+
+        subCategoryMatches = new ArrayList<SubCategory>();
+
+        subCategoryMatch = new SubCategory();
+
+        subCategoryMatch.setSubCatName("Address");
+        subCategoryMatch.setSubCatCode("2001");
+        subCategoryMatches.add(subCategoryMatch);
+        subCatCount.add(subCategoryMatches.size());
 
 
 
 
+        subCategoryMatches = new ArrayList<SubCategory>();
+
+    subCategoryMatch = new SubCategory();
+
+    subCategoryMatch.setSubCatName("T-shirts");
+    subCategoryMatch.setSubCatCode("5001");
+    subCategoryMatches.add(subCategoryMatch);
+
+
+
+        subcategory_name.add(subCategoryMatches);
+        subCatCount.add(subCategoryMatches.size());
+
+
+
+
+
+    }
 }
-
-
-
 
 
