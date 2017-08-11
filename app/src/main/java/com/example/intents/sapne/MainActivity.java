@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Toolbar toolbar;
-    private DrawerLayout mDrawerLayout;
+    protected DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ExpandableListView mCategoryList;
     private ArrayList<Category> category_name = new ArrayList<Category>();

@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -100,7 +102,11 @@ public class Activities extends MainActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activities);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activities, null, false);
+        mDrawerLayout.addView(contentView, 0);
+
 
         RecyclerView rv= (RecyclerView) findViewById(R.id.myRecycler);
         //SET LAYOUT
