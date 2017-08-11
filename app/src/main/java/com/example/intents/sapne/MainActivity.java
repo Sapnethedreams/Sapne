@@ -1,6 +1,7 @@
 package com.example.intents.sapne;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.support.v4.view.GravityCompat;
@@ -8,6 +9,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,8 +23,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
+import static com.example.intents.sapne.R.id.parent;
+
 
 public class MainActivity extends AppCompatActivity {
+
+
     Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -35,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.getCatData();
-
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -71,7 +81,28 @@ if(groupPosition==4||groupPosition==5){
             }
 
         });
+        mCategoryList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
+            @Override
+        public boolean onChildClick(ExpandableListView parent, View v,
+        int groupPosition, int childPosition, long id) {
+
+            //calling CatWiseSearchResults with parameters of subcat code.
+            //CatWiseSearchResults will fetch items based on subcatcode.
+if(groupPosition==1 && childPosition==1) {
+    Intent intent = new Intent(MainActivity.this, Activities.class);
+
+    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+    tempList = subcategory_name.get(groupPosition);
+
+    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+    startActivity(intent);
+    mDrawerLayout.closeDrawer(mCategoryList);
+}
+    return true;
+
+        }
+    });
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
@@ -247,12 +278,12 @@ if(groupPosition==4||groupPosition==5){
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(50);
-        categoryDetails.setCatName("CONTACT US");
+        categoryDetails.setCatName("EVENTS");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(60);
-        categoryDetails.setCatName("DONATE");
+        categoryDetails.setCatName("CONTACT US");
         category_name.add(categoryDetails);
 
 
@@ -326,7 +357,10 @@ if(groupPosition==4||groupPosition==5){
         subCategoryMatch.setSubCatName("RECENT");
         subCategoryMatch.setSubCatCode("2001");
         subCategoryMatches.add(subCategoryMatch);
-        subCatCount.add(subCategoryMatches.size());
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Past");
+        subCategoryMatch.setSubCatCode("6001");
+        subCategoryMatches.add(subCategoryMatch);
 
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());

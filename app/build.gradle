@@ -11,6 +11,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    android {
+
+        aaptOptions {
+            cruncherEnabled = false
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -29,7 +35,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
+    compile 'uk.co.chrisjenx:calligraphy:2.1.0'
     testCompile 'junit:junit:4.12'
     compile 'com.google.firebase:firebase-crash:9.6.1'
 }
