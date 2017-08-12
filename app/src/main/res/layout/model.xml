@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -9,8 +7,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     card_view:cardBackgroundColor="#00490b"
-    android:layout_height="170dp"
-    android:layout_margin="10dp"
+    android:layout_height="100dp"
+    android:layout_margin="0dp"
     card_view:cardElevation="4dp"
     app:cardPreventCornerOverlap="false"
     card_view:cardCornerRadius="4dp">
@@ -22,7 +20,7 @@
         <ImageView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:elevation="10dp"
+            android:elevation="15dp"
             android:id="@+id/playerImage"
             android:padding="10dp"
             android:scaleType="fitXY"
@@ -37,8 +35,8 @@
             android:textColor="@color/yellow"
             android:id="@+id/nameTxt"
             android:padding="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/playerImage" />
+            android:layout_toRightOf="@+id/playerImage"
+            />
 
 
 

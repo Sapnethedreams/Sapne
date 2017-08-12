@@ -20,6 +20,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="10dp"
         android:text="Sub Category Name"
+        android:textColor="@color/yellow"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="14dp" />
 

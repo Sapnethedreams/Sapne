@@ -63,8 +63,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
-if(groupPosition==4||groupPosition==5){
+if(groupPosition==4||groupPosition==6){
     return true;
+}
+else if(groupPosition==5)
+{
+    Intent intent = new Intent(MainActivity.this, Contact_us.class);
+    startActivity(intent);
+
 }
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
@@ -99,6 +105,12 @@ if(groupPosition==1 && childPosition==1) {
     startActivity(intent);
     mDrawerLayout.closeDrawer(mCategoryList);
 }
+
+
+
+
+
+
     return true;
 
         }
@@ -273,7 +285,7 @@ if(groupPosition==1 && childPosition==1) {
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(40);
-        categoryDetails.setCatName("PRODUCT");
+        categoryDetails.setCatName("PRODUCTS");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
@@ -284,6 +296,10 @@ if(groupPosition==1 && childPosition==1) {
         categoryDetails = new Category();
         categoryDetails.setCatCode(60);
         categoryDetails.setCatName("CONTACT US");
+        category_name.add(categoryDetails);
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(70);
+        categoryDetails.setCatName("HOME");
         category_name.add(categoryDetails);
 
 
@@ -320,31 +336,28 @@ if(groupPosition==1 && childPosition==1) {
 
         subCategoryMatches = new ArrayList<SubCategory>();
 
-        subCategoryMatch = new SubCategory();
-
-        subCategoryMatch.setSubCatName("Events Corner");
-        subCategoryMatch.setSubCatCode("2001");
-        subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Activities Corner");
+        subCategoryMatch.setSubCatName("Regular Camps");
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
 
-        subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Birthday Corner");
-        subCategoryMatch.setSubCatCode("2003");
-        subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Volume of Month");
+        subCategoryMatch.setSubCatName("Activities Corner");
         subCategoryMatch.setSubCatCode("2004");
         subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Regular Camps");
+        subCategoryMatch.setSubCatName("Volume of the month");
         subCategoryMatch.setSubCatCode("2005");
         subCategoryMatches.add(subCategoryMatch);
+
+        subCategoryMatch = new SubCategory();
+        subCategoryMatch.setSubCatName("Our Volunteer");
+        subCategoryMatch.setSubCatCode("2002");
+        subCategoryMatches.add(subCategoryMatch);
+
 
 
         subcategory_name.add(subCategoryMatches);
