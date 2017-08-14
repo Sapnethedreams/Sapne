@@ -24,6 +24,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class MainActivity extends AppCompatActivity {
 
+
     protected DrawerLayout mDrawerLayout;
     Toolbar toolbar;
     int previousGroup;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
         //set up the adapter for the expandablelistview to display the categories.
+
         mCategoryList.setAdapter(new expandableListViewAdapter(MainActivity.this, category_name, subcategory_name, subCatCount));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -55,30 +57,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
-                if (groupPosition == 4 || groupPosition == 6) {
+                if (groupPosition == 4) {
                     return true;
                 } else if (groupPosition == 5) {
                     Intent intent = new Intent(MainActivity.this, Contact_us.class);
                     startActivity(intent);
 
+                } else if (groupPosition == 6) {
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent);
+
                 } else if (parent.isGroupExpanded(groupPosition)) {
-if(groupPosition==4){
-    return true;
-}
-else if(groupPosition==5)
-{
-    Intent intent = new Intent(MainActivity.this, Contact_us.class);
-    startActivity(intent);
-
-}
-else if(groupPosition==6)
-{
-    Intent intent = new Intent(MainActivity.this, MainActivity.class);
-    startActivity(intent);
-
-}
-
-                else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
                 } else {
                     if (groupPosition != previousGroup) {
@@ -111,15 +100,7 @@ else if(groupPosition==6)
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-
-                if (groupPosition == 0 && childPosition == 0) {
-                    Intent intent = new Intent(MainActivity.this, AboutUs.class);
-    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-    startActivity(intent);
-    mDrawerLayout.closeDrawer(mCategoryList);
-}
-                if(groupPosition==2&&childPosition==1)
-                {
+                if (groupPosition == 2 && childPosition == 1) {
                     Intent intent = new Intent(MainActivity.this, SuccessStory.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
@@ -129,21 +110,21 @@ else if(groupPosition==6)
                     mDrawerLayout.closeDrawer(mCategoryList);
 
 
-
                 }
-
-                    ArrayList<SubCategory> tempList;
+                if (groupPosition == 0 && childPosition == 0) {
+                    Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
                     intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
-                }
 
+
+                }
                 if (groupPosition == 0 && childPosition == 1) {
                     Intent intent = new Intent(MainActivity.this, OurMission.class);
-
-                    ArrayList<SubCategory> tempList;
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
                     intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
@@ -153,8 +134,17 @@ else if(groupPosition==6)
 
                 if (groupPosition == 0 && childPosition == 2) {
                     Intent intent = new Intent(MainActivity.this, OurVision.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
 
-                    ArrayList<SubCategory> tempList;
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+                }
+
+                if (groupPosition == 0 && childPosition == 3) {
+                    Intent intent = new Intent(MainActivity.this, OurTeam.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
                     intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
@@ -173,16 +163,12 @@ else if(groupPosition==6)
 
             @Override
             public void onDrawerClosed(View view) {
-
                 invalidateOptionsMenu();
-
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
-
                 invalidateOptionsMenu();
-
             }
 
         };
@@ -440,5 +426,3 @@ else if(groupPosition==6)
         }
     }
 }
-
-
