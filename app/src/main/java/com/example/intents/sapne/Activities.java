@@ -15,8 +15,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Activities extends MainActivity {
 
-
-
     String[] names={"One year has passed giving thousands of smiles to people. Thanks to all " +
             "those who supported us for a good cause because of which we had a successful one year.\n" +
             "Celebrating One year anniversary of Sapne on 22nd Jan 2017 with a very special event.,"
@@ -106,7 +104,6 @@ public class Activities extends MainActivity {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activities, null, false);
         mDrawerLayout.addView(contentView, 0);
-
 
         RecyclerView rv= (RecyclerView) findViewById(R.id.myRecycler);
         //SET LAYOUT

@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
 
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context="com.example.intents.sapne.Activities"
-                tools:showIn="@layout/activities">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/li"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.intents.sapne.Activities"
+    tools:showIn="@layout/activities">
+
+    <LinearLayout
+        android:id="@+id/li"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Activities Corner"
-        android:textAlignment="center"
-        android:textColor="@color/yellow"
-        android:id="@+id/activitycorner"
-        android:padding="10dp"
-        />
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/activitycorner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Activities Corner"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/yellow" />
 
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/myRecycler"
-    android:layout_below="@+id/li"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    class="android.support.v7.widget.RecyclerView" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myRecycler"
+        class="android.support.v7.widget.RecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/li" />
 </RelativeLayout>

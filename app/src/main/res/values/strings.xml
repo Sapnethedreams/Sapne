@@ -3,4 +3,19 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="about_para_1">Education is not preparation for life; education is life itself - rightly said by John Deway. \n\n Education is life and life is the right of each and every human living on the earth whether she/he is poor , rich or anyone . But due to lack of some resources , the so-called money , the so-called wealth , the poor section of our society is struggling for basic needs like education, food , shelter , clothing ,etc.
+    And we as the responsible citizens of the country must bridge the gap between rich and poor . So to give this thought a direction, we have "SAPNE" , an NGO which is there to educate , to provide some basic requirements to the unprivileged section of children.</string>
+    <string name="about_para_2">So, Sapne is working for the betterment of the children who do not know the real meaning of their life by analyzing their sapne , their dreams , we provide them the way to their dreams , we enlighten the way of their dreams. In this world , everyone dreams and everyone chase their respective dreams , so why can\'t these children ? They also have dreams and they also have right to fulfill their dreams and they must also know and hence we teach them that , " A dream is not that you see in sleep , dream is something that doesn\'t let you sleep."</string>
+    <string name="title_activity_our_mission">OurMission</string>
+    <string name="mission_1">Develop research teams and centres with special focus on developing advanced curriculum for the children of the NGO.</string>
+    <string name="mission_0">Create at least 20 educational camps all over Delhi in next 2 years.</string>
+    <string name="mission_2">Creating job opportunities in distinct fields and train at least 1000 employable youth for specialized and well respected roles.</string>
+    <string name="about_us">About Us</string>
+    <string name="our_mission">Our Mission</string>
+    <string name="mission_3">Establish a Gurukul with a functional library, ground, auditorium and accommodation for the kids.</string>
+    <string name="mission_4">Include more trained and experienced teachers into the SAPNE family to train the kids.</string>
+    <string name="title_activity_our_vision">Our Vision</string>
+    <string name="vision_0">SAPNE is working towards developing skills and providing special teaching aids in order to make the knowledge accessible to all. This will be done through our Gurukuls, or Education centres, for children where they can learn, play and get a chance of realizing their sapne (dreams).</string>
+    <string name="vision_1">The ultimate aim is to create a highly aware generation of youth that is not susceptible to social and financial barriers and can fight their own battles with the power of knowledge and skills.</string>
 </resources>

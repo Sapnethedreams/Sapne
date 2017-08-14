@@ -7,7 +7,6 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
         <include layout="@layout/content" />
 
     </LinearLayout>
