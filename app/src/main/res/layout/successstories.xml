@@ -52,7 +52,7 @@ card_view:cardCornerRadius="4dp">
         android:padding="10dp"
         android:text="Detail"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/red"
+        android:textColor="@color/colorAccent"
          android:layout_below="@+id/dateTxt"
         />
 

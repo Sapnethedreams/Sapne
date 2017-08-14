@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Sapne"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,37 +19,39 @@
         </activity>
         <activity
             android:name=".Activities"
-            android:launchMode="singleTask"
+            android:label="Activities Corner "
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Contact_us"
-            android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
+            android:label="Contact Us "
             android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUs"
+            android:screenOrientation="portrait"
             android:label="@string/about_us"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurMission"
+            android:screenOrientation="portrait"
             android:label="@string/our_mission"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurVision"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_our_vision"
             android:theme="@style/AppTheme"></activity>
         <activity android:name=".SuccessStory"
+                  android:label="Success Stories "
                   android:screenOrientation="portrait"
-                  android:launchMode="singleTask"
+                  android:theme="@style/AppTheme"
 
 
 
             >
         </activity>
-        <activity android:name=".Contact_us"
-                  android:screenOrientation="portrait"
-                  android:launchMode="singleTask"
-            >
-            </activity>
+
     </application>
 
 </manifest>
