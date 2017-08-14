@@ -8,31 +8,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.intents.sapne.Activities"
     tools:showIn="@layout/activities">
-
-    <LinearLayout
-        android:id="@+id/li"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/activitycorner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Activities Corner"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/yellow" />
-
-    </LinearLayout>
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context="com.example.intents.sapne.Activities"
-                tools:showIn="@layout/activities"
     >
 <LinearLayout
     android:layout_width="wrap_content"
