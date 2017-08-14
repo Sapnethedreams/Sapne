@@ -54,19 +54,12 @@
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"
             android:theme="@style/AppTheme"></activity>
-<<<<<<< HEAD
-=======
         <activity android:name=".SuccessStory"
                   android:label="Success Stories "
                   android:screenOrientation="portrait"
-                  android:theme="@style/AppTheme"
-
-
-
-            >
+                  android:theme="@style/AppTheme">
         </activity>
 
->>>>>>> e9807072853b16e7a57725d26e83e5782f12377b
     </application>
 
 </manifest>
