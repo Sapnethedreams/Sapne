@@ -8,8 +8,9 @@ android:orientation="vertical"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:layout_margin="0dp"
-card_view:cardElevation="4dp"
+card_view:cardElevation="5dp"
 app:cardPreventCornerOverlap="false"
+card_view:cardUseCompatPadding="true"
 card_view:cardCornerRadius="4dp">
 <RelativeLayout        android:orientation="vertical"
                      android:layout_width="match_parent"
@@ -61,7 +62,7 @@ card_view:cardCornerRadius="4dp">
         android:id="@+id/playerImage1"
         android:layout_below="@+id/DetailTxt"
         android:src="@drawable/lo"
-
+android:elevation="10dp"
          />
 
 
