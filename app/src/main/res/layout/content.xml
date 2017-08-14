@@ -26,6 +26,20 @@
             android:textColor="@color/yellow" />
 
     </LinearLayout>
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context="com.example.intents.sapne.Activities"
+                tools:showIn="@layout/activities"
+    >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/li"
+    android:orientation="vertical">
+</LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myRecycler"

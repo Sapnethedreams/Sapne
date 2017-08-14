@@ -9,7 +9,8 @@
     card_view:cardBackgroundColor="#00490b"
     android:layout_height="100dp"
     android:layout_margin="0dp"
-    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardElevation="5dp"
     app:cardPreventCornerOverlap="false"
     card_view:cardCornerRadius="4dp">
     <LinearLayout        android:orientation="vertical"
@@ -18,17 +19,16 @@
                          android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_width="match_parent"
             android:elevation="15dp"
             android:id="@+id/playerImage"
-            android:padding="10dp"
-            android:scaleType="fitXY"
+            android:padding="25dp"
             android:src="@drawable/lo" />
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name"

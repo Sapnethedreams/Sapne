@@ -62,6 +62,23 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
+if(groupPosition==4){
+    return true;
+}
+else if(groupPosition==5)
+{
+    Intent intent = new Intent(MainActivity.this, Contact_us.class);
+    startActivity(intent);
+
+}
+else if(groupPosition==6)
+{
+    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+    startActivity(intent);
+
+}
+
+                else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
                 } else {
                     if (groupPosition != previousGroup) {
@@ -97,6 +114,23 @@ public class MainActivity extends AppCompatActivity {
 
                 if (groupPosition == 0 && childPosition == 0) {
                     Intent intent = new Intent(MainActivity.this, AboutUs.class);
+    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+    startActivity(intent);
+    mDrawerLayout.closeDrawer(mCategoryList);
+}
+                if(groupPosition==2&&childPosition==1)
+                {
+                    Intent intent = new Intent(MainActivity.this, SuccessStory.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+
+
+                }
 
                     ArrayList<SubCategory> tempList;
                     tempList = subcategory_name.get(groupPosition);
