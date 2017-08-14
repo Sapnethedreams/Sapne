@@ -20,45 +20,36 @@
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Contact_us"
-            android:theme="@style/AppTheme"
             android:label="Contact Us "
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutUs"
-            android:screenOrientation="portrait"
             android:label="@string/about_us"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurMission"
-            android:screenOrientation="portrait"
             android:label="@string/our_mission"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurVision"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_our_vision"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".SuccessStory"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".Contact_us"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".SuccessStory"
-                  android:label="Success Stories "
-                  android:screenOrientation="portrait"
-                  android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
 
     </application>
 
