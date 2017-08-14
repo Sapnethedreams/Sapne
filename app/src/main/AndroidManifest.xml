@@ -27,6 +27,14 @@
 
             >
         </activity>
+        <activity android:name=".SuccessStory"
+                  android:screenOrientation="portrait"
+                  android:launchMode="singleTask"
+
+
+
+            >
+        </activity>
         <activity android:name=".Contact_us"
                   android:screenOrientation="portrait"
                   android:launchMode="singleTask"

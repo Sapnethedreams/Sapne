@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
-if(groupPosition==4||groupPosition==6){
+if(groupPosition==4){
     return true;
 }
 else if(groupPosition==5)
@@ -72,6 +72,13 @@ else if(groupPosition==5)
     startActivity(intent);
 
 }
+else if(groupPosition==6)
+{
+    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+    startActivity(intent);
+
+}
+
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
                 } else {
@@ -105,6 +112,19 @@ if(groupPosition==1 && childPosition==1) {
     startActivity(intent);
     mDrawerLayout.closeDrawer(mCategoryList);
 }
+                if(groupPosition==2&&childPosition==1)
+                {
+                    Intent intent = new Intent(MainActivity.this, SuccessStory.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+
+
+                }
 
 
 

@@ -18,17 +18,16 @@
                          android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_width="match_parent"
             android:elevation="15dp"
             android:id="@+id/playerImage"
-            android:padding="10dp"
-            android:scaleType="fitXY"
+            android:padding="15dp"
             android:src="@drawable/lo" />
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name"
