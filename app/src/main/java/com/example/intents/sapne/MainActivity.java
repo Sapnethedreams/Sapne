@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
     private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
     int previousGroup;
+    public Button btnJoinUs,btnSubmit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
+        btnSubmit= (Button) findViewById(R.id.btnSubmit);
+
+        btnJoinUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+                startActivity(intent);
+            }
+        });
+        
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
