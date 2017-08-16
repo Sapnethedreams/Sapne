@@ -1,31 +1,31 @@
 package com.example.intents.sapne;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Typeface;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.res.Configuration;
+        import android.graphics.Typeface;
+        import android.support.v4.view.GravityCompat;
+        import android.support.v4.widget.DrawerLayout;
+        import android.support.v7.app.ActionBarDrawerToggle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.support.v7.widget.DefaultItemAnimator;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
+        import android.support.v7.widget.Toolbar;
+        import android.view.LayoutInflater;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.BaseExpandableListAdapter;
+        import android.widget.ExpandableListView;
+        import android.widget.TextView;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+        import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-import static com.example.intents.sapne.R.id.parent;
+        import static com.example.intents.sapne.R.id.parent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -141,6 +141,18 @@ public class MainActivity extends AppCompatActivity {
                 if(groupPosition==0&&childPosition==1)
                 {
                     Intent intent = new Intent(MainActivity.this, OurMission.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
+                if(groupPosition==3&&childPosition==0)
+                {
+                    Intent intent = new Intent(MainActivity.this, Expandable_products.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
