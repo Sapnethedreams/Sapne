@@ -41,5 +41,10 @@ dependencies {
     compile 'javax.mail:mail:1.4.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
+    
+    compile files('libs/activation.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/mail.jar')
+
 }
 apply plugin: 'com.google.gms.google-services'
