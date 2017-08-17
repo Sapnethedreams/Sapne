@@ -4,6 +4,7 @@ package com.example.intents.sapne;
         import android.content.Intent;
         import android.content.res.Configuration;
         import android.graphics.Typeface;
+        import android.net.Uri;
         import android.support.v4.view.GravityCompat;
         import android.support.v4.widget.DrawerLayout;
         import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +19,7 @@ package com.example.intents.sapne;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.BaseExpandableListAdapter;
+        import android.widget.Button;
         import android.widget.ExpandableListView;
         import android.widget.TextView;
 
@@ -60,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
         
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
@@ -98,7 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
-                } else {
+                }
+
+
+                else {
                     if (groupPosition != previousGroup) {
                         parent.collapseGroup(previousGroup);
                     }
@@ -163,9 +171,22 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+                if(groupPosition==1&&childPosition==0)
+                {
+                    Intent intent = new Intent(MainActivity.this, Regular_camps.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
+
                 if(groupPosition==3&&childPosition==0)
                 {
-                    Intent intent = new Intent(MainActivity.this, Expandable_products.class);
+                    Intent intent = new Intent(MainActivity.this, Products.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
@@ -230,6 +251,14 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+
+    }
+
+    public void donate(View v)
+    {
+
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
+        startActivity(myIntent);
 
     }
 

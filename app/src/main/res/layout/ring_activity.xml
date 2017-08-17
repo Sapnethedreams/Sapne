@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:lines="3"
+        android:inputType="textMultiLine"
         android:textColor="#2c6094"
         android:text="
 Devesh Mittal
@@ -28,6 +28,11 @@ Divya Verma
 Mon - Fri, 8:00-22:00
 
 Anurag Pandey
-+919 311 140 034"/>
++919 311 140 034"
+        android:textStyle="bold"
+
+        />
+
+
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

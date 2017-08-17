@@ -28,6 +28,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
+        android:name=".Products"
+        android:label="Products"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name=".Regular_camps"
+            android:label="Regular camps "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".Contact_us"
             android:label="Contact Us "
             android:screenOrientation="portrait"
@@ -43,8 +55,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".Ring_contact_us"
+            android:label="Contact Us"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".OurVision"
             android:label="@string/title_activity_our_vision"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Location_contact_us"
+            android:label="Location"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
