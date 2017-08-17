@@ -55,7 +55,8 @@
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"
             android:theme="@style/AppTheme" />
+        
 
-    </application>
+</application>
 
 </manifest>
