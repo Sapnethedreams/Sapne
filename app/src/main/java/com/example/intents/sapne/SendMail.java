@@ -1,8 +1,6 @@
 package com.example.intents.sapne;
 
-/**
- * Created by itsmeemohit on 15-08-2017.
- */
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -18,9 +16,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- * Created by Belal on 10/30/2015.
- */
+
 
 //Class is extending AsyncTask because this class is going to perform a networking operation
 public class SendMail extends AsyncTask<Void,Void,Void> {

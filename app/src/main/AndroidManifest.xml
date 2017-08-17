@@ -1,71 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.intents.sapne">
 
-<application
-    android:allowBackup="true"
-    android:hardwareAccelerated="false"
-    android:icon="@mipmap/ic_launcher"
-    android:label="Sapne"
-    android:largeHeap="true"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".Activities"
-        android:label="Activities Corner "
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name=".Contact_us"
-        android:label="Contact Us "
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name=".AboutUs"
-        android:label="@string/about_us"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name=".OurMission"
-        android:label="@string/our_mission"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-
-    <activity
-        android:name=".Expandable_products"
-        android:label="Products"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".Location_contact_us"
-        android:label="Find Us"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".Ring_contact_us"
+    package="com.example.intents.sapne">
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
         android:label="Sapne"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".OurVision"
-        android:label="@string/title_activity_our_vision"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-    <activity
-        android:name=".SuccessStory"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait" />
-    <activity
-        android:name=".OurTeam"
-        android:label="@string/title_activity_our_team"
-        android:theme="@style/AppTheme" />
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".JoinUs">
+        </activity>
+    
+        <activity
+            android:name=".Activities"
+            android:label="Activities Corner "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Contact_us"
+            android:label="Contact Us "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AboutUs"
+            android:label="@string/about_us"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".OurMission"
+            android:label="@string/our_mission"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".OurVision"
+            android:label="@string/title_activity_our_vision"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SuccessStory"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OurTeam"
+            android:label="@string/title_activity_our_team"
+            android:theme="@style/AppTheme" />
+        
 
 </application>
 
