@@ -21,6 +21,7 @@
         </activity>
          <activity android:name=".JoinUs">
         </activity>
+
     
         <activity
             android:name=".Activities"
@@ -35,7 +36,7 @@
 
 
         <activity
-            android:name=".Regular_camps"
+            android:name=".RegularCamps"
             android:label="Regular camps "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
     private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
     int previousGroup;
-    public Button btnJoinUs,btnSubmit;
+    public Button btnJoinUs,btnSubmit,login;
 
 
     @Override
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        login=(Button)findViewById(R.id.login);
         btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
 
@@ -173,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(groupPosition==1&&childPosition==0)
                 {
-                    Intent intent = new Intent(MainActivity.this, Regular_camps.class);
+                    Intent intent = new Intent(MainActivity.this, RegularCamps.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
@@ -251,6 +252,13 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+
+    }
+    public void login(View v)
+    {
+
+        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
+        startActivity(myIntent);
 
     }
 
