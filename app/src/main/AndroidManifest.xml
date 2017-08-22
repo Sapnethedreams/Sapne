@@ -40,6 +40,12 @@
             android:label="Regular camps "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".our_volunteer"
+            android:label="Our Team"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Contact_us"
             android:label="Contact Us "
@@ -68,6 +74,12 @@
         <activity
             android:name=".Location_contact_us"
             android:label="Location"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".all_volunteer"
+            android:label="Volunteers"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity

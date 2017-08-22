@@ -183,6 +183,19 @@ public class MainActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
+                if(groupPosition==1&&childPosition==3)
+                {
+                    Intent intent = new Intent(MainActivity.this, our_volunteer.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
+
 
 
                 if(groupPosition==3&&childPosition==0)
