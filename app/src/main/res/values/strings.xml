@@ -20,4 +20,27 @@
     <string name="vision_1">The ultimate aim is to create a highly aware generation of youth that is not susceptible to social and financial barriers and can fight their own battles with the power of knowledge and skills.</string>
     <string name="title_activity_our_team">Our Team</string>
     <string name="team_devesh">An Accountant/Social Worker/Entrepreneur/Event organizer. He is young Enthusiastic , Energetic and active personality with have positive approach towards life. He is a founder of SAPNE. He founded SAPNE with a promising commitment towards the nation and the Society. He is positive , Intellectual and funny at the same time. He loves kids and love to interact with them.</string>
+    <string name="title_activity_events">EventsActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="events_intro">“The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education. - Martin Luther King, Jr.
+    \n\nThis is what SAPNE believes in. And to accomplish this goal we provide education to all the underprivileged children.</string>
+    <string name="events_0_1">“A teacher presents the past, reveals the present and creates the future.”</string>
+    <string name="events_0_2">Providing education does not only mean giving them the knowledge of alphabets and numbers but also includes overall development of the children. For this we encourage skill development along with academic education. We train them in co-curricular areas like drawing, handicraft, dancing, English speaking, extempore along with other activities which are conducted regularly in form of events.</string>
+    <string name="events_0_3">Health camps are also held once or twice in a month where we provide free health check up and also create awareness about hygiene and cleanliness amongst the people. The classes are held daily from Monday– Saturday at 4–6 in evening. At present 4 educational camps are working in this field.</string>
+    <string name="events_1_1">Lohri is famously an occasion which marks the end of winter and the coming of spring. SAPNE celebrated Lohri 2016 with great enthusiasm and exuberance to give our children
+    an experience of different festivals.</string>
+    <string name="events_1_2">1. Lohri Celebration</string>
+    <string name="events_1_3">2. Republic Day</string>
+    <string name="events_1_4">In our country, we strive to inculcate our youth the feeling of brotherhood, patriotism, and other core values. Keeping this thought in mind, we celebrated Republic Day with deprived section of our society. This national occasion comprised a mini parade and national anthem sung towards the acquaintance with the celebration of our national festivals.</string>
+    <string name="events_2_1">3. Express Your Dreams</string>
+    <string name="events_2_2">No matter from where you belong, your dreams are valid and feasible. And that is why SAPNE was formed - to value everyone\'s dream. This event was held on 29th June 2016 at D-Mall, Rohini, Delhi. The event was anchored by Mr. Devesh Mittal, Ms. Diivya Verma, Mr. Anurag Pandey and the whole Sapne Team participated.</string>
+    <string name="events_2_3">4. <![CDATA[Truth & Dare]]></string>
+    <string name="events_2_4">This event was organised at Netaji Subhash Place, Delhi with an aim to bring out some hidden curiosity among the people. The theme of this event was to put some daring people forward to try and attempt the dares given to them by the volunteers which were meant for social welfare. The active involvement of the people made it a huge success.</string>
+    <string name="events_3_1">5. Independence Day</string>
+    <string name="events_3_3">6. Cleanliness Drive</string>
+    <string name="events_3_2">SAPNE along with the children from various sections of the deprived society celebrated the Independence Day at Siraspur, Delhi. It was an occasion of both Independence Day as well as opening ceremony of the centre. Flag hoisting was followed by some cultural programs. The program consisted of patriotic group song, graceful dance and short plays.</string>
+    <string name="events_3_4">On the auspicious occasion of Ganesh Chaturthi, we came across a canal in Rohini Sec- 18, Delhi which was long overdue and it was getting noxious for the ones living nearby. Our group of volunteers initiated the drive and dedicated themselves to this movement whole heartedly. Holding up the broom in hand and with determination in the heart to clean the dirt, to make Swachh Bharat Abhiyan a great success across the nation.</string>
+    <string name="events_0_4">These camps are: ~District Park I block, Sector - 16, Rohini, Delhi-89 ~Nursery Park, Sector -16, G Block, Rohini, Delhi - 89 ~Sector - 16, slum side, near Ambedkar Bhawan, Rohini, Delhi - 85 ~ Siraspur, Delhi</string>
 </resources>

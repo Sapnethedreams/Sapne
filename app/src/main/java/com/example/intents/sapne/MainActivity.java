@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
                 if(groupPosition==4){
-                    return true;
+                    Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                    startActivity(intent);
                 }
                 else if(groupPosition==5)
                 {
@@ -179,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
-
                 }
 
                 return true;

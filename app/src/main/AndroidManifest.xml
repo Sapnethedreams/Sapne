@@ -50,7 +50,10 @@
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"
             android:theme="@style/AppTheme" />
-
+        <activity
+            android:name=".EventsActivity"
+            android:label="@string/title_activity_events"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
