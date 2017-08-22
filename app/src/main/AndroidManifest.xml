@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intents.sapne">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -19,20 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity android:name=".JoinUs">
-        </activity>
+        <activity android:name=".JoinUs"></activity>
 
-    
+
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-        android:name=".Products"
-        android:label="Products"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
+            android:name=".Products"
+            android:label="Products"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
 
         <activity
@@ -93,10 +93,7 @@
         <activity
             android:name=".EventsActivity"
             android:label="@string/title_activity_events"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
-        
-
-</application>
 
 </manifest>
