@@ -14,25 +14,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-<include
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    layout="@layout/toolbar_layout"
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_layout"
 
-    />
+            />
 
 
     </LinearLayout>
 
-<!--/    <android.support.design.widget.NavigationView-->
-        <!--android:id="@+id/NavigationView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:menu="@menu/drawer_menu"-->
-        <!--android:layout_gravity="start"-->
-        <!--app:headerLayout="@layout/nav_header"-->
-        <!--android:fitsSystemWindows="true"-->
->
+    <!--/    <android.support.design.widget.NavigationView-->
+    <!--android:id="@+id/NavigationView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:menu="@menu/drawer_menu"-->
+    <!--android:layout_gravity="start"-->
+    <!--app:headerLayout="@layout/nav_header"-->
+    <!--android:fitsSystemWindows="true"-->
+    >
 
 
 
@@ -51,7 +51,7 @@
         android:dividerHeight="0dp"
         android:background="#444444"
 
-    app:headerLayout="@layout/nav_header"
+        app:headerLayout="@layout/nav_header"
         />
 
 </android.support.v4.widget.DrawerLayout>

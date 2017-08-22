@@ -1,31 +1,33 @@
 package com.example.intents.sapne;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Typeface;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.res.Configuration;
+        import android.graphics.Typeface;
+        import android.net.Uri;
+        import android.support.v4.view.GravityCompat;
+        import android.support.v4.widget.DrawerLayout;
+        import android.support.v7.app.ActionBarDrawerToggle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.support.v7.widget.DefaultItemAnimator;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
+        import android.support.v7.widget.Toolbar;
+        import android.view.LayoutInflater;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.BaseExpandableListAdapter;
+        import android.widget.Button;
+        import android.widget.ExpandableListView;
+        import android.widget.TextView;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+        import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-import static com.example.intents.sapne.R.id.parent;
+        import static com.example.intents.sapne.R.id.parent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
     private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
     int previousGroup;
+    public Button btnJoinUs,btnSubmit,login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +51,22 @@ public class MainActivity extends AppCompatActivity {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        login=(Button)findViewById(R.id.login);
+        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
+        btnSubmit= (Button) findViewById(R.id.btnSubmit);
 
+        btnJoinUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
@@ -86,7 +105,10 @@ public class MainActivity extends AppCompatActivity {
 
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
-                } else {
+                }
+
+
+                else {
                     if (groupPosition != previousGroup) {
                         parent.collapseGroup(previousGroup);
                     }
@@ -151,6 +173,44 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+                if(groupPosition==1&&childPosition==0)
+                {
+                    Intent intent = new Intent(MainActivity.this, RegularCamps.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+                if(groupPosition==1&&childPosition==3)
+                {
+                    Intent intent = new Intent(MainActivity.this, our_volunteer.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
+
+
+
+                if(groupPosition==3&&childPosition==0)
+                {
+                    Intent intent = new Intent(MainActivity.this, Products.class);
+                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
                 if (groupPosition == 0 && childPosition == 2) {
                     Intent intent = new Intent(MainActivity.this, OurVision.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
@@ -205,6 +265,21 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+
+    }
+    public void login(View v)
+    {
+
+        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
+        startActivity(myIntent);
+
+    }
+
+    public void donate(View v)
+    {
+
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
+        startActivity(myIntent);
 
     }
 

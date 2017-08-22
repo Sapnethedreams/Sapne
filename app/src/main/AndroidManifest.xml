@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intents.sapne">
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -17,9 +19,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         <activity android:name=".JoinUs">
+        </activity>
+
+    
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+        android:name=".Products"
+        android:label="Products"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name=".RegularCamps"
+            android:label="Regular camps "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".our_volunteer"
+            android:label="Our Team"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
@@ -38,8 +62,24 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".Ring_contact_us"
+            android:label="Contact Us"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".OurVision"
             android:label="@string/title_activity_our_vision"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Location_contact_us"
+            android:label="Location"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".all_volunteer"
+            android:label="Volunteers"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
@@ -55,5 +95,8 @@
             android:label="@string/title_activity_events"
             android:theme="@style/AppTheme"></activity>
     </application>
+        
+
+</application>
 
 </manifest>
