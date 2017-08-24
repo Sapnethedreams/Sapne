@@ -14,6 +14,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 public class EventsActivity extends MainActivity {
 
@@ -25,10 +26,34 @@ public class EventsActivity extends MainActivity {
         View contentView = inflater.inflate(R.layout.activity_events, null, false);
         mDrawerLayout.addView(contentView, 0);
 
-        ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
+        final ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
         viewPager.setAdapter(new CustomTabPagerAdapter(this));
         viewPager.setPageTransformer(false, new ZoomOutPageTransformer());
         viewPager.setOffscreenPageLimit(4);
+
+        ImageButton leftButton = (ImageButton)findViewById(R.id.events_left);
+        leftButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                int num = viewPager.getCurrentItem();
+                if(num > 0){
+                    viewPager.setCurrentItem(num - 1, true);
+                }
+            }
+        });
+
+        ImageButton rightButton = (ImageButton)findViewById(R.id.events_right);
+        rightButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                int num = viewPager.getCurrentItem();
+                if(num < 4){
+                    viewPager.setCurrentItem(num + 1, true);
+                }
+            }
+        });
     }
 
     public class CustomTabPagerAdapter extends FragmentPagerAdapter {
