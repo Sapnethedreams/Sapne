@@ -1,33 +1,28 @@
 package com.example.intents.sapne;
 
-        import android.content.Context;
-        import android.content.Intent;
-        import android.content.res.Configuration;
-        import android.graphics.Typeface;
-        import android.net.Uri;
-        import android.support.v4.view.GravityCompat;
-        import android.support.v4.widget.DrawerLayout;
-        import android.support.v7.app.ActionBarDrawerToggle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.support.v7.widget.DefaultItemAnimator;
-        import android.support.v7.widget.LinearLayoutManager;
-        import android.support.v7.widget.RecyclerView;
-        import android.support.v7.widget.Toolbar;
-        import android.view.LayoutInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.BaseExpandableListAdapter;
-        import android.widget.Button;
-        import android.widget.ExpandableListView;
-        import android.widget.TextView;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
-        import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-
-        import static com.example.intents.sapne.R.id.parent;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -51,22 +46,22 @@ public class MainActivity extends AppCompatActivity {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        login=(Button)findViewById(R.id.login);
-        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
+        //      login=(Button)findViewById(R.id.login);
+        //     btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
 
-        btnJoinUs.setOnClickListener(new View.OnClickListener() {
+    /*  btnJoinUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),JoinUs.class);
                 startActivity(intent);
             }
         });
+*/
 
 
 
 
-        
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
@@ -267,15 +262,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void login(View v)
-    {
 
-        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
-        startActivity(myIntent);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        String btnName = null;
+        switch(itemId) {
 
+            case R.id.login1:
+
+                Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
+                startActivity(myIntent);
+                break;
+            case R.id.notification:
+                btnName = "Help";
+                break;
+        }
+        return true;
     }
 
-    public void donate(View v)
+    public void donate1(View v)
     {
 
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
@@ -288,8 +294,13 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
@@ -298,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Handle action buttons
         return true;
-    }
+    }*/
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -532,3 +543,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+

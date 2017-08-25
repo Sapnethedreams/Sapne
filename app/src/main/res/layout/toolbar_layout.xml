@@ -20,36 +20,20 @@
         android:minHeight="?attr/actionBarSize"
         android:fitsSystemWindows="true"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    <Button
-        android:id="@+id/btnJoinUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Join Us"
-        android:layout_gravity="right"
 
 
-        />
-
-        <Button
-            android:id="@+id/btnDonate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Donate Us"
-            android:layout_gravity="left"
-   android:onClick="donate"
-
-            />
 
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login Sapne User"
-            android:layout_gravity="center"
-            android:onClick="login"
 
-            />
+        <!--<Button-->
+            <!--android:id="@+id/login"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Login Sapne User"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:onClick="login"-->
+
+            <!--/>-->
 
     </android.support.v7.widget.Toolbar>
 

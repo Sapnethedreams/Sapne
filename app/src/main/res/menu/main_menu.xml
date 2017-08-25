@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/login1"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:actionLayout="@layout/toolbar_layout"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_notifications_white_24dp"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        android:actionLayout="@layout/toolbar_layout"
+        android:title="Setting" />
+
+</menu>
