@@ -14,9 +14,9 @@ public class AboutUs extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+
         LayoutInflater inflater = (LayoutInflater) this
-                .getSystemService(LAYOUT_INFLATER_SERVICE);
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_about_us, null, false);
     mDrawerLayout.addView(contentView, 0);
     }

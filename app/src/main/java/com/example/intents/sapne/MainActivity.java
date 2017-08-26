@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,10 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    ViewPagerAdapter adapter;
+    ViewPager viewPager;
+
+
     protected DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ExpandableListView mCategoryList;
@@ -46,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        viewPager=(ViewPager)findViewById(R.id.viewpager);
+        adapter=new ViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
+
+
         //      login=(Button)findViewById(R.id.login);
         //     btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
@@ -288,6 +298,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(myIntent);
 
     }
+
+    public void join1(View v)
+    {
+        Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+        startActivity(intent);
+
+
+
+
+    }
+
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
