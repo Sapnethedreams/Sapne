@@ -12,15 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class OurTeam extends MainActivity implements View.OnClickListener{
+public class OurTeam extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_our_team);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_our_team, null, false);
-        mDrawerLayout.addView(contentView, 0);
+
 
         ImageButton fbButton = (ImageButton) contentView.findViewById(R.id.devesh_fb);
         ImageButton instaButton = (ImageButton) contentView.findViewById(R.id.devesh_insta);

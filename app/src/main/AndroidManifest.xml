@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
 
+
+
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

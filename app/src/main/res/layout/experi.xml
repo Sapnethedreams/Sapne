@@ -13,12 +13,8 @@
 
             >
 
-            <include
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                layout="@layout/toolbar_layout"
 
-                />
+
 
 
             <android.support.v7.widget.AppCompatTextView

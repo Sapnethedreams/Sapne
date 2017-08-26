@@ -29,8 +29,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    ViewPagerAdapter adapter;
-    ViewPager viewPager;
+
 
 
     protected DrawerLayout mDrawerLayout;
@@ -47,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         this.getCatData();
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        viewPager=(ViewPager)findViewById(R.id.viewpager);
-        adapter=new ViewPagerAdapter(this);
-        viewPager.setAdapter(adapter);
+
 
 
         //      login=(Button)findViewById(R.id.login);
@@ -107,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 }
+                else if(groupPosition==3) {
+                    Intent intent = new Intent(MainActivity.this, Products.class);
+                    startActivity(intent);
+                }
+
+                else if(groupPosition==2) {
+                    Intent intent = new Intent(MainActivity.this, SuccessStory.class);
+                    startActivity(intent);
+                }
 
                 else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
@@ -144,16 +151,16 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-                if(groupPosition==2&&childPosition==1)
-                {
-                    Intent intent = new Intent(MainActivity.this, SuccessStory.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
+//                if(groupPosition==2&&childPosition==1)
+//                {
+//                    Intent intent = new Intent(MainActivity.this, SuccessStory.class);
+//                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+//                    tempList = subcategory_name.get(groupPosition);
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
-                    mDrawerLayout.closeDrawer(mCategoryList);
-                }
+//                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+//                    startActivity(intent);
+//                    mDrawerLayout.closeDrawer(mCategoryList);
+//                }
                 if(groupPosition==0&&childPosition==0)
                 {
                     Intent intent = new Intent(MainActivity.this, AboutUs.class);
@@ -204,17 +211,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                if(groupPosition==3&&childPosition==0)
-                {
-                    Intent intent = new Intent(MainActivity.this, Products.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
+//                if(groupPosition==3&&childPosition==0)
+//                {
+//                    Intent intent = new Intent(MainActivity.this, Products.class);
+//                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+//                    tempList = subcategory_name.get(groupPosition);
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
-                    mDrawerLayout.closeDrawer(mCategoryList);
+//                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+//                    startActivity(intent);
+//                    mDrawerLayout.closeDrawer(mCategoryList);
 
-                }
+//                }
 
                 if (groupPosition == 0 && childPosition == 2) {
                     Intent intent = new Intent(MainActivity.this, OurVision.class);
@@ -294,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
     public void donate1(View v)
     {
 
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));
         startActivity(myIntent);
 
     }
@@ -499,7 +506,7 @@ public class MainActivity extends AppCompatActivity {
         subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Our Team");
+        subCategoryMatch.setSubCatName("Core Team");
         subCategoryMatch.setSubCatCode("1004");
         subCategoryMatches.add(subCategoryMatch);
 
@@ -523,7 +530,7 @@ public class MainActivity extends AppCompatActivity {
         subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Volume of the month");
+        subCategoryMatch.setSubCatName("Volunteer of the month");
         subCategoryMatch.setSubCatCode("2005");
         subCategoryMatches.add(subCategoryMatch);
 
@@ -537,30 +544,9 @@ public class MainActivity extends AppCompatActivity {
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
 
-        subCategoryMatches = new ArrayList<SubCategory>();
 
-        subCategoryMatch = new SubCategory();
 
-        subCategoryMatch.setSubCatName("RECENT");
-        subCategoryMatch.setSubCatCode("2001");
-        subCategoryMatches.add(subCategoryMatch);
-        subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Past");
-        subCategoryMatch.setSubCatCode("6001");
-        subCategoryMatches.add(subCategoryMatch);
 
-        subcategory_name.add(subCategoryMatches);
-        subCatCount.add(subCategoryMatches.size());
-
-        subCategoryMatches = new ArrayList<SubCategory>();
-
-        subCategoryMatch = new SubCategory();
-
-        subCategoryMatch.setSubCatName("T-shirts");
-        subCategoryMatch.setSubCatCode("5001");
-        subCategoryMatches.add(subCategoryMatch);
-        subcategory_name.add(subCategoryMatches);
-        subCatCount.add(subCategoryMatches.size());
 
     }
 }
