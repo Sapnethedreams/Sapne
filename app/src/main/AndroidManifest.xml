@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".JoinUs"></activity>
-
+<activity android:name=".Launcharpage"></activity>
 
         <activity
             android:name=".Activities"

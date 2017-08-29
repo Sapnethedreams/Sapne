@@ -10,52 +10,47 @@
     >
 
 
-
     <android.support.v7.widget.Toolbar
 
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        android:background="?attr/colorPrimaryDark"
-        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
         android:fitsSystemWindows="true"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    <Button
-        android:id="@+id/btnJoinUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Join Us"
-        android:layout_gravity="right"
+        android:title="@string/app_name"
 
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:weightSum="1">
 
-        />
-
-        <Button
-            android:id="@+id/btnDonate"
-            android:layout_width="wrap_content"
+        <ImageButton
+            android:id="@+id/notify"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="@android:dimen/app_icon_size"
             android:layout_height="wrap_content"
-            android:text="Donate Us"
-            android:layout_gravity="left"
-   android:onClick="donate"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="220dp"
+            android:src="@drawable/notification"
+            android:textAlignment="center" />
+
+        <ImageButton
+            android:id="@+id/login1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="loginhere"
+            android:src="@drawable/login"
+            android:textAlignment="center"
 
             />
 
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login Sapne User"
-            android:layout_gravity="center"
-            android:onClick="login"
 
-            />
+
+
 
     </android.support.v7.widget.Toolbar>
-
-
-
-
 
 
 </android.support.design.widget.AppBarLayout>

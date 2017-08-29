@@ -51,17 +51,17 @@ public class MainActivity extends AppCompatActivity {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        login=(Button)findViewById(R.id.login);
-        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
-        btnSubmit= (Button) findViewById(R.id.btnSubmit);
+//        login=(Button)findViewById(R.id.login);
+//        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
+//        btnSubmit= (Button) findViewById(R.id.btnSubmit);
 
-        btnJoinUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
-                startActivity(intent);
-            }
-        });
+//        btnJoinUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
@@ -267,21 +267,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void login(View v)
-    {
+//    public void login(View v)
+//    /{
 
-        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
-        startActivity(myIntent);
+//        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
+//        startActivity(myIntent);
 
-    }
+//    }
 
-    public void donate(View v)
-    {
+//    public void donate(View v)
+//    {
 
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
-        startActivity(myIntent);
-
-    }
+//        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
+//        startActivity(myIntent);
+//
+//    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
