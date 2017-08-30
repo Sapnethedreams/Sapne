@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_our_mission"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:background="#eee">
+    android:background="@drawable/event_grad">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,8 @@
             app:cardPreventCornerOverlap="true"
             app:contentPadding="3dp"
             app:cardElevation="3dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:timeline="http://schemas.android.com/apk/res-auto"
@@ -42,8 +43,8 @@
                     android:layout_height="match_parent"
                     timeline:timeline_lineStyle="linear"
                     timeline:timeline_type="end"
-                    timeline:timeline_lineColor="#72a5a9"
-                    timeline:timeline_indicatorColor="#4481dc"/>
+                    timeline:timeline_lineColor="#e7e7e7"
+                    timeline:timeline_indicatorColor="#ffffff"/>
 
                 <TextView
                     android:id="@+id/textView0"
@@ -56,6 +57,7 @@
                     android:fontFamily="serif"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
+                    android:textColor="@color/white"
                     android:textAlignment="viewStart"
                     tools:ignore="RtlHardcoded"
                     />
@@ -71,7 +73,8 @@
             app:cardUseCompatPadding="true"
             app:contentPadding="3dp"
             app:cardElevation="3dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:timeline="http://schemas.android.com/apk/res-auto"
@@ -84,9 +87,9 @@
                     android:id="@+id/timeline1"
                     android:layout_width="?android:listPreferredItemHeight"
                     android:layout_height="match_parent"
-                    timeline:timeline_lineStyle="dashed"
-                    timeline:timeline_lineColor="#72a5a9"
-                    timeline:timeline_indicatorColor="#4481dc"/>
+                    timeline:timeline_indicatorColor="#ffffff"
+                    timeline:timeline_lineColor="#d9d9d9"
+                    timeline:timeline_lineStyle="dashed" />
 
                 <TextView
                     android:id="@+id/textView1"
@@ -98,6 +101,7 @@
                     android:textSize="16sp"
                     android:fontFamily="serif"
                     android:textAlignment="viewStart"
+                    android:textColor="@color/white"
                     tools:ignore="RtlHardcoded"
                     />
 
@@ -112,7 +116,8 @@
             app:cardUseCompatPadding="true"
             app:contentPadding="2dp"
             app:cardElevation="3dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:timeline="http://schemas.android.com/apk/res-auto"
@@ -126,21 +131,21 @@
                     android:layout_width="?android:listPreferredItemHeight"
                     android:layout_height="match_parent"
                     timeline:timeline_lineStyle="dashed"
-                    timeline:timeline_lineColor="#72a5a9"
-                    timeline:timeline_indicatorColor="#4481dc"/>
+                    timeline:timeline_lineColor="#e9eaea"
+                    timeline:timeline_indicatorColor="#ffffff"/>
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
                     android:fontFamily="serif"
-                    android:textSize="16sp"
+                    android:gravity="center"
                     android:text="@string/mission_2"
                     android:textAlignment="viewStart"
-                    tools:ignore="RtlHardcoded"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -153,7 +158,8 @@
             app:cardUseCompatPadding="true"
             app:contentPadding="2dp"
             app:cardElevation="3dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:timeline="http://schemas.android.com/apk/res-auto"
@@ -166,9 +172,9 @@
                     android:id="@+id/timeline3"
                     android:layout_width="?android:listPreferredItemHeight"
                     android:layout_height="match_parent"
-                    timeline:timeline_lineStyle="dashed"
-                    timeline:timeline_lineColor="#72a5a9"
-                    timeline:timeline_indicatorColor="#4481dc"/>
+                    timeline:timeline_indicatorColor="#ffffff"
+                    timeline:timeline_lineColor="#e1e1e1"
+                    timeline:timeline_lineStyle="dashed" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -178,6 +184,7 @@
                     android:gravity="center"
                     android:fontFamily="serif"
                     android:textSize="16sp"
+                    android:textColor="@color/white"
                     android:text="@string/mission_3"
                     android:layout_marginTop="7dp"
                     android:layout_marginBottom="7dp"
@@ -196,7 +203,8 @@
             app:cardUseCompatPadding="true"
             app:contentPadding="2dp"
             app:cardElevation="3dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:timeline="http://schemas.android.com/apk/res-auto"
@@ -211,8 +219,8 @@
                     android:layout_height="match_parent"
                     timeline:timeline_lineStyle="linear"
                     timeline:timeline_type="start"
-                    timeline:timeline_lineColor="#72a5a9"
-                    timeline:timeline_indicatorColor="#4481dc"/>
+                    timeline:timeline_lineColor="#dcdcdc"
+                    timeline:timeline_indicatorColor="#ffffff"/>
 
                 <TextView
                     android:id="@+id/textView4"
@@ -222,6 +230,7 @@
                     android:gravity="center"
                     android:text="@string/mission_4"
                     android:layout_marginTop="7dp"
+                    android:textColor="@color/white"
                     android:fontFamily="serif"
                     android:textSize="16sp"
                     android:layout_marginBottom="7dp"

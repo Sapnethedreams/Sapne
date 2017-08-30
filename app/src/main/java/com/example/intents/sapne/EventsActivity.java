@@ -25,7 +25,7 @@ public class EventsActivity extends AppCompatActivity  {
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_events, null, false);
-
+        setContentView(contentView);
 
         final ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
         viewPager.setAdapter(new CustomTabPagerAdapter(this));
