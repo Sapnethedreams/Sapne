@@ -69,8 +69,7 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-
-
+                android:onClick="explore"
                 android:text="Explore Journey of Sapne"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"

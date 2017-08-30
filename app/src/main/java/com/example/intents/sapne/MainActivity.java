@@ -66,6 +66,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
+//        login=(Button)findViewById(R.id.login);
+//        btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
+//        btnSubmit= (Button) findViewById(R.id.btnSubmit);
+
+//        btnJoinUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
@@ -313,8 +324,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+//    public void login(View v)
+//    /{
 
-    }
+//        Intent myIntent = new Intent(MainActivity.this,Login_Activity.class);
+//        startActivity(myIntent);
+
+//    }
+
+//    public void donate(View v)
+//    {
+
+//        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sapne.org.in/DonateUs/Donation"));
+//        startActivity(myIntent);
+//
+//    }
 
 
     @Override
