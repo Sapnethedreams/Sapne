@@ -1,22 +1,18 @@
 package com.example.intents.sapne;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class JoinUs extends AppCompatActivity {
+public class JoinUs extends BaseActivity {
 
     EditText etAddress,etName,etPhoneNumber,etEmail,etAadhar,etOffice;
     Button btnSubmit;
@@ -26,7 +22,8 @@ public class JoinUs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join_us);
+       // setContentView(R.layout.activity_join_us);
+        getLayoutInflater().inflate(R.layout.activity_join_us, frameLayout);
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
 
         etName= (EditText) findViewById(R.id.etName);

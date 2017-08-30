@@ -9,14 +9,14 @@ package com.example.intents.sapne;
         import android.widget.EditText;
         import android.widget.Toast;
 
-public class Contact_us extends MainActivity {
+public class Contact_us extends     BaseActivity {
     Button button2,button4,button3;
     EditText editText5;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_us);
-
+      //  setContentView(R.layout.contact_us);
+        getLayoutInflater().inflate(R.layout.contact_us, frameLayout);
         button3=(Button)findViewById(R.id.button2);
         button4=(Button)findViewById(R.id.button2);
 

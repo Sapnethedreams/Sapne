@@ -1,20 +1,14 @@
 package com.example.intents.sapne;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class RegularCamps extends AppCompatActivity{
+public class RegularCamps extends BaseActivity{
 
     String names[]={"A teacher presents the past, reveals the present and creates the future, rightly said by John Holt. So, here at Sapne - our NGO, we are providing quality teachers, for the children who are willing to study and who want to make their future bright but due to some obstacles , they are unable to do so. Due to this reason, we are teaching them, making them capable for themselves and for the society too. We have organized regular camps in which we teach students, we provide the children with the academic education and apart from this, we play with them, we teach them how to live life to its fullest. And in the two hours of the camp, those children are so happy that their happiness, their joy, their cheer, cannot be expressed in words." ,
             "We believe that Learning is not the product of teaching , Learning is the product of activities of learners .\" So we indulge the children in various kinds of activities of their own interest and also in other activities which can benefit them in future. We dance together , we sing together , we play together , we study together , we giggle together , we gossip together , we share our memories , our experiences in those two hours of regular camps organized by Sapne For us , every sapna , every dream is important and hence we try our best to accomplish that , if not accomplish , we try our best to give that dream , a direction. For this , we provide teachers , who are skilled in their field of work and accordingly they teach , they train the students . In this way teachers get the platform to teach and express or share their knowledge , moreover , increase their knowledge , and students get quality education .\n" ,
@@ -24,8 +18,8 @@ public class RegularCamps extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regular_camps);
-
+       // setContentView(R.layout.activity_regular_camps);
+        getLayoutInflater().inflate(R.layout.activity_regular_camps, frameLayout);
        // RecyclerView rv= (RecyclerView) findViewById(R.id.myRecycler);
         //SET LAYOUT
         //rv.setLayoutManager(new LinearLayoutManager(this));

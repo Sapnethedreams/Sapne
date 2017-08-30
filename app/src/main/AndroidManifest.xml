@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intents.sapne">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -13,13 +13,16 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
+
+
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +30,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JoinUs" />
-        <activity android:name=".Launcharpage" />
+
+
+        <activity android:name=".JoinUs"></activity>
+        <activity
+            android:name=".sign_up"
+            android:label="Sapne Team "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Your_Journey"
+            android:label="Sapne"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name=".childrens_day"
+            android:label="Events"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
@@ -39,11 +61,14 @@
             android:label="Products"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        <activity android:name=".NewFrag" android:parentActivityName=".MainActivity"/>
+<activity android:name=".Login_Activity" android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".RegularCamps"
             android:label="Regular camps "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
         <activity
             android:name=".our_volunteer"
             android:label="Our Team"
@@ -57,11 +82,13 @@
         <activity
             android:name=".AboutUs"
             android:label="@string/about_us"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurMission"
             android:label="@string/our_mission"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
@@ -79,6 +106,7 @@
             android:label="Location"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
         <activity
             android:name=".all_volunteer"
             android:label="Volunteers"
@@ -96,10 +124,6 @@
             android:name=".EventsActivity"
             android:label="@string/title_activity_events"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".SupportActivity"
-            android:label="@string/title_activity_support"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

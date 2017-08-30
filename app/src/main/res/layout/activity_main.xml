@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        xmlns:tools="http://schemas.android.com/tools"
+
+
+        tools:context="com.example.intents.sapne.MainActivity"
+
+    android:orientation="vertical" android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="#faf0e6"
+        android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#faf0e6"
+            android:layout_height="343dp"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:paddingBottom="16dp"
+            android:background="#faf0e6"
 
-            <include
-                layout="@layout/toolbar_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            android:weightSum="1"
+            android:layout_weight="0.66">
+
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+
                 android:text="Every Child"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -40,18 +39,15 @@
                 android:text="Every child deserves the best chance for a bright future.
 That’s why, we at SAPNE, are committed to ensure that every child gets a platform to rise up and fulfil his/her dream!"
                 android:textAlignment="center"
-                android:textSize="13sp"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
             <android.support.v4.view.ViewPager
-                android:id="@+id/viewpager"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-
+                android:layout_height="match_parent"
+                android:id="@+id/viewpager">
             </android.support.v4.view.ViewPager>
         </LinearLayout>
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,12 +59,16 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/MyButton"
+
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+
                 android:onClick="explore"
                 android:text="Explore Journey of Sapne"
                 android:textAlignment="center"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                 />
 
 
             <Button
@@ -80,8 +80,11 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_marginLeft="70dp"
                 android:onClick="donate1"
                 android:text="Donate Us"
+                android:theme="@style/MyButton"
+
                 android:textAlignment="center"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                 />
 
             <Button
                 android:id="@+id/btnJoinUs1"
@@ -94,39 +97,20 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:onClick="join1"
                 android:paddingLeft="20dp"
                 android:text="Join Us"
+                android:theme="@style/MyButton"
                 android:textAlignment="center"
-                android:textColor="@android:color/white">
+                android:textColor="@android:color/white"
+                >
 
             </Button>
 
         </RelativeLayout>
 
 
+
+
+
+
+
     </LinearLayout>
 
-    <!--/    <android.support.design.widget.NavigationView-->
-    <!--android:id="@+id/NavigationView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--app:menu="@menu/drawer_menu"-->
-    <!--android:layout_gravity="start"-->
-    <!--app:headerLayout="@layout/nav_header"-->
-    <!--android:fitsSystemWindows="true"-->
-    >
-
-
-    <!--</android.support.design.widget.NavigationView>-->
-
-
-    <!-- Side navigation drawer UI -->
-    <ExpandableListView
-        android:id="@+id/left_drawer"
-        android:layout_width="235dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/colorPrimary"
-        android:divider="@color/white"
-        android:dividerHeight="0.5dp"
-        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
-
-</android.support.v4.widget.DrawerLayout>

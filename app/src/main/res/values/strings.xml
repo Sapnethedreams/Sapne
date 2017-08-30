@@ -20,7 +20,7 @@
     <string name="vision_1">The ultimate aim is to create a highly aware generation of youth that is not susceptible to social and financial barriers and can fight their own battles with the power of knowledge and skills.</string>
     <string name="title_activity_our_team">Our Team</string>
     <string name="team_devesh">An Accountant/Social Worker/Entrepreneur/Event organizer. He is young Enthusiastic , Energetic and active personality with have positive approach towards life. He is a founder of SAPNE. He founded SAPNE with a promising commitment towards the nation and the Society. He is positive , Intellectual and funny at the same time. He loves kids and love to interact with them.</string>
-    <string name="title_activity_events">Events At Sapne</string>
+    <string name="title_activity_events">EventsActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -43,6 +43,4 @@
     <string name="events_3_2">SAPNE along with the children from various sections of the deprived society celebrated the Independence Day at Siraspur, Delhi. It was an occasion of both Independence Day as well as opening ceremony of the centre. Flag hoisting was followed by some cultural programs. The program consisted of patriotic group song, graceful dance and short plays.</string>
     <string name="events_3_4">On the auspicious occasion of Ganesh Chaturthi, we came across a canal in Rohini Sec- 18, Delhi which was long overdue and it was getting noxious for the ones living nearby. Our group of volunteers initiated the drive and dedicated themselves to this movement whole heartedly. Holding up the broom in hand and with determination in the heart to clean the dirt, to make Swachh Bharat Abhiyan a great success across the nation.</string>
     <string name="events_0_4">These camps are: ~District Park I block, Sector - 16, Rohini, Delhi-89 ~Nursery Park, Sector -16, G Block, Rohini, Delhi - 89 ~Sector - 16, slum side, near Ambedkar Bhawan, Rohini, Delhi - 85 ~ Siraspur, Delhi</string>
-    <string name="title_activity_support">Support Us</string>
-    <string name="events_heading">Events At Sapne</string>
 </resources>

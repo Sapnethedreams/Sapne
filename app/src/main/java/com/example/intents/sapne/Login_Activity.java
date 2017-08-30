@@ -3,21 +3,19 @@ package com.example.intents.sapne;
 
 
         import android.app.ProgressDialog;
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.util.Log;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import android.content.Intent;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-        import butterknife.ButterKnife;
-        import butterknife.BindView;
-
-public class Login_Activity extends AppCompatActivity {
+public class Login_Activity extends BaseActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
@@ -29,7 +27,8 @@ public class Login_Activity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+       // setContentView(R.layout.activity_login);
+        getLayoutInflater().inflate(R.layout.activity_login, frameLayout);
         ButterKnife.bind(this);
 
         _loginButton.setOnClickListener(new View.OnClickListener() {

@@ -1,30 +1,29 @@
 package com.example.intents.sapne;
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.SparseArray;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
+        import android.content.Context;
+        import android.os.Bundle;
+        import android.support.v4.app.Fragment;
+        import android.support.v4.app.FragmentPagerAdapter;
+        import android.support.v4.view.ViewPager;
+        import android.support.v7.app.AppCompatActivity;
+        import android.util.SparseArray;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ImageButton;
 
-public class EventsActivity extends AppCompatActivity  {
+public class EventsActivity extends BaseActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //   setContentView(R.layout.activity_events);
+        getLayoutInflater().inflate(R.layout.activity_events, frameLayout);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_events, null, false);
-        setContentView(contentView);
+
+
 
         final ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
         viewPager.setAdapter(new CustomTabPagerAdapter(this));
@@ -32,7 +31,7 @@ public class EventsActivity extends AppCompatActivity  {
         viewPager.setOffscreenPageLimit(4);
 
         ImageButton leftButton = (ImageButton)findViewById(R.id.events_left);
-        leftButton.setOnClickListener(new View.OnClickListener() {
+       leftButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -51,10 +50,11 @@ public class EventsActivity extends AppCompatActivity  {
                 int num = viewPager.getCurrentItem();
                 if(num < 4){
                     viewPager.setCurrentItem(num + 1, true);
-               }
+             }
             }
         });
     }
+
 
 
     public class CustomTabPagerAdapter extends FragmentPagerAdapter {
