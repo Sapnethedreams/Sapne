@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#50ffffff"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="12dp"
+                app:cardElevation="7dp"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="6dp"
                 tools:layout_editor_absoluteY="0dp">
@@ -33,7 +33,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="serif"
+                        android:fontFamily="sans-serif-smallcaps"
                         android:shadowColor="#80ffffff"
                         android:shadowDx="2"
                         android:shadowDy="2"
@@ -57,7 +57,7 @@
                         android:layout_marginTop="15dp"
                         android:text="@string/events_1_1"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#50ffffff"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="12dp"
+                app:cardElevation="7dp"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="6dp"
                 tools:layout_editor_absoluteY="0dp">
@@ -81,7 +81,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="serif"
+                        android:fontFamily="sans-serif-smallcaps"
                         android:shadowColor="#80ffffff"
                         android:shadowDx="2"
                         android:shadowDy="2"
@@ -95,7 +95,8 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:layout_marginTop="7dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="-5dp"
                         android:contentDescription="@null"
                         android:src="@drawable/e2" />
 
@@ -105,7 +106,7 @@
                         android:layout_marginTop="15dp"
                         android:text="@string/events_1_4"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intents.sapne">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -20,9 +20,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
-
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,11 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".JoinUs"></activity>
-<activity android:name=".Launcharpage"></activity>
-
+        <activity android:name=".JoinUs" />
+        <activity android:name=".Launcharpage" />
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
@@ -45,14 +39,11 @@
             android:label="Products"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
-
         <activity
             android:name=".RegularCamps"
             android:label="Regular camps "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".our_volunteer"
             android:label="Our Team"
@@ -88,7 +79,6 @@
             android:label="Location"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".all_volunteer"
             android:label="Volunteers"
@@ -106,6 +96,10 @@
             android:name=".EventsActivity"
             android:label="@string/title_activity_events"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SupportActivity"
+            android:label="@string/title_activity_support"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -9,8 +9,7 @@
     tools:context="com.example.intents.sapne.OurMission"
     tools:showIn="@layout/activity_our_mission"
     android:clipChildren="false"
-    android:clipToPadding="false"
-    android:background="@drawable/event_grad">
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,8 +54,8 @@
                     android:text="@string/mission_0"
                     android:textSize="16sp"
                     android:fontFamily="serif"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/white"
                     android:textAlignment="viewStart"
                     tools:ignore="RtlHardcoded"

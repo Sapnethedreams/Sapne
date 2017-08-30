@@ -16,8 +16,8 @@
             android:id="@+id/events_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
 
         </android.support.v4.view.ViewPager>
 
@@ -25,21 +25,21 @@
             android:id="@+id/events_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_left_arrow"
             android:layout_gravity="center_vertical|start"
             android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
             android:padding="7dp"
-            android:contentDescription="@null" />
+            android:src="@drawable/ic_left_arrow" />
 
         <ImageButton
             android:id="@+id/events_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_right_arrow"
             android:layout_gravity="center_vertical|end"
             android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
             android:padding="7dp"
-            android:contentDescription="@null" />
+            android:src="@drawable/ic_right_arrow" />
 
     </FrameLayout>
 

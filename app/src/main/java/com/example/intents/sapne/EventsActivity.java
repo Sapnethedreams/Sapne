@@ -21,7 +21,6 @@ public class EventsActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_events, null, false);
@@ -32,32 +31,31 @@ public class EventsActivity extends AppCompatActivity  {
         viewPager.setPageTransformer(false, new ZoomOutPageTransformer());
         viewPager.setOffscreenPageLimit(4);
 
-//        ImageButton leftButton = (ImageButton)findViewById(R.id.events_left);
-//        leftButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton leftButton = (ImageButton)findViewById(R.id.events_left);
+        leftButton.setOnClickListener(new View.OnClickListener() {
 
-//            @Override
-//            public void onClick(View view) {
-//                int num = viewPager.getCurrentItem();
-//                if(num > 0){
-//                    viewPager.setCurrentItem(num - 1, true);
-//                }
-//            }
-//        });
+            @Override
+            public void onClick(View view) {
+                int num = viewPager.getCurrentItem();
+                if(num > 0){
+                    viewPager.setCurrentItem(num - 1, true);
+                }
+            }
+        });
 
-//        ImageButton rightButton = (ImageButton)findViewById(R.id.events_right);
-//        rightButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton rightButton = (ImageButton)findViewById(R.id.events_right);
+        rightButton.setOnClickListener(new View.OnClickListener() {
 
-//            @Override
-//            public void onClick(View view) {
-//                int num = viewPager.getCurrentItem();
-//                if(num < 4){
-//                    viewPager.setCurrentItem(num + 1, true);
-//                }
-//            }
-//        });
-//    }
-
+            @Override
+            public void onClick(View view) {
+                int num = viewPager.getCurrentItem();
+                if(num < 4){
+                    viewPager.setCurrentItem(num + 1, true);
+               }
+            }
+        });
     }
+
 
     public class CustomTabPagerAdapter extends FragmentPagerAdapter {
 

@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
-import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         //set up the adapter for the expandablelistview to display the categories.
 
-        mCategoryList.setAdapter(new expandableListViewAdapter(MainActivity.this, category_name, subcategory_name, subCatCount) {
+        mCategoryList.setAdapter(new ExpandableListViewAdapter(MainActivity.this, category_name, subcategory_name, subCatCount) {
         });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -314,16 +313,17 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-        @Override
-        public void onConfigurationChanged (Configuration newConfig){
-            super.onConfigurationChanged(newConfig);
-            mDrawerToggle.onConfigurationChanged(newConfig);
-        }
-        @Override
-        public boolean onCreateOptionsMenu (Menu menu){
-            getMenuInflater().inflate(R.menu.main_menu, menu);
-            return true;
-        }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
    /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -336,148 +336,50 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }*/
 
-        @Override
-        protected void onPostCreate (Bundle savedInstanceState){
-            super.onPostCreate(savedInstanceState);
-            // Sync the toggle state after onRestoreInstanceState has occurred.
-            mDrawerToggle.syncState();
-        }
-
-
-        public class expandableListViewAdapter extends BaseExpandableListAdapter {
-
-            ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
-            ArrayList<Integer> subCategoryCount = new ArrayList<Integer>();
-            int count;
-            Typeface type;
-            SubCategory singleChild = new SubCategory();
-            private LayoutInflater layoutInflater;
-            private ArrayList<Category> categoryName = new ArrayList<Category>();
-
-            public expandableListViewAdapter(Context context, ArrayList<Category> categoryName, ArrayList<ArrayList<SubCategory>> subCategoryName, ArrayList<Integer> subCategoryCount) {
-
-                layoutInflater = LayoutInflater.from(context);
-                this.categoryName = categoryName;
-                this.subCategoryName = subCategoryName;
-                this.subCategoryCount = subCategoryCount;
-                this.count = categoryName.size();
-
-
-            }
-
-
-            @Override
-            public int getGroupCount() {
-                return categoryName.size();
-            }
-
-            @Override
-            public int getChildrenCount(int i) {
-                return (subCategoryCount.get(i));
-            }
-
-            @Override
-            public Object getGroup(int i) {
-                return categoryName.get(i).getCatName();
-            }
-
-            @Override
-            public SubCategory getChild(int i, int i1) {
-                ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                tempList = subCategoryName.get(i);
-                return tempList.get(i1);
-            }
-
-            @Override
-            public long getGroupId(int groupPosition) {
-                return groupPosition;
-            }
-
-            @Override
-            public long getChildId(int groupPosition, int childPosition) {
-                return childPosition;
-            }
-
-            @Override
-            public boolean hasStableIds() {
-                return true;
-            }
-
-            @Override
-            public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
-                if (view == null) {
-                    view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
-                }
-
-                TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
-                textView.setText(getGroup(i).toString());
-                textView.setTypeface(type);
-
-                return view;
-            }
-
-            @Override
-            public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
-                if (view == null) {
-                    view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
-
-                }
-
-                singleChild = getChild(i, i1);
-
-                TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
-                childSubCategoryName.setTypeface(type);
-
-                childSubCategoryName.setText(singleChild.getSubCatName());
-
-                return view;
-
-            }
-
-            @Override
-            public boolean isChildSelectable(int groupPosition, int childPosition) {
-                return true;
-            }
-        }
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
 
     public void getCatData() {
         category_name.clear();
         Category categoryDetails = new Category();
 
         categoryDetails.setCatCode(10);
-        categoryDetails.setCatName("WHO WE ARE");
+        categoryDetails.setCatName("Who We Are");
 
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(20);
-        categoryDetails.setCatName("OUR BIT");
+        categoryDetails.setCatName("Our Bit");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(30);
-        categoryDetails.setCatName("SUCCESS STORIES");
+        categoryDetails.setCatName("Success Stories");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(40);
-        categoryDetails.setCatName("PRODUCTS");
+        categoryDetails.setCatName("Products");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(50);
-        categoryDetails.setCatName("EVENTS");
+        categoryDetails.setCatName("Events");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(60);
-        categoryDetails.setCatName("CONTACT US");
+        categoryDetails.setCatName("Contact Us");
         category_name.add(categoryDetails);
         categoryDetails = new Category();
         categoryDetails.setCatCode(70);
-        categoryDetails.setCatName("HOME");
+        categoryDetails.setCatName("Home");
         category_name.add(categoryDetails);
-
 
         //----Populate Sub Category Codes
         subcategory_name.clear();
@@ -505,19 +407,15 @@ public class MainActivity extends AppCompatActivity {
         subCategoryMatch.setSubCatCode("1004");
         subCategoryMatches.add(subCategoryMatch);
 
-
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
-        //---
 
         subCategoryMatches = new ArrayList<SubCategory>();
-
 
         subCategoryMatch = new SubCategory();
         subCategoryMatch.setSubCatName("Regular Camps");
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
-
 
         subCategoryMatch = new SubCategory();
         subCategoryMatch.setSubCatName("Activities Corner");
@@ -534,11 +432,100 @@ public class MainActivity extends AppCompatActivity {
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
 
-
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
 
 
+    }
+
+    public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
+
+        ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
+        ArrayList<Integer> subCategoryCount = new ArrayList<Integer>();
+        int count;
+        Typeface type;
+        SubCategory singleChild = new SubCategory();
+        private LayoutInflater layoutInflater;
+        private ArrayList<Category> categoryName = new ArrayList<Category>();
+
+        public ExpandableListViewAdapter(Context context, ArrayList<Category> categoryName, ArrayList<ArrayList<SubCategory>> subCategoryName, ArrayList<Integer> subCategoryCount) {
+
+            layoutInflater = LayoutInflater.from(context);
+            this.categoryName = categoryName;
+            this.subCategoryName = subCategoryName;
+            this.subCategoryCount = subCategoryCount;
+            this.count = categoryName.size();
+        }
+
+
+        @Override
+        public int getGroupCount() {
+            return categoryName.size();
+        }
+
+        @Override
+        public int getChildrenCount(int i) {
+            return (subCategoryCount.get(i));
+        }
+
+        @Override
+        public Object getGroup(int i) {
+            return categoryName.get(i).getCatName();
+        }
+
+        @Override
+        public SubCategory getChild(int i, int i1) {
+            ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+            tempList = subCategoryName.get(i);
+            return tempList.get(i1);
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
+            }
+
+            TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
+            textView.setText(getGroup(i).toString());
+            textView.setTypeface(type);
+
+            return view;
+        }
+
+        @Override
+        public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
+            }
+
+            singleChild = getChild(i, i1);
+
+            TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
+            childSubCategoryName.setTypeface(type);
+            childSubCategoryName.setText(singleChild.getSubCatName());
+            return view;
+        }
+
+        @Override
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return true;
+        }
     }
 }
 
