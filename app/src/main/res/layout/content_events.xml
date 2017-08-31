@@ -16,8 +16,8 @@
             android:id="@+id/events_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
         </android.support.v4.view.ViewPager>
 
@@ -28,7 +28,6 @@
             android:src="@drawable/ic_left_arrow"
             android:layout_gravity="center_vertical|start"
             android:background="?android:selectableItemBackgroundBorderless"
-            android:padding="7dp"
             android:contentDescription="@null" />
 
         <ImageButton
@@ -38,7 +37,6 @@
             android:src="@drawable/ic_right_arrow"
             android:layout_gravity="center_vertical|end"
             android:background="?android:selectableItemBackgroundBorderless"
-            android:padding="7dp"
             android:contentDescription="@null" />
 
     </FrameLayout>

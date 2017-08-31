@@ -17,13 +17,8 @@ public class EventsActivity extends BaseActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //   setContentView(R.layout.activity_events);
-        getLayoutInflater().inflate(R.layout.activity_events, frameLayout);
-        LayoutInflater inflater = (LayoutInflater) this
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_events, null, false);
-
-
+        //setContentView(R.layout.activity_events);
+        View contentView = getLayoutInflater().inflate(R.layout.activity_events, frameLayout);
 
         final ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
         viewPager.setAdapter(new CustomTabPagerAdapter(this));

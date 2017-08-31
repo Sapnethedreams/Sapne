@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#50ffffff"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="12dp"
+                app:cardElevation="7dp"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="6dp"
                 tools:layout_editor_absoluteY="0dp">
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#50ffffff"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="12dp"
+                app:cardElevation="7dp"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="6dp"
                 tools:layout_editor_absoluteY="0dp">
