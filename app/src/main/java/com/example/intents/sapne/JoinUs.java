@@ -1,31 +1,46 @@
+
 package com.example.intents.sapne;
 
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class JoinUs extends BaseActivity {
+public class JoinUs extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener  {
 
     EditText etAddress,etName,etPhoneNumber,etEmail,etAadhar,etOffice;
     Button btnSubmit;
     Spinner spnJoin;
     RadioGroup rgSex;
 
+    
+    GoogleApiClient mLocationClient;
+    Location mLastLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_join_us);
-        getLayoutInflater().inflate(R.layout.activity_join_us, frameLayout);
+        setContentView(R.layout.activity_join_us);
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
 
+        
+        GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
+        builder.addApi(LocationServices.API);
+        builder.addConnectionCallbacks(this);
+        builder.addOnConnectionFailedListener(this);
+        mLocationClient = builder.build();
+        
         etName= (EditText) findViewById(R.id.etName);
         etPhoneNumber= (EditText) findViewById(R.id.etPhoneNumber);
         etEmail= (EditText) findViewById(R.id.etEmail);
@@ -106,4 +121,74 @@ public class JoinUs extends BaseActivity {
 
 
     }
+    
+    //For Location Detection
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mLocationClient != null) {
+            mLocationClient.connect();
+        }
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[] {
+                        android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.INTERNET
+                },10);
+            }
+            return;
+        }
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mLocationClient);
+        if(mLastLocation!=null)
+        {
+            double latitude=mLastLocation.getLatitude();
+            double longitude=mLastLocation.getLongitude();
+
+
+            Geocoder geocoder=new Geocoder(this, Locale.ENGLISH);
+            try
+            {
+                List<android.location.Address> addresses=geocoder.getFromLocation(latitude,longitude,1);
+                if (addresses!=null)
+                {
+
+                    android.location.Address fetchedAddress=addresses.get(0);
+                    etAddress.setText(fetchedAddress.getFeatureName()+","+fetchedAddress.getSubLocality()+","+fetchedAddress.getLocality()+"-"+fetchedAddress.getPostalCode()+","+fetchedAddress.getAdminArea()+","+fetchedAddress.getCountryName());
+
+                }
+                else
+                    etAddress.setText("No Location Found");
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+    Toast.makeText(getApplicationContext(),"Connection Failed",Toast.LENGTH_LONG).show();
+    }
+
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        Toast.makeText(getApplicationContext(),"Connection Suspended",Toast.LENGTH_LONG).show();
+    }
+
 }
+=======
+
