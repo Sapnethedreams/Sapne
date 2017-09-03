@@ -20,16 +20,8 @@
         android:text="
 Devesh Mittal
 +918 447 058 009
-Mon - Fri, 8:00-22:00
-
-
-Divya Verma
-+918 860 130 633
-Mon - Fri, 8:00-22:00
-
-Anurag Pandey
-+919 311 140 034"
-        android:textStyle="bold"
+Mon - Fri, 8:00-22:00"
+  android:textStyle="bold"
 
         />
 
