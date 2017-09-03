@@ -19,10 +19,27 @@
         android:background="?attr/colorPrimaryDark"
         android:minHeight="?attr/actionBarSize"
         android:fitsSystemWindows="true"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
-        />
+
+
+
+        <!--<Button-->
+            <!--android:id="@+id/login"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Login Sapne User"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:onClick="login"-->
+
+            <!--/>-->
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+
 
 
 </android.support.design.widget.AppBarLayout>

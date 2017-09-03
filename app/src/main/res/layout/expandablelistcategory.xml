@@ -5,24 +5,18 @@
 
 <TextView
     android:id="@+id/cat_desc_1"
-    android:textColor="#000000"
+    android:textColor="@color/black"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_gravity="left|center_vertical"
     android:layout_alignParentLeft="true"
-    android:textSize="18dp"
+    android:textSize="16dp"
     android:layout_marginLeft="30dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="5dip"
     android:padding="8dp"
-    android:background="#ffdbdbdb"
+    android:background="#ffffff"
     android:text="Product Description"/>
 
-<View
-    android:id="@+id/view1"
-    android:layout_width="match_parent"
-    android:layout_height="2dp"
-    android:layout_below="@+id/cat_desc_1"
-    android:background="#E6E6E6" />
 
 </RelativeLayout>

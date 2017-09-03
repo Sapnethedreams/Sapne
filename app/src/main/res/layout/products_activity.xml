@@ -11,6 +11,10 @@
                     xmlns:tools="http://schemas.android.com/tools"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="16dp"
                     android:background="@color/cardview_light_background"
                     tools:context="com.example.android.sapne.MainActivity">
 
@@ -43,23 +47,29 @@
                 android:textColor="@android:color/background_dark"
                 android:textSize="30sp" />
 
-            <ExpandableListView
-                android:id="@+id/lvExp"
+
+
+            <TextView
                 android:layout_width="200dp"
                 android:layout_height="180dp"
-                android:choiceMode="singleChoice"
-                android:divider="@android:color/transparent"
-                android:dividerHeight="0dp"
-                android:background="#444444"
                 android:layout_marginLeft="150dp"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="50dp"
+                android:inputType="textMultiLine"
+                android:text="-Storm and midnight-blue stretch cotton-blend
+-Notch lapels, functioning buttoned cuffs, two front flap pockets
+-Single vent, internal pocket
+-Two button fastening
+-84% cotton, 14% nylon, 2% elastane
+-Dry clean"
+                android:textStyle="bold"
+                android:textSize="15dp"
 
-            </ExpandableListView>
+                />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="150dp"
-                android:layout_height="237dp"
+                android:layout_height="220dp"
                 android:src="@drawable/product1" />
 
             <TextView

@@ -3,7 +3,12 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:orientation="vertical" android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -11,8 +16,8 @@
         android:layout_height="wrap_content"
 
         android:text="Send Us A Message:"
-        android:textSize="30dp"
-        android:textColor="#8f05ec"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

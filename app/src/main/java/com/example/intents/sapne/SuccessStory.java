@@ -6,15 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class SuccessStory extends MainActivity {
+public class SuccessStory extends BaseActivity {
 
 String names[]={"Sapna","Ajay","Manpreet"};
  String date[]={"Joined on 8th June'16","Joined on 3rd June'16","Joined on 28th June'16"
@@ -24,11 +19,8 @@ String names[]={"Sapna","Ajay","Manpreet"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater inflater = (LayoutInflater) this
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activities1, null, false);
-        mDrawerLayout.addView(contentView, 0);
-
+        //setContentView(R.layout.activities1);
+        getLayoutInflater().inflate(R.layout.activities1, frameLayout);
         RecyclerView rv1= (RecyclerView) findViewById(R.id.myRecycler1);
         //SET LAYOUT
         rv1.setLayoutManager(new LinearLayoutManager(this));

@@ -16,10 +16,16 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+      <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <style parent="ThemeOverlay.AppCompat.Light" name="AppTheme.PopupOverlay"> </style>
 
-    </style>
 
+    -<style parent="Theme.AppCompat.Light" name="MyButton">
+
+    <item name="colorControlHighlight">#EC407A</item>
+
+    <item name="colorButtonNormal">@color/colorPrimary</item>
+
+</style>
 </resources>
