@@ -14,7 +14,7 @@ import android.widget.Button;
 
 public class Launcharpage extends AppCompatActivity {
 Button b1,b2,b3;
-ViewPagerAdapter adapter;
+//ViewPagerAdapter adapter;
     ViewPager viewPager;
 
 
@@ -30,8 +30,8 @@ ViewPagerAdapter adapter;
 
 
         viewPager=(ViewPager)findViewById(R.id.viewpager);
-        adapter=new ViewPagerAdapter(Launcharpage.this);
-        viewPager.setAdapter(adapter);
+      //  adapter=new ViewPagerAdapter(Launcharpage.this);
+       // viewPager.setAdapter(adapter);
 
 
 }

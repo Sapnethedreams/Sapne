@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
-
+<activity android:name=".ExpandingCells"></activity>
 
         <activity android:name=".splash">
             <intent-filter>
@@ -115,10 +115,6 @@
             android:label="Volunteers"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".SuccessStory"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"

@@ -36,7 +36,7 @@ public class NewFrag extends FragmentActivity {
                 case 1: return SecondFragment.newInstance("LEARNING");
                 case 2: return ThirdFragment.newInstance("SKILL DEVELOPMENT");
                 case 3: return FourthFragment.newInstance("ACTIVITIES");
-                default: return FourthFragment.newInstance("ACTIVITIES");
+                default: return FirstFragment.newInstance("PLAYGROUND");
             }
         }
 

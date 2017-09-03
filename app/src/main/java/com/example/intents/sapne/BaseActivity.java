@@ -27,27 +27,30 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class BaseActivity extends AppCompatActivity {
 
-    public Button login;
+    Toolbar toolbar;
+
     protected FrameLayout frameLayout;
 
     protected DrawerLayout mDrawerLayout;
-    Toolbar toolbar;
-    int previousGroup;
     private ActionBarDrawerToggle mDrawerToggle;
     private ExpandableListView mCategoryList;
     private ArrayList<Category> category_name = new ArrayList<Category>();
     private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
     private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
+    int previousGroup;
+    public Button login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        frameLayout = (FrameLayout) findViewById(R.id.content_frame);
+        frameLayout = (FrameLayout)findViewById(R.id.content_frame);
         this.getCatData();
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder(). setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr. fontPath).build());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 
         //      login=(Button)findViewById(R.id.login);
@@ -63,6 +66,9 @@ public class BaseActivity extends AppCompatActivity {
         });
 */
 
+
+
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
@@ -77,10 +83,12 @@ public class BaseActivity extends AppCompatActivity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
-                if (groupPosition == 4) {
+                if(groupPosition==4){
                     Intent intent = new Intent(BaseActivity.this, EventsActivity.class);
                     startActivity(intent);
-                } else if (groupPosition == 5) {
+                }
+                else if(groupPosition==5)
+                {
                     Intent intent = new Intent(BaseActivity.this, Contact_us.class);
                     startActivity(intent);
 
@@ -89,19 +97,29 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
-                } else if (groupPosition == 6) {
+                }
+                else if(groupPosition==6)
+                {
                     Intent intent = new Intent(BaseActivity.this, MainActivity.class);
                     startActivity(intent);
 
-                } else if (groupPosition == 3) {
+                }
+                else if(groupPosition==3) {
                     Intent intent = new Intent(BaseActivity.this, Products.class);
                     startActivity(intent);
-                } else if (groupPosition == 2) {
-                    Intent intent = new Intent(BaseActivity.this, SuccessStory.class);
+                }
+
+                else if(groupPosition==2) {
+                    Intent intent = new Intent(BaseActivity.this, ExpandingCells.class);
                     startActivity(intent);
-                } else if (parent.isGroupExpanded(groupPosition)) {
+                }
+
+                else if(parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
-                } else {
+                }
+
+
+                else {
                     if (groupPosition != previousGroup) {
                         parent.collapseGroup(previousGroup);
                     }
@@ -122,7 +140,7 @@ public class BaseActivity extends AppCompatActivity {
 
                 //calling CatWiseSearchResults with parameters of subcat code.
                 //CatWiseSearchResults will fetch items based on subcatcode.
-                if (groupPosition == 1 && childPosition == 1) {
+                if(groupPosition==1 && childPosition==1) {
                     Intent intent = new Intent(BaseActivity.this, Activities.class);
 
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
@@ -132,8 +150,9 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-                if (groupPosition == 2 && childPosition == 1) {
-                    Intent intent = new Intent(BaseActivity.this, SuccessStory.class);
+                if(groupPosition==2&&childPosition==1)
+                {
+                    Intent intent = new Intent(BaseActivity.this, ExpandingCells.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
@@ -141,7 +160,8 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-                if (groupPosition == 0 && childPosition == 0) {
+                if(groupPosition==0&&childPosition==0)
+                {
                     Intent intent = new Intent(BaseActivity.this, AboutUs.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
@@ -152,7 +172,8 @@ public class BaseActivity extends AppCompatActivity {
 
                 }
 
-                if (groupPosition == 0 && childPosition == 1) {
+                if(groupPosition==0&&childPosition==1)
+                {
                     Intent intent = new Intent(BaseActivity.this, OurMission.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
@@ -163,7 +184,8 @@ public class BaseActivity extends AppCompatActivity {
 
                 }
 
-                if (groupPosition == 1 && childPosition == 0) {
+                if(groupPosition==1&&childPosition==0)
+                {
                     Intent intent = new Intent(BaseActivity.this, RegularCamps.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
@@ -173,15 +195,19 @@ public class BaseActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
-                if (groupPosition == 1 && childPosition == 3) {
-                    Intent intent = new Intent(BaseActivity.this, our_volunteer.class);
+                if(groupPosition==1&&childPosition==3)
+                {
+                    Intent intent = new Intent( BaseActivity.this, our_volunteer.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 
                     intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
+
                 }
+
+
 
 
 //                if(groupPosition==3&&childPosition==0)
@@ -257,11 +283,11 @@ public class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         String btnName = null;
-        switch (itemId) {
+        switch(itemId) {
 
             case R.id.login1:
 
-                Intent myIntent = new Intent(BaseActivity.this, Login_Activity.class);
+                Intent myIntent = new Intent(BaseActivity.this,Login_Activity.class);
                 startActivity(myIntent);
                 break;
             case R.id.notification:
@@ -272,12 +298,12 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -302,7 +328,106 @@ public class BaseActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
     }
 
-    public void getCatData() {
+
+    public class expandableListViewAdapter extends BaseExpandableListAdapter {
+
+        private LayoutInflater layoutInflater;
+        private ArrayList<Category> categoryName = new ArrayList<Category>();
+        ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
+        ArrayList<Integer> subCategoryCount = new ArrayList<Integer>();
+        int count;
+        Typeface type;
+
+        SubCategory singleChild = new SubCategory();
+
+        public expandableListViewAdapter(Context context, ArrayList<Category> categoryName, ArrayList<ArrayList<SubCategory>> subCategoryName, ArrayList<Integer> subCategoryCount) {
+
+            layoutInflater = LayoutInflater.from(context);
+            this.categoryName = categoryName;
+            this.subCategoryName = subCategoryName;
+            this.subCategoryCount = subCategoryCount;
+            this.count = categoryName.size();
+
+
+        }
+
+
+        @Override
+        public int getGroupCount() {
+            return categoryName.size();
+        }
+
+        @Override
+        public int getChildrenCount(int i) {
+            return (subCategoryCount.get(i));
+        }
+
+        @Override
+        public Object getGroup(int i) {
+            return categoryName.get(i).getCatName();
+        }
+
+        @Override
+        public SubCategory getChild(int i, int i1) {
+            ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
+            tempList = subCategoryName.get(i);
+            return tempList.get(i1);
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
+            }
+
+            TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
+            textView.setText(getGroup(i).toString());
+            textView.setTypeface(type);
+
+            return view;
+        }
+
+        @Override
+        public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
+            if (view == null) {
+                view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
+
+            }
+
+            singleChild = getChild(i, i1);
+
+            TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
+            childSubCategoryName.setTypeface(type);
+
+            childSubCategoryName.setText(singleChild.getSubCatName());
+
+            return view;
+
+        }
+
+        @Override
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return true;
+        }
+    }
+
+    public void getCatData()
+    {
         category_name.clear();
         Category categoryDetails = new Category();
 
@@ -397,106 +522,14 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatches.add(subCategoryMatch);
 
 
+
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
 
 
-    }
-
-    public class expandableListViewAdapter extends BaseExpandableListAdapter {
-
-        ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
-        ArrayList<Integer> subCategoryCount = new ArrayList<Integer>();
-        int count;
-        Typeface type;
-        SubCategory singleChild = new SubCategory();
-        private LayoutInflater layoutInflater;
-        private ArrayList<Category> categoryName = new ArrayList<Category>();
-
-        public expandableListViewAdapter(Context context, ArrayList<Category> categoryName, ArrayList<ArrayList<SubCategory>> subCategoryName, ArrayList<Integer> subCategoryCount) {
-
-            layoutInflater = LayoutInflater.from(context);
-            this.categoryName = categoryName;
-            this.subCategoryName = subCategoryName;
-            this.subCategoryCount = subCategoryCount;
-            this.count = categoryName.size();
 
 
-        }
 
-
-        @Override
-        public int getGroupCount() {
-            return categoryName.size();
-        }
-
-        @Override
-        public int getChildrenCount(int i) {
-            return (subCategoryCount.get(i));
-        }
-
-        @Override
-        public Object getGroup(int i) {
-            return categoryName.get(i).getCatName();
-        }
-
-        @Override
-        public SubCategory getChild(int i, int i1) {
-            ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-            tempList = subCategoryName.get(i);
-            return tempList.get(i1);
-        }
-
-        @Override
-        public long getGroupId(int groupPosition) {
-            return groupPosition;
-        }
-
-        @Override
-        public long getChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return true;
-        }
-
-        @Override
-        public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
-            if (view == null) {
-                view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
-            }
-
-            TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
-            textView.setText(getGroup(i).toString());
-            textView.setTypeface(type);
-
-            return view;
-        }
-
-        @Override
-        public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
-            if (view == null) {
-                view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
-
-            }
-
-            singleChild = getChild(i, i1);
-
-            TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
-            childSubCategoryName.setTypeface(type);
-
-            childSubCategoryName.setText(singleChild.getSubCatName());
-
-            return view;
-
-        }
-
-        @Override
-        public boolean isChildSelectable(int groupPosition, int childPosition) {
-            return true;
-        }
     }
 }
 
