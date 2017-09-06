@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -43,9 +48,9 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:textStyle="bold" />
 
           <ImageView
-              android:layout_width="wrap_content"
+              android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:src="@drawable/mainpage"/>
+              android:id="@+id/mainimgview"/>
         </LinearLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -113,3 +118,4 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
     </LinearLayout>
 
+</ScrollView>

@@ -110,6 +110,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 else if(groupPosition==2) {
+
                     Intent intent = new Intent(BaseActivity.this, ExpandingCells.class);
                     startActivity(intent);
                 }
