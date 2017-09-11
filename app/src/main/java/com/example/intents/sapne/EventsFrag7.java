@@ -1,21 +1,18 @@
 package com.example.intents.sapne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EventsFrag4#newInstance} factory method to
+ * Use the {@link EventsFrag7#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EventsFrag4 extends Fragment {
+public class EventsFrag7 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -25,12 +22,12 @@ public class EventsFrag4 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public EventsFrag4() {
+    public EventsFrag7() {
         // Required empty public constructor
     }
 
-    public static EventsFrag4 newInstance(){
-        return new EventsFrag4();
+    public static EventsFrag7 newInstance(){
+        return new EventsFrag7();
     }
 
     /**
@@ -42,8 +39,8 @@ public class EventsFrag4 extends Fragment {
      * @return A new instance of fragment EventsFrag4.
      */
     // TODO: Rename and change types and number of parameters
-    public static EventsFrag4 newInstance(String param1, String param2) {
-        EventsFrag4 fragment = new EventsFrag4();
+    public static EventsFrag7 newInstance(String param1, String param2) {
+        EventsFrag7 fragment = new EventsFrag7();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,17 +60,8 @@ public class EventsFrag4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_events4, container, false);
-        Button explore = (Button) rootView.findViewById(R.id.events_explore);
-        explore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(EventsFrag4.this.getActivity(), EventsExtraActivity.class);
-                startActivity(intent);
-            }
-        });
-        return rootView;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_events7, container, false);
     }
 
 }

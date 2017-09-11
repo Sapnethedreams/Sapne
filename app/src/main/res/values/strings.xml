@@ -6,7 +6,7 @@
     <string name="title_activity_about_us">AboutUs</string>
 
 
-        <string name="signup">"No account yet? Create one"</string>
+    <string name="signup">"No account yet? Create one"</string>
 
     <string name="short_lorem_ipsum">Her name is Sapna, a young girl who recently migrated to Delhi from Nepal, along with her parents. The first few months in Delhi were tough. Having little knowledge of Hindi, the common language, Sapna struggled to communicate with other kids of her dilapidated locality in Delhi. But not only does she share her name with our organisation, she shares SAPNE\'s grit and determination as well! Since the past three months, Sapnas been working diligently on her Hindi under the guidance of tutors provided by SAPNE. Her hardwork seems to be paying off and she can now converse and play with her friends with relative ease. During one of the career counselling sessions organised by SAPNE at her locality, Sapna shared her dream of becoming a doctor when she grows up. "I want to help the needy" she says with her trademark adorable smile. Help her fulfil her dreams.</string>
 
@@ -40,16 +40,30 @@
     <string name="events_0_3">Health camps are also held once or twice in a month where we provide free health check up and also create awareness about hygiene and cleanliness amongst the people. The classes are held daily from Monday– Saturday at 4–6 in evening. At present 4 educational camps are working in this field.</string>
     <string name="events_1_1">Lohri is famously an occasion which marks the end of winter and the coming of spring. SAPNE celebrated Lohri 2016 with great enthusiasm and exuberance to give our children
     an experience of different festivals.</string>
-    <string name="events_1_2">1. Lohri Celebration</string>
-    <string name="events_1_3">2. Republic Day</string>
+    <string name="events_1_2">Lohri Celebration</string>
+    <string name="events_1_3">Republic Day</string>
     <string name="events_1_4">In our country, we strive to inculcate our youth the feeling of brotherhood, patriotism, and other core values. Keeping this thought in mind, we celebrated Republic Day with deprived section of our society. This national occasion comprised a mini parade and national anthem sung towards the acquaintance with the celebration of our national festivals.</string>
-    <string name="events_2_1">3. Express Your Dreams</string>
+    <string name="events_2_1">Express Your Dreams</string>
     <string name="events_2_2">No matter from where you belong, your dreams are valid and feasible. And that is why SAPNE was formed - to value everyone\'s dream. This event was held on 29th June 2016 at D-Mall, Rohini, Delhi. The event was anchored by Mr. Devesh Mittal, Ms. Diivya Verma, Mr. Anurag Pandey and the whole Sapne Team participated.</string>
-    <string name="events_2_3">4. <![CDATA[Truth & Dare]]></string>
+    <string name="events_2_3"><![CDATA[Truth & Dare]]></string>
     <string name="events_2_4">This event was organised at Netaji Subhash Place, Delhi with an aim to bring out some hidden curiosity among the people. The theme of this event was to put some daring people forward to try and attempt the dares given to them by the volunteers which were meant for social welfare. The active involvement of the people made it a huge success.</string>
-    <string name="events_3_1">5. Independence Day</string>
-    <string name="events_3_3">6. Cleanliness Drive</string>
+    <string name="events_3_1">Independence Day</string>
+    <string name="events_3_3">Cleanliness Drive</string>
     <string name="events_3_2">SAPNE along with the children from various sections of the deprived society celebrated the Independence Day at Siraspur, Delhi. It was an occasion of both Independence Day as well as opening ceremony of the centre. Flag hoisting was followed by some cultural programs. The program consisted of patriotic group song, graceful dance and short plays.</string>
     <string name="events_3_4">On the auspicious occasion of Ganesh Chaturthi, we came across a canal in Rohini Sec- 18, Delhi which was long overdue and it was getting noxious for the ones living nearby. Our group of volunteers initiated the drive and dedicated themselves to this movement whole heartedly. Holding up the broom in hand and with determination in the heart to clean the dirt, to make Swachh Bharat Abhiyan a great success across the nation.</string>
     <string name="events_0_4">These camps are: ~District Park I block, Sector - 16, Rohini, Delhi-89 ~Nursery Park, Sector -16, G Block, Rohini, Delhi - 89 ~Sector - 16, slum side, near Ambedkar Bhawan, Rohini, Delhi - 85 ~ Siraspur, Delhi</string>
+    <string name="events_4_1">MRIG TRISHNA , an event organized by SAPNE was held at Unity One Mall , Janakpuri, Delhi consisted of two activities . Firstly , there was an activity , “Find me” in which there were some cubes and on each side of the cube , a letter was written . In 30 seconds , people had to rearrange those cubes to make a meaningful word and those who were successful in making the words won a smiley , as the token of appreciation .</string>
+    <string name="events_4_2">Diwali, the auspicious festival of lights bring joy to many but ignore the underprivileged, but SAPNE didn\'t. SAPNE decided to bring light and joy in the lives of those people. On 16th October 2016, SAPNE conducted an awareness drive at Saket, Delhi, urging the public to celebrate a Cracker- free and Eco-friendly Diwali. We distributed handmade Diyas and candles to everyone who pledged to celebrate a safe Diwali. These beautiful Diyas and candles were made by the underprivileged and differently-abled children of SAPNE.</string>
+    <string name="events_5_1">This year SAPNE celebrated Diwali, the festival of lights by bringing some spark and light in the lives of the children of SAPNE. We conducted Diwali Fiesta event at growing steps where we addressed the children who are underprivileged and who may not have any reason to look forward for this festival. \n\nChildren from our centre gave the dance performance learnt from their Choreographer in dance classes. They danced gracefully. We managed to bring a smile on the faces of all the kids.</string>
+    <string name="events_5_2">The SAPNE team and the Children celebrated Children\'s Day with love and warmth. The idea of coming up with this event was to give the feeling of happiness and joy to children and spread awareness about child rights among people. \n\nThe event was hosted by Ms. Rupali Jain and co-hosted by Ms. Nikita Kedia. The engagement was vibrant with total of 100 underprivileged kids from our camps and privileged children from nearby societies coming together to share the fun on 14th November, 2016, which was held at Siraspur in New Delhi.</string>
+    <string name="events_6_1">We organised an event called \'Kindness Day\' at Play School - Growing steps. Kindness day was celebrated with the inclusion of kids from SAPNE camps and Growing Steps. They were taught sharing, caring and KINDNESS towards other people and were asked to be a helping hand to others. They learnt the same with great enthusiasm. They were told to be compassionate and helpful to others.</string>
+    <string name="events_6_2">Christmas is the time of celebration, hope and joy. It is the time when children wait eagerly for the presents from their favourite Santa Claus. In order to bring the joy and light in the lives of underprivileged kids, SAPNE took the initiative to celebrate Christmas with them. \n\nThe children from our camps and nearby slums, took part with great zeal in this amazing event. Children got to know the story of Jesus Christ and the reason we celebrate Christmas and showed great interest. At the closing of this event, each participant received gifts and chocolates.</string>
+    <string name="events_7_1">Anniversaries are an important part of life. They remind us of important events both personal and cultural. Anniversary puts a pin on the calendar to remind us of something that matters to us. \n\nSAPNE, also celebrated its first anniversary on 22 January 2017 at Rohini,Sector-11, Delhi, the place from where the journey of SAPNE begun, the journey to teach underprivileged section of the society.</string>
+    <string name="events_7_2">Decorate a life campaign\' was organized by Team Sapne on Saturday, February 18,2017.
+        Team Sapne invited volunteers to come together and clean the surroundings and
+        decorate the walls of their education centers with creative art, inspiring messages or
+        their wishes as well.
+        \n\nThe children showed great enthusiasm while painting the walls. They showed their
+        creative skills by painting the walls using their handprints and decorate the walls
+        with alphabets and numbers.</string>
 </resources>

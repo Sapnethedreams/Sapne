@@ -13,4 +13,6 @@
     <dimen name="header_img_size">70dp</dimen>
 
     <dimen name="header_font_size">14sp</dimen>
+    <dimen name="pic_size">300dp</dimen>
+    <dimen name="land_pic_size">200dp</dimen>
 </resources>

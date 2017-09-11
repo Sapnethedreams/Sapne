@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.intents.sapne.AboutUs">
 
-
     <include layout="@layout/content_about_us" />
 
 </android.support.design.widget.CoordinatorLayout>

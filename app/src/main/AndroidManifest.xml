@@ -123,6 +123,10 @@
             android:name=".EventsActivity"
             android:label="@string/title_activity_events"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EventsExtraActivity"
+            android:label="@string/title_activity_events"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
