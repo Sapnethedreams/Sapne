@@ -36,5 +36,10 @@ public class Notifications extends AppCompatActivity {
         Intent intent= new Intent(Notifications.this,Invitations.class);
         startActivity(intent);
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 }

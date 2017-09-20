@@ -16,6 +16,7 @@
 
 package com.example.intents.sapne;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ import java.util.List;
  */
 public class ExpandingCells extends BaseActivity {
 
-    private final int CELL_DEFAULT_HEIGHT = 200;
+    private final int CELL_DEFAULT_HEIGHT = 150;
     private final int NUM_OF_CELLS = 3;
 
     private ExpandingListView mListView;
@@ -66,5 +67,12 @@ public class ExpandingCells extends BaseActivity {
         mListView = (ExpandingListView)findViewById(R.id.main_list_view);
         mListView.setAdapter(adapter);
         mListView.setDivider(null);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(ExpandingCells.this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }

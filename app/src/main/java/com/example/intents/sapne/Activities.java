@@ -1,21 +1,16 @@
 package com.example.intents.sapne;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Activities extends Activity {
+public class Activities extends BaseActivity {
 
     String[] names={"One year has passed giving thousands of smiles to people. Thanks to all " +
             "those who supported us for a good cause because of which we had a successful one year.\n" +
@@ -102,7 +97,9 @@ public class Activities extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activities);
+
+        getLayoutInflater().inflate(R.layout.activities, frameLayout);
+      //  setContentView(R.layout.activities);
 //        LayoutInflater inflater = (LayoutInflater) this
 //                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //        View contentView = inflater.inflate(R.layout.activities, null, false);

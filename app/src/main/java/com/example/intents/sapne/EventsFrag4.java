@@ -1,13 +1,10 @@
 package com.example.intents.sapne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 
 /**
@@ -63,17 +60,8 @@ public class EventsFrag4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_events4, container, false);
-        Button explore = (Button) rootView.findViewById(R.id.events_explore);
-        explore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(EventsFrag4.this.getActivity(), EventsExtraActivity.class);
-                startActivity(intent);
-            }
-        });
-        return rootView;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_events4, container, false);
     }
 
 }

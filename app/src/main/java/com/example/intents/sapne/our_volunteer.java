@@ -20,5 +20,10 @@ ListView listView;
         startActivity(intent);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 }

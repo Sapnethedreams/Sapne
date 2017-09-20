@@ -15,27 +15,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/events_0_1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#50ffffff"
-                app:cardCornerRadius="3dp"
-                app:cardElevation="7dp"
+                tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="#50ffffff"
                 app:contentPadding="6dp"
-                tools:layout_editor_absoluteY="0dp">
+                app:cardElevation="7dp"
+                app:cardCornerRadius="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -45,22 +33,22 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
+                        android:src="@drawable/z12"
                         android:layout_marginTop="-10dp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/z12" />
+                        android:contentDescription="@null" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="serif"
+                        android:text="@string/events_intro"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
                         android:shadowColor="#80ffffff"
                         android:shadowDx="2"
                         android:shadowDy="2"
                         android:shadowRadius="3"
-                        android:text="@string/events_intro"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:fontFamily="serif"/>
 
                 </LinearLayout>
 
@@ -69,17 +57,26 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#50ffffff"
-                app:cardCornerRadius="3dp"
-                app:cardElevation="7dp"
+                tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="#50ffffff"
                 app:contentPadding="6dp"
-                tools:layout_editor_absoluteY="0dp">
+                app:cardElevation="7dp"
+                app:cardCornerRadius="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/events_0_1"
+                        android:layout_marginTop="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textView6"
@@ -97,12 +94,12 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#50ffffff"
-                app:cardCornerRadius="3dp"
-                app:cardElevation="7dp"
+                tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="#50ffffff"
                 app:contentPadding="6dp"
-                tools:layout_editor_absoluteY="0dp">
+                app:cardElevation="7dp"
+                app:cardCornerRadius="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,19 +109,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:text="@string/events_0_3"
+                        android:layout_marginTop="15dp"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:text="@string/events_0_4"
+                        android:layout_marginTop="15dp"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="16sp" />
 
 
                 </LinearLayout>

@@ -18,6 +18,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -51,24 +52,6 @@ public class BaseActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-        //      login=(Button)findViewById(R.id.login);
-        //     btnJoinUs= (Button) findViewById(R.id.btnJoinUs);
-        //btnSubmit= (Button) findViewById(R.id.btnSubmit);
-
-    /*  btnJoinUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
-                startActivity(intent);
-            }
-        });
-*/
-
-
-
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mCategoryList = (ExpandableListView) findViewById(R.id.left_drawer);
 
@@ -78,11 +61,16 @@ public class BaseActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        mCategoryList.setGroupIndicator(null);
+        //mCategoryList.expandGroup(0);
+        //mCategoryList.expandGroup(1);
         //defining the behavior when any group is clicked in expandable listview
         mCategoryList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View view,
                                         int groupPosition, long id) {
+
+
                 if(groupPosition==4){
                     Intent intent = new Intent(BaseActivity.this, EventsActivity.class);
                     startActivity(intent);
@@ -97,13 +85,11 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
-                }
-                else if(groupPosition==6)
-                {
-                    Intent intent = new Intent(BaseActivity.this, MainActivity.class);
-                    startActivity(intent);
+
+                  parent.collapseGroup(groupPosition);
 
                 }
+
                 else if(groupPosition==3) {
                     Intent intent = new Intent(BaseActivity.this, Products.class);
                     startActivity(intent);
@@ -120,6 +106,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
 
+
                 else {
                     if (groupPosition != previousGroup) {
                         parent.collapseGroup(previousGroup);
@@ -127,6 +114,8 @@ public class BaseActivity extends AppCompatActivity {
                     previousGroup = groupPosition;
                     parent.expandGroup(groupPosition);
                 }
+
+
 
                 parent.smoothScrollToPosition(groupPosition);
                 return true;
@@ -280,6 +269,7 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
@@ -292,11 +282,15 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(myIntent);
                 break;
             case R.id.notification:
-                btnName = "Help";
+                Intent myIntent1 = new Intent(BaseActivity.this,Notifications.class);
+                startActivity(myIntent1);
+
                 break;
         }
         return true;
     }
+
+
 
 
 
@@ -311,16 +305,6 @@ public class BaseActivity extends AppCompatActivity {
         return true;
     }
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-        // ActionBarDrawerToggle will take care of this.
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        // Handle action buttons
-        return true;
-    }*/
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -359,8 +343,10 @@ public class BaseActivity extends AppCompatActivity {
         }
 
         @Override
-        public int getChildrenCount(int i) {
-            return (subCategoryCount.get(i));
+        public int getChildrenCount(int groupPosition)
+        {
+
+            return (subCategoryCount.get(groupPosition));
         }
 
         @Override
@@ -374,7 +360,10 @@ public class BaseActivity extends AppCompatActivity {
             tempList = subCategoryName.get(i);
             return tempList.get(i1);
         }
-
+        @Override
+        public void onGroupCollapsed(int groupPosition) {
+            super.onGroupCollapsed(groupPosition);
+        }
         @Override
         public long getGroupId(int groupPosition) {
             return groupPosition;
@@ -391,17 +380,33 @@ public class BaseActivity extends AppCompatActivity {
         }
 
         @Override
-        public View getGroupView(int i, boolean isExpanded, View view, ViewGroup viewGroup) {
+        public View getGroupView(int groupPsition, boolean isExpanded, View view, ViewGroup viewGroup) {
             if (view == null) {
                 view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
             }
 
             TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
-            textView.setText(getGroup(i).toString());
-            textView.setTypeface(type);
+            textView.setText(getGroup(groupPsition).toString());
+           textView.setTypeface(type);
+
+            ImageView indicator=(ImageView)view.findViewById(R.id.expicon);
+
+            if(groupPsition!=0 && groupPsition!=1 )
+
+            {
+                indicator.setVisibility(view.INVISIBLE);
+
+            }else {
+
+                indicator.setVisibility(view.VISIBLE);
+                indicator.setImageResource(isExpanded ? R.drawable.ic_keyboard_arrow_up_black_24dp:R.drawable.ic_keyboard_arrow_down_black_24dp);
+
+
+            }
 
             return view;
         }
+
 
         @Override
         public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
@@ -461,6 +466,7 @@ public class BaseActivity extends AppCompatActivity {
         categoryDetails.setCatCode(60);
         categoryDetails.setCatName("CONTACT US");
         category_name.add(categoryDetails);
+
         categoryDetails = new Category();
         categoryDetails.setCatCode(70);
         categoryDetails.setCatName("HOME");

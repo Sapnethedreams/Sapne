@@ -9,7 +9,7 @@ public class AboutUs extends BaseActivity{
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_about_us, frameLayout);
 
-        //setContentView(R.layout.activity_about_us);
+
     }
 
 }

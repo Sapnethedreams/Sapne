@@ -41,18 +41,9 @@
             android:label="Sapne Team "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".Your_Journey"
-            android:label="Sapne"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
 
 
-        <activity
-            android:name=".childrens_day"
-            android:label="Events"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+
 
         <activity
             android:name=".Activities"

@@ -1,5 +1,6 @@
 package com.example.intents.sapne;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -14,5 +15,11 @@ public class Products extends BaseActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.products_activity);
         getLayoutInflater().inflate(R.layout.products_activity, frameLayout);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -45,4 +45,5 @@ public class NewFrag extends FragmentActivity {
             return 5;
         }
     }
+
 }

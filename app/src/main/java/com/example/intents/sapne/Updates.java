@@ -1,5 +1,6 @@
 package com.example.intents.sapne;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class Updates extends BaseActivity {
@@ -9,5 +10,11 @@ public class Updates extends BaseActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_updates);
         getLayoutInflater().inflate(R.layout.activity_updates, frameLayout);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -19,19 +19,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //  setContentView(R.layout.activity_main);
         getLayoutInflater().inflate(R.layout.activity_main, frameLayout);
-      /*  viewPager = (ViewPager) findViewById(R.id.viewpager);
-        adapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(adapter);*/
         img=(ImageView)findViewById(R.id.mainimgview);
-      // img.setImageResource(R.drawable.logo_sapne);
+
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
 
-
-        // toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-       final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
+ final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
 
 
         final Handler handler = new Handler();
@@ -47,7 +40,7 @@ public class MainActivity extends BaseActivity {
                 handler.postDelayed(this, 4000);  //for interval...
             }
         };
-       handler.postDelayed(runnable, 50); //for initial delay..
+       handler.postDelayed(runnable, 25); //for initial delay..
 
 
         explore=(Button)findViewById(R.id.explore);
@@ -56,24 +49,12 @@ public class MainActivity extends BaseActivity {
 
 
 
-
-
-    /*  btnJoinUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),JoinUs.class);
-                startActivity(intent);
-            }
-        });
-*/
-
-
     }
 
         public void explore(View v)
         {
 
-            Intent intent=new Intent(getApplicationContext(),NewFrag.class);
+            Intent intent=new Intent(getApplicationContext(),EventsExtraActivity.class);
             startActivity(intent);
 
         }
@@ -94,9 +75,6 @@ public class MainActivity extends BaseActivity {
 
 
     }
-
-
-
 
 }
 

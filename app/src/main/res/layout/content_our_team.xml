@@ -88,7 +88,7 @@
                         android:id="@+id/devesh_insta"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/instagram"
+                        android:src="@drawable/twitter"
                         android:padding="2dp"
                         android:layout_marginLeft="5dp"
                         android:scaleType="fitXY"
