@@ -12,11 +12,5 @@ public class Ring_contact_us extends BaseActivity {
        // setContentView(R.layout.ring_activity);
         getLayoutInflater().inflate(R.layout.ring_activity, frameLayout);
     }
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
-        finish();
-    }
-}
+   }
 
