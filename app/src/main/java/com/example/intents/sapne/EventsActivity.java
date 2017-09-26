@@ -109,10 +109,5 @@ public class EventsActivity extends BaseActivity  {
             return registeredFragments.get(position);
         }
     }
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
-        finish();
-    }
+    
 }

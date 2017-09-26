@@ -16,10 +16,5 @@ public class Products extends BaseActivity {
         //setContentView(R.layout.products_activity);
         getLayoutInflater().inflate(R.layout.products_activity, frameLayout);
     }
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
-        finish();
-    }
+  
 }

@@ -67,18 +67,13 @@ public class Contact_us extends     BaseActivity {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/sapnethedreams/"));
         startActivity(myIntent);
     }
-    public void youtubr(View v)
+    public void youtube(View v)
     {
         Intent myIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com"));
-
+         startActivity(myIntent);
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
-        finish();
-    }
+    
 }
 
 
