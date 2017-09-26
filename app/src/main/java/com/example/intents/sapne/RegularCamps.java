@@ -41,10 +41,4 @@ public class RegularCamps extends BaseActivity{
 
 
     protected void attachBaseContext(Context newBase) {super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase)); }
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
-        finish();
-    }
 }
