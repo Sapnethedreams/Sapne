@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intents.sapne">
+
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+  
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -12,73 +16,117 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".BaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"
+            ></activity>
+<activity android:name=".ExpandingCells"
+    android:noHistory="true"></activity>
+
+        <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity android:name=".JoinUs">
-        </activity>
-    
+
+        <activity android:name=".Notifications"></activity>
+        <activity android:name=".JoinUs"></activity>
+        <activity
+            android:name=".sign_up"
+            android:label="Sapne Team "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-        android:name=".Products"
-        android:label="Products"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" />
-
+            android:name=".Products"
+            android:label="Products"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".NewFrag"
+            android:noHistory="true" android:parentActivityName=".MainActivity"/>
+<activity android:name=".Login_Activity"
+    android:noHistory="true" android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".RegularCamps"
+            android:label="Regular camps "
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".Regular_camps"
-            android:label="Regular camps "
+            android:name=".our_volunteer"
+            android:label="Our Team"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Contact_us"
             android:label="Contact Us "
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutUs"
+            android:noHistory="true"
             android:label="@string/about_us"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurMission"
             android:label="@string/our_mission"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Ring_contact_us"
             android:label="Contact Us"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".OurVision"
             android:label="@string/title_activity_our_vision"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Location_contact_us"
             android:label="Location"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".all_volunteer"
+            android:label="Volunteers"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".SuccessStory"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".OurTeam"
             android:label="@string/title_activity_our_team"
+            android:noHistory="true"
             android:theme="@style/AppTheme" />
-        
-
-</application>
+        <activity
+            android:name=".EventsActivity"
+            android:noHistory="true"
+            android:label="@string/title_activity_events"
+            android:theme="@style/AppTheme" />
+    </application>
 
 </manifest>
