@@ -14,18 +14,6 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         android:orientation="vertical">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="update"
-            android:id="@+id/button"
-            android:text="Updates"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="invitation"
-            android:id="@+id/button2"
-            android:text="Invitations"/>
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

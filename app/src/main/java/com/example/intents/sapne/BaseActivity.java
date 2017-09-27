@@ -519,7 +519,7 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Volunteer of the month");
+        subCategoryMatch.setSubCatName("Gallery");
         subCategoryMatch.setSubCatCode("2005");
         subCategoryMatches.add(subCategoryMatch);
 

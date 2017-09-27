@@ -127,6 +127,11 @@
             android:noHistory="true"
             android:label="@string/title_activity_events"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EventsExtraActivity"
+            android:noHistory="true"
+            android:label="Events"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
