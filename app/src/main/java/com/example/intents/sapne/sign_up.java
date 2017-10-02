@@ -5,6 +5,8 @@ package com.example.intents.sapne;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,13 +14,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class sign_up extends BaseActivity {
     private static final String TAG = "SignupActivity";
-
+private FirebaseAuth mAuth;
     @BindView(R.id.input_name) EditText _nameText;
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -28,6 +36,7 @@ public class sign_up extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth=FirebaseAuth.getInstance();
        // setContentView(R.layout.activity_signup);
         getLayoutInflater().inflate(R.layout.activity_signup, frameLayout);
         ButterKnife.bind(this);
@@ -48,6 +57,11 @@ public class sign_up extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.getCurrentUser();
+    }
     public void signup() {
         Log.d(TAG, "Signup");
 
@@ -55,6 +69,7 @@ public class sign_up extends BaseActivity {
             onSignupFailed();
             return;
         }
+
 
         _signupButton.setEnabled(false);
 
@@ -70,27 +85,48 @@ public class sign_up extends BaseActivity {
 
         // TODO: Implement your own signup logic here.
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
+
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                onSignupSuccess();
+                                progressDialog.dismiss();
+
+                            }
+
+                        }
+
+                    });
+
+
+
+
+//            new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
                         // depending on success
-                        onSignupSuccess();
+//                        onSignupSuccess();
                         // onSignupFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
+        mAuth.getCurrentUser();
         finish();
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "SignUp failed", Toast.LENGTH_LONG).show();
 
         _signupButton.setEnabled(true);
     }
@@ -125,4 +161,6 @@ public class sign_up extends BaseActivity {
 
         return valid;
     }
+
+
 }

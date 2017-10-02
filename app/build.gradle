@@ -46,10 +46,19 @@ dependencies {
     compile 'com.github.mzelzoghbi:zgallery:0.3'
     compile 'uk.co.chrisjenx:calligraphy:2.1.0'
     compile 'com.google.firebase:firebase-crash:9.6.1'
+    compile'com.google.firebase:firebase-messaging:9.6.1'
     compile 'com.github.alorma:timelineview:2.3.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.jakewharton:butterknife:8.7.0'
+
+    compile 'com.google.firebase:firebase-auth:9.6.1'
+    testCompile 'junit:junit:4.12'
+    
+    compile files('libs/activation.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/mail.jar')
+
     compile 'com.google.android.gms:play-services-maps:9.6.1'
     compile 'com.google.android.gms:play-services-location:9.6.1'
     testCompile 'junit:junit:4.12'
