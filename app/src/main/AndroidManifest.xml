@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.intents.sapne">
 
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-  
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -15,7 +15,8 @@
         android:label="Sapne"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <activity android:name=".BaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +24,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            ></activity>
-<activity android:name=".ExpandingCells"
-    android:noHistory="true"></activity>
-
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".ExpandingCells"
+            android:noHistory="true" />
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,15 +35,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Notifications"></activity>
-        <activity android:name=".JoinUs"></activity>
+        <activity android:name=".Notifications" />
+        <activity android:name=".JoinUs" />
         <activity
             android:name=".sign_up"
             android:label="Sapne Team "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
@@ -56,17 +54,20 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".NewFrag"
-            android:noHistory="true" android:parentActivityName=".MainActivity"/>
-<activity android:name=".Login_Activity"
-    android:noHistory="true" android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".NewFrag"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Login_Activity"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegularCamps"
             android:label="Regular camps "
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".our_volunteer"
             android:label="Our Team"
@@ -81,8 +82,8 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutUs"
-            android:noHistory="true"
             android:label="@string/about_us"
+            android:noHistory="true"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
@@ -111,7 +112,6 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".all_volunteer"
             android:label="Volunteers"
@@ -124,14 +124,15 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".EventsActivity"
-            android:noHistory="true"
             android:label="@string/title_activity_events"
+            android:noHistory="true"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".EventsExtraActivity"
-            android:noHistory="true"
             android:label="Events"
+            android:noHistory="true"
             android:theme="@style/AppTheme" />
+        <activity android:name=".Gallery"></activity>
     </application>
 
 </manifest>
