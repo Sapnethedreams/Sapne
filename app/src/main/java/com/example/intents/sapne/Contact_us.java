@@ -33,9 +33,23 @@ public class Contact_us extends     BaseActivity {
     }
 
 
-    public void location(View v) {
-        Intent myIntent = new Intent(Contact_us.this, Location_contact_us.class);
-        startActivity(myIntent);
+       public void location(View v) {
+        String uri=String.format(Locale.ENGLISH,"https://maps.google.com/maps?daddr=%f,%f(%s)",28.735615,77.117572,"Sapne Office");
+
+        Intent myIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(uri));
+        myIntent.setPackage("com.google.android.apps.maps");
+        try {
+            startActivity(myIntent);
+        }
+        catch (ActivityNotFoundException ex){
+            try {
+                Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(uri));
+                startActivity(i);
+            }catch (ActivityNotFoundException anex)
+            {
+                Toast.makeText(this,"please insatll a map application",Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     public void ring(View v) {
