@@ -278,11 +278,11 @@ public class BaseActivity extends AppCompatActivity {
 
             case R.id.login1:
 
-                Intent myIntent = new Intent(BaseActivity.this,Login_Activity.class);
+                Intent myIntent = new Intent(BaseActivity.this,Register_user.class);
                 startActivity(myIntent);
                 break;
             case R.id.notification:
-                Intent myIntent1 = new Intent(BaseActivity.this,Notifications.class);
+                Intent myIntent1 = new Intent(BaseActivity.this,Login_Activity.class);
                 startActivity(myIntent1);
 
                 break;
