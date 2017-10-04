@@ -42,17 +42,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="serif"
                 android:text="EXPLORE THE WORLD WITH US"
-                android:textColor="#c91010"
-                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
            <ImageView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:src="@drawable/slide1"/>
+               android:src="@drawable/rc5"/>
 
 
 
@@ -132,47 +132,25 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
                 android:fontFamily="serif"
-                android:text="Want update of latest events and activities"
+                android:text="Regular Camps : Mon to Sat"
                 android:textColor="#ed0b0b"
                 android:textStyle="bold"
                 android:textSize="18sp"
 
                 />
-
-            <EditText
-                android:id="@+id/editText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:inputType="textPersonName"
-                android:text="Your Name" />
-            />
-
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:inputType="textPersonName"
-                android:text="Your Email" />
-            />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:inputType="textPersonName"
-                android:text="Phone No." />
-            />
-
-            <Button
-                android:id="@+id/button"
+            <TextView
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#d7ef1e"
-                android:text="LETS TALK" />
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="serif"
+                android:text="Davesh Mittal : +918447058009"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+
+                />
+
+
 
         </LinearLayout>
 

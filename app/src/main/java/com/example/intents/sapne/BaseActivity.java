@@ -185,6 +185,19 @@ public class BaseActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
+
+                if(groupPosition==1&&childPosition==2)
+                {
+                    Intent intent = new Intent( BaseActivity.this, Gallery.class);
+                    ArrayList<SubCategory> tempList;
+                    tempList = subcategory_name.get(groupPosition);
+
+                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
+                    startActivity(intent);
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                }
+
                 if(groupPosition==1&&childPosition==3)
                 {
                     Intent intent = new Intent( BaseActivity.this, our_volunteer.class);
