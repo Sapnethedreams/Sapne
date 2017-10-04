@@ -42,6 +42,14 @@
             android:label="Sapne Team "
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
+        <activity android:name=".Register_user"
+            android:label="Sign up"
+                  android:screenOrientation="portrait"
+            >
+
+        </activity>
+
         <activity
             android:name=".Activities"
             android:label="Activities Corner "
