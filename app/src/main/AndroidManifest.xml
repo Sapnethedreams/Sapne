@@ -37,14 +37,17 @@
         </activity>
         <activity android:name=".Notifications" />
         <activity android:name=".JoinUs" />
-        <activity
-            android:name=".sign_up"
-            android:label="Sapne Team "
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
 
         <activity android:name=".Register_user"
-            android:label="Sign up"
+                  android:label="Sign up"
+                  android:screenOrientation="portrait"
+            />
+        <activity android:name=".ProfileActivity"
+                  android:label="Sapne User Information"
+                  android:screenOrientation="portrait"
+            />
+        <activity android:name=".LoginActivity"
+                  android:label="Sign in"
                   android:screenOrientation="portrait"
             >
 
@@ -64,10 +67,6 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".NewFrag"
-            android:noHistory="true"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".Login_Activity"
             android:noHistory="true"
             android:parentActivityName=".MainActivity" />
         <activity

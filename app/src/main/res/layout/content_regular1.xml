@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="serif"
-                android:text="Davesh Mittal : +918447058009"
+                android:text="Devesh Mittal : +918447058009"
                 android:textColor="@color/black"
                 android:textSize="12sp"
 
