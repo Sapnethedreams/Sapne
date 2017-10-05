@@ -1,6 +1,6 @@
 package com.example.intents.sapne;
 
-
+import android.content.ActivityNotFoundException;
         import android.content.Intent;
         import android.net.Uri;
         import android.os.Bundle;
@@ -8,6 +8,8 @@ package com.example.intents.sapne;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.Toast;
+
+        import java.util.Locale;
 
 public class Contact_us extends     BaseActivity {
     Button button2,button4,button3;

@@ -140,7 +140,6 @@
             android:label="Events"
             android:noHistory="true"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Gallery"></activity>
     </application>
 
 </manifest>

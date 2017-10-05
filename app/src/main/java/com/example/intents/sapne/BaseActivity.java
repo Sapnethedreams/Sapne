@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,6 +21,9 @@ import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.mzelzoghbi.zgallery.ZGallery;
+import com.mzelzoghbi.zgallery.entities.ZColor;
 
 import java.util.ArrayList;
 
@@ -188,14 +192,29 @@ public class BaseActivity extends AppCompatActivity {
 
                 if(groupPosition==1&&childPosition==2)
                 {
-                    Intent intent = new Intent( BaseActivity.this, Gallery.class);
-                    ArrayList<SubCategory> tempList;
-                    tempList = subcategory_name.get(groupPosition);
+                    ZGallery.with(BaseActivity.this, new ArrayList<String>() {{
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g1).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g2).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g3).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g4).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g5).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g6).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g7).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g8).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g9).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g10).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g11).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g12).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g13).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g14).toString());
+                        add(Uri.parse("android.resource://com.example.intents.sapne/" + R.drawable.g15).toString());
+                    }}).setToolbarTitleColor(ZColor.WHITE) // toolbar title color
+                            .setGalleryBackgroundColor(ZColor.BLACK) // activity background color
+                            .setToolbarColorResId(R.color.colorPrimary) // toolbar color
+                            .setTitle("Gallery") // toolbar title
+                            .show();
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
-
                 }
 
                 if(groupPosition==1&&childPosition==3)
@@ -209,8 +228,6 @@ public class BaseActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
-
-
 
 
 //                if(groupPosition==3&&childPosition==0)
