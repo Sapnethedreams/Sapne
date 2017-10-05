@@ -20,6 +20,15 @@
                    android:layout_height="72dp"
                    android:layout_marginBottom="24dp"
                    android:layout_gravity="center_horizontal" />
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Register"
+            android:textStyle="bold"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal" />
+
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -41,7 +50,11 @@
             android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="40dp"
+            android:textSize="15sp"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:text="Signup" />
         <TextView
             android:text="Already Registered? SignIn Here"
