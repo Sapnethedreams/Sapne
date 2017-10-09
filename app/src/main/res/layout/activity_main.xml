@@ -58,20 +58,20 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
             android:background="#faf0e6">
 
 
-            <Button
+           <Button
                 android:id="@+id/explore"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/MyButton"
-
+                android:elevation="3dp"
+                android:background="@color/linen"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
 
                 android:onClick="explore"
                 android:text="Explore Journey of Sapne"
                 android:textAlignment="center"
-                android:textColor="@android:color/white"
+                android:textColor="#00897B"
                  />
 
 
@@ -81,11 +81,11 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/explore"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="90dp"
                 android:onClick="donate1"
                 android:text="Donate Us"
-                android:theme="@style/MyButton"
-
+                android:textStyle="bold"
+                android:background="@drawable/custombutton"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
                  />
@@ -99,10 +99,10 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_marginLeft="25dp"
                 android:layout_toRightOf="@+id/btnDonate1"
                 android:onClick="join1"
-                android:paddingLeft="20dp"
                 android:text="Join Us"
-                android:theme="@style/MyButton"
-                android:textAlignment="center"
+                android:background="@drawable/custombutton"
+                android:textStyle="bold"
+
                 android:textColor="@android:color/white"
                 >
 
