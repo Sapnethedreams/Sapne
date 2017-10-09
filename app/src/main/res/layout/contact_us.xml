@@ -103,7 +103,8 @@
             android:textStyle="bold"
             android:text="Send Message"
             android:textColor="#ffffff"
-            android:background="@color/colorPrimary" />
+            android:background="@drawable/custombutton" />
+
 
         <Button
             android:id="@+id/button3"
