@@ -12,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-/**
- * Created by user on 22/08/2017.
- */
+//Created by user on 22/08/2017.
 
 public class ViewPagerAdapter extends PagerAdapter {
 
@@ -36,7 +34,7 @@ public ViewPagerAdapter(Context ctx)
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view==(LinearLayout)object;
+        return view== object;
     }
 
     @Override

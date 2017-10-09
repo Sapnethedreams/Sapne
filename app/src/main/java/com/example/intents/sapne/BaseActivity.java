@@ -424,11 +424,11 @@ public class BaseActivity extends AppCompatActivity {
             if(groupPsition!=0 && groupPsition!=1 )
 
             {
-                indicator.setVisibility(view.INVISIBLE);
+                indicator.setVisibility(View.INVISIBLE);
 
             }else {
 
-                indicator.setVisibility(view.VISIBLE);
+                indicator.setVisibility(View.VISIBLE);
                 indicator.setImageResource(isExpanded ? R.drawable.ic_keyboard_arrow_up_black_24dp:R.drawable.ic_keyboard_arrow_down_black_24dp);
 
 
