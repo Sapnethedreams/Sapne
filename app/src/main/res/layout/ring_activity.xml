@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                            android:layout_gravity="center"
                                              xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
                                              tools:context="com.example.intents.sapne.Ring_contact_us">
 
-<RelativeLayout
-    android:layout_width="368dp"
-    android:layout_height="551dp"
-    tools:layout_editor_absoluteY="8dp"
-    tools:layout_editor_absoluteX="8dp">
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textMultiLine"
-        android:textColor="#2c6094"
         android:text="
 Devesh Mittal
 +918 447 058 009
 Mon - Fri, 8:00-22:00"
-  android:textStyle="bold"
+        android:textColor="#2c6094"
 
-        />
-
-
+        android:textStyle="bold"
+         />
 </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
