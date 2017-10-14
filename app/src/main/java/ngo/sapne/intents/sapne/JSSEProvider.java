@@ -1,4 +1,4 @@
-package com.example.intents.sapne;
+package ngo.sapne.intents.sapne;
 
 /**
  * Created by user on 14/10/2017.
