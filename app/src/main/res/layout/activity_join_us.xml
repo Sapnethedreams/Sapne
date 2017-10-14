@@ -133,6 +133,16 @@
             android:inputType="text|textPersonName"
             android:text="" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/terms"
+            android:textColor="@color/red"
+            android:layout_gravity="center_horizontal"
+            android:text="Terms and Conditions"
+            />
+
         <Button
             android:id="@+id/btnSubmit"
             android:textColor="@color/white"
@@ -142,6 +152,5 @@
             android:layout_height="wrap_content"
             android:text="Submit"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
+            android:layout_gravity="center_horizontal"/>   </LinearLayout>
 </ScrollView>
