@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true" >
+    android:fillViewport="true">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
 
 
-        tools:context="com.example.intents.sapne.MainActivity"
+        tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity"
 
     android:orientation="vertical" android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -32,7 +33,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
                 android:text="Every Child"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -41,6 +41,7 @@
                 android:id="@+id/appCompatTextView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Every child deserves the best chance for a bright future.
 That’s why, we at SAPNE, are committed to ensure that every child gets a platform to rise up and fulfil his/her dream!"
                 android:textAlignment="center"
@@ -50,11 +51,14 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
           <ImageView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:layout_gravity="center"
               android:id="@+id/mainimgview"/>
         </LinearLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:orientation="vertical"
             android:background="#faf0e6">
 
 
@@ -63,52 +67,55 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/MyButton"
-
+                android:elevation="3dp"
+                android:background="@color/linen"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
 
                 android:onClick="explore"
                 android:text="Explore Journey of Sapne"
                 android:textAlignment="center"
-                android:textColor="@android:color/white"
+                android:textColor="#00897B"
                  />
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
             <Button
                 android:id="@+id/btnDonate1"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/explore"
-                android:layout_marginLeft="70dp"
+
+                android:background="@drawable/custombutton"
+
+
                 android:onClick="donate1"
                 android:text="Donate Us"
-                android:theme="@style/MyButton"
-
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                 />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnJoinUs1"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/explore"
+
                 android:layout_marginLeft="25dp"
+
                 android:layout_toRightOf="@+id/btnDonate1"
+                android:background="@drawable/custombutton"
                 android:onClick="join1"
-                android:paddingLeft="20dp"
                 android:text="Join Us"
-                android:theme="@style/MyButton"
-                android:textAlignment="center"
                 android:textColor="@android:color/white"
-                >
+
+                android:textStyle="bold">
 
             </Button>
-
-        </RelativeLayout>
+              </RelativeLayout>
+        </LinearLayout>
 
 
 

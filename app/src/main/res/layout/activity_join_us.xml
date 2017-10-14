@@ -12,7 +12,7 @@
 
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.example.intents.sapne.MainActivity">
+        tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity">
 
         <TextView
             android:id="@+id/textView"
@@ -135,6 +135,9 @@
 
         <Button
             android:id="@+id/btnSubmit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/custombutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"

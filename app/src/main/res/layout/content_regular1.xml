@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.intents.sapne.RegularCamps"
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.RegularCamps"
     tools:showIn="@layout/activity_regular_camps">
     <FrameLayout
-        android:layout_width="368dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteY="0dp"
@@ -16,6 +16,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="250dp"
+        android:layout_gravity="center|top"
         android:background="@drawable/b"/>
         <ScrollView
             android:layout_width="match_parent"
@@ -29,6 +30,7 @@
         tools:layout_editor_absoluteY="0dp"
         app:cardUseCompatPadding="true"
         android:layout_marginTop="90dp"
+        android:layout_gravity="center"
         app:contentPadding="6dp"
         app:cardElevation="12dp"
         app:cardCornerRadius="3dp">

@@ -87,9 +87,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="250dp"
-                android:background="@color/colorAccent"
+                android:background="@drawable/custombutton1"
                 android:text="BUY NOW"
-                android:textColor="@color/cardview_light_background" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textView4"

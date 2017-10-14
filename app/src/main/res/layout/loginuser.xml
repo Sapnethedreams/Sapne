@@ -25,7 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="User Login"
+            android:text="Login"
+            android:textStyle="bold"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
 
@@ -45,12 +46,16 @@
             android:hint="Enter password"
             android:inputType="textPassword" />
 
-        <Button
+       <Button
             android:id="@+id/buttonSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:text="Signup" />
+            android:layout_margin="40dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:background="@color/colorAccent"
+            android:text="SignIn" />
 
         <TextView
             android:text="Not have an account? Signup Here"
