@@ -1,5 +1,5 @@
 
-package com.example.intents.sapne;
+package ngo.sapne.intents.sapne;
 
 import android.content.pm.PackageManager;
 import android.location.Address;
