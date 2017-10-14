@@ -32,6 +32,7 @@ public class splash extends Activity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
 
         });
