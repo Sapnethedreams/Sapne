@@ -6,18 +6,24 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Patterns;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -35,6 +41,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
     Button btnSubmit;
     Spinner spnJoin;
     RadioGroup rgSex;
+    TextView terms;
 
     
     GoogleApiClient mLocationClient;
@@ -52,7 +59,8 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         builder.addConnectionCallbacks(this);
         builder.addOnConnectionFailedListener(this);
         mLocationClient = builder.build();
-        
+
+        terms=(TextView)findViewById(R.id.terms);
         etName= (EditText) findViewById(R.id.etName);
         etPhoneNumber= (EditText) findViewById(R.id.etPhoneNumber);
         etEmail= (EditText) findViewById(R.id.etEmail);
@@ -62,10 +70,43 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
         spnJoin= (Spinner) findViewById(R.id.spnJoin);
         rgSex= (RadioGroup) findViewById(R.id.rgSex);
+        terms.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                LinearLayout mainLayout = (LinearLayout) findViewById(R.id.activity_main);
+
+                // inflate the layout of the popup window
+                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater.inflate(R.layout.activity_terms, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });
+            }
+
+
+        });
 
         final ArrayList<String> joinusas=new ArrayList<>();
         joinusas.add("Intern");
         joinusas.add("Volunteer");
+        joinusas.add("Donor");
+        joinusas.add("Supporter");
 
 
         ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,joinusas);
@@ -78,7 +119,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
                 String name = etName.getText().toString();
                 String phone = etPhoneNumber.getText().toString();
-                String email = etEmail.getText().toString();
+                final String email = etEmail.getText().toString();
                 String gender = rgSex.getCheckedRadioButtonId() == R.id.rbMale ? "Male" : "Female";
                 //String batch = etAddress.getText().toString();
                 String sub = joinusas.get(spnJoin.getSelectedItemPosition());
@@ -116,20 +157,52 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                     etAadhar.requestFocus();
                     return;
                 }
-                String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
+                final String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
 
-                //Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
-                //i.putExtra("msg",msg);
-                //Intent i=new Intent(getApplicationContext(),);
-                //i.putExtra("email",email);
-                //startActivity(i);
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                new Thread(new Runnable() {
 
-                SendMail sm = new SendMail(JoinUs.this, "sapnethedreams@gmail.com", "New Entry", msg);
+                    public void run() {
 
-                //Executing sendmail to send email
-                sm.execute();
-            }});
+                        try {
+
+                            Gmailsender sender = new Gmailsender(
+
+                                    "sapneapp@gmail.com",
+
+                                    "sapne@delhi");
+
+
+
+                           // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
+
+                            sender.sendMail("Joined form details", msg,
+
+                                    email,
+
+                                    "sapneapp@gmail.com");
+
+
+
+                            Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
+
+
+
+
+
+                        } catch (Exception e) {
+
+                            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+
+
+
+                        }
+
+                    }
+
+                }).start();
+
+            }
+            });
 
 
     }
