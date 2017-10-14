@@ -1,4 +1,4 @@
-package com.example.intents.sapne;
+package ngo.sapne.intents.sapne;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class Gmailsender extends javax.mail.Authenticator {
 
     static {
 
-        Security.addProvider(new com.example.intents.sapne.JSSEProvider());
+        Security.addProvider(new ngo.sapne.intents.sapne.JSSEProvider());
 
     }
 
