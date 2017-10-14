@@ -1,25 +1,22 @@
 
 package com.example.intents.sapne;
 
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -69,6 +66,8 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         final ArrayList<String> joinusas=new ArrayList<>();
         joinusas.add("Intern");
         joinusas.add("Volunteer");
+        joinusas.add("Donor");
+        joinusas.add("Supporter");
 
 
         ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,joinusas);
@@ -81,7 +80,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
                 String name = etName.getText().toString();
                 String phone = etPhoneNumber.getText().toString();
-                String email = etEmail.getText().toString();
+                final String email = etEmail.getText().toString();
                 String gender = rgSex.getCheckedRadioButtonId() == R.id.rbMale ? "Male" : "Female";
                 //String batch = etAddress.getText().toString();
                 String sub = joinusas.get(spnJoin.getSelectedItemPosition());
@@ -119,20 +118,52 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                     etAadhar.requestFocus();
                     return;
                 }
-                String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
+                final String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
 
-                //Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
-                //i.putExtra("msg",msg);
-                //Intent i=new Intent(getApplicationContext(),);
-                //i.putExtra("email",email);
-                //startActivity(i);
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                new Thread(new Runnable() {
 
-                SendMail sm = new SendMail(JoinUs.this, "sapnethedreams@gmail.com", "New Entry", msg);
+                    public void run() {
 
-                //Executing sendmail to send email
-                sm.execute();
-            }});
+                        try {
+
+                            Gmailsender sender = new Gmailsender(
+
+                                    "sapneapp@gmail.com",
+
+                                    "sapne@delhi");
+
+
+
+                           // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
+
+                            sender.sendMail("Joined form details", msg,
+
+                                    email,
+
+                                    "sapneapp@gmail.com");
+
+
+
+                            Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
+
+
+
+
+
+                        } catch (Exception e) {
+
+                            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+
+
+
+                        }
+
+                    }
+
+                }).start();
+
+            }
+            });
 
 
     }
