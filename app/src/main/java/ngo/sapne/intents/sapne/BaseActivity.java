@@ -193,21 +193,21 @@ public class BaseActivity extends AppCompatActivity {
                 if(groupPosition==1&&childPosition==2)
                 {
                     ZGallery.with(BaseActivity.this, new ArrayList<String>() {{
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g1).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g2).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g3).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g4).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g5).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g6).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g7).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g8).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g9).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g10).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g11).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g12).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g13).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g14).toString());
-                        add(Uri.parse("android.resource://ngo.sapne.intents.sapne/" + R.drawable.g15).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g1).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g2).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g3).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g4).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g5).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g6).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g7).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g8).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g9).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g10).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g11).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g12).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g13).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g14).toString());
+                        add(Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.g15).toString());
                     }}).setToolbarTitleColor(ZColor.WHITE) // toolbar title color
                             .setGalleryBackgroundColor(ZColor.BLACK) // activity background color
                             .setToolbarColorResId(R.color.colorPrimary) // toolbar color
