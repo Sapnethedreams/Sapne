@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo_sapne"
-    tools:context="com.example.intents.sapne.our_volunteer">
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.our_volunteer">
 
 
 

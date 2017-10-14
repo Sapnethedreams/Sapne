@@ -4,7 +4,7 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="wrap_content"
                                              android:layout_height="wrap_content"
-                                             tools:context="com.example.intents.sapne.Ring_contact_us">
+                                             tools:context="com.example.intents.sapne.ngo.example.intents.sapne.Ring_contact_us">
 
 
     <TextView

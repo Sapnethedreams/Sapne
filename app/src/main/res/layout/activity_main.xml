@@ -10,7 +10,7 @@
         xmlns:tools="http://schemas.android.com/tools"
 
 
-        tools:context="com.example.intents.sapne.MainActivity"
+        tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity"
 
     android:orientation="vertical" android:layout_width="match_parent"
                   android:layout_height="match_parent"
