@@ -524,10 +524,10 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatch.setSubCatCode("1003");
         subCategoryMatches.add(subCategoryMatch);
 
-        subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Core Team");
-        subCategoryMatch.setSubCatCode("1004");
-        subCategoryMatches.add(subCategoryMatch);
+//        subCategoryMatch = new SubCategory();
+//        subCategoryMatch.setSubCatName("Core Team");
+//        subCategoryMatch.setSubCatCode("1004");
+//        subCategoryMatches.add(subCategoryMatch);
 
 
         subcategory_name.add(subCategoryMatches);
@@ -554,7 +554,7 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatches.add(subCategoryMatch);
 
         subCategoryMatch = new SubCategory();
-        subCategoryMatch.setSubCatName("Our Volunteer");
+        subCategoryMatch.setSubCatName("Our Team");
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
 
