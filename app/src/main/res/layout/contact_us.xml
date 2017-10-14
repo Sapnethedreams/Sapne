@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              app:layout_scrollFlags="scroll">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_scrollFlags="scroll">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -99,56 +99,57 @@
             android:layout_below="@+id/editText4"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
             android:onClick="Message"
             android:textStyle="bold"
             android:text="Send Message"
             android:textColor="#ffffff"
             android:background="@drawable/custombutton" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_gravity="center"
+        >
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/button2"
-            android:layout_marginLeft="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="21dp"
-            android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/custombutton1"
             android:onClick="location"
             android:text="Find Us "
-            android:textColor="#ffffff" />
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/button3"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/button3"
-            android:layout_marginEnd="37dp"
-            android:layout_marginRight="37dp"
-            android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/custombutton1"
             android:onClick="ring"
-
             android:text="Give Us A Ring"
-            android:textColor="#ffffff" />
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
         >
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+
             android:background="@android:color/transparent"
             android:onClick="twitter"
             android:paddingRight="10dp"
@@ -158,34 +159,37 @@
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imageButton"
             android:background="@android:color/transparent"
             android:onClick="linkedin"
             android:paddingRight="10dp"
+
             app:srcCompat="@drawable/linkedin" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
+            android:layout_toEndOf="@+id/imageButton2"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:paddingRight="10dp"
+
             android:background="@android:color/transparent"
             android:onClick="facebook"
-            android:paddingRight="10dp"
             app:srcCompat="@drawable/facebook" />
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:paddingRight="10dp"
             android:background="@android:color/transparent"
             android:onClick="instagram"
-            android:paddingRight="10dp"
+            android:layout_toEndOf="@+id/imageButton3"
             app:srcCompat="@drawable/instagram" />
 
 
 
         />
 
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
