@@ -24,7 +24,7 @@ public class MainActivity extends BaseActivity {
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
 
- final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
+        final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
 
 
         final Handler handler = new Handler();

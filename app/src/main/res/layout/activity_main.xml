@@ -7,10 +7,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-
-
         android:layout_width="match_parent"
-
         android:layout_height="match_parent"
         android:background="#faf0e6"
         android:orientation="vertical"
@@ -23,10 +20,8 @@
             android:layout_weight="0.66"
             android:background="#faf0e6"
             android:orientation="vertical"
-
             android:paddingBottom="16dp"
             android:weightSum="1">
-
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView"
@@ -34,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Every Child"
+                android:textColor="#424242"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -45,6 +41,7 @@
                 android:text="Every child deserves the best chance for a bright future.
 That’s why, we at SAPNE, are committed to ensure that every child gets a platform to rise up and fulfil his/her dream!"
                 android:textAlignment="center"
+                android:textColor="#212121"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -58,10 +55,8 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:background="#faf0e6"
             android:orientation="vertical">
-
 
             <Button
                 android:id="@+id/explore"
