@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.EventsFrag1">
+    tools:context=".EventsFrag1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,10 +20,12 @@
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="#50ffffff"
+                app:cardBackgroundColor="#30ffffff"
                 app:contentPadding="6dp"
                 app:cardElevation="7dp"
-                app:cardCornerRadius="3dp">
+                app:cardCornerRadius="3dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -44,7 +46,7 @@
                         android:textSize="16sp"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:shadowColor="#80ffffff"
+                        android:shadowColor="#20ffffff"
                         android:shadowDx="2"
                         android:shadowDy="2"
                         android:shadowRadius="3"
@@ -59,7 +61,9 @@
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="#50ffffff"
+                app:cardBackgroundColor="#30ffffff"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
                 app:contentPadding="6dp"
                 app:cardElevation="7dp"
                 app:cardCornerRadius="3dp">
@@ -96,7 +100,9 @@
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteY="0dp"
                 app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="#50ffffff"
+                app:cardBackgroundColor="#30ffffff"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
                 app:contentPadding="6dp"
                 app:cardElevation="7dp"
                 app:cardCornerRadius="3dp">
