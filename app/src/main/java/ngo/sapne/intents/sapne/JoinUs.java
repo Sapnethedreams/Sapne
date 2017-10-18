@@ -1,6 +1,7 @@
 
 package ngo.sapne.intents.sapne;
 
+import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -42,7 +43,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
     Spinner spnJoin;
     RadioGroup rgSex;
     TextView terms;
-
+    ProgressDialog progressDialog;
     
     GoogleApiClient mLocationClient;
     Location mLastLocation;
@@ -69,6 +70,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         etOffice= (EditText) findViewById(R.id.etOffice);
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
         spnJoin= (Spinner) findViewById(R.id.spnJoin);
+        progressDialog = new ProgressDialog(this);
         rgSex= (RadioGroup) findViewById(R.id.rgSex);
         terms.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -117,16 +119,17 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
             @Override
             public void onClick(View view) {
 
+
+
                 String name = etName.getText().toString();
                 String phone = etPhoneNumber.getText().toString();
                 final String email = etEmail.getText().toString();
                 String gender = rgSex.getCheckedRadioButtonId() == R.id.rbMale ? "Male" : "Female";
-                //String batch = etAddress.getText().toString();
                 String sub = joinusas.get(spnJoin.getSelectedItemPosition());
                 String aadhar = etAadhar.getText().toString();
                 String address = etAddress.getText().toString();
                 String office = etOffice.getText().toString();
-                if (name.length() == 0) {
+               if (name.length() == 0) {
                     Toast.makeText(getApplication(), "Name Empty", Toast.LENGTH_LONG).show();
                     etName.requestFocus();
                     return;
@@ -157,7 +160,13 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                     etAadhar.requestFocus();
                     return;
                 }
+
+
                 final String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
+
+                progressDialog.setMessage("Registering Please Wait...");
+                progressDialog.show();
+
 
                 new Thread(new Runnable() {
 
