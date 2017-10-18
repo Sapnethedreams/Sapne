@@ -26,21 +26,22 @@ public class MainActivity extends BaseActivity {
 
         final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
 
+        try {
+            final Handler handler = new Handler();
+            Runnable runnable = new Runnable() {
+                int i = 0;
 
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            int i=0;
-            public void run() {
-                img.setImageResource(imageArray[i]);
-                i++;
-                if(i>imageArray.length-1)
-                {
-                    i=0;
+                public void run() {
+                    img.setImageResource(imageArray[i]);
+                    i++;
+                    if (i > imageArray.length - 1) {
+                        i = 0;
+                    }
+                    handler.postDelayed(this, 4000);  //for interval...
                 }
-                handler.postDelayed(this, 4000);  //for interval...
-            }
-        };
-       handler.postDelayed(runnable, 25); //for initial delay..
+            };
+            handler.postDelayed(runnable, 25); //for initial delay..
+        } catch (OutOfMemoryError ignored){}
 
 
         explore=(Button)findViewById(R.id.explore);
