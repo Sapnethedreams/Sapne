@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:961449336145:android:ed36cfbfa18586d4",
         "android_client_info": {
-          "package_name": "com.example.intents.sapne"
+          "package_name": "ngo.sapne.intents.sapne"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "961449336145-9rjk3k479nn8ge928if3rshi9i3hqtp7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.intents.sapne",
+            "package_name": "ngo.sapne.intents.sapne",
             "certificate_hash": "ccc83e13bcc700a0d4dd20267aa669ef232f55d0"
           }
         },
