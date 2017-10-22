@@ -13,10 +13,10 @@ public class splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.video_anim_layout);
 
         //get the VideoView from the resources
-        VideoView vView = (VideoView)findViewById(R.id.videoView);
+        VideoView vView = (VideoView)findViewById(R.id.videoView2);
         //use this to get touch events
         vView.requestFocus();
         //now we have to load video from the resources folder
