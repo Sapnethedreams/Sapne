@@ -44,7 +44,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
     RadioGroup rgSex;
     TextView terms;
     ProgressDialog progressDialog;
-    
+
     GoogleApiClient mLocationClient;
     Location mLastLocation;
 
@@ -54,7 +54,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         setContentView(R.layout.activity_join_us);
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
 
-        
+
         GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
         builder.addApi(LocationServices.API);
         builder.addConnectionCallbacks(this);
@@ -129,7 +129,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                 String aadhar = etAadhar.getText().toString();
                 String address = etAddress.getText().toString();
                 String office = etOffice.getText().toString();
-               if (name.length() == 0) {
+                if (name.length() == 0) {
                     Toast.makeText(getApplication(), "Name Empty", Toast.LENGTH_LONG).show();
                     etName.requestFocus();
                     return;
@@ -182,7 +182,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
 
 
-                           // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
+                            // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
 
                             sender.sendMail("Joined form details", msg,
 
@@ -211,11 +211,11 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                 }).start();
 
             }
-            });
+        });
 
 
     }
-    
+
     //For Location Detection
 
     @Override
@@ -274,7 +274,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-    Toast.makeText(getApplicationContext(),"Connection Failed",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Connection Failed",Toast.LENGTH_LONG).show();
     }
 
 
