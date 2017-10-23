@@ -2,9 +2,6 @@ package ngo.sapne.intents.sapne;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -28,14 +25,7 @@ public class RegularCamps extends BaseActivity{
        // MyAdapter adapter=new MyAdapter(this,names,images);
        // rv.setAdapter(adapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
 
