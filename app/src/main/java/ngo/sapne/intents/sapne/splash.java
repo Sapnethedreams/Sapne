@@ -16,6 +16,7 @@ public class splash extends Activity {
         setContentView(R.layout.video_anim_layout);
 
         //get the VideoView from the resources
+
         VideoView vView = (VideoView)findViewById(R.id.videoView3);
         //use this to get touch events
         vView.requestFocus();
