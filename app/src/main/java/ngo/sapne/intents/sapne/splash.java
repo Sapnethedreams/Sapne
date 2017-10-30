@@ -16,12 +16,13 @@ public class splash extends Activity {
         setContentView(R.layout.video_anim_layout);
 
         //get the VideoView from the resources
-        VideoView vView = (VideoView)findViewById(R.id.videoView2);
+
+        VideoView vView = (VideoView)findViewById(R.id.videoView3);
         //use this to get touch events
         vView.requestFocus();
         //now we have to load video from the resources folder
         //set the video path
-        String vSource = "android.resource://com.example.intents.sapne/" + R.raw.video;
+        String vSource = "android.resource://ngo.sapne.intents.sapne/" + R.raw.video;
         //set the video URI, passing thevSource as a URI
         vView.setVideoURI(Uri.parse(vSource));
         //enable this if you want to enable video controllers, such as pause and forward
