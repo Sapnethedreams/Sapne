@@ -86,7 +86,9 @@ public class BaseActivity extends AppCompatActivity {
 
                 } else if (groupPosition == 6) {
                     Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                    finish();
                     startActivity(intent);
+
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
 
@@ -230,17 +232,6 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
 
-//                if(groupPosition==3&&childPosition==0)
-//                {
-//                    Intent intent = new Intent(MainActivity.this, Products.class);
-//                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-//                    tempList = subcategory_name.get(groupPosition);
-
-//                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-//                    startActivity(intent);
-//                    mDrawerLayout.closeDrawer(mCategoryList);
-
-//                }
 
                 if (groupPosition == 0 && childPosition == 2) {
                     Intent intent = new Intent(BaseActivity.this, OurVision.class);
@@ -261,17 +252,6 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-/*
-                if(groupPosition==0&&childPosition==2)
-                {
-                    Intent intent = new Intent(BaseActivity.this, OurVision.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
-
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
-                    mDrawerLayout.closeDrawer(mCategoryList);
-                }*/
 
                 return true;
 
