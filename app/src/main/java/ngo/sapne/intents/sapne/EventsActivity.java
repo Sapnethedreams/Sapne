@@ -16,15 +16,22 @@ public class EventsActivity extends BaseActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_events);
-        View contentView = getLayoutInflater().inflate(R.layout.activity_events, frameLayout);
 
-        final ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.events_pager);
+        View contentView;
+        try{
+            contentView =  getLayoutInflater().inflate(R.layout.activity_events, frameLayout);
+        } catch (OutOfMemoryError ignored) {
+            finish();
+            return;
+        }
+
+        final ViewPager viewPager = contentView.findViewById(R.id.events_pager);
         viewPager.setAdapter(new CustomTabPagerAdapter(this));
         viewPager.setPageTransformer(false, new ZoomOutPageTransformer());
-        viewPager.setOffscreenPageLimit(4);
+        viewPager.setOffscreenPageLimit(2);
 
         ImageButton leftButton = (ImageButton)findViewById(R.id.events_left);
-       leftButton.setOnClickListener(new View.OnClickListener() {
+        leftButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
