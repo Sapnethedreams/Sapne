@@ -56,7 +56,6 @@ public class EventsActivity extends BaseActivity  {
     }
 
 
-
     public class CustomTabPagerAdapter extends FragmentPagerAdapter {
 
         private SparseArray<Fragment> registeredFragments = new SparseArray<>();
