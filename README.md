@@ -10,4 +10,4 @@ The Sapne app is designed to create awareness among the people towards the educa
 2. Make your changes.
 3. After finalizing, send a pull request. 
 
-The code is copyrighted by Sapne. If you wish to contribute, please contact us.
+The code is copyrighted by Sapne.
