@@ -193,8 +193,8 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
 
 
-                            Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
-
+                          //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
+                                finish();
 
 
 
