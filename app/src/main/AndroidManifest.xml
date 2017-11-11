@@ -25,9 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.MainActivity" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.ExpandingCells"
-            android:noHistory="true" />
         <activity android:name="ngo.sapne.intents.sapne.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -119,6 +116,7 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
         <activity
             android:name="ngo.sapne.intents.sapne.all_volunteer"
             android:label="Volunteers"
