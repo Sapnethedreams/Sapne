@@ -1,7 +1,6 @@
 package ngo.sapne.intents.sapne;
 
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.view.ViewGroup;
  * Created by rohegde on 11/11/17.
  */
 
-public class AboutUsFragment extends Fragment{
+public class AboutUsFragment extends android.support.v4.app.Fragment{
 
     /*
     @Override
@@ -33,7 +32,8 @@ public class AboutUsFragment extends Fragment{
     public void onStart() {
         super.onStart();
         //getLayoutInflater().inflate(R.layout.fragment_about_us, frameLayout);
-        getLayoutInflater().inflate(R.layout.fragment_about_us, null);
+       // getLayoutInflater().inflate(R.layout.fragment_about_us, null);
+
 
     }
 
