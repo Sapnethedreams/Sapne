@@ -11,4 +11,12 @@
 
     <include layout="@layout/content_about_us" />
 
+    <fragment
+        android:name="ngo.sapne.intents.sapne.AboutUsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    />
+
 </android.support.design.widget.CoordinatorLayout>
+
+

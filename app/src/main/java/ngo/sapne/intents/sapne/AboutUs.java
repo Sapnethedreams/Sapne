@@ -10,6 +10,7 @@ public class AboutUs extends BaseActivity{
         getLayoutInflater().inflate(R.layout.activity_about_us, frameLayout);
 
 
+
     }
 
 }

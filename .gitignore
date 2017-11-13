@@ -11,3 +11,4 @@ app/src/main/AndroidManifest.xml
 app/src/main/AndroidManifest.xml
 app/src/main/java/com/example/intents/sapne/MainActivity.java
 app/src/main/res/values/colors.xml
+.idea/misc.xml

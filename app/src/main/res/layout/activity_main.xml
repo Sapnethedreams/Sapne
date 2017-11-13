@@ -60,7 +60,6 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
             <Button
                 android:id="@+id/explore"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
