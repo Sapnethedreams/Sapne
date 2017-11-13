@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class VerticalViewPagerActivity extends android.support.v4.app.Fragment {
+public class VerticalViewPagerFragment extends android.support.v4.app.Fragment {
 
     VerticalViewPager ViewPager;
     Context mContext;
 
-    public VerticalViewPagerActivity()
+    public VerticalViewPagerFragment()
     {
 
     }
@@ -34,9 +34,9 @@ public class VerticalViewPagerActivity extends android.support.v4.app.Fragment {
         super.onAttach(context);
         mContext=context;
     }
-    public static VerticalViewPagerActivity newInstance()
+    public static VerticalViewPagerFragment newInstance()
     {
-        VerticalViewPagerActivity fragment=new VerticalViewPagerActivity();
+        VerticalViewPagerFragment fragment=new VerticalViewPagerFragment();
         return fragment;
     }
 }

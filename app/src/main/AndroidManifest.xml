@@ -45,9 +45,7 @@
             />
         <activity android:name="ngo.sapne.intents.sapne.LoginActivity"
                   android:label="Sign in"
-                  android:screenOrientation="portrait"
-            >
-
+                  android:screenOrientation="portrait">
         </activity>
 
         <activity
@@ -85,28 +83,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="ngo.sapne.intents.sapne.AboutUs"
-            android:label="@string/about_us"
-            android:noHistory="true"
-            android:parentActivityName="ngo.sapne.intents.sapne.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurMission"
-            android:label="@string/our_mission"
-            android:noHistory="true"
-            android:parentActivityName="ngo.sapne.intents.sapne.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name="ngo.sapne.intents.sapne.Ring_contact_us"
             android:label="Contact Us"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurVision"
-            android:label="@string/title_activity_our_vision"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />

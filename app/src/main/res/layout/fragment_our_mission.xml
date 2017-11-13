@@ -14,7 +14,7 @@
 
 
     <fragment
-        android:name="ngo.sapne.intents.sapne.OurMissionFragment"
+        android:name="ngo.sapne.intents.sapne.OurMission"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
