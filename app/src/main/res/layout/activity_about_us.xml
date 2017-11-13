@@ -12,5 +12,3 @@
     <include layout="@layout/content_about_us" />
 
 </android.support.design.widget.CoordinatorLayout>
-
-

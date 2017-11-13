@@ -42,6 +42,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
     Button btnSubmit;
     Spinner spnJoin;
     RadioGroup rgSex;
+//    TextView terms;
     TextView terms;
     ProgressDialog progressDialog;
 
@@ -61,7 +62,7 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         builder.addOnConnectionFailedListener(this);
         mLocationClient = builder.build();
 
-        terms=(TextView)findViewById(R.id.terms);
+//        terms=(TextView)findViewById(R.id.terms);
         etName= (EditText) findViewById(R.id.etName);
         etPhoneNumber= (EditText) findViewById(R.id.etPhoneNumber);
         etEmail= (EditText) findViewById(R.id.etEmail);
@@ -72,37 +73,37 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         spnJoin= (Spinner) findViewById(R.id.spnJoin);
         progressDialog = new ProgressDialog(this);
         rgSex= (RadioGroup) findViewById(R.id.rgSex);
-        terms.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
+//        terms.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
 
-                LinearLayout mainLayout = (LinearLayout) findViewById(R.id.activity_main);
+//                LinearLayout mainLayout = (LinearLayout) findViewById(R.id.activity_main);
 
                 // inflate the layout of the popup window
-                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-                View popupView = inflater.inflate(R.layout.activity_terms, null);
+//                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+//                View popupView = inflater.inflate(R.layout.activity_terms, null);
 
                 // create the popup window
-                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                boolean focusable = true; // lets taps outside the popup also dismiss it
-                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+//                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+//                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+//                boolean focusable = true; // lets taps outside the popup also dismiss it
+//                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
                 // show the popup window
-                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
+//                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
 
                 // dismiss the popup window when touched
-                popupView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        popupWindow.dismiss();
-                        return true;
-                    }
-                });
-            }
+//                popupView.setOnTouchListener(new View.OnTouchListener() {
+//                    @Override
+//                    public boolean onTouch(View v, MotionEvent event) {
+//                        popupWindow.dismiss();
+//                        return true;
+//                    }
+//                });
+//            }
 
 
-        });
+//        });
 
         final ArrayList<String> joinusas=new ArrayList<>();
         joinusas.add("Intern");
@@ -192,8 +193,8 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
 
 
-                            Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
-
+                          //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
+                                finish();
 
 
 
