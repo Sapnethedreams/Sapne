@@ -52,6 +52,9 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support:support-v4:26.1.0'
 
+
+
+
     compile 'com.google.firebase:firebase-auth:11.4.2'
     testCompile 'junit:junit:4.12'
     
