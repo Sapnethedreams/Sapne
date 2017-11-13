@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by user on 10/11/2017.
- */
 
 public class VerticalViewPagerActivity extends android.support.v4.app.Fragment {
 
