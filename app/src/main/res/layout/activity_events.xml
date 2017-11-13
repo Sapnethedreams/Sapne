@@ -1,13 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsActivity"
-    android:background="@drawable/event_grad">
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".events.EventsFragment">
+
+    <ImageView
+        android:id="@+id/home"
+        style="@style/ClickableImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:src="@drawable/common_google_signin_btn_icon_dark" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Stoneware + Porcelain Plate" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="4dp" />
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:text="$24.00 USD" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="16dp" />
+
+    <com.yarolegovich.discretescrollview.DiscreteScrollView
+        android:id="@+id/item_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/item_btn_comment"
+            style="@style/ClickableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/common_google_signin_btn_icon_dark"
+            android:tint="@color/colorPrimary" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/item_btn_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@android:color/white"
+            app:rippleColor="#50ffffff"
+            app:useCompatPadding="true" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/item_btn_rate"
+            style="@style/ClickableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/common_google_signin_btn_icon_dark"
+            android:tint="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_smooth_scroll"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Donate Us"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_transition_time"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="See more"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
 
 
-    <include layout="@layout/content_events" />
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

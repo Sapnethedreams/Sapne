@@ -27,6 +27,7 @@ import com.mzelzoghbi.zgallery.entities.ZColor;
 
 import java.util.ArrayList;
 
+import ngo.sapne.intents.sapne.events.EventsFragment;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 
@@ -76,7 +77,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
                 if(groupPosition==4){
-                    Intent intent = new Intent(BaseActivity.this, EventsActivity.class);
+                    Intent intent = new Intent(BaseActivity.this, EventsFragment.class);
                     startActivity(intent);
                 }
                 else if(groupPosition==5)

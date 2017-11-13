@@ -129,16 +129,6 @@
             android:label="@string/title_activity_our_team"
             android:noHistory="true"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.EventsActivity"
-            android:label="@string/title_activity_events"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.EventsExtraActivity"
-            android:label="Events"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

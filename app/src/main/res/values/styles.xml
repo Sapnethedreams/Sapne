@@ -16,16 +16,26 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
-      <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
+    <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
 
     <style parent="ThemeOverlay.AppCompat.Light" name="AppTheme.PopupOverlay"> </style>
 
 
-    -<style parent="Theme.AppCompat.Light" name="MyButton">
+    <style parent="Theme.AppCompat.Light" name="MyButton">
 
     <item name="colorControlHighlight">#EC407A</item>
 
     <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
 
-</style>
+    <style name="ShopTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="ClickableImageView">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
 </resources>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import ngo.sapne.intents.sapne.events.ExtraEventsFragment;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 
@@ -55,7 +56,7 @@ public class MainActivity extends BaseActivity {
         public void explore(View v)
         {
 
-            Intent intent=new Intent(getApplicationContext(),EventsExtraActivity.class);
+            Intent intent=new Intent(getApplicationContext(),ExtraEventsFragment.class);
             startActivity(intent);
 
         }
