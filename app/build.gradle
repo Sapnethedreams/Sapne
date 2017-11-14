@@ -1,15 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-<<<<<<< HEAD
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
-=======
 
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
 
->>>>>>> 145bd3e6a45a7f7b90cc999201b7a302fef42172
     defaultConfig {
         applicationId "ngo.sapne.intents.sapne"
         minSdkVersion 16
