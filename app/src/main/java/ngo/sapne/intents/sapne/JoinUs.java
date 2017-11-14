@@ -1,4 +1,3 @@
-
 package ngo.sapne.intents.sapne;
 
 import android.app.ProgressDialog;
@@ -13,15 +12,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -36,13 +30,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class JoinUs extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener  {
+public class JoinUs extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    EditText etAddress,etName,etPhoneNumber,etEmail,etAadhar,etOffice;
+    EditText etAddress, etName, etPhoneNumber, etEmail, etAadhar, etOffice;
     Button btnSubmit;
     Spinner spnJoin;
     RadioGroup rgSex;
-//    TextView terms;
+    //    TextView terms;
     TextView terms;
     ProgressDialog progressDialog;
 
@@ -55,7 +49,6 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         setContentView(R.layout.activity_join_us);
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
 
-
         GoogleApiClient.Builder builder = new GoogleApiClient.Builder(this);
         builder.addApi(LocationServices.API);
         builder.addConnectionCallbacks(this);
@@ -63,36 +56,36 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
         mLocationClient = builder.build();
 
 //        terms=(TextView)findViewById(R.id.terms);
-        etName= (EditText) findViewById(R.id.etName);
-        etPhoneNumber= (EditText) findViewById(R.id.etPhoneNumber);
-        etEmail= (EditText) findViewById(R.id.etEmail);
-        etAddress= (EditText) findViewById(R.id.etAddress);
-        etAadhar= (EditText) findViewById(R.id.etAadhar);
-        etOffice= (EditText) findViewById(R.id.etOffice);
-        btnSubmit= (Button) findViewById(R.id.btnSubmit);
-        spnJoin= (Spinner) findViewById(R.id.spnJoin);
+        etName = (EditText) findViewById(R.id.etName);
+        etPhoneNumber = (EditText) findViewById(R.id.etPhoneNumber);
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etAddress = (EditText) findViewById(R.id.etAddress);
+        etAadhar = (EditText) findViewById(R.id.etAadhar);
+        etOffice = (EditText) findViewById(R.id.etOffice);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        spnJoin = (Spinner) findViewById(R.id.spnJoin);
         progressDialog = new ProgressDialog(this);
-        rgSex= (RadioGroup) findViewById(R.id.rgSex);
+        rgSex = (RadioGroup) findViewById(R.id.rgSex);
 //        terms.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View v) {
 
 //                LinearLayout mainLayout = (LinearLayout) findViewById(R.id.activity_main);
 
-                // inflate the layout of the popup window
+        // inflate the layout of the popup window
 //                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 //                View popupView = inflater.inflate(R.layout.activity_terms, null);
 
-                // create the popup window
+        // create the popup window
 //                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
 //                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
 //                boolean focusable = true; // lets taps outside the popup also dismiss it
 //                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-                // show the popup window
+        // show the popup window
 //                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
 
-                // dismiss the popup window when touched
+        // dismiss the popup window when touched
 //                popupView.setOnTouchListener(new View.OnTouchListener() {
 //                    @Override
 //                    public boolean onTouch(View v, MotionEvent event) {
@@ -105,21 +98,20 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
 //        });
 
-        final ArrayList<String> joinusas=new ArrayList<>();
+        final ArrayList<String> joinusas = new ArrayList<>();
         joinusas.add("Intern");
         joinusas.add("Volunteer");
         joinusas.add("Donor");
         joinusas.add("Supporter");
 
 
-        ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,joinusas);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, joinusas);
 
         spnJoin.setAdapter(adapter);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
 
                 String name = etName.getText().toString();
@@ -172,48 +164,28 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
                 new Thread(new Runnable() {
 
                     public void run() {
-
                         try {
-
                             Gmailsender sender = new Gmailsender(
-
                                     "sapneapp@gmail.com",
-
                                     "sapne@delhi");
 
-
-
                             // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
-
                             sender.sendMail("Joined form details", msg,
-
                                     email,
-
                                     "sapneapp@gmail.com");
 
-
-
-                          //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
-                                finish();
-
-
-
+                            //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
+                            finish();
 
                         } catch (Exception e) {
-
-                            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
-
-
-
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                         }
 
                     }
 
                 }).start();
-
             }
         });
-
 
     }
 
@@ -239,31 +211,26 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[] {
+                requestPermissions(new String[]{
                         android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.INTERNET
-                },10);
+                }, 10);
             }
             return;
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mLocationClient);
-        if(mLastLocation!=null)
-        {
-            double latitude=mLastLocation.getLatitude();
-            double longitude=mLastLocation.getLongitude();
+        if (mLastLocation != null) {
+            double latitude = mLastLocation.getLatitude();
+            double longitude = mLastLocation.getLongitude();
 
+            Geocoder geocoder = new Geocoder(this, Locale.ENGLISH);
+            try {
+                List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+                if (addresses != null) {
 
-            Geocoder geocoder=new Geocoder(this, Locale.ENGLISH);
-            try
-            {
-                List<Address> addresses=geocoder.getFromLocation(latitude,longitude,1);
-                if (addresses!=null)
-                {
+                    android.location.Address fetchedAddress = addresses.get(0);
+                    etAddress.setText(fetchedAddress.getFeatureName() + "," + fetchedAddress.getSubLocality() + "," + fetchedAddress.getLocality() + "-" + fetchedAddress.getPostalCode() + "," + fetchedAddress.getAdminArea() + "," + fetchedAddress.getCountryName());
 
-                    android.location.Address fetchedAddress=addresses.get(0);
-                    etAddress.setText(fetchedAddress.getFeatureName()+","+fetchedAddress.getSubLocality()+","+fetchedAddress.getLocality()+"-"+fetchedAddress.getPostalCode()+","+fetchedAddress.getAdminArea()+","+fetchedAddress.getCountryName());
-
-                }
-                else
+                } else
                     etAddress.setText("No Location Found");
 
 
@@ -275,13 +242,13 @@ public class JoinUs extends AppCompatActivity implements GoogleApiClient.Connect
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(getApplicationContext(),"Connection Failed",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Connection Failed", Toast.LENGTH_LONG).show();
     }
 
 
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(getApplicationContext(),"Connection Suspended",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Connection Suspended", Toast.LENGTH_LONG).show();
     }
 
 }

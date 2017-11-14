@@ -11,7 +11,7 @@ import android.content.ActivityNotFoundException;
 
         import java.util.Locale;
 
-public class Contact_us extends     BaseActivity {
+public class Contact_us extends BaseActivity {
     Button button2,button4,button3;
     EditText editText5;
 
