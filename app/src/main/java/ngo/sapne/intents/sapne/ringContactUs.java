@@ -3,7 +3,7 @@ package ngo.sapne.intents.sapne;
 
         import android.os.Bundle;
 
-public class Ring_contact_us extends BaseActivity {
+public class ringContactUs extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

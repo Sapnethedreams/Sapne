@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-public class our_volunteer extends BaseActivity {
+public class OurVolunteers extends BaseActivity {
 ListView listView;
 
     @Override
@@ -16,7 +16,7 @@ ListView listView;
         int[] iamges={R.drawable.ss1,R.drawable.ss2,R.drawable.ss3};
     }
     public void vol(View view){
-        Intent intent=new Intent(our_volunteer.this,all_volunteer.class);
+        Intent intent=new Intent(OurVolunteers.this,AllVolunteers.class);
         startActivity(intent);
     }
 

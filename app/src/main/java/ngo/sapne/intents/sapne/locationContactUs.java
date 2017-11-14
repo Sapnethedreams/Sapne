@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
-public class Location_contact_us extends BaseActivity {
+public class locationContactUs extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

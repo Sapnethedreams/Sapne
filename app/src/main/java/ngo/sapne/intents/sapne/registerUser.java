@@ -22,7 +22,7 @@ package ngo.sapne.intents.sapne;
         import com.google.firebase.auth.AuthResult;
         import com.google.firebase.auth.FirebaseAuth;
 
-public class Register_user extends AppCompatActivity implements View.OnClickListener {
+public class registerUser extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
     private EditText editTextEmail;
@@ -103,7 +103,7 @@ public class Register_user extends AppCompatActivity implements View.OnClickList
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }else{
                             //display some message here
-                            Toast.makeText(Register_user.this,"Registration Error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(registerUser.this,"Registration Error",Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }

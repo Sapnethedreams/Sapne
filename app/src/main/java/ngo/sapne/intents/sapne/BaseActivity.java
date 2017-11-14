@@ -95,7 +95,7 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 2) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new VerticalViewPagerFragment(), "VerticalViewPagerFragment")
+                            replace(R.id.content_frame, new SuccessStoriesFrag(), "VerticalViewPagerFragment")
                             .commit();
                 } else if (parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
@@ -134,7 +134,7 @@ public class BaseActivity extends AppCompatActivity {
                 if (groupPosition == 2 && childPosition == 1) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new VerticalViewPagerFragment(), "VerticalViewPagerFragment")
+                            replace(R.id.content_frame, new SuccessStoriesFrag(), "VerticalViewPagerFragment")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
@@ -195,7 +195,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (groupPosition == 1 && childPosition == 3) {
-                    Intent intent = new Intent(BaseActivity.this, our_volunteer.class);
+                    Intent intent = new Intent(BaseActivity.this, OurVolunteers.class);
                     ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
                     tempList = subcategory_name.get(groupPosition);
 

@@ -11,7 +11,7 @@ import android.content.ActivityNotFoundException;
 
         import java.util.Locale;
 
-public class Contact_us extends BaseActivity {
+public class ContactUs extends BaseActivity {
     Button button2,button4,button3;
     EditText editText5;
 
@@ -55,7 +55,7 @@ public class Contact_us extends BaseActivity {
     }
 
     public void ring(View v) {
-        Intent myIntent = new Intent(Contact_us.this, Ring_contact_us.class);
+        Intent myIntent = new Intent(ContactUs.this, ringContactUs.class);
 
         startActivity(myIntent);
     }

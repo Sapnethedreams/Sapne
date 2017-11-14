@@ -35,7 +35,7 @@
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
         <activity android:name="ngo.sapne.intents.sapne.JoinUs" />
 
-        <activity android:name="ngo.sapne.intents.sapne.Register_user"
+        <activity android:name="ngo.sapne.intents.sapne.registerUser"
                   android:label="Sign up"
                   android:screenOrientation="portrait"
             />
@@ -71,32 +71,32 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="ngo.sapne.intents.sapne.our_volunteer"
+            android:name="ngo.sapne.intents.sapne.OurVolunteers"
             android:label="Our Team"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="ngo.sapne.intents.sapne.Contact_us"
+            android:name="ngo.sapne.intents.sapne.ContactUs"
             android:label="Contact Us "
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="ngo.sapne.intents.sapne.Ring_contact_us"
+            android:name="ngo.sapne.intents.sapne.ringContactUs"
             android:label="Contact Us"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="ngo.sapne.intents.sapne.Location_contact_us"
+            android:name="ngo.sapne.intents.sapne.locationContactUs"
             android:label="Location"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="ngo.sapne.intents.sapne.all_volunteer"
+            android:name="ngo.sapne.intents.sapne.AllVolunteers"
             android:label="Volunteers"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />

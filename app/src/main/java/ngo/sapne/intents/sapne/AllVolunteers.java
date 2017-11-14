@@ -2,7 +2,7 @@ package ngo.sapne.intents.sapne;
 
 import android.os.Bundle;
 
-public class all_volunteer extends BaseActivity {
+public class AllVolunteers extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
