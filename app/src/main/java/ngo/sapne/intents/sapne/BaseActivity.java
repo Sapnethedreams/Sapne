@@ -77,10 +77,10 @@ public class BaseActivity extends AppCompatActivity {
                             replace(R.id.content_frame, new EventsFragment(), "EventsFragment")
                             .commit();
                 } else if (groupPosition == 5) {
-                    /*getSupportFragmentManager().
+                    getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new Contact_us(), "Contact_us")
-                            .commit();*/
+                            replace(R.id.content_frame, new ContactUs(), "ContactUs")
+                            .commit();
                 } else if (groupPosition == 6) {
                     /*getSupportFragmentManager().
                             beginTransaction().
@@ -95,7 +95,7 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 2) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new SuccessStoriesFrag(), "VerticalViewPagerFragment")
+                            replace(R.id.content_frame, new SuccessStoriesFrag(), "SuccessStoriesFrag")
                             .commit();
                 } else if (parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
@@ -122,14 +122,10 @@ public class BaseActivity extends AppCompatActivity {
                 //calling CatWiseSearchResults with parameters of subcat code.
                 //CatWiseSearchResults will fetch items based on subcatcode.
                 if (groupPosition == 1 && childPosition == 1) {
-                    Intent intent = new Intent(BaseActivity.this, Activities.class);
-
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
-
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
-                    mDrawerLayout.closeDrawer(mCategoryList);
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new Activities(), "Activities")
+                            .commit();
                 }
                 if (groupPosition == 2 && childPosition == 1) {
                     getSupportFragmentManager().

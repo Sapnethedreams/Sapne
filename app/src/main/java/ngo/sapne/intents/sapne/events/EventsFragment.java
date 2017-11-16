@@ -36,7 +36,7 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.content_events, container);
+        View view = inflater.inflate(R.layout.fragment_events, container);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
         rateItemButton = view.findViewById(R.id.item_btn_rate);
@@ -59,7 +59,6 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
         view.findViewById(R.id.item_btn_buy).setOnClickListener(this);
         view.findViewById(R.id.item_btn_comment).setOnClickListener(this);
 
-        view.findViewById(R.id.home).setOnClickListener(this);
         view.findViewById(R.id.btn_smooth_scroll).setOnClickListener(this);
         view.findViewById(R.id.btn_transition_time).setOnClickListener(this);
         return view;

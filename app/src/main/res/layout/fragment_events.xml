@@ -8,16 +8,6 @@
     android:orientation="vertical"
     tools:context=".events.EventsFragment">
 
-    <ImageView
-        android:id="@+id/home"
-        style="@style/ClickableImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
-
     <Space
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -32,7 +22,7 @@
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:text="Stoneware + Porcelain Plate" />
+        tools:text="Lohri Celebration" />
 
     <Space
         android:layout_width="wrap_content"
@@ -43,9 +33,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:maxLines="3"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        tools:text="$24.00 USD" />
+        tools:text="Main event" />
 
     <Space
         android:layout_width="wrap_content"
@@ -116,6 +110,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="monospace"
             android:text="Donate Us"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimary" />
@@ -125,6 +120,7 @@
             style="?android:borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
             android:layout_weight="1"
             android:text="See more"
             android:textAllCaps="true"
