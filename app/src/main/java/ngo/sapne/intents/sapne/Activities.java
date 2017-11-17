@@ -54,9 +54,7 @@ public class Activities extends Fragment {
             " The diya making sessions conducted by Team Sapne for differently abled kids.", "Induction session at siraspur centre." +
             " Our young and aspiring team has made this event successful.", "“When we are happy, we dance.” But sometimes, “To be happy, we should dance.” And hence," +
             " we are inviting our choreographer to enhance the skills of these children by teaching them ‘dance’ " +
-            "and hence making these children happy. Children are excited to learn from him.", "With this vision in mind,Sapne organised \"A grand cleanliness drive\" on September'11 2016." +
-            "With brooms in Hand, our army of volunteers marched the roads of rohini around 5 pm." +
-            " People joined in large number and supported the cause.", "While moving on the roads , we see many children who have not worn proper clothes , who are deprived of " +
+            "and hence making these children happy. Children are excited to learn from him.", "While moving on the roads , we see many children who have not worn proper clothes , who are deprived of " +
             "the basic needs , who should study and play at this age , but due to their financial conditions ," +
             " they can't even think of doing all these things because , for them , three-time meal is more than enough for " +
             "survival.", "We cannot stop celebrating friendship day with our friends any day." +
@@ -89,7 +87,7 @@ public class Activities extends Fragment {
             R.drawable.z7, R.drawable.z8,
             R.drawable.z9, R.drawable.z10, R.drawable.z11, R.drawable.z12, R.drawable.z13, R.drawable.z14, R.drawable.z15,
             R.drawable.z16, R.drawable.z17,
-            R.drawable.z18, R.drawable.z19, R.drawable.z21, R.drawable.z22, R.drawable.z23, R.drawable.z24,
+            R.drawable.z18, R.drawable.z19, R.drawable.z22, R.drawable.z23, R.drawable.z24,
             R.drawable.z25, R.drawable.z26,
             R.drawable.z27, R.drawable.z28, R.drawable.z29
 
