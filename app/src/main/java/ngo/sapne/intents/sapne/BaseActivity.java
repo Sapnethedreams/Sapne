@@ -90,8 +90,8 @@ public class BaseActivity extends AppCompatActivity {
                     parent.collapseGroup(groupPosition);
 
                 } else if (groupPosition == 3) {
-                    /*Intent intent = new Intent(BaseActivity.this, Products.class);
-                    startActivity(intent);*/
+                    Intent intent = new Intent(BaseActivity.this, Products.class);
+                    startActivity(intent);
                 } else if (groupPosition == 2) {
                     getSupportFragmentManager().
                             beginTransaction().
@@ -126,12 +126,15 @@ public class BaseActivity extends AppCompatActivity {
                             beginTransaction().
                             replace(R.id.content_frame, new Activities(), "Activities")
                             .commit();
+
+                    mDrawerLayout.closeDrawer(mCategoryList);
                 }
                 if (groupPosition == 2 && childPosition == 1) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new SuccessStoriesFrag(), "VerticalViewPagerFragment")
                             .commit();
+
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
                 if (groupPosition == 0 && childPosition == 0) {
@@ -139,6 +142,7 @@ public class BaseActivity extends AppCompatActivity {
                             beginTransaction().
                             replace(R.id.content_frame, new AboutUs(), "AboutUs")
                             .commit();
+
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
@@ -222,12 +226,11 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (groupPosition == 0 && childPosition == 3) {
-                    Intent intent = new Intent(BaseActivity.this, OurTeam.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new OurTeam(), "OurTeam")
+                            .commit();
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
 /*

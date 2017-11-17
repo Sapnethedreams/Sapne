@@ -9,7 +9,6 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#faf0e6"
         android:orientation="vertical"
         android:weightSum="1"
         tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity">
@@ -18,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="343dp"
             android:layout_weight="0.66"
-            android:background="#faf0e6"
             android:orientation="vertical"
             android:paddingBottom="16dp"
             android:weightSum="1">
@@ -50,12 +48,12 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#faf0e6"
             android:orientation="vertical">
 
             <Button
@@ -64,9 +62,9 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:background="@color/linen"
+                android:background="@android:color/transparent"
                 android:elevation="3dp"
-
+                android:fontFamily="serif"
                 android:onClick="explore"
                 android:text="Explore Journey of Sapne"
                 android:textAlignment="center"
@@ -79,13 +77,9 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
                 <Button
                     android:id="@+id/btnDonate1"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:background="@drawable/custombutton"
-
-
                     android:onClick="donate1"
                     android:text="Donate Us"
                     android:textAlignment="center"
@@ -94,24 +88,21 @@ That’s why, we at SAPNE, are committed to ensure that every child gets a platf
 
                 <Button
                     android:id="@+id/btnJoinUs1"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_marginLeft="25dp"
-
                     android:layout_toRightOf="@+id/btnDonate1"
                     android:background="@drawable/custombutton"
                     android:onClick="join1"
                     android:text="Join Us"
                     android:textColor="@android:color/white"
-
                     android:textStyle="bold">
 
                 </Button>
-            </RelativeLayout>
-        </LinearLayout>
 
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

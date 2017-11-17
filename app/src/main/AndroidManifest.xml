@@ -68,11 +68,6 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurTeam"
-            android:label="@string/title_activity_our_team"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

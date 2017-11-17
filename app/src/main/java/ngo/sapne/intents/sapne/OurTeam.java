@@ -4,27 +4,27 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-public class OurTeam extends BaseActivity implements View.OnClickListener{
+public class OurTeam extends Fragment implements View.OnClickListener{
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_our_team);
-        getLayoutInflater().inflate(R.layout.activity_our_team, frameLayout);
-        LayoutInflater inflater = (LayoutInflater) this
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View contentView = inflater.inflate(R.layout.activity_our_team, null, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_our_team, container);
 
-
-        ImageButton fbButton = (ImageButton) contentView.findViewById(R.id.devesh_fb);
-        ImageButton instaButton = (ImageButton) contentView.findViewById(R.id.devesh_insta);
+        ImageButton fbButton = view.findViewById(R.id.devesh_fb);
+        ImageButton instaButton = view.findViewById(R.id.devesh_insta);
 
         fbButton.setOnClickListener(this);
         instaButton.setOnClickListener(this);
+
+        return view;
     }
 
     @Override
