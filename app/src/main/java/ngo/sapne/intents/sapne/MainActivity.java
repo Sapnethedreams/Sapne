@@ -1,5 +1,6 @@
 package ngo.sapne.intents.sapne;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,7 +71,7 @@ public class MainActivity extends BaseActivity {
 
     public void join1(View v)
     {
-        Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+        Intent intent=new Intent(getApplicationContext(), FragmentJoinUs.class);
         startActivity(intent);
 
 

@@ -35,8 +35,7 @@
             </intent-filter>
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
-        <activity android:name="ngo.sapne.intents.sapne.JoinUs" />
-
+        <activity android:name="ngo.sapne.intents.sapne.FragmentJoinUs" />
         <activity android:name="ngo.sapne.intents.sapne.RegisterUser"
                   android:label="Sign up"
                   android:screenOrientation="portrait"
