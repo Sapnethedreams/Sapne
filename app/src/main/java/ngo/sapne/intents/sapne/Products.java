@@ -2,18 +2,17 @@ package ngo.sapne.intents.sapne;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-/**
- * Created by dell pc on 18/08/2017.
- */
 
-public class Products extends BaseActivity {
+public class Products extends Fragment {
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //setContentView(R.layout.products_activity);
-        getLayoutInflater().inflate(R.layout.products_activity, frameLayout);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.products_activity, container, false);
     }
-  
 }

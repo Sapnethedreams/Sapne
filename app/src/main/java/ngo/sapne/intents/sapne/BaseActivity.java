@@ -28,7 +28,6 @@ import com.mzelzoghbi.zgallery.entities.ZColor;
 import java.util.ArrayList;
 
 import ngo.sapne.intents.sapne.events.EventsFragment;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 
 public class BaseActivity extends AppCompatActivity {
@@ -37,8 +36,8 @@ public class BaseActivity extends AppCompatActivity {
     protected FrameLayout frameLayout;
 
     protected DrawerLayout mDrawerLayout;
-    Toolbar toolbar;
-    int previousGroup;
+    private Toolbar toolbar;
+    private int previousGroup;
     private ActionBarDrawerToggle mDrawerToggle;
     private ExpandableListView mCategoryList;
     private ArrayList<Category> category_name = new ArrayList<Category>();
@@ -49,9 +48,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        frameLayout = findViewById(R.id.content_frame);
         this.getCatData();
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -64,6 +61,11 @@ public class BaseActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         mCategoryList.setGroupIndicator(null);
+
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_frame, new MainActivity(), "MainActivity")
+                .commit();
 
         //defining the behavior when any group is clicked in expandable listview
         mCategoryList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
@@ -82,16 +84,18 @@ public class BaseActivity extends AppCompatActivity {
                             replace(R.id.content_frame, new ContactUs(), "ContactUs")
                             .commit();
                 } else if (groupPosition == 6) {
-                    /*getSupportFragmentManager().
+                    getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new MainActivity(), "MainActivity")
-                            .commit();*/
+                            .commit();
                 } else if (parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
 
                 } else if (groupPosition == 3) {
-                    Intent intent = new Intent(BaseActivity.this, Products.class);
-                    startActivity(intent);
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new Products(), "Products")
+                            .commit();
                 } else if (groupPosition == 2) {
                     getSupportFragmentManager().
                             beginTransaction().
@@ -154,18 +158,15 @@ public class BaseActivity extends AppCompatActivity {
                             .commit();
 
                     mDrawerLayout.closeDrawer(mCategoryList);
-
                 }
 
                 if (groupPosition == 1 && childPosition == 0) {
-                    Intent intent = new Intent(BaseActivity.this, RegularCamps.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new RegularCamps(), "RegularCamps")
+                            .commit();
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
-
                 }
 
                 if (groupPosition == 1 && childPosition == 2) {
@@ -195,27 +196,14 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (groupPosition == 1 && childPosition == 3) {
-                    Intent intent = new Intent(BaseActivity.this, OurVolunteers.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new OurVolunteers(), "OurVolunteers")
+                            .commit();
 
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 }
-
-//                if(groupPosition==3&&childPosition==0)
-//                {
-//                    Intent intent = new Intent(MainActivity.this, Products.class);
-//                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-//                    tempList = subcategory_name.get(groupPosition);
-
-//                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-//                    startActivity(intent);
-//                    mDrawerLayout.closeDrawer(mCategoryList);
-
-//                }
 
                 if (groupPosition == 0 && childPosition == 2) {
                     getSupportFragmentManager().
@@ -233,20 +221,8 @@ public class BaseActivity extends AppCompatActivity {
 
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
-/*
-                if(groupPosition==0&&childPosition==2)
-                {
-                    Intent intent = new Intent(BaseActivity.this, OurVision.class);
-                    ArrayList<SubCategory> tempList = new ArrayList<SubCategory>();
-                    tempList = subcategory_name.get(groupPosition);
-
-                    intent.putExtra("subcategory", tempList.get(childPosition).getSubCatCode());
-                    startActivity(intent);
-                    mDrawerLayout.closeDrawer(mCategoryList);
-                }*/
 
                 return true;
-
             }
         });
 
@@ -267,10 +243,7 @@ public class BaseActivity extends AppCompatActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -279,19 +252,18 @@ public class BaseActivity extends AppCompatActivity {
         switch (itemId) {
 
             case R.id.login1:
-
                 Intent myIntent = new Intent(BaseActivity.this, LoginActivity.class);
                 startActivity(myIntent);
                 break;
             case R.id.notification:
-                Intent myIntent1 = new Intent(BaseActivity.this, MainActivity.class);
-                startActivity(myIntent1);
-
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.content_frame, new MainActivity(), "MainActivity")
+                        .commit();
                 break;
         }
         return true;
     }
-
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -304,7 +276,6 @@ public class BaseActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
-
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -374,24 +345,16 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatch.setSubCatCode("1003");
         subCategoryMatches.add(subCategoryMatch);
 
-//        subCategoryMatch = new SubCategory();
-//        subCategoryMatch.setSubCatName("Core Team");
-//        subCategoryMatch.setSubCatCode("1004");
-//        subCategoryMatches.add(subCategoryMatch);
-
-
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
         //---
 
         subCategoryMatches = new ArrayList<SubCategory>();
 
-
         subCategoryMatch = new SubCategory();
         subCategoryMatch.setSubCatName("Regular Camps");
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
-
 
         subCategoryMatch = new SubCategory();
         subCategoryMatch.setSubCatName("Activities Corner");
@@ -408,11 +371,8 @@ public class BaseActivity extends AppCompatActivity {
         subCategoryMatch.setSubCatCode("2002");
         subCategoryMatches.add(subCategoryMatch);
 
-
         subcategory_name.add(subCategoryMatches);
         subCatCount.add(subCategoryMatches.size());
-
-
     }
 
     public class expandableListViewAdapter extends BaseExpandableListAdapter {
@@ -432,8 +392,6 @@ public class BaseActivity extends AppCompatActivity {
             this.subCategoryName = subCategoryName;
             this.subCategoryCount = subCategoryCount;
             this.count = categoryName.size();
-
-
         }
 
 
@@ -493,16 +451,11 @@ public class BaseActivity extends AppCompatActivity {
             ImageView indicator = (ImageView) view.findViewById(R.id.expicon);
 
             if (groupPsition != 0 && groupPsition != 1)
-
             {
                 indicator.setVisibility(View.INVISIBLE);
-
             } else {
-
                 indicator.setVisibility(View.VISIBLE);
                 indicator.setImageResource(isExpanded ? R.drawable.ic_keyboard_arrow_up_black_24dp : R.drawable.ic_keyboard_arrow_down_black_24dp);
-
-
             }
 
             return view;
@@ -513,16 +466,13 @@ public class BaseActivity extends AppCompatActivity {
         public View getChildView(int i, int i1, boolean isExpanded, View view, ViewGroup viewGroup) {
             if (view == null) {
                 view = layoutInflater.inflate(R.layout.expandablelistviewsubcat, viewGroup, false);
-
             }
 
             singleChild = getChild(i, i1);
 
             TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
             childSubCategoryName.setTypeface(type);
-
             childSubCategoryName.setText(singleChild.getSubCatName());
-
             return view;
 
         }

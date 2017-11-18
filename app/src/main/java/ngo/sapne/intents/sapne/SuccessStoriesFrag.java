@@ -24,12 +24,11 @@ public class SuccessStoriesFrag extends android.support.v4.app.Fragment {
             ViewPager.setAdapter(new VerticalPagerAdapter(mContext));
 
             return view;
-
     }
 
     public static SuccessStoriesFrag newInstance()
     {
-        SuccessStoriesFrag fragment=new SuccessStoriesFrag();
+        SuccessStoriesFrag fragment = new SuccessStoriesFrag();
         return fragment;
     }
 }
