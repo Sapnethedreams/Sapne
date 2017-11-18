@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.VideoView;
 
 
-public class splash extends Activity {
+public class Splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

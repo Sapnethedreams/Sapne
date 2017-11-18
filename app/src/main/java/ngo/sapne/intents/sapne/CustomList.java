@@ -11,12 +11,12 @@ import android.widget.TextView;
 /**
  * Created by work on 8/21/2017.
  */
-public class customList extends ArrayAdapter<String> {
+public class CustomList extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] web;
     private final Integer[] imageId;
-    public customList(Activity context,
+    public CustomList(Activity context,
                       String[] web, Integer[] imageId) {
         super(context, R.layout.list_single, web);
         this.context = context;
