@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import android.widget.ImageView;
 import ngo.sapne.intents.sapne.events.ExtraEventsFragment;
 
 
-public class MainActivity extends Fragment implements View.OnClickListener {
+public class MainActivity extends android.support.v4.app.Fragment implements View.OnClickListener {
 
     private ImageView img;
 
@@ -73,10 +72,15 @@ public class MainActivity extends Fragment implements View.OnClickListener {
 
     }
 
-    public void join1(View v) {
+    /*public void join1(View v) {
         Intent intent = new Intent(getActivity(), JoinUs.class);
-        startActivity(intent);
     }
+
+    public void join1(View v)
+    {
+        Intent intent=new Intent(getActivity(), FragmentJ.class);
+        startActivity(intent);
+    }*/
 
     @Override
     public void onClick(View view) {
@@ -91,7 +95,7 @@ public class MainActivity extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btnDonate1:
-                join1(view);
+                //join1(view);
                 break;
         }
     }

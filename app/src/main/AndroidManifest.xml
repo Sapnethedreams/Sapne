@@ -33,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
-        <activity android:name="ngo.sapne.intents.sapne.JoinUs" />
 
         <activity
             android:name="ngo.sapne.intents.sapne.RegisterUser"
@@ -47,13 +46,6 @@
             android:name="ngo.sapne.intents.sapne.LoginActivity"
             android:label="Sign in"
             android:screenOrientation="portrait"/>
-
-        <activity
-            android:name="ngo.sapne.intents.sapne.Products"
-            android:label="Products"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

@@ -43,7 +43,7 @@ public void donate1(View v)
 
 public void join1(View v)
 {
-    Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+    Intent intent=new Intent(getApplicationContext(),FragmentJoinUs.class);
     startActivity(intent);
 
 
