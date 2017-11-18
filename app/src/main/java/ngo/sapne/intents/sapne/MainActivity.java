@@ -78,7 +78,11 @@ public class MainActivity extends android.support.v4.app.Fragment implements Vie
 
     public void join1(View v)
     {
+<<<<<<< HEAD
         Intent intent=new Intent(getActivity(), FragmentJ.class);
+=======
+        Intent intent=new Intent(getApplicationContext(),JoinUs.class);
+>>>>>>> parent of f59aee2... Fragment Work
         startActivity(intent);
     }*/
 
