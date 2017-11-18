@@ -37,7 +37,7 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.content_events, container);
+        View view = inflater.inflate(R.layout.content_events, container, false);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
         rateItemButton = view.findViewById(R.id.item_btn_rate);

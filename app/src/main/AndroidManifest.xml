@@ -17,17 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name="ngo.sapne.intents.sapne.BaseActivity">
+        <activity
+            android:name="ngo.sapne.intents.sapne.BaseActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="ngo.sapne.intents.sapne.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name="ngo.sapne.intents.sapne.splash">
+        <activity android:name="ngo.sapne.intents.sapne.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,38 +33,19 @@
             </intent-filter>
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
-        <activity android:name="ngo.sapne.intents.sapne.FragmentJoinUs" />
-        <activity android:name="ngo.sapne.intents.sapne.RegisterUser"
-                  android:label="Sign up"
-                  android:screenOrientation="portrait"
-            />
-        <activity android:name="ngo.sapne.intents.sapne.ProfileActivity"
-                  android:label="Sapne User Information"
-                  android:screenOrientation="portrait"
-            />
-        <activity android:name="ngo.sapne.intents.sapne.LoginActivity"
-                  android:label="Sign in"
-                  android:screenOrientation="portrait">
-        </activity>
 
         <activity
-            android:name="ngo.sapne.intents.sapne.Products"
-            android:label="Products"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.RegisterUser"
+            android:label="Sign up"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="ngo.sapne.intents.sapne.RegularCamps"
-            android:label="Regular camps "
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.ProfileActivity"
+            android:label="Sapne User Information"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="ngo.sapne.intents.sapne.OurVolunteers"
-            android:label="Our Team"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.LoginActivity"
+            android:label="Sign in"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -7,9 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.VideoView;
 
-//Created by work on 8/24/2017.
 
-public class splash extends Activity {
+public class Splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +31,7 @@ public class splash extends Activity {
         vView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), BaseActivity.class));
                 finish();
             }
 

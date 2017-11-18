@@ -22,7 +22,7 @@ public class ContactUs extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.contact_us, container);
+        View view = inflater.inflate(R.layout.contact_us, container, false);
         button3 = view.findViewById(R.id.button3);
         button4 = view.findViewById(R.id.button4);
 

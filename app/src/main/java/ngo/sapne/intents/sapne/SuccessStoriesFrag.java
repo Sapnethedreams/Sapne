@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 public class SuccessStoriesFrag extends android.support.v4.app.Fragment {
 
     VerticalViewPager ViewPager;
-    Context mContext;
 
     public SuccessStoriesFrag()
     {
@@ -21,15 +20,14 @@ public class SuccessStoriesFrag extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.success_stories_fragment, container, false);
             ViewPager = view.findViewById(R.id.viewpager8);
-            ViewPager.setAdapter(new VerticalPagerAdapter(mContext));
+            ViewPager.setAdapter(new VerticalPagerAdapter(getActivity()));
 
             return view;
-
     }
 
     public static SuccessStoriesFrag newInstance()
     {
-        SuccessStoriesFrag fragment=new SuccessStoriesFrag();
+        SuccessStoriesFrag fragment = new SuccessStoriesFrag();
         return fragment;
     }
 }

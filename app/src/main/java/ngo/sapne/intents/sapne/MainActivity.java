@@ -1,32 +1,30 @@
 package ngo.sapne.intents.sapne;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import ngo.sapne.intents.sapne.events.ExtraEventsFragment;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends android.support.v4.app.Fragment implements View.OnClickListener {
 
-    public Button btnJoinUs1,btnSubmit1,explore;
-    ImageView img;
+    private ImageView img;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_main, frameLayout);
-        img=(ImageView)findViewById(R.id.mainimgview);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_main, container, false);
+        img = view.findViewById(R.id.mainimgview);
 
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/Roboto-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
-
-        final int []imageArray={R.drawable.p11,R.drawable.p12,R.drawable.p3,R.drawable.p13,R.drawable.p6,R.drawable.p7,R.drawable.p8,R.drawable.p5,R.drawable.p14,R.drawable.p1};
+        final int[] imageArray = {R.drawable.p5, R.drawable.p1, R.drawable.p8, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
 
         try {
             final Handler handler = new Handler();
@@ -43,41 +41,57 @@ public class MainActivity extends BaseActivity {
                 }
             };
             handler.postDelayed(runnable, 25); //for initial delay..
-        } catch (OutOfMemoryError ignored){}
+        } catch (OutOfMemoryError ignored) {
+        }
 
-
-        explore=(Button)findViewById(R.id.explore);
-            btnJoinUs1= (Button) findViewById(R.id.btnJoinUs1);
-        btnSubmit1= (Button) findViewById(R.id.btnDonate1);
-
-
-
+        return view;
     }
 
-        public void explore(View v)
-        {
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-            Intent intent=new Intent(getApplicationContext(),ExtraEventsFragment.class);
-            startActivity(intent);
+        Button explore = getActivity().findViewById(R.id.explore);
+        Button btnJoinUs1 = getActivity().findViewById(R.id.btnJoinUs1);
+        Button btnSubmit1 = getActivity().findViewById(R.id.btnDonate1);
 
-        }
-    public void donate1(View v)
-    {
+        explore.setOnClickListener(this);
+        btnJoinUs1.setOnClickListener(this);
+        btnSubmit1.setOnClickListener(this);
+    }
+
+    public void explore(View v) {
+        Intent intent = new Intent(getActivity(), ExtraEventsFragment.class);
+        startActivity(intent);
+    }
+
+    public void donate1(View v) {
 
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));
         startActivity(myIntent);
 
     }
 
-    public void join1(View v)
-    {
-        Intent intent=new Intent(getApplicationContext(), FragmentJoinUs.class);
-        startActivity(intent);
-
-
-
+    public void join1(View v) {
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+            case R.id.explore:
+                explore(view);
+                break;
+
+            case R.id.btnJoinUs1:
+                donate1(view);
+                break;
+
+            case R.id.btnDonate1:
+                join1(view);
+                break;
+        }
+    }
 }
 
