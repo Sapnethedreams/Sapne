@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="ngo.sapne.intents.sapne.splash">
+        <activity android:name="ngo.sapne.intents.sapne.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
