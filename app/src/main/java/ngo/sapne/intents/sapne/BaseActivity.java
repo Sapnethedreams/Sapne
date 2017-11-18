@@ -78,16 +78,22 @@ public class BaseActivity extends AppCompatActivity {
                             beginTransaction().
                             replace(R.id.content_frame, new EventsFragment(), "EventsFragment")
                             .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
                 } else if (groupPosition == 5) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new ContactUs(), "ContactUs")
                             .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
                 } else if (groupPosition == 6) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new MainActivity(), "MainActivity")
                             .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
                 } else if (parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
 
@@ -96,11 +102,15 @@ public class BaseActivity extends AppCompatActivity {
                             beginTransaction().
                             replace(R.id.content_frame, new Products(), "Products")
                             .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
                 } else if (groupPosition == 2) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new SuccessStoriesFrag(), "SuccessStoriesFrag")
                             .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
                 } else if (parent.isGroupExpanded(groupPosition)) {
                     parent.collapseGroup(groupPosition);
                 } else {

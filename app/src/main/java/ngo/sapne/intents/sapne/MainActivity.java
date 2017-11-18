@@ -25,7 +25,7 @@ public class MainActivity extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.activity_main, container, false);
         img = view.findViewById(R.id.mainimgview);
 
-        final int[] imageArray = {R.drawable.p1};
+        final int[] imageArray = {R.drawable.p5, R.drawable.p1, R.drawable.p8, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
 
         try {
             final Handler handler = new Handler();
