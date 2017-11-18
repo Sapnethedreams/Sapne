@@ -64,7 +64,7 @@ public class BaseActivity extends AppCompatActivity {
 
         getSupportFragmentManager().
                 beginTransaction().
-                replace(R.id.content_frame, new MainActivity(), "MainActivity")
+                replace(R.id.content_frame, new MainFragment(), "MainActivity")
                 .commit();
 
         //defining the behavior when any group is clicked in expandable listview
@@ -90,7 +90,7 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 6) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new MainActivity(), "MainActivity")
+                            replace(R.id.content_frame, new MainFragment(), "MainActivity")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
@@ -268,7 +268,7 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.notification:
                 getSupportFragmentManager().
                         beginTransaction().
-                        replace(R.id.content_frame, new MainActivity(), "MainActivity")
+                        replace(R.id.content_frame, new MainFragment(), "MainActivity")
                         .commit();
                 break;
         }

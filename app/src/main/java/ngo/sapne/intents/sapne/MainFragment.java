@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import ngo.sapne.intents.sapne.events.ExtraEventsFragment;
 
 
-public class MainActivity extends android.support.v4.app.Fragment implements View.OnClickListener {
+public class MainFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
 
     private ImageView img;
 
@@ -24,7 +24,7 @@ public class MainActivity extends android.support.v4.app.Fragment implements Vie
         View view = inflater.inflate(R.layout.activity_main, container, false);
         img = view.findViewById(R.id.mainimgview);
 
-        final int[] imageArray = {R.drawable.p5, R.drawable.p1, R.drawable.p8, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
+        final int[] imageArray = {R.drawable.p8, R.drawable.p5, R.drawable.p1, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
 
         try {
             final Handler handler = new Handler();
@@ -52,28 +52,31 @@ public class MainActivity extends android.support.v4.app.Fragment implements Vie
         super.onActivityCreated(savedInstanceState);
 
         Button explore = getActivity().findViewById(R.id.explore);
-        Button btnJoinUs1 = getActivity().findViewById(R.id.btnJoinUs1);
-        Button btnSubmit1 = getActivity().findViewById(R.id.btnDonate1);
+        Button btnJoinUs = getActivity().findViewById(R.id.btnJoinUs1);
+        Button btnSubmit = getActivity().findViewById(R.id.btnDonate1);
 
         explore.setOnClickListener(this);
-        btnJoinUs1.setOnClickListener(this);
-        btnSubmit1.setOnClickListener(this);
+        btnJoinUs.setOnClickListener(this);
+        btnSubmit.setOnClickListener(this);
     }
 
-    public void explore(View v) {
-        Intent intent = new Intent(getActivity(), ExtraEventsFragment.class);
-        startActivity(intent);
+    public void explore() {
+        getActivity().getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_frame, new ExtraEventsFragment(), "ExtraEventsFragment")
+                .commit();
     }
 
-    public void donate1(View v) {
-
+    public void donate(View v) {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));
         startActivity(myIntent);
-
     }
 
-    public void join1(View v) {
-
+    public void join() {
+        getActivity().getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_frame, new FragmentJoinUs(), "FragmentJoinUs")
+                .commit();
     }
 
     @Override
@@ -81,15 +84,15 @@ public class MainActivity extends android.support.v4.app.Fragment implements Vie
 
         switch (view.getId()) {
             case R.id.explore:
-                explore(view);
+                explore();
                 break;
 
             case R.id.btnJoinUs1:
-                donate1(view);
+                join();
                 break;
 
             case R.id.btnDonate1:
-                join1(view);
+                donate(view);
                 break;
         }
     }

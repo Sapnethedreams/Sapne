@@ -8,15 +8,6 @@
     tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurMission"
     android:background="@drawable/mission_bg">
 
-
-
     <include layout="@layout/content_our_mission" />
-
-
-    <fragment
-        android:name="ngo.sapne.intents.sapne.OurMission"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
 
 </android.support.design.widget.CoordinatorLayout>
