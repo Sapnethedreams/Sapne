@@ -1,10 +1,11 @@
 package ngo.sapne.intents.sapne.events;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,7 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
-        rateItemButton = view.findViewById(R.id.item_btn_rate);
+        rateItemButton = view.findViewById(R.id.item_btn_lnik);
 
         eventList = EventList.get();
         data = eventList.getData();
@@ -48,37 +49,41 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
         itemPicker.addOnItemChangedListener(this);
         infiniteAdapter = InfiniteScrollAdapter.wrap(new EventsAdapter(data));
         itemPicker.setAdapter(infiniteAdapter);
-        itemPicker.setItemTransitionTimeMillis(400);
+        itemPicker.setItemTransitionTimeMillis(500);
         itemPicker.setItemTransformer(new ScaleTransformer.Builder()
                 .setMinScale(0.8f)
                 .build());
 
         onItemChanged(data.get(0));
 
-        view.findViewById(R.id.item_btn_rate).setOnClickListener(this);
-        view.findViewById(R.id.item_btn_buy).setOnClickListener(this);
-        view.findViewById(R.id.item_btn_comment).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_lnik).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_right).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_star).setOnClickListener(this);
 
-        view.findViewById(R.id.btn_smooth_scroll).setOnClickListener(this);
-        view.findViewById(R.id.btn_transition_time).setOnClickListener(this);
+        view.findViewById(R.id.btn_events_donate).setOnClickListener(this);
+        view.findViewById(R.id.btn_events_more).setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.item_btn_rate:
-                int realPosition = infiniteAdapter.getRealPosition(itemPicker.getCurrentItem());
-                EventItem current = data.get(realPosition);
-                changeRateButtonState();
+            case R.id.item_btn_lnik:
+                //int realPosition = infiniteAdapter.getRealPosition(itemPicker.getCurrentItem());
+                //EventItem current = data.get(realPosition);
                 break;
-            case R.id.home:
-
+            case R.id.btn_events_more:
+                getActivity().getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.content_frame, new ExtraEventsFragment(), "ExtraEventsFragment")
+                        .commit();
                 break;
-            case R.id.btn_transition_time:
-                break;
-            case R.id.btn_smooth_scroll:
+            case R.id.item_btn_right:
                 DiscreteScrollViewOptions.smoothScrollToUserSelectedPosition(itemPicker, v);
+                break;
+            case R.id.btn_events_donate:
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));
+                startActivity(myIntent);
                 break;
             default:
                 showUnsupportedSnackBar();
@@ -89,12 +94,6 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
     private void onItemChanged(EventItem eventItem) {
         currentItemName.setText(eventItem.getName());
         currentItemPrice.setText(eventItem.getDesc());
-        changeRateButtonState();
-    }
-
-    private void changeRateButtonState() {
-            rateItemButton.setImageResource(R.drawable.common_google_signin_btn_icon_dark);
-            rateItemButton.setColorFilter(ContextCompat.getColor(getContext(), R.color.black));
     }
 
     @Override

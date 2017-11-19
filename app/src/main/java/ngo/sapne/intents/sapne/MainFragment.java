@@ -67,7 +67,7 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
                 .commit();
     }
 
-    public void donate(View v) {
+    public void donate() {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));
         startActivity(myIntent);
     }
@@ -92,7 +92,7 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
                 break;
 
             case R.id.btnDonate1:
-                donate(view);
+                donate();
                 break;
         }
     }

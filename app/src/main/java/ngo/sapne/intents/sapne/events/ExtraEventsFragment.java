@@ -19,7 +19,6 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import java.util.List;
 
-import ngo.sapne.intents.sapne.BaseActivity;
 import ngo.sapne.intents.sapne.R;
 
 public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.OnItemChangedListener,
@@ -40,10 +39,10 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
-        rateItemButton = view.findViewById(R.id.item_btn_rate);
+        rateItemButton = view.findViewById(R.id.item_btn_lnik);
 
         eventList = EventList.get();
-        data = eventList.getData();
+        data = eventList.getExtraData();
         itemPicker = view.findViewById(R.id.item_picker);
         itemPicker.setOrientation(Orientation.HORIZONTAL);
         itemPicker.addOnItemChangedListener(this);
@@ -56,19 +55,19 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
 
         onItemChanged(data.get(0));
 
-        view.findViewById(R.id.item_btn_rate).setOnClickListener(this);
-        view.findViewById(R.id.item_btn_buy).setOnClickListener(this);
-        view.findViewById(R.id.item_btn_comment).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_lnik).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_right).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_star).setOnClickListener(this);
 
-        view.findViewById(R.id.btn_smooth_scroll).setOnClickListener(this);
-        view.findViewById(R.id.btn_transition_time).setOnClickListener(this);
+        view.findViewById(R.id.btn_events_donate).setOnClickListener(this);
+        view.findViewById(R.id.btn_events_more).setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.item_btn_rate:
+            case R.id.item_btn_lnik:
                 int realPosition = infiniteAdapter.getRealPosition(itemPicker.getCurrentItem());
                 EventItem current = data.get(realPosition);
                 changeRateButtonState();
@@ -76,9 +75,9 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
             case R.id.home:
 
                 break;
-            case R.id.btn_transition_time:
+            case R.id.btn_events_more:
                 break;
-            case R.id.btn_smooth_scroll:
+            case R.id.btn_events_donate:
                 DiscreteScrollViewOptions.smoothScrollToUserSelectedPosition(itemPicker, v);
                 break;
             default:

@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,7 @@ import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mzelzoghbi.zgallery.ZGallery;
 import com.mzelzoghbi.zgallery.entities.ZColor;
@@ -34,6 +37,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public Button login;
     protected FrameLayout frameLayout;
+    private boolean doubleBackToExitPressedOnce = false;
 
     protected DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -64,7 +68,7 @@ public class BaseActivity extends AppCompatActivity {
 
         getSupportFragmentManager().
                 beginTransaction().
-                replace(R.id.content_frame, new MainFragment(), "MainActivity")
+                replace(R.id.content_frame, new MainFragment(), "MainFragment")
                 .commit();
 
         //defining the behavior when any group is clicked in expandable listview
@@ -90,7 +94,7 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 6) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new MainFragment(), "MainActivity")
+                            replace(R.id.content_frame, new MainFragment(), "MainFragment")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
@@ -266,10 +270,13 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(myIntent);
                 break;
             case R.id.notification:
-                getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.content_frame, new MainFragment(), "MainActivity")
-                        .commit();
+                Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
+                if (mainFrag == null) {
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new MainFragment(), "MainFragment")
+                            .commit();
+                }
                 break;
         }
         return true;
@@ -292,6 +299,33 @@ public class BaseActivity extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
+        if (mainFrag == null) {
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new MainFragment(), "MainFragment")
+                    .commit();
+        } else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 3000);
+        }
     }
 
     public void getCatData() {
