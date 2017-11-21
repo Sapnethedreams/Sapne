@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/four" >
+
+<!--    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="1000dp"
+        app:srcCompat="@drawable/gaming"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+-->
+    <TextView
+        android:id="@+id/tvFragFourth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibhav Bisht"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvFragFirstt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Head of Digital Marketing"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15dp"
+        android:layout_below="@+id/tvFragFourth"
+        android:layout_alignLeft="@+id/tvFragFourth"
+        android:layout_alignStart="@+id/tvFragFourth" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_dark"
+        android:text="It is rare that you get an opportunity to work in an environment where your creativity is respected and your efforts recieved with genuine accolades. SAPNE is one such organization where everyone, irrespective of their designation, is treated equally and has a chance to make their voice heard.
+
+During the past one year I've seen this organization grow from a small dilapidated room to having four operational centres in three cities, thereby bringing a vast umbrella of youth within its reach. Despite rapid expansion, I find it incredible that the organization continues to provide the same homely feeling to all its volunteers as it did during its founding months.
+
+I wish the Team members of SAPNE all the very best for the upcoming 2017 and hope that we continue to stride towards our common goal for the betterment of the society."
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
