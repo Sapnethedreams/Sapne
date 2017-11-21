@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/twot" >
+
+<!--    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="1000dp"
+        app:srcCompat="@drawable/twot"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+-->
+    <TextView
+        android:id="@+id/tvFragSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIKITA GUPTA"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_dark"
+        android:text="I always wanted to work for an NGO and working for SAPNE was like a dream come true.
+
+I came in with no expectations or experience of working in an NGO, and I had my apprehensions like everybody else. However, I was pleasantly surprised with how SAPNE family members supported me ever since Day1.
+
+The best part of volunteering with SAPNE is that, in addition to promote education among underprivileged children, we also get to encourage people to participate in various awareness drives like cleanliness awareness drives, donation drives etc. This makes a greater impact on the society for good.
+
+Lastly, as a part of the admin team of SAPNE, I have gained leadership skills , time management skills which will ultimately help me be a better person.
+
+Being a volunteer at SAPNE is a perfect example of *gain while you give*
+
+I feel privileged to be a part of Sapne."
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout> 
