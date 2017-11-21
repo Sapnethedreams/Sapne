@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/three" >
+
+    <!--<ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="1000dp"
+        app:srcCompat="@drawable/three"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+-->
+    <TextView
+        android:id="@+id/tvFragThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alankrita Shah"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvFragFirstt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Social Media Intern"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15dp"
+        android:layout_below="@+id/tvFragThird"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_dark"
+        android:text="Being an intern at Sapne was an amazing experience. I can feel a positive change in myself, both personally and professionally. Being a social media intern, my way of looking at things has broadened.
+Moreover, it is an NGO ,I, of course got a lot to learn from the works of people which highly contribute towards making a healthy society. It has made me a more optimistic person.
+In addition to that, the Sapne team is more like a family having the same goal. I loved being a part of it.
+"
+        android:layout_below="@+id/tvFragFirstt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="97dp" />
+
+</RelativeLayout>
