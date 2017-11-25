@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginuser);
 
+        //Checking internet first
+        if (NetworkUtil.getInstance(getApplicationContext()).isOnline()) {
+
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -66,6 +69,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonSignIn.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
     }
+else{
+                 // Internet is NOT available, Toast It!
+            Toast.makeText(getApplicationContext(), "Ooops! No WiFi/Mobile Networks Connected!", Toast.LENGTH_SHORT).show();
+                   }
+        }
+
 
     //method for user login
     private void userLogin(){
