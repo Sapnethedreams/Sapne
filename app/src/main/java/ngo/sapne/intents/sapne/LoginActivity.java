@@ -40,11 +40,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginuser);
 
+setVisible(NetworkUtil.getInstance(getApplicationContext()).isOnline());
         //Checking internet first
         if (NetworkUtil.getInstance(getApplicationContext()).isOnline()) {
 
+            setContentView(R.layout.loginuser);
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -71,7 +72,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 else{
                  // Internet is NOT available, Toast It!
-            Toast.makeText(getApplicationContext(), "Ooops! No WiFi/Mobile Networks Connected!", Toast.LENGTH_SHORT).show();
+           //7 Toast.makeText(getApplicationContext(), "Ooops! No WiFi/Mobile Networks Connected!", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.no_connection);
                    }
         }
 
