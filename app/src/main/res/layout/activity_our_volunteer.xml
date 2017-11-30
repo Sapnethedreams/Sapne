@@ -278,6 +278,7 @@ App Development Head"
         android:text="view ALL Volunteers"
         android:textColor="#222222" />
 </LinearLayout>
+
 </ScrollView>
 
     </RelativeLayout>
