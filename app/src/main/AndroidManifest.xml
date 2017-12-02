@@ -46,6 +46,10 @@
             android:name="ngo.sapne.intents.sapne.LoginActivity"
             android:label="Sign in"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name="ngo.sapne.intents.sapne.Registration"
+            android:label="Sign in"
+            android:screenOrientation="portrait"/>
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
