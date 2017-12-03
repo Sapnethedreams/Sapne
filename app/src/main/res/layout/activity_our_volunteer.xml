@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
 
 <ScrollView
 android:layout_width="match_parent"
@@ -17,8 +17,7 @@ android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-
-
+  
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -34,7 +33,6 @@ android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="72dp"
         tools:layout_editor_absoluteY="29dp" />
 
-    />
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -65,10 +63,6 @@ Coordinator"
         tools:layout_editor_absoluteY="29dp" />
 </LinearLayout>
 
-    />
-
-    
-
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -98,9 +92,8 @@ Coordinator"
         android:layout_below="@+id/textView5"
         android:layout_gravity="right"
         app:srcCompat="@drawable/gurleen"/>
-
-   
 </LinearLayout>
+  
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -129,9 +122,6 @@ App Development Head"
         tools:layout_editor_absoluteX="72dp"
         tools:layout_editor_absoluteY="29dp" />
 </LinearLayout>
-
-
-
 
 <LinearLayout
     android:layout_width="wrap_content"
@@ -249,19 +239,13 @@ App Development Head"
             android:layout_marginTop="7dp"
             android:background="#ffffff"
             android:text="  Gurleen Kaur
-  Social Media 
+  Social Media
        Head"
             android:textColor="#f16101"
             android:textSize="25dp"
             tools:layout_editor_absoluteX="72dp"
             tools:layout_editor_absoluteY="29dp" />
     </LinearLayout>
-
-
-
-
-
-
 
     <Button
         android:id="@+id/button9"
