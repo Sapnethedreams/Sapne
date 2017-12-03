@@ -6,26 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
         <item name="android:actionModeBackground">@color/colorPrimary</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionModeOverlay">true</item>
-    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
-    <style parent="ThemeOverlay.AppCompat.Light" name="AppTheme.PopupOverlay"> </style>
-
-
-    <style parent="Theme.AppCompat.Light" name="MyButton">
-
-    <item name="colorControlHighlight">#EC407A</item>
-
-    <item name="colorButtonNormal">@color/colorPrimary</item>
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">#EC407A</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 
     <style name="EventTheme" parent="Theme.AppCompat.Light.NoActionBar">

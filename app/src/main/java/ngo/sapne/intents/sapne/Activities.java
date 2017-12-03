@@ -96,7 +96,7 @@ public class Activities extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activities, container);
+        View view = inflater.inflate(R.layout.activities, container, false);
         RecyclerView rv = view.findViewById(R.id.myRecycler);
         //SET LAYOUT
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));

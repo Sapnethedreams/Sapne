@@ -92,10 +92,13 @@ public class BaseActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (groupPosition == 6) {
-                    getSupportFragmentManager().
-                            beginTransaction().
-                            replace(R.id.content_frame, new MainFragment(), "MainFragment")
-                            .commit();
+                    Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
+                    if (mainFrag == null) {
+                        getSupportFragmentManager().
+                                beginTransaction().
+                                replace(R.id.content_frame, new MainFragment(), "MainFragment")
+                                .commit();
+                    }
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
