@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212121"
     android:orientation="vertical"
     tools:context=".events.EventsFragment">
 
@@ -19,8 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="serif"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
+        android:layout_marginTop="5dp"
         android:textStyle="bold"
         tools:text="Lohri Celebration" />
 
@@ -37,7 +37,7 @@
         android:paddingEnd="10dp"
         android:paddingStart="10dp"
         android:maxLines="2"
-        android:textColor="#e2e2e2"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         tools:text="Main event" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:background="#20ffffff"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp" />
 
     <Space
         android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
             android:fontFamily="monospace"
             android:text="Donate Us"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@color/colorPrimary" />
 
         <Button
             android:id="@+id/btn_events_more"
@@ -128,7 +128,7 @@
             android:layout_weight="1"
             android:text="See more"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 
