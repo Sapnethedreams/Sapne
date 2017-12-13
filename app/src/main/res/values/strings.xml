@@ -66,4 +66,12 @@
         \n\nThe children showed great enthusiasm while painting the walls. They showed their
         creative skills by painting the walls using their handprints and decorate the walls
         with alphabets and numbers.</string>
+    <string name="volunteer_head">Volunteer Head</string>
+    <string name="falguni_jain_coordinator">Falguni Jain Coordinator</string>
+    <string name="piyush_shrivastava_app_development_head">Piyush Shrivastava App Development Head</string>
+    <string name="pallavi_madan_hr_head">Pallavi Madan HR HEAD</string>
+    <string name="gurleen_kaur_social_media_head">Gurleen Kaur Social Media Head</string>
+    <string name="view_all_volunteers">view ALL Volunteers</string>
+    <string name="harleen_kaur_graphic_department_head">Harleen Kaur Graphic Department Head</string>
+    <string name="gurleen_camp_coordinator">GURLEEN Camp Coordinator</string>
 </resources>
