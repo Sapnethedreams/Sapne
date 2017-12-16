@@ -28,8 +28,9 @@
                 android:layout_gravity="center"
                 android:text="A bright future"
                 android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="-30dp"
-                android:fontFamily="serif"
+                android:fontFamily="cursive"
                 android:textColor="#424242"
                 android:textSize="20sp" />
 
@@ -39,7 +40,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:text="for every child"
-                android:fontFamily="serif"
+                android:fontFamily="cursive"
                 android:textColor="#424242"
                 android:textSize="20sp" />
 

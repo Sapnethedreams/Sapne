@@ -40,7 +40,7 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
-        rateItemButton = view.findViewById(R.id.item_btn_lnik);
+        rateItemButton = view.findViewById(R.id.item_btn_link);
 
         eventList = EventList.get();
         data = eventList.getData();
@@ -56,7 +56,7 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
 
         onItemChanged(data.get(0));
 
-        view.findViewById(R.id.item_btn_lnik).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_link).setOnClickListener(this);
         view.findViewById(R.id.item_btn_right).setOnClickListener(this);
         view.findViewById(R.id.item_btn_star).setOnClickListener(this);
 
@@ -68,7 +68,7 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.item_btn_lnik:
+            case R.id.item_btn_link:
                 //int realPosition = infiniteAdapter.getRealPosition(itemPicker.getCurrentItem());
                 //EventItem current = data.get(realPosition);
                 break;
@@ -86,7 +86,6 @@ public class EventsFragment extends Fragment implements DiscreteScrollView.OnIte
                 startActivity(myIntent);
                 break;
             default:
-                showUnsupportedSnackBar();
                 break;
         }
     }
