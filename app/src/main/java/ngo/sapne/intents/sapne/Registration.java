@@ -22,41 +22,36 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-/**
- * Created by user on 22/11/2017.
- */
 
-public class Registration extends AppCompatActivity{
+public class Registration extends AppCompatActivity {
 
-    EditText name,email,dob,edu,post;
-    String name1,email1,dob1,edu1,post1;
+    EditText name, email, dob, edu, post;
+    String name1, email1, dob1, edu1, post1;
     Button register;
     int PICK_IMAGE_REQUEST = 111;
     Button uplod;
     TextView t1;
-    private DatabaseReference mDatabase;
     Uri filePath;
     ProgressDialog pd;
-
-
     FirebaseStorage
             storage = FirebaseStorage.getInstance();
-   StorageReference storageRef = storage.getReferenceFromUrl("gs://sapne-241cc.appspot.com/");    //change the url according to your firebase app
+    StorageReference storageRef = storage.getReferenceFromUrl("gs://sapne-241cc.appspot.com/");    //change the url according to your firebase app
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
 
-
-        name=(EditText)findViewById(R.id.input_name);
-        email=(EditText)findViewById(R.id.input_email);
-        dob=(EditText)findViewById(R.id.dob);
-        edu=(EditText)findViewById(R.id.edu);
-        post=(EditText)findViewById(R.id.post);
-        register=(Button)findViewById(R.id.btn_regi);
-        uplod=(Button)findViewById(R.id.bws);
-        t1=(TextView)findViewById(R.id.t1);
+        name = (EditText) findViewById(R.id.input_name);
+        email = (EditText) findViewById(R.id.input_email);
+        dob = (EditText) findViewById(R.id.dob);
+        edu = (EditText) findViewById(R.id.edu);
+        post = (EditText) findViewById(R.id.post);
+        register = (Button) findViewById(R.id.btn_regi);
+        uplod = (Button) findViewById(R.id.bws);
+        t1 = (TextView) findViewById(R.id.t1);
         mDatabase = FirebaseDatabase.getInstance().getReference("users"); //Dont pass any path if you want root of the tree
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +68,8 @@ public class Registration extends AppCompatActivity{
 
 
     }
-    public  void addUser()
-    {
+
+    public void addUser() {
 
      /*   if(t1.getText().equals("Selected file"))
         {
@@ -82,10 +77,8 @@ public class Registration extends AppCompatActivity{
         }*/
 
 
-
-      //t1.setText(filePath.toString());
-        if(filePath != null) {
-
+        //t1.setText(filePath.toString());
+        if (filePath != null) {
 
             StorageReference childRef = storageRef.child("image.jpg");
 
@@ -96,14 +89,14 @@ public class Registration extends AppCompatActivity{
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    name1=name.getText().toString();
-                    email1=email.getText().toString();
-                    dob1=dob.getText().toString();
-                    edu1=edu.getText().toString();
-                    post1=post.getText().toString();
+                    name1 = name.getText().toString();
+                    email1 = email.getText().toString();
+                    dob1 = dob.getText().toString();
+                    edu1 = edu.getText().toString();
+                    post1 = post.getText().toString();
                     String id = mDatabase.push().getKey();
 
-                    Users users = new Users(id,name1,email1,post1,dob1,edu1);
+                    Users users = new Users(id, name1, email1, post1, dob1, edu1);
                     mDatabase.child(id).setValue(users);
 
                     Toast.makeText(getApplicationContext(), "Upload successful", Toast.LENGTH_SHORT).show();
@@ -115,21 +108,14 @@ public class Registration extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "Upload Failed -> " + e, Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else {
+        } else {
             Toast.makeText(getApplicationContext(), "Select an image", Toast.LENGTH_SHORT).show();
         }
 
-
-
         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-
-
-
     }
 
-    public void uploadimage()
-    {
+    public void uploadimage() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_PICK);
