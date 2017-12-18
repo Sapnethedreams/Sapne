@@ -9,20 +9,21 @@ public class Users {
         private String volunteer;
         private String dob;
         private String id;
-        private String edu;
+        private String edu,phn;
 
 
         public Users(){
 
         }
 
-        public Users(String id,String name, String email, String volunteer,String dob,String edu) {
+        public Users(String id,String name, String email, String volunteer,String dob,String edu,String phn) {
             this.name = name;
             this.id=id;
             this.email = email;
             this.volunteer = volunteer;
             this.dob=dob;
             this.edu=edu;
+            this.phn=phn;
         }
 
         public String getId()
@@ -49,4 +50,5 @@ public class Users {
     {
         return edu;
     }
+    public String getPhn(){return phn;}
 }
