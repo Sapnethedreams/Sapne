@@ -7,10 +7,13 @@ package ngo.sapne.intents.sapne;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,8 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
     //defining views
     private Button buttonSignIn;
@@ -36,11 +38,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //progress dialog
     private ProgressDialog progressDialog;
 
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginuser);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.loginuser, container, false);
 
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -49,22 +50,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //means user is already logged in
         if(firebaseAuth.getCurrentUser() != null){
             //close this activity
-            finish();
-            //opening profile activity
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new ProfileFragment(), "ProfileFragment")
+                    .commit();
         }
 
         //initializing views
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonSignIn = (Button) findViewById(R.id.buttonSignin);
-        textViewSignup  = (TextView) findViewById(R.id.textViewSignUp);
+        editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
+        buttonSignIn = (Button) view.findViewById(R.id.buttonSignin);
+        textViewSignup  = (TextView) view.findViewById(R.id.textViewSignUp);
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(getActivity());
 
         //attaching click listener
         buttonSignIn.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
+
+        return view;
     }
 
     //method for user login
@@ -72,15 +76,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = editTextEmail.getText().toString().trim();
         String password  = editTextPassword.getText().toString().trim();
 
-
         //checking if email and passwords are empty
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),"Please enter email",Toast.LENGTH_LONG).show();
             return;
         }
 
         if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),"Please enter password",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -92,15 +95,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //logging in the user
         firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         //if the task is successfull
                         if(task.isSuccessful()){
                             //start the profile activity
-                            finish();
-                            startActivity(new Intent(getApplicationContext(),Registration.class));
+                            getActivity().getSupportFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.content_frame, new Registration(), "Registration")
+                                    .commit();
                         }
                     }
                 });
@@ -114,8 +119,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         if(view == textViewSignup){
-            finish();
-            startActivity(new Intent(this, RegisterUser.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new RegisterUser(), "RegisterUser")
+                    .commit();
         }
     }
 }

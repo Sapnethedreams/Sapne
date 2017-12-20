@@ -269,8 +269,13 @@ public class BaseActivity extends AppCompatActivity {
         switch (itemId) {
 
             case R.id.login1:
-                Intent myIntent = new Intent(BaseActivity.this, LoginActivity.class);
-                startActivity(myIntent);
+                Fragment loginFrag = getSupportFragmentManager().findFragmentByTag("LoginFragment");
+                if (loginFrag == null) {
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                            .commit();
+                }
                 break;
             case R.id.notification:
                 Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");

@@ -4,16 +4,20 @@ package ngo.sapne.intents.sapne;
  * Created by dell pc on 05/10/2017.
  */
 import android.content.Intent;
-        import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
         import android.widget.TextView;
 
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseUser;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -22,11 +26,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private TextView textViewUserEmail;
     private Button buttonLogout;
 
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.profileuser);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.profileuser, container, false);
 
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -35,23 +38,26 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //that means current user will return null
         if(firebaseAuth.getCurrentUser() == null){
             //closing this activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(this, LoginActivity.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                    .commit();
         }
 
         //getting current user
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //initializing views
-        textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        textViewUserEmail = (TextView) view.findViewById(R.id.textViewUserEmail);
+        buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
+
+        return view;
     }
 
     @Override
@@ -61,9 +67,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             //logging out the user
             firebaseAuth.signOut();
             //closing activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(this, LoginActivity.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                    .commit();
         }
     }
 }
