@@ -13,7 +13,7 @@
         android:background="@drawable/gradient_green"
         android:fitsSystemWindows="true"
         android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        app:elevation="5dp">
 
     </android.support.v7.widget.Toolbar>
 

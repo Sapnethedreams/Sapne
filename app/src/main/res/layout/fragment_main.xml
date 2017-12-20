@@ -1,60 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1"
-        tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity">
+        android:background="@drawable/gradient_green"
+        android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="343dp"
-            android:layout_weight="0.66"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/main_border">
+
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
             android:orientation="vertical"
-            android:paddingBottom="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
             android:weightSum="1">
-
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="A bright future"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="-30dp"
-                android:fontFamily="cursive"
-                android:textColor="#424242"
-                android:textSize="20sp" />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:text="for every child"
-                android:fontFamily="cursive"
-                android:textColor="#424242"
-                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/mainimgview"
-                android:layout_width="match_parent"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:scaleType="centerCrop"
                 android:layout_gravity="center" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#70000000"
+                android:layout_gravity="center_horizontal|bottom">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="A bright future"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="-30dp"
+                    android:fontFamily="cursive"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:text="for every child"
+                    android:fontFamily="cursive"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:gravity="center"
             android:orientation="vertical">
 
             <Button
@@ -69,7 +86,7 @@
                 android:onClick="explore"
                 android:text="Explore our Journey"
                 android:textAlignment="center"
-                android:textColor="#00897B" />
+                android:textColor="@color/white" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -80,7 +97,7 @@
                     android:id="@+id/btnDonate1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/custombutton"
+                    android:background="@drawable/custombutton_border"
                     android:onClick="donate1"
                     android:text="Donate Us"
                     android:textAlignment="center"
@@ -93,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
                     android:layout_toRightOf="@id/btnDonate1"
-                    android:background="@drawable/custombutton"
+                    android:background="@drawable/custombutton_border"
                     android:onClick="join1"
                     android:text="Join Us"
                     android:textColor="@android:color/white"
@@ -103,40 +120,8 @@
 
             </RelativeLayout>
 
-            <com.getbase.floatingactionbutton.FloatingActionsMenu
-                android:id="@+id/right_labels"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                fab:fab_addButtonColorNormal="@color/white"
-                fab:fab_addButtonColorPressed="@color/black"
-                fab:fab_addButtonPlusIconColor="@color/colorPrimary"
-                android:visibility="gone"
-                android:layout_gravity="end"
-                fab:fab_addButtonSize="mini"
-                fab:fab_labelStyle="@style/menu_labels_style"
-                fab:fab_labelsPosition="right">
-
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    fab:fab_colorNormal="@color/white"
-                    fab:fab_title="Label on the right"
-                    fab:fab_colorPressed="@color/black"/>
-
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    fab:fab_colorNormal="@color/white"
-                    fab:fab_size="mini"
-                    fab:fab_title="Another one on the right"
-                    fab:fab_colorPressed="@color/black"/>
-
-            </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
         </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>
