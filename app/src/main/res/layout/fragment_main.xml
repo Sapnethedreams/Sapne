@@ -7,6 +7,11 @@
         android:background="@drawable/gradient_green"
         android:weightSum="1">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:background="@drawable/drop_shadow" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,21 +21,32 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/main_border">
 
-        <FrameLayout
-            android:layout_width="240dp"
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="We whisper hope"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:textColor="#00b797"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
             android:layout_weight="0.6"
             android:orientation="vertical"
+            android:layout_margin="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
             android:weightSum="1">
 
             <ImageView
                 android:id="@+id/mainimgview"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:src="@drawable/p3"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center" />
 
@@ -70,6 +86,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.4"
             android:minHeight="100dp"
             android:gravity="center"
             android:orientation="vertical">

@@ -58,6 +58,8 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
         explore.setOnClickListener(this);
         btnJoinUs.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+
+        getActivity().findViewById(R.id.appBarAnim).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
     }
 
     public void explore() {
@@ -95,6 +97,12 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
                 donate();
                 break;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        getActivity().findViewById(R.id.appBarAnim).setBackgroundResource(R.drawable.gradient_green);
+        super.onDestroy();
     }
 }
 
