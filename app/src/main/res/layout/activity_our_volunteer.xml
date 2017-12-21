@@ -35,13 +35,15 @@
             app:contentPadding="5dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginTop="60dp"
                     android:orientation="vertical">
 
@@ -85,7 +87,7 @@
                     android:foregroundGravity="right"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/falguni" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -98,13 +100,15 @@
             app:contentPadding="5dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
@@ -148,7 +152,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/piyush" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -162,14 +166,16 @@
             app:cardElevation="12dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -212,7 +218,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/gurleen" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -226,14 +232,16 @@
             app:contentPadding="5dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -276,7 +284,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/gurleen_kaur" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -290,14 +298,16 @@
             app:cardElevation="12dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -340,7 +350,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/harleen" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -354,13 +364,15 @@
             app:cardElevation="12dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
@@ -405,7 +417,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/nishant" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -419,14 +431,16 @@
             app:cardElevation="12dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -470,7 +484,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/pallavi" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -484,14 +498,16 @@
             app:cardElevation="12dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="35dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -534,7 +550,7 @@
                     android:layout_marginTop="6dp"
                     android:foregroundGravity="right"
                     app:srcCompat="@drawable/richa" />
-            </RelativeLayout>
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
