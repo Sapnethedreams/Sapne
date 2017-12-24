@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -266,8 +267,8 @@ public class BaseActivity extends AppCompatActivity {
         switch (itemId) {
 
             case R.id.login1:
-                Intent myIntent = new Intent(BaseActivity.this, LoginActivity.class);
-                startActivity(myIntent);
+
+
                 break;
             case R.id.notification:
                 Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
