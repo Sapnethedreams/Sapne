@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,7 +39,7 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         currentItemName = view.findViewById(R.id.item_name);
         currentItemPrice = view.findViewById(R.id.item_price);
-        rateItemButton = view.findViewById(R.id.item_btn_link);
+        rateItemButton = view.findViewById(R.id.item_btn_lnik);
 
         eventList = EventList.get();
         data = eventList.getExtraData();
@@ -56,38 +55,33 @@ public class ExtraEventsFragment extends Fragment implements DiscreteScrollView.
 
         onItemChanged(data.get(0));
 
-        view.findViewById(R.id.item_btn_link).setOnClickListener(this);
+        view.findViewById(R.id.item_btn_lnik).setOnClickListener(this);
         view.findViewById(R.id.item_btn_right).setOnClickListener(this);
         view.findViewById(R.id.item_btn_star).setOnClickListener(this);
 
         view.findViewById(R.id.btn_events_donate).setOnClickListener(this);
-        Button seeMore = view.findViewById(R.id.btn_events_more);
-        seeMore.setText("Back");
-        seeMore.setOnClickListener(this);
+        view.findViewById(R.id.btn_events_more).setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.item_btn_link:
+            case R.id.item_btn_lnik:
                 int realPosition = infiniteAdapter.getRealPosition(itemPicker.getCurrentItem());
                 EventItem current = data.get(realPosition);
                 changeRateButtonState();
                 break;
-            case R.id.btn_events_more:
-                getActivity().getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.content_frame, new EventsFragment(), "ExtraEventsFragment")
-                        .commit();
+            case R.id.home:
+
                 break;
-            case R.id.item_btn_right:
-                DiscreteScrollViewOptions.smoothScrollToUserSelectedPosition(itemPicker, v);
+            case R.id.btn_events_more:
                 break;
             case R.id.btn_events_donate:
                 DiscreteScrollViewOptions.smoothScrollToUserSelectedPosition(itemPicker, v);
                 break;
             default:
+                showUnsupportedSnackBar();
                 break;
         }
     }
