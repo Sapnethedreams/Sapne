@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical"
     tools:context=".events.EventsFragment">
 
     <Space
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="7" />
 
     <TextView
         android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="sans-serif-light"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:fontFamily="serif"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
         android:textStyle="bold"
         tools:text="Lohri Celebration" />
 
@@ -36,7 +36,7 @@
         android:textAlignment="center"
         android:paddingEnd="10dp"
         android:paddingStart="10dp"
-        android:maxLines="3"
+        android:maxLines="2"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         tools:text="Main event" />
@@ -48,7 +48,10 @@
     <com.yarolegovich.discretescrollview.DiscreteScrollView
         android:id="@+id/item_picker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="#20ffffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
     <Space
         android:layout_width="wrap_content"
@@ -67,7 +70,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:src="@drawable/ic_star"
-            android:tint="@color/colorPrimary" />
+            android:tint="@color/white" />
 
         <Space
             android:layout_width="16dp"
@@ -79,6 +82,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_right_arrow"
             android:tint="@android:color/white"
+            app:backgroundTint="#e2e2e2"
             app:rippleColor="#50ffffff"
             app:useCompatPadding="true" />
 
@@ -87,13 +91,13 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/item_btn_lnik"
+            android:id="@+id/item_btn_link"
             style="@style/ClickableImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:src="@drawable/ic_star"
-            android:tint="@color/colorPrimary" />
+            android:src="@drawable/ic_info"
+            android:tint="@color/white" />
 
     </LinearLayout>
 
