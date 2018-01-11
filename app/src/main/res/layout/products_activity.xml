@@ -28,7 +28,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/black"
+            android:src="@drawable/download"
             tools:layout_editor_absoluteY="2dp" />
 
         <TextView
@@ -207,7 +207,7 @@ Try and Buy might be available"
 
             android:gravity="center"
 
-            android:background="@drawable/place"/>
+            android:background="@drawable/download"/>
 
 
     </RelativeLayout>
