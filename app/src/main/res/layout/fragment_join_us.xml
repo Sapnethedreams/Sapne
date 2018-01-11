@@ -3,39 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
     android:background="#ffffff"
 =======
     xmlns:app="http://schemas.android.com/apk/res-auto"
 >>>>>>> parent of cacd9c9... Revert "Merge remote-tracking branch 'origin/master'"
+=======
+>>>>>>> parent of 22148ef... Merge pull request #79 from Vanditi/patch-6
     tools:context="ngo.sapne.intents.sapne.FragmentJoinUs">
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:paddingBottom="20dp"
-        android:background="#ffffff">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp"
-        android:background="#ffff19"
-        app:cardBackgroundColor="#f8f9fa"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        android:orientation="vertical">
-
-
+        android:background="@drawable/join"
+        android:layout_height="match_parent">
 
         <LinearLayout xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/activity_main"
@@ -55,8 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textColorHint="#123456"
-                android:textColor="@color/black"
+
                 android:ems="10"
                 android:hint="Name"
                 android:inputType="textPersonName" />
@@ -108,8 +87,6 @@
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Enter Phone Number"
-                android:textColor="@color/black"
-                android:textColorHint="#123456"
                 android:inputType="phone" />
 =======
                 android:layout_marginTop="5dp"
@@ -142,10 +119,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:textColor="@color/black"
+=======
+>>>>>>> parent of 22148ef... Merge pull request #79 from Vanditi/patch-6
                 android:ems="10"
                 android:hint="Email"
-                android:textColorHint="#123456"
                 android:inputType="textEmailAddress" />
 =======
                 android:layout_marginTop="5dp"
@@ -187,7 +166,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:textColor="#123456"
                     android:text="Male" />
 
                 <RadioButton
@@ -195,41 +173,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#123456"
                     android:text="Female" />
 
             </RadioGroup>
-           </LinearLayout>
-    </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:layout_marginTop="50dp"
-            android:background="#ffff19"
-            app:cardBackgroundColor="#f8f9fa"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            android:orientation="vertical">
-            <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/activity_main1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity">
 
         <EditText
+=======
+            <EditText
+>>>>>>> parent of 22148ef... Merge pull request #79 from Vanditi/patch-6
                 android:id="@+id/etAddress"
 =======
             <android.support.v7.widget.CardView
@@ -241,8 +198,6 @@
                 android:ems="10"
                 android:lines="3"
                 android:hint="Enter address"
-            android:textColor="@color/black"
-                android:textColorHint="#123456"
                 android:inputType="textMultiLine"
                 android:text="" />
 =======
@@ -282,8 +237,6 @@
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:lines="3"
-                android:textColorHint="#123456"
-                android:textColor="@color/black"
                 android:hint="Office/Institute"
                 android:inputType="text"
                 android:text="" />
@@ -324,7 +277,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:text="Join Sapne As"
-                android:textColor="#123456"
                 android:textSize="20sp" />
 
             <Spinner
@@ -342,8 +294,6 @@
                 android:ems="10"
                 android:lines="3"
                 android:hint="Enter Aadhar No."
-                android:textColor="@color/black"
-                android:textColorHint="#123456"
                 android:inputType="text|textPersonName"
                 android:text="" />
 =======
@@ -398,8 +348,6 @@
                 android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-        </LinearLayout>
     </ScrollView>
+
 </FrameLayout>
