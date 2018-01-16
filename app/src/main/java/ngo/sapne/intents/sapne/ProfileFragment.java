@@ -14,16 +14,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
         import android.widget.TextView;
 
-        import com.google.firebase.auth.FirebaseAuth;
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseUser;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
-
-    //view objects
-    private TextView textViewUserEmail;
+CircleImageView profpic;
+    //view objects,
+    private TextView textViewUserEmail,name;
     private Button buttonLogout;
 
     @Nullable
@@ -50,14 +53,31 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         //initializing views
         textViewUserEmail = (TextView) view.findViewById(R.id.textViewUserEmail);
         buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
-
+        profpic= view.findViewById(R.id.iv8);
+        name= view.findViewById(R.id.name1);
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
+        loadUserInfo();
+
+
+
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
 
         return view;
+    }
+
+    private void loadUserInfo() {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user!=null){
+            if(user.getPhotoUrl()!=null){
+                Glide.with(this).load(user.getPhotoUrl().toString()).into(profpic);
+            }
+            if(user.getDisplayName()!=null){
+                name.setText(user.getDisplayName());
+            }
+        }
     }
 
     @Override

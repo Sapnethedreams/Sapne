@@ -45,6 +45,7 @@
                 android:src="@drawable/devesh"
                 app:civ_border_width="8dp"
                 app:civ_border_color="@color/white"
+                android:id="@+id/iv8"
                 />
              <TextView
                  android:layout_width="wrap_content"
@@ -85,22 +86,13 @@
 
 
             <TextView
+                android:id="@+id/name1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
+                android:text="Name"
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-
-                android:layout_gravity="left" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:id="@+id/textAddress"
-                android:layout_marginTop="6dp"
-                android:textSize="18sp"
                 android:textColor="@color/black"
 
                 android:layout_gravity="left" />
@@ -110,18 +102,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/etAddress"
                 android:visibility="gone"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:id="@+id/textdescription"
-                android:layout_marginTop="10dp"
-
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_gravity="left" />
-
 
 
             <Button
