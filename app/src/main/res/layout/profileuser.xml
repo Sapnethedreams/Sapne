@@ -89,13 +89,35 @@
                 android:id="@+id/name1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:layout_gravity="left"
                 android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:text="Name"
                 android:textColor="@color/black"
+                android:textSize="18sp"
 
-                android:layout_gravity="left" />
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/phn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:text="Phone"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/edu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:text="Edu"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                android:textStyle="bold" />
 
             <EditText
                 android:layout_width="wrap_content"

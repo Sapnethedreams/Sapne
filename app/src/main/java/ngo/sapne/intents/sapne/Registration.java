@@ -59,7 +59,7 @@ public class Registration extends Fragment {
             storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReferenceFromUrl("gs://sapne-241cc.appspot.com/");    //change the url according to your firebase app
     private DatabaseReference mDatabase;
-    FirebaseAuth mAuth= FirebaseAuth.getInstance();
+    FirebaseAuth mAuth;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -120,7 +120,7 @@ public class Registration extends Fragment {
             name.requestFocus();
             return;
         }
-
+        mAuth = FirebaseAuth.getInstance();
         FirebaseUser user= mAuth.getCurrentUser();
         if(user!=null){
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
