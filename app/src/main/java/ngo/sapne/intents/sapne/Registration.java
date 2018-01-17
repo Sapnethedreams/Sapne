@@ -115,7 +115,7 @@ public class Registration extends Fragment {
 
     private void saveUserInfo() {
         String displayName = name.getText().toString();
-        if(displayName.isEmpty()){
+      if(displayName.isEmpty()){
             name.setText("error, Name required");
             name.requestFocus();
             return;
@@ -123,6 +123,7 @@ public class Registration extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user= mAuth.getCurrentUser();
         if(user!=null){
+
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
                     .setPhotoUri(Uri.parse(profileImageUrl))
@@ -135,6 +136,15 @@ public class Registration extends Fragment {
                     }
                 }
             });
+
+            String uid= mAuth.getUid();
+            dob1 = dob.getText().toString();
+            edu1 = edu.getText().toString();
+            post1 = joinusas.get(spnJoin.getSelectedItemPosition());
+            phn1 = phn.getText().toString();
+            String id = mDatabase.push().getKey();
+            Users users= new Users( id, name1,  email1,  post1, dob1, edu1, phn1);
+            mDatabase.child(uid).setValue(users);
         }
     }
 
