@@ -21,7 +21,7 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.activity_main, container, false);
         img = view.findViewById(R.id.mainimgview);
 
         final int[] imageArray = {R.drawable.p8, R.drawable.p5, R.drawable.p1, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
@@ -58,8 +58,6 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
         explore.setOnClickListener(this);
         btnJoinUs.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
-
-        getActivity().findViewById(R.id.appBarAnim).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
     }
 
     public void explore() {
@@ -97,12 +95,6 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
                 donate();
                 break;
         }
-    }
-
-    @Override
-    public void onDestroy() {
-        getActivity().findViewById(R.id.appBarAnim).setBackgroundResource(R.drawable.gradient_green);
-        super.onDestroy();
     }
 }
 

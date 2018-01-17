@@ -46,6 +46,10 @@
             android:name="ngo.sapne.intents.sapne.LoginActivity"
             android:label="Sign in"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name="ngo.sapne.intents.sapne.Registration"
+            android:label="Sign in"
+            android:screenOrientation="portrait"/>
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -53,7 +57,7 @@
             </intent-filter>
         </service>
 
-        <service android:name=".FirebaseIDService">
+        <service android:name=".FirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>

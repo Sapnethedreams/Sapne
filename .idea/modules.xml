@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Sapne.iml" filepath="$PROJECT_DIR$/Sapne.iml" />
-      <module fileurl="file://C:\Users\AstroBoy\AndroidStudioProjects\Sapne\.idea\Sapne.iml" filepath="C:\Users\AstroBoy\AndroidStudioProjects\Sapne\.idea\Sapne.iml" />
-      <module fileurl="file://E:\Android_programs\Internship\Sapne\Sapne.iml" filepath="E:\Android_programs\Internship\Sapne\Sapne.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
