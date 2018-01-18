@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_right_arrow"
             android:tint="@android:color/white"
-            app:fab_colorNormal="#e2e2e2"
+            app:backgroundTint="#e2e2e2"
             app:rippleColor="#50ffffff"
             app:useCompatPadding="true" />
 

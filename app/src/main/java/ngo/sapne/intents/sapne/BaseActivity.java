@@ -92,13 +92,10 @@ public class BaseActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (groupPosition == 6) {
-                    Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
-                    if (mainFrag == null) {
-                        getSupportFragmentManager().
-                                beginTransaction().
-                                replace(R.id.content_frame, new MainFragment(), "MainFragment")
-                                .commit();
-                    }
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new MainFragment(), "MainFragment")
+                            .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (parent.isGroupExpanded(groupPosition)) {
@@ -269,8 +266,10 @@ public class BaseActivity extends AppCompatActivity {
         switch (itemId) {
 
             case R.id.login1:
-                Intent myIntent = new Intent(BaseActivity.this, LoginActivity.class);
-                startActivity(myIntent);
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                        .commit();
                 break;
             case R.id.notification:
                 Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
