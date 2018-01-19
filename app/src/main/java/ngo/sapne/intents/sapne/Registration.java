@@ -114,16 +114,10 @@ public class Registration extends Fragment {
     }
 
     private void saveUserInfo() {
-        String displayName = name.getText().toString();
-      if(displayName.isEmpty()){
-            name.setText("error, Name required");
-            name.requestFocus();
-            return;
-        }
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user= mAuth.getCurrentUser();
-        if(user!=null){
-
+        if(user!=null) {
+            String displayName= name.getText().toString();
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
                     .setPhotoUri(Uri.parse(profileImageUrl))
@@ -131,21 +125,21 @@ public class Registration extends Fragment {
             user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(getActivity(), "Profile Updated", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-
-            String uid= mAuth.getUid();
-            dob1 = dob.getText().toString();
-            edu1 = edu.getText().toString();
-            post1 = joinusas.get(spnJoin.getSelectedItemPosition());
-            phn1 = phn.getText().toString();
-            String id = mDatabase.push().getKey();
-            Users users= new Users( id, name1,  email1,  post1, dob1, edu1, phn1);
-            mDatabase.child(uid).setValue(users);
         }
+        String uid= mAuth.getUid();
+        dob1 = dob.getText().toString();
+        edu1 = edu.getText().toString();
+        post1 = joinusas.get(spnJoin.getSelectedItemPosition());
+        phn1 = phn.getText().toString();
+        String id = mDatabase.push().getKey();
+        Users users= new Users( id, name1, email1, post1, dob1, edu1, phn1);
+        mDatabase.child(uid).setValue(users);
+
     }
 
 
@@ -192,4 +186,3 @@ public class Registration extends Fragment {
         }
     }
 }
-
