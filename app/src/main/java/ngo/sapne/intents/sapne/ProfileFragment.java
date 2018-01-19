@@ -68,11 +68,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         edu= view.findViewById(R.id.edu1);
         //displaying logged in user name
         textViewUserEmail.setText(user.getEmail());
-        loadUserProfpic();
         loadUserDob();
         loadUserPhone();
         loadUserVol();
         loadUserEdu();
+        loadUserProfpic();
+
 
 
         //adding listener to button
