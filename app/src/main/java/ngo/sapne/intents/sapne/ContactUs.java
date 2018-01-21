@@ -28,6 +28,29 @@ public class ContactUs extends Fragment {
 
         button2 = view.findViewById(R.id.button2);
 
+
+        button4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:07023208911"));
+                startActivity(intent);
+            }
+
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.sapne.org.in/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);            }
+
+        });
+
         button2.setOnClickListener(new View.OnClickListener() {
 
             @Override
