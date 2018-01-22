@@ -24,12 +24,10 @@ public class RegularCamps extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_regular_camps, container, false);
-  
+
       View view = inflater.inflate(R.layout.content_regular1, container, false);
         initData();
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView1);
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         RegularCamp_RecyclerAdapter myAdapter = new RegularCamp_RecyclerAdapter(listData);
@@ -40,5 +38,8 @@ public class RegularCamps extends Fragment{
         listData.add(new RegularCampItem(R.drawable.rc_1, R.string.regularcamp_para1));
         listData.add(new RegularCampItem(R.drawable.rc_2, R.string.regularcamp_para2));
         listData.add(new RegularCampItem(R.drawable.rc_3,R.string.regularcamp_para3));
+    }
+    private void it(){
+
     }
 }

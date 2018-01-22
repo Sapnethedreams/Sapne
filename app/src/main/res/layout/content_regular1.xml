@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.intents.sapne.ngo.example.intents.sapne.RegularCamps"
-    tools:showIn="@layout/activity_regular_camps">
+    tools:showIn="@layout/activity_regular_camps"
+    android:orientation="vertical">
    
      <TextView
             android:layout_width="wrap_content"
@@ -21,7 +22,8 @@
             android:textStyle="bold" />
     
         <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recyclerView1">
 
