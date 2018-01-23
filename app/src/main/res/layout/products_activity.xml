@@ -205,7 +205,5 @@ Try and Buy might be available"
             android:background="@drawable/placeorder"
             android:gravity="center"
             android:visibility="visible" />
-
-
-    </RelativeLayout>
+</RelativeLayout>
 </ScrollView>
