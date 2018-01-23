@@ -23,12 +23,10 @@
             android:id="@+id/imageView"
             android:layout_width="381dp"
             android:layout_height="380dp"
-
-
+            android:src="@drawable/black"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/black"
+            android:layout_alignParentTop="true"/>
             tools:layout_editor_absoluteY="2dp" />
 
         <TextView
@@ -202,12 +200,11 @@ Try and Buy might be available"
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="950dip"
             android:layout_marginLeft="40dip"
-
+            android:layout_marginTop="950dip"
+            android:background="@drawable/placeorder"
             android:gravity="center"
-
-            android:background="@drawable/place"/>
+            android:visibility="visible" />
 
 
     </RelativeLayout>
