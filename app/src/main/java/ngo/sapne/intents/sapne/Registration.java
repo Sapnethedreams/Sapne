@@ -131,7 +131,7 @@ public class Registration extends Fragment {
                 }
             });
         }
-        String uid= mAuth.getUid();
+        String uid= user.getUid();
         dob1 = dob.getText().toString();
         edu1 = edu.getText().toString();
         post1 = joinusas.get(spnJoin.getSelectedItemPosition());
