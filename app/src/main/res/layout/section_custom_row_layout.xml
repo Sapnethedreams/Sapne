@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#05d5f5"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:textColor="#feffff"
+        android:textSize="26dp"
+        android:ems="20"
+        android:gravity="center"
+
+
+        />
+
+
+
+    <!--  recycler view for items -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/item_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/section_label"
+        android:layout_marginTop="18dp"
+        />
+</RelativeLayout>
