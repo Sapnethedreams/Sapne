@@ -1,26 +1,40 @@
 package ngo.sapne.intents.sapne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.Button;
 
-public class OurVolunteers extends Fragment {
-
+public class OurVolunteers extends Fragment{
     @Nullable
-    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_our_volunteer, container, false);
+        View view =  inflater.inflate(R.layout.activity_our_volunteer, container, false);
+
+        Button button = view.findViewById(R.id.vol_bn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linearSectionedRecyclerViewVertical();
+            }
+        });
+        return view;
     }
 
-    public void vol(View view) {
-        Intent intent = new Intent(getActivity(), AllVolunteers.class);
-        startActivity(intent);
+    public void linearSectionedRecyclerViewVertical() {
+        startRecyclerViewActivity();
     }
+
+    private void startRecyclerViewActivity() {
+        getActivity().getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_frame, new RecyclerViewFragment(), "RecyclerViewFragment")
+                .commit();
+    }
+
+
 
 
 }
