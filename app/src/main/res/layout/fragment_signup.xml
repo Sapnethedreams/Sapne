@@ -32,6 +32,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
             <EditText android:id="@+id/input_name"
+                android:textColor="@color/black"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:inputType="textCapWords"
@@ -53,6 +54,7 @@
             <EditText android:id="@+id/phn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:hint="Phone number"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -66,7 +68,8 @@
             <EditText android:id="@+id/dob"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                    android:inputType="date"
+                android:textColor="@color/black"
+                android:inputType="date"
                       android:hint="Date of Birth(dd/mm/yyyy)"/>
         </android.support.design.widget.TextInputLayout>
         <!-- Password Label -->
@@ -79,7 +82,7 @@
             <EditText android:id="@+id/edu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/black"
                 android:hint="Education"/>
         </android.support.design.widget.TextInputLayout>
         <!-- Password Label -->
@@ -104,6 +107,7 @@
                 android:id="@+id/spnJoin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp" />
         </android.support.design.widget.TextInputLayout>
