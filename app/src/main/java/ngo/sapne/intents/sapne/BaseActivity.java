@@ -62,8 +62,6 @@ public class BaseActivity extends AppCompatActivity {
         //set up the adapter for the expandablelistview to display the categories.
         mCategoryList.setAdapter(new expandableListViewAdapter(BaseActivity.this, category_name, subcategory_name, subCatCount));
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
         mCategoryList.setGroupIndicator(null);
 
         getSupportFragmentManager().
@@ -87,11 +85,18 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 5) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new ContactUs(), "ContactUs")
+                            replace(R.id.content_frame, new SapneCare(), "SapneCare")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (groupPosition == 6) {
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new ContactUs(), "ContactUs")
+                            .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                } else if (groupPosition == 7) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new MainFragment(), "MainFragment")
@@ -335,38 +340,43 @@ public class BaseActivity extends AppCompatActivity {
         Category categoryDetails = new Category();
 
         categoryDetails.setCatCode(10);
-        categoryDetails.setCatName("WHO WE ARE");
+        categoryDetails.setCatName("Who We Are");
 
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(20);
-        categoryDetails.setCatName("OUR BIT");
+        categoryDetails.setCatName("Our Bit");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(30);
-        categoryDetails.setCatName("SUCCESS STORIES");
+        categoryDetails.setCatName("Success Stories");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(40);
-        categoryDetails.setCatName("PRODUCTS");
+        categoryDetails.setCatName("Products");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(50);
-        categoryDetails.setCatName("EVENTS");
+        categoryDetails.setCatName("Events");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(60);
-        categoryDetails.setCatName("CONTACT US");
+        categoryDetails.setCatName("Contact Us");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(70);
-        categoryDetails.setCatName("HOME");
+        categoryDetails.setCatName("Sapne Care");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(80);
+        categoryDetails.setCatName("Home");
         category_name.add(categoryDetails);
 
 
