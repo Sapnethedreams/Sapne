@@ -1,24 +1,40 @@
-package com.example.intents.sapne;
+package ngo.sapne.intents.sapne;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.Button;
 
-public class our_volunteer extends BaseActivity {
-ListView listView;
+public class OurVolunteers extends Fragment{
+    @Nullable
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.activity_our_volunteer, container, false);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-     //   setContentView(R.layout.activity_our_volunteer);
-        getLayoutInflater().inflate(R.layout.activity_our_volunteer, frameLayout);
-        int[] iamges={R.drawable.ss1,R.drawable.ss2,R.drawable.ss3};
+        Button button = view.findViewById(R.id.vol_bn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linearSectionedRecyclerViewVertical();
+            }
+        });
+        return view;
     }
-    public void vol(View view){
-        Intent intent=new Intent(our_volunteer.this,all_volunteer.class);
-        startActivity(intent);
+
+    public void linearSectionedRecyclerViewVertical() {
+        startRecyclerViewActivity();
     }
+
+    private void startRecyclerViewActivity() {
+        getActivity().getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_frame, new RecyclerViewFragment(), "RecyclerViewFragment")
+                .commit();
+    }
+
+
 
 
 }
