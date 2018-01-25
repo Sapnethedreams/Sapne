@@ -8,6 +8,6 @@
     tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurMission"
     android:background="@drawable/mission_bg">
 
-    <include layout="@layout/content_our_mission" />
+    <include layout="@layout/activity_our_mission" />
 
 </android.support.design.widget.CoordinatorLayout>

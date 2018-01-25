@@ -4,9 +4,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
+public class RegisterUser extends Fragment implements View.OnClickListener {
 
     //defining view objects
     private EditText editTextEmail;
@@ -32,10 +35,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     //defining firebaseauth object
     private FirebaseAuth firebaseAuth;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_user);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.register_user, container, false);
 
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -44,24 +47,26 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         if (firebaseAuth.getCurrentUser() != null) {
             //that means user is already logged in
             //so close this activity
-            finish();
-
-            //and open profile activity
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new ProfileFragment(), "ProfileFragment")
+                    .commit();
         }
 
         //initializing views
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+        editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
+        textViewSignin = (TextView) view.findViewById(R.id.textViewSignin);
 
-        buttonSignup = (Button) findViewById(R.id.buttonSignup);
+        buttonSignup = (Button) view.findViewById(R.id.buttonSignup);
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(getActivity());
 
         //attaching listener to button
         buttonSignup.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
+
+        return view;
     }
 
     private void registerUser() {
@@ -72,12 +77,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         //checking if email and passwords are empty
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Please enter email", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Please enter password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -89,16 +94,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         //creating a new user
         firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                         if (task.isSuccessful()) {
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            getActivity().getSupportFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.content_frame, new Registration(), "Registration")
+                                    .commit();
                         } else {
                             //display some message here
-                            Toast.makeText(RegisterUser.this, "Registration Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Registration Error", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
@@ -114,8 +121,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         if (view == textViewSignin) {
-            //open login activity when user taps on the already registered textview
-            startActivity(new Intent(this, LoginActivity.class));
+            getActivity().getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                    .commit();
         }
 
     }
