@@ -23,8 +23,6 @@
             android:id="@+id/imageView"
             android:layout_width="381dp"
             android:layout_height="380dp"
-
-
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -79,10 +77,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dip"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="RS 499"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="406dp" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
 
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView2"
+            android:text="Free shipping"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="438dp" />
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView3"
             android:text="Product Details:
@@ -191,7 +214,6 @@ Try and Buy might be available"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="700dip"
-
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/textView2"
@@ -204,11 +226,22 @@ Try and Buy might be available"
             android:layout_height="wrap_content"
             android:layout_marginTop="950dip"
             android:layout_marginLeft="40dip"
-
             android:gravity="center"
-
             android:background="@drawable/download"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textView2"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/combined_products" />
 
-
-    </RelativeLayout>
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dip"
+            android:layout_marginTop="950dip"
+            android:background="@drawable/placeorder"
+            android:gravity="center"
+            android:visibility="visible" />
+</RelativeLayout>
 </ScrollView>
