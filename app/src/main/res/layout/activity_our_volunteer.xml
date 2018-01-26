@@ -594,8 +594,7 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentLeft="true"
-
-                              android:layout_alignParentStart="true"
+                        android:layout_alignParentStart="true"
                         android:text="General Secretary"
                         android:textAlignment="textStart"
                         android:textColor="#808080"
