@@ -1,6 +1,7 @@
 package ngo.sapne.intents.sapne;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -59,7 +60,7 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
         btnJoinUs.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
 
-        getActivity().findViewById(R.id.appBarAnim).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        getActivity().findViewById(R.id.appBarAnim).setBackgroundColor(Color.parseColor("#1DE9B6"));
     }
 
     public void explore() {
@@ -68,6 +69,7 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
                 replace(R.id.content_frame, new ExtraEventsFragment(), "ExtraEventsFragment")
                 .commit();
     }
+
 
     public void donate() {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.payumoney.com/paybypayumoney/#/206415"));

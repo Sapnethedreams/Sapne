@@ -18,8 +18,8 @@ public class OurVolunteers extends Fragment {
     }
 
     public void vol(View view) {
-        Intent intent = new Intent(getActivity(), AllVolunteers.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getActivity(), AllVolunteers.class);
+        //startActivity(intent);
     }
 
 
