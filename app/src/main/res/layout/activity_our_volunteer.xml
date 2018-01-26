@@ -594,7 +594,8 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
+
+                              android:layout_alignParentStart="true"
                         android:text="General Secretary"
                         android:textAlignment="textStart"
                         android:textColor="#808080"
@@ -623,8 +624,9 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:background="#05d5f5"
-            android:onClick="vol"
+            android:id="@+id/vol_bn"
             android:text="All Volunteers"
+            android:layout_marginBottom="20dp"
             android:textAlignment="center"
             android:textColor="#feffff"
             android:textSize="25dp" />
