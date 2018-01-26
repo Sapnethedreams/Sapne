@@ -4,10 +4,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_about_us">AboutUs</string>
-<string name="education_for_all">Education for all</string>
+    <string name="education_for_all">Education for all</string>
 
-    
-<string name="regularcamp_para1">A teacher presents the past,
+
+    <string name="regularcamp_para1">A teacher presents the past,
     reveals the present and creates the future, rightly said by John Holt.
     So, here at Sapne - our NGO, we are providing quality teachers, for the
     children who are willing to study and who want to make their future bright
@@ -26,14 +26,14 @@
         accordingly they teach , they train the students . In this way teachers get the platform to teach and express or share their knowledge , moreover ,
         increase their knowledge , and students get quality education .</string>
 
-<string name="regularcamp_para3">While moving on the roads , we see many children who have not worn proper clothes , who are deprived of the basic needs ,
+    <string name="regularcamp_para3">While moving on the roads , we see many children who have not worn proper clothes , who are deprived of the basic needs ,
     who should study and play at this age , but due to their financial conditions , they can\'t even think of doing all these things because , for them ,
     three-time meal is more than enough for survival. Now the question arrises , What do we , as responsible citizen of the country , do for them ? Except for
     showing concern , except for being sympathetic , we do nothing . But Sapne , our NGO , is proud to tell that , we are doing something , we have taken first
     step and it is the First step that leads to the Final step . And we are sure that we will definitely reach till the final step with the support of our team and
     the children who want to make their future bright and satisfying .</string>
 
-    
+
     <string name="signup">"No account yet? Create one"</string>
 
     <string name="short_lorem_ipsum">Her name is Sapna, a young girl who recently migrated to Delhi from Nepal, along with her parents. The first few months in Delhi were tough. Having little knowledge of Hindi, the common language, Sapna struggled to communicate with other kids of her dilapidated locality in Delhi. But not only does she share her name with our organisation, she shares SAPNE\'s grit and determination as well! Since the past three months, Sapnas been working diligently on her Hindi under the guidance of tutors provided by SAPNE. Her hardwork seems to be paying off and she can now converse and play with her friends with relative ease. During one of the career counselling sessions organised by SAPNE at her locality, Sapna shared her dream of becoming a doctor when she grows up. "I want to help the needy" she says with her trademark adorable smile. Help her fulfil her dreams.</string>
@@ -94,4 +94,5 @@
         \n\nThe children showed great enthusiasm while painting the walls. They showed their
         creative skills by painting the walls using their handprints and decorate the walls
         with alphabets and numbers.</string>
+    <string name="title_activity_notification__list">Notification_List</string>
 </resources>
