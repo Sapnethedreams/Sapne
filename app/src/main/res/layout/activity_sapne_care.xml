@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="About:"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -23,7 +23,7 @@
             android:id="@+id/textView01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sapne care intends to act as an interface between the volunteers and organistaion."
+            android:text="@string/sap_care_message"
             android:textColor="#434141"
             android:textSize="20dp"
             android:layout_margin="5dp"/>
@@ -42,8 +42,9 @@
                 android:background="@color/grey"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:text="Enter your name"
-                android:textColor="#aeaea8" />
+                android:hint="Enter your name"
+                android:textColorHint="#737373"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -55,11 +56,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_weight="7.47"
-                android:text="Enter your position"
+                android:hint="Enter your position"
                 android:layout_margin="5dp"
                 android:padding="5dp"
                 android:background="@color/grey"
-                android:textColor="#aeaea8" />
+                android:textColorHint="#737373"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,11 +73,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_weight="7.47"
-                android:text="Enter your department"
+                android:hint="Enter your department"
                 android:layout_margin="5dp"
                 android:padding="5dp"
                 android:background="@color/grey"
-                android:textColor="#aeaea8" />
+                android:textColorHint="#737373"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,11 +92,12 @@
                 android:layout_marginTop="15dp"
                 android:ems="10"
                 android:inputType="phone"
-                android:text="Enter your number"
+                android:hint="Enter your number"
                 android:layout_margin="5dp"
                 android:padding="5dp"
                 android:background="@color/grey"
-                android:textColor="#aeaea8" />
+                android:textColorHint="#737373"
+                android:textColor="@color/colorPrimaryDark"/>
         </LinearLayout>
 
         <TextView
@@ -101,9 +105,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Description:"
-            android:textColor="@color/colorPrimary"
             android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -111,9 +115,24 @@
             android:layout_margin="5dp"
             android:padding="5dp"
             android:background="@color/grey"
-            android:text="Enter description here"
-            android:textColor="#aeaea8" />
+            android:hint="Enter description here"
+            android:textColorHint="#737373"
+            android:textColor="@color/colorPrimaryDark"/>
 
+        <Button
+            android:id="@+id/care_button"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText4"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custombutton"
+            android:onClick="Message"
+            android:text="Send Message"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

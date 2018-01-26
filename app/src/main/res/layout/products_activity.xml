@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-                    android:background="@color/cardview_light_background"
-                    tools:context="com.example.android.sapne.MainActivity">
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="381dp"
-            android:layout_height="380dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/download"
-            tools:layout_editor_absoluteY="2dp" />
+        android:background="@color/cardview_light_background"
+        tools:context="com.example.android.sapne.MainActivity">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="300dp"
             android:layout_height="43dp"
-            android:layout_marginTop="20dip"
-
-
             android:layout_alignParentLeft="true"
+
+
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
+            android:layout_marginTop="20dip"
             android:text="SAPNE BLACK T-SHIRT"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="382dp" />
@@ -47,8 +35,6 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:layout_alignBottom="@+id/textView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -62,11 +48,11 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
-
             android:layout_alignParentLeft="true"
+
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView2"
+            android:layout_marginTop="10dip"
             android:text="Free shipping"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
@@ -76,38 +62,10 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
-            android:layout_alignBottom="@+id/textView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="RS 499"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="406dp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
-
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView2"
-            android:text="Free shipping"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="438dp" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView3"
+            android:layout_marginTop="10dip"
             android:text="Product Details:
 Black solid T-shirt with raw edge effect, has a round neck, short sleeves,"
             android:textStyle="bold"
@@ -119,12 +77,12 @@ Black solid T-shirt with raw edge effect, has a round neck, short sleeves,"
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="175dip"
-
-
             android:layout_alignParentLeft="true"
+
+
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
+            android:layout_marginTop="175dip"
             android:text="Material and Care
 Cotton
 Machine-wash"
@@ -133,16 +91,17 @@ Machine-wash"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="406dp" />
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dip"
-
-
             android:layout_alignParentLeft="true"
+
+
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
+            android:layout_marginTop="250dip"
             android:text="Check Delivery Options
 Tax: Applicable tax on the basis of exact location and discount will be charged at the time of checkout
 
@@ -161,17 +120,15 @@ Try and Buy might be available"
             tools:layout_editor_absoluteY="406dp" />
 
 
-
-
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dip"
-
             android:layout_alignLeft="@+id/textView3"
+
             android:layout_alignStart="@+id/textView3"
             android:layout_below="@+id/textView3"
+            android:layout_marginTop="400dip"
             android:text="LARGE"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
@@ -207,30 +164,13 @@ Try and Buy might be available"
             tools:layout_editor_absoluteX="196dp"
             tools:layout_editor_absoluteY="463dp" />
 
-
-
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:layout_marginTop="700dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/textView2"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/combined_products" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="950dip"
-            android:layout_marginLeft="40dip"
-            android:gravity="center"
-            android:background="@drawable/download"/>
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/textView2"
+            android:layout_below="@+id/checkBox3"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/combined_products" />
 
@@ -240,8 +180,14 @@ Try and Buy might be available"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dip"
             android:layout_marginTop="950dip"
-            android:background="@drawable/placeorder"
+            android:background="@drawable/download"
             android:gravity="center"
-            android:visibility="visible" />
-</RelativeLayout>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/textView2"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/combined_products" />
+
+    </RelativeLayout>
+
 </ScrollView>

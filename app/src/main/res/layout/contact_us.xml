@@ -1,195 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_scrollFlags="scroll">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="10dp"
-            android:text="Send Us A Message:"
-            android:textColor="@color/colorAccent"
-            android:textSize="25dp" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/textView"
-            android:layout_marginTop="47dp"
-            android:ems="10"
-            android:hint="Your Name"
-            android:inputType="textPersonName"
-            android:textColor="#3989f1" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="Send Us A Message:"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText"
-            android:ems="10"
-            android:hint="Phone"
-            android:inputType="textPersonName"
-            android:textColor="#3989f1" />
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/textView"
+                android:layout_marginTop="47dp"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="Your Name"
+                android:textColorHint="#939393"
+                android:inputType="textPersonName"
+                android:textColor="#3989f1" />
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText3"
-            android:ems="10"
-            android:hint="Email Address"
-            android:inputType="textPersonName"
-            android:textColor="#3989f1" />
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editText"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="textPersonName"
+                android:textColorHint="#939393"
+                android:textColor="#3989f1" />
 
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText2"
-            android:ems="10"
-            android:hint="Your Message"
-            android:inputType="textPersonName"
-            android:textColor="#3989f1" />
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editText3"
+                android:ems="10"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:hint="Email Address"
+                android:inputType="textPersonName"
+                android:textColorHint="#939393"
+                android:textColor="#3989f1" />
 
-        <EditText
-            android:id="@+id/editText4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText5"
-            android:ems="10"
-            android:hint="City"
-            android:inputType="textPersonName"
-            android:textColor="#3989f1" />
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editText2"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="Your Message"
+                android:inputType="textPersonName"
+                android:textColorHint="#939393"
+                android:textColor="#3989f1" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="221dp"
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editText5"
+                android:textColorHint="#939393"
+                android:ems="10"
+                android:hint="City"
+                android:inputType="textPersonName"
+                android:textColor="#3989f1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText4"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custombutton"
+                android:onClick="Message"
+                android:text="Send Message"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText4"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/button2"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombutton1"
+                android:onClick="location"
+                android:text="Find Us "
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/button3"
+                android:layout_marginLeft="180dp"
+                android:background="@drawable/custombutton1"
+                android:onClick="ring"
+                android:text="Give Us A Ring"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:onClick="Message"
-            android:textStyle="bold"
-            android:text="Send Message"
-            android:textColor="#ffffff"
-            android:background="@drawable/custombutton" />
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="15dp">
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:onClick="twitter"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/twitter" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_gravity="center"
-        >
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imageButton"
+                android:background="@android:color/transparent"
+                android:onClick="linkedin"
+                android:layout_marginRight="20dp"
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custombutton1"
-            android:onClick="location"
-            android:text="Find Us "
-            android:textColor="#000000"
-            android:textStyle="bold" />
+                app:srcCompat="@drawable/linkedin" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_marginLeft="180dp"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button3"
-            android:background="@drawable/custombutton1"
-            android:onClick="ring"
-            android:text="Give Us A Ring"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imageButton2"
+                android:background="@android:color/transparent"
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        >
+                android:onClick="facebook"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/facebook" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imageButton3"
+                android:background="@android:color/transparent"
+                android:onClick="instagram"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/instagram" />
+            />
 
-            android:background="@android:color/transparent"
-            android:onClick="twitter"
-            android:paddingRight="10dp"
-            app:srcCompat="@drawable/twitter" />
+        </RelativeLayout>
+    </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imageButton"
-            android:background="@android:color/transparent"
-            android:onClick="linkedin"
-            android:paddingRight="10dp"
-
-            app:srcCompat="@drawable/linkedin" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_toEndOf="@+id/imageButton2"
-            android:layout_height="wrap_content"
-            android:paddingRight="10dp"
-
-            android:background="@android:color/transparent"
-            android:onClick="facebook"
-            app:srcCompat="@drawable/facebook" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="10dp"
-            android:background="@android:color/transparent"
-            android:onClick="instagram"
-            android:layout_toEndOf="@+id/imageButton3"
-            app:srcCompat="@drawable/instagram" />
-
-
-
-        />
-
-    </RelativeLayout>
-</LinearLayout>
+</ScrollView>
