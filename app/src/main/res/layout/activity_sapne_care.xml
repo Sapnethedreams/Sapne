@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sap_care_message"
             android:textColor="#434141"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:layout_margin="5dp"/>
 
         <LinearLayout

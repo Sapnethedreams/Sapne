@@ -284,11 +284,11 @@ public class BaseActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.notification:
-                Fragment mainFrag = getSupportFragmentManager().findFragmentByTag("MainFragment");
-                if (mainFrag == null) {
+                Fragment notificationList = getSupportFragmentManager().findFragmentByTag("NotificationList");
+                if (notificationList == null) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new MainFragment(), "MainFragment")
+                            replace(R.id.content_frame, new NotificationList(), "NotificationList")
                             .commit();
                 }
                 break;

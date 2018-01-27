@@ -89,6 +89,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
                 String edu1= dataSnapshot.getValue().toString();
                 edu.setText(edu1);
             }
@@ -106,6 +109,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
                 String vol1= dataSnapshot.getValue().toString();
                 vol.setText(vol1);
             }
@@ -123,6 +129,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
                 String phn1= dataSnapshot.getValue().toString();
                 phone.setText(phn1);
             }
@@ -140,6 +149,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
                 String dob1= dataSnapshot.getValue().toString();
                 dob.setText(dob1);
             }

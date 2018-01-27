@@ -83,9 +83,6 @@ public class RecyclerViewFragment extends Fragment {
                 itemA12.add(R.drawable.pooja);
                 textA11.add("Shubham Pandey ");
                 textA12.add("Pooja Rai");
-                itemA11.add(R.drawable.arjun);
-                itemA12.add(0);
-                textA11.add("Arjun Gupta");
                 textA12.add("");
 
                 //add the section and items to array list
