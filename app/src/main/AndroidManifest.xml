@@ -19,50 +19,47 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity
-            android:name=".BaseActivity"
+            android:name="ngo.sapne.intents.sapne.BaseActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Splash">
+        <activity android:name="ngo.sapne.intents.sapne.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Notifications" />
+        <activity android:name="ngo.sapne.intents.sapne.Notifications" />
+
         <activity
-            android:name=".RegisterUser"
+            android:name="ngo.sapne.intents.sapne.RegisterUser"
             android:label="Sign up"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="ngo.sapne.intents.sapne.ProfileActivity"
             android:label="Sapne User Information"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name="ngo.sapne.intents.sapne.LoginActivity"
             android:label="Sign in"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".FirebaseIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".Notification_List"
-            android:label="@string/title_activity_notification__list"
-            android:theme="@style/AppTheme"></activity>
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

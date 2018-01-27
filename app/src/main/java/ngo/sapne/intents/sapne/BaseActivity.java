@@ -85,18 +85,25 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (groupPosition == 5) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new SapneCare(), "SapneCare")
+                            replace(R.id.content_frame, new ContactUs(), "ContactUs")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (groupPosition == 6) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new ContactUs(), "ContactUs")
+                            replace(R.id.content_frame, new VolunteerSpeak(), "VolunteerSpeak")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
                 } else if (groupPosition == 7) {
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new SapneCare(), "SapneCare")
+                            .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                } else if (groupPosition == 8) {
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new MainFragment(), "MainFragment")
@@ -371,11 +378,16 @@ public class BaseActivity extends AppCompatActivity {
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(70);
-        categoryDetails.setCatName("Sapne Care");
+        categoryDetails.setCatName("Volunteers Speak");
         category_name.add(categoryDetails);
 
         categoryDetails = new Category();
         categoryDetails.setCatCode(80);
+        categoryDetails.setCatName("Sapne Care");
+        category_name.add(categoryDetails);
+
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(90);
         categoryDetails.setCatName("Home");
         category_name.add(categoryDetails);
 

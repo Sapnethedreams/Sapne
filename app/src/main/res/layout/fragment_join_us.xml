@@ -4,33 +4,36 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     tools:context="ngo.sapne.intents.sapne.FragmentJoinUs">
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
+        android:background="#ffffff"
         android:paddingBottom="20dp"
-        android:background="#ffffff">
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:scrollbars="none"
+        android:paddingTop="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#ffff19"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingBottom="20dp"
                 android:paddingTop="20dp"
-                android:background="#ffff19"
                 app:cardBackgroundColor="#f8f9fa"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                android:orientation="vertical">
-
+                app:cardElevation="5dp">
 
 
                 <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -49,11 +52,11 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="Welcome To Sapne"
                         android:textAlignment="center"
                         android:textColor="@color/colorAccent"
                         android:textSize="25sp"
-                        android:layout_marginTop="10dp"
                         android:textStyle="bold" />
 
                     <EditText
@@ -61,11 +64,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:textColorHint="#123456"
-                        android:textColor="@color/black"
                         android:ems="10"
                         android:hint="Name"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:textColorHint="#123456" />
 
                     <EditText
                         android:id="@+id/etPhoneNumber"
@@ -74,27 +77,27 @@
                         android:layout_marginTop="10dp"
                         android:ems="10"
                         android:hint="Enter Phone Number"
+                        android:inputType="phone"
                         android:textColor="@color/black"
-                        android:textColorHint="#123456"
-                        android:inputType="phone" />
+                        android:textColorHint="#123456" />
 
                     <EditText
                         android:id="@+id/etEmail"
-                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
                         android:ems="10"
                         android:hint="Email"
-                        android:textColorHint="#123456"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:textColorHint="#123456" />
 
                     <RadioGroup
                         android:id="@+id/rgSex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -103,35 +106,37 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:checked="true"
-                            android:textColor="#123456"
-                            android:text="Male" />
+                            android:text="Male"
+                            android:textColor="#123456" />
 
                         <RadioButton
                             android:id="@+id/rbFemale"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textColor="#123456"
-                            android:text="Female" />
+                            android:text="Female"
+                            android:textColor="#123456" />
 
                     </RadioGroup>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="20dp"
-                android:paddingTop="20dp"
                 android:layout_marginTop="50dp"
                 android:background="#ffff19"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
                 app:cardBackgroundColor="#f8f9fa"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                android:orientation="vertical">
+                app:cardElevation="5dp">
+
                 <LinearLayout xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/activity_main1"
                     android:layout_width="match_parent"
@@ -147,39 +152,39 @@
                     <EditText
                         android:id="@+id/etAddress"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
                         android:ems="10"
-                        android:lines="3"
                         android:hint="Enter address"
-                        android:textColor="@color/black"
-                        android:textColorHint="#123456"
                         android:inputType="textMultiLine"
-                        android:text="" />
+                        android:lines="3"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="#123456" />
 
 
                     <EditText
                         android:id="@+id/etOffice"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
                         android:ems="10"
-                        android:lines="3"
-                        android:textColorHint="#123456"
-                        android:textColor="@color/black"
                         android:hint="Office/Institute"
                         android:inputType="text"
-                        android:text="" />
+                        android:lines="3"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="#123456" />
 
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
                         android:text="Join Sapne As"
                         android:textColor="#123456"
                         android:textSize="20sp" />
@@ -187,24 +192,24 @@
                     <Spinner
                         android:id="@+id/spnJoin"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp" />
 
 
                     <EditText
                         android:id="@+id/etAadhar"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
                         android:ems="10"
-                        android:lines="3"
                         android:hint="Enter Aadhar No."
-                        android:textColor="@color/black"
-                        android:textColorHint="#123456"
                         android:inputType="text|textPersonName"
-                        android:text="" />
+                        android:lines="3"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="#123456" />
 
 
                     <!--<TextView-->
@@ -219,14 +224,14 @@
 
                     <Button
                         android:id="@+id/btnSubmit"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:background="@drawable/custombutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Submit"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
-                        android:layout_gravity="center_horizontal"/>
+                        android:background="@drawable/custombutton"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
