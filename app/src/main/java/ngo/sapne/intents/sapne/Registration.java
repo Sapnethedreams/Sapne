@@ -45,14 +45,14 @@ public class Registration extends Fragment {
 
     final ArrayList<String> joinusas = new ArrayList<>();
     EditText name, email, dob, edu, phn;
-    String name1, email1, dob1, edu1, post1, phn1, profileImageUrl;
+    String name1, email1, dob1, edu1, post1, phn1 ;
     Button GoToProf;
     int PICK_IMAGE_REQUEST = 111;
     Button uplod;
 
     TextView t1;
     ImageView prof;
-    Uri filePath;
+    Uri filePath,profileImageUrl;
     ProgressDialog pd;
     Spinner spnJoin;
     FirebaseStorage
@@ -120,7 +120,7 @@ public class Registration extends Fragment {
             String displayName= name.getText().toString();
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
-                    .setPhotoUri(Uri.parse(profileImageUrl))
+                    .setPhotoUri(profileImageUrl)
                     .build();
             user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -175,7 +175,7 @@ public class Registration extends Fragment {
             profileImageReference.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    profileImageUrl = taskSnapshot.getDownloadUrl().toString();
+                    profileImageUrl = taskSnapshot.getDownloadUrl();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
