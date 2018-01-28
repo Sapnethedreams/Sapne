@@ -22,8 +22,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static ngo.sapne.intents.sapne.NetworkUtil.context;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
@@ -166,9 +169,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void loadUserProfpic() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if(user!=null){
-            if(user.getPhotoUrl()!=null){
-                Glide.with(this).load(user.getPhotoUrl().toString()).into(profpic);
-            }
+
+            Picasso.with(getActivity()).load(user.getPhotoUrl()).into(profpic);
             if (user.getDisplayName()!=null){
                 name.setText("Welcome   " +user.getDisplayName());
             }
