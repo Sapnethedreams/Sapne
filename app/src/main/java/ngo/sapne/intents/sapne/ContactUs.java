@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -18,6 +19,7 @@ import java.util.Locale;
 public class ContactUs extends Fragment {
     Button button2, button4, button3;
     EditText editText5;
+    ImageButton ib1,ib3,ib2,ib4;
 
     @Nullable
     @Override
@@ -25,10 +27,48 @@ public class ContactUs extends Fragment {
         View view = inflater.inflate(R.layout.contact_us, container, false);
         button3 = view.findViewById(R.id.button3);
         button4 = view.findViewById(R.id.button4);
-
         button2 = view.findViewById(R.id.button2);
+        ib1=view.findViewById(R.id.imageButton);
+        ib2=view.findViewById(R.id.imageButton2);
+        ib3=view.findViewById(R.id.imageButton3);
+        ib4=view.findViewById(R.id.imageButton4);
 
-
+        ib1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://twitter.com/Sapne07";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        ib2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.linkedin.com/in/sapnethedreams";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        ib3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.facebook.com/Sapnethedreams/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        ib4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.instagram.com/sapnethedreams/?hl=en";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
         button4.setOnClickListener(new View.OnClickListener() {
 
             @Override

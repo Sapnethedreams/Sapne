@@ -72,6 +72,7 @@ public class Registration extends Fragment {
         spnJoin = (Spinner) view.findViewById(R.id.spnJoin);
         prof = view.findViewById(R.id.iv7);
         GoToProf = (Button) view.findViewById(R.id.btn_regi);
+        t1= view.findViewById(R.id.tv77);
         uplod = (Button) view.findViewById(R.id.bws);
 
         joinusas.add("Intern");
@@ -156,7 +157,7 @@ public class Registration extends Fragment {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
-
+            t1.setVisibility(View.INVISIBLE);
             try {
                 //getting image from gallery
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
