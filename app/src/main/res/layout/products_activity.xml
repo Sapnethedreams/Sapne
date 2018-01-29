@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="300dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dip"
@@ -127,30 +127,21 @@ Black solid T-shirt with raw edge effect, has a round neck, short sleeves,"
             android:layout_marginTop="10dip"
             android:text="Material and Care
 Cotton
-Machine-wash"
+Machine-wash
+
+Our other products"
 
             android:textStyle="bold"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="406dp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/combined_products" />
-
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dip"
+            android:layout_marginTop="10dip"
             android:text="Check Delivery Options
 Tax: Applicable tax on the basis of exact location and discount will be charged at the time of checkout
 
@@ -167,7 +158,6 @@ Try and Buy might be available"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="406dp" />
-
         <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
@@ -175,12 +165,35 @@ Try and Buy might be available"
             android:layout_marginTop="10dip"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
-            android:background="@drawable/custombutton"
-            android:text="Buy"
+
+
             android:textColor="@color/white"
             android:gravity="center"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/combined_products" />
+            app:srcCompat="@drawable/combined_products"
+            android:background="@drawable/orange"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See Our other products"
+            android:textStyle="bold"
+android:textSize="25dp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/combined_products"
+           />
+
+
+
+
 
     </LinearLayout>
 
