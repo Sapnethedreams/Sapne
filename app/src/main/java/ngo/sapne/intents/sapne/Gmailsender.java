@@ -24,24 +24,17 @@ import javax.mail.internet.MimeMultipart;
 
 public class Gmailsender extends javax.mail.Authenticator {
 
-    private String mailhost = "smtp.gmail.com";
-
-    private String user;
-
-    private String password;
-
-    private Session session;
-
-
-
-    private Multipart _multipart = new MimeMultipart();
-
     static {
 
         Security.addProvider(new ngo.sapne.intents.sapne.JSSEProvider());
 
     }
 
+    private String mailhost = "smtp.gmail.com";
+    private String user;
+    private String password;
+    private Session session;
+    private Multipart _multipart = new MimeMultipart();
 
 
     public Gmailsender(String user, String password) {
@@ -49,7 +42,6 @@ public class Gmailsender extends javax.mail.Authenticator {
         this.user = user;
 
         this.password = password;
-
 
 
         Properties props = new Properties();
@@ -73,11 +65,9 @@ public class Gmailsender extends javax.mail.Authenticator {
         props.setProperty("mail.smtp.quitwait", "false");
 
 
-
         session = Session.getDefaultInstance(props, this);
 
     }
-
 
 
     protected PasswordAuthentication getPasswordAuthentication() {
@@ -85,7 +75,6 @@ public class Gmailsender extends javax.mail.Authenticator {
         return new PasswordAuthentication(user, password);
 
     }
-
 
 
     public synchronized void sendMail(String subject, String body,
@@ -113,7 +102,6 @@ public class Gmailsender extends javax.mail.Authenticator {
             _multipart.addBodyPart(messageBodyPart);
 
 
-
             // Put parts in message
 
             message.setContent(_multipart);
@@ -135,11 +123,9 @@ public class Gmailsender extends javax.mail.Authenticator {
         } catch (Exception e) {
 
 
-
         }
 
     }
-
 
 
     public void addAttachment(String filename) throws Exception {
@@ -153,11 +139,9 @@ public class Gmailsender extends javax.mail.Authenticator {
         messageBodyPart.setFileName("download image");
 
 
-
         _multipart.addBodyPart(messageBodyPart);
 
     }
-
 
 
     public class ByteArrayDataSource implements DataSource {
@@ -165,9 +149,6 @@ public class Gmailsender extends javax.mail.Authenticator {
         private byte[] data;
 
         private String type;
-
-
-
 
 
         public ByteArrayDataSource(byte[] data, String type) {
@@ -181,7 +162,6 @@ public class Gmailsender extends javax.mail.Authenticator {
         }
 
 
-
         public ByteArrayDataSource(byte[] data) {
 
             super();
@@ -191,15 +171,11 @@ public class Gmailsender extends javax.mail.Authenticator {
         }
 
 
-
-
-
         public void setType(String type) {
 
             this.type = type;
 
         }
-
 
 
         public String getContentType() {
@@ -215,7 +191,6 @@ public class Gmailsender extends javax.mail.Authenticator {
         }
 
 
-
         public InputStream getInputStream() throws IOException {
 
             return new ByteArrayInputStream(data);
@@ -223,13 +198,11 @@ public class Gmailsender extends javax.mail.Authenticator {
         }
 
 
-
         public String getName() {
 
             return "ByteArrayDataSource";
 
         }
-
 
 
         public OutputStream getOutputStream() throws IOException {

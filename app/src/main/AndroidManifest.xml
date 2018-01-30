@@ -7,25 +7,26 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="Sapne"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name="ngo.sapne.intents.sapne.BaseActivity">
+        <activity
+            android:name="ngo.sapne.intents.sapne.BaseActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="ngo.sapne.intents.sapne.MainActivity" />
-        <activity android:name="ngo.sapne.intents.sapne.splash">
+        <activity android:name="ngo.sapne.intents.sapne.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,110 +34,32 @@
             </intent-filter>
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
-        <activity android:name="ngo.sapne.intents.sapne.JoinUs" />
-
-        <activity android:name="ngo.sapne.intents.sapne.Register_user"
-                  android:label="Sign up"
-                  android:screenOrientation="portrait"
-            />
-        <activity android:name="ngo.sapne.intents.sapne.ProfileActivity"
-                  android:label="Sapne User Information"
-                  android:screenOrientation="portrait"
-            />
-        <activity android:name="ngo.sapne.intents.sapne.LoginActivity"
-                  android:label="Sign in"
-                  android:screenOrientation="portrait"
-            >
-
-        </activity>
 
         <activity
-            android:name="ngo.sapne.intents.sapne.Activities"
-            android:label="Activities Corner "
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.RegisterUser"
+            android:label="Sign up"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="ngo.sapne.intents.sapne.Products"
-            android:label="Products"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.ProfileActivity"
+            android:label="Sapne User Information"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="ngo.sapne.intents.sapne.NewFrag"
-            android:noHistory="true"
-            android:parentActivityName="ngo.sapne.intents.sapne.MainActivity" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.RegularCamps"
-            android:label="Regular camps "
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.our_volunteer"
-            android:label="Our Team"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.Contact_us"
-            android:label="Contact Us "
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.AboutUs"
-            android:label="@string/about_us"
-            android:noHistory="true"
-            android:parentActivityName="ngo.sapne.intents.sapne.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurMission"
-            android:label="@string/our_mission"
-            android:noHistory="true"
-            android:parentActivityName="ngo.sapne.intents.sapne.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.Ring_contact_us"
-            android:label="Contact Us"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurVision"
-            android:label="@string/title_activity_our_vision"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.Location_contact_us"
-            android:label="Location"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:name="ngo.sapne.intents.sapne.LoginActivity"
+            android:label="Sign in"
+            android:screenOrientation="portrait"/>
 
-        <activity
-            android:name="ngo.sapne.intents.sapne.all_volunteer"
-            android:label="Volunteers"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.OurTeam"
-            android:label="@string/title_activity_our_team"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.EventsActivity"
-            android:label="@string/title_activity_events"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.EventsExtraActivity"
-            android:label="Events"
-            android:noHistory="true"
-            android:theme="@style/AppTheme" />
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

@@ -14,22 +14,23 @@ public class Notifications extends AppCompatActivity {
         setContentView(R.layout.activity_notifications);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
     }
+
     public void update(View v)
     {
         Intent intent= new Intent(Notifications.this,Updates.class);
         startActivity(intent);
     }
+
     public void invitation(View v)
     {
         Intent intent= new Intent(Notifications.this,Invitations.class);
         startActivity(intent);
     }
+
     @Override
     public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
+        Intent i=new Intent(this,MainFragment.class);
         startActivity(i);
         finish();
     }

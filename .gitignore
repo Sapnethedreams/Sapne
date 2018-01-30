@@ -1,5 +1,4 @@
 *.iml
-.gradle
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -7,7 +6,7 @@
 /build
 /captures
 .externalNativeBuild
-app/src/main/AndroidManifest.xml
-app/src/main/AndroidManifest.xml
-app/src/main/java/com/example/intents/sapne/MainActivity.java
 app/src/main/res/values/colors.xml
+.idea/misc.xml
+.gradle
+app/src/main/AndroidManifest.xml
