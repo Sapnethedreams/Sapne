@@ -170,14 +170,14 @@ Try and Buy might be available"
             android:textColor="@color/white"
             android:gravity="center"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/combined_products"
-            android:background="@drawable/orange"/>
+            app:srcCompat="@drawable/combined_products" />
+           <!-- android:background="@drawable/orange"-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="See Our other products"
             android:textStyle="bold"
-android:textSize="25dp"
+            android:textSize="25dp"
             android:gravity="center"/>
 
         <ImageView
