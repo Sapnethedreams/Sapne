@@ -33,6 +33,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
@@ -52,7 +53,8 @@ public class Registration extends Fragment {
 
     TextView t1;
     ImageView prof;
-    Uri filePath,profileImageUrl;
+    Uri filePath;
+    public static Uri profileImageUrl;
     ProgressDialog pd;
     Spinner spnJoin;
     FirebaseStorage
@@ -117,8 +119,11 @@ public class Registration extends Fragment {
     private void saveUserInfo() {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user= mAuth.getCurrentUser();
+
         if(user!=null) {
-            String displayName= name.getText().toString();
+
+
+               String displayName= name.getText().toString();
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
                     .setPhotoUri(profileImageUrl)
@@ -140,7 +145,6 @@ public class Registration extends Fragment {
         String id = mDatabase.push().getKey();
         Users users= new Users( id, name1, email1, post1, dob1, edu1, phn1);
         mDatabase.child(uid).setValue(users);
-
     }
 
 
