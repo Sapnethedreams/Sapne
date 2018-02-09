@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
@@ -32,6 +33,9 @@
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
+            android:backgroundTint="#ffff"
+            android:textColor="#cccccc"
+            android:drawableLeft="@drawable/user"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Enter email"
@@ -41,6 +45,9 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#ffff"
+            android:drawableLeft="@drawable/lock"
+            android:textColor="#cccccc"
             android:layout_margin="15dp"
             android:hint="Enter password"
             android:inputType="textPassword" />
@@ -50,9 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorAccent"
+            android:background="#79a209df"
             android:text="SignIn"
-            android:textColor="@color/white"
+            android:textColor="#cccccc"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -60,6 +67,7 @@
             android:id="@+id/textViewSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+             android:textColor="#cccccc"
             android:layout_margin="15dp"
             android:text="Don't have an account? Signup Here"
             android:textAlignment="center" />
