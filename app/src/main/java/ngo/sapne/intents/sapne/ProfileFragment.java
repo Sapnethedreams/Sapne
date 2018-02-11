@@ -78,8 +78,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         loadUserEdu();
         loadUserProfpic();
 
-
-
         //adding listener to button
         buttonLogout.setOnClickListener(this);
 

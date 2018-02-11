@@ -1,20 +1,20 @@
 package ngo.sapne.intents.sapne;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.util.Patterns;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,25 +22,27 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class FragmentJoinUs extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener  {
+public class FragmentJoinUs extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-        EditText etAddress, etName, etPhoneNumber, etEmail, etAadhar, etOffice;
-        Button btnSubmit;
-        Spinner spnJoin;
-        RadioGroup rgSex;
-        EditText tt;
-        TextView terms;
-        ProgressDialog progressDialog;
-        GoogleApiClient mLocationClient;
-        Location mLastLocation;
+    EditText etAddress, etName, etPhoneNumber, etEmail, etAadhar, etOffice;
+    Button btnSubmit;
+    Spinner spnJoin;
+    RadioGroup rgSex;
+    EditText tt;
+    TextView terms;
+    ProgressDialog progressDialog;
+    GoogleApiClient mLocationClient;
+    Location mLastLocation;
 
 
     @Override
@@ -60,16 +62,16 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
         mLocationClient = builder.build();
 
 //        terms=(TextView)findViewById(R.id.terms);
-        etName= (EditText)v.findViewById(R.id.etName);
-        etPhoneNumber= (EditText) v.findViewById(R.id.etPhoneNumber);
-        etEmail= (EditText) v.findViewById(R.id.etEmail);
-        etAddress= (EditText) v.findViewById(R.id.etAddress);
-        etAadhar= (EditText) v.findViewById(R.id.etAadhar);
-        etOffice= (EditText) v.findViewById(R.id.etOffice);
-        btnSubmit= (Button) v.findViewById(R.id.btnSubmit);
-        spnJoin= (Spinner) v.findViewById(R.id.spnJoin);
+        etName = (EditText) v.findViewById(R.id.etName);
+        etPhoneNumber = (EditText) v.findViewById(R.id.etPhoneNumber);
+        etEmail = (EditText) v.findViewById(R.id.etEmail);
+        etAddress = (EditText) v.findViewById(R.id.etAddress);
+        etAadhar = (EditText) v.findViewById(R.id.etAadhar);
+        etOffice = (EditText) v.findViewById(R.id.etOffice);
+        btnSubmit = (Button) v.findViewById(R.id.btnSubmit);
+        spnJoin = (Spinner) v.findViewById(R.id.spnJoin);
         progressDialog = new ProgressDialog(getActivity());
-        rgSex= (RadioGroup) v.findViewById(R.id.rgSex);
+        rgSex = (RadioGroup) v.findViewById(R.id.rgSex);
         //        terms.setOnClickListener(new View.OnClickListener(){
 //            @Override
 //            public void onClick(View v) {
@@ -101,21 +103,20 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
 
 //        });
 
-        final ArrayList<String> joinusas=new ArrayList<>();
+        final ArrayList<String> joinusas = new ArrayList<>();
         joinusas.add("Intern");
         joinusas.add("Volunteer");
         joinusas.add("Donor");
         joinusas.add("Supporter");
 
 
-        ArrayAdapter adapter=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,joinusas);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, joinusas);
 
         spnJoin.setAdapter(adapter);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
 
                 String name = etName.getText().toString();
@@ -177,29 +178,20 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
 
                                     "sapne@delhi");
 
-
                             // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
 
                             sender.sendMail("Joined form details", msg,
 
                                     email,
 
-                                    "sapneapp@gmail.com");
-
-
+                                    "pallavi.madan97@gmail.com");
 
                             //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
                             getActivity().finish();
 
-
-
-
                         } catch (Exception e) {
 
-                            Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG).show();
-
-
-
+                            Toast.makeText(getActivity(), "Error", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -231,31 +223,27 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[] {
+                requestPermissions(new String[]{
                         android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.INTERNET
-                },10);
+                }, 10);
             }
             return;
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mLocationClient);
-        if(mLastLocation!=null)
-        {
+        if (mLastLocation != null) {
             double latitude = mLastLocation.getLatitude();
             double longitude = mLastLocation.getLongitude();
 
 
             Geocoder geocoder = new Geocoder(getActivity(), Locale.ENGLISH);
-            try
-            {
-                List<Address> addresses = geocoder.getFromLocation(latitude,longitude,1);
-                if (addresses!=null)
-                {
+            try {
+                List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+                if (addresses != null) {
 
-                    android.location.Address fetchedAddress=addresses.get(0);
-                    etAddress.setText(fetchedAddress.getFeatureName()+","+fetchedAddress.getSubLocality()+","+fetchedAddress.getLocality()+"-"+fetchedAddress.getPostalCode()+","+fetchedAddress.getAdminArea()+","+fetchedAddress.getCountryName());
+                    android.location.Address fetchedAddress = addresses.get(0);
+                    etAddress.setText(fetchedAddress.getFeatureName() + "," + fetchedAddress.getSubLocality() + "," + fetchedAddress.getLocality() + "-" + fetchedAddress.getPostalCode() + "," + fetchedAddress.getAdminArea() + "," + fetchedAddress.getCountryName());
 
-                }
-                else
+                } else
                     etAddress.setText("No Location Found");
 
 
@@ -267,12 +255,12 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(getActivity(),"Connection Failed",Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "Connection Failed", Toast.LENGTH_LONG).show();
     }
 
 
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(getActivity(),"Connection Suspended",Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "Connection Suspended", Toast.LENGTH_LONG).show();
     }
 }
