@@ -33,9 +33,9 @@ public class NotificationList extends Activity {
         SharedPreferences sharedPref = getSharedPreferences("notification1", Context.MODE_PRIVATE);
         int z = sharedPref.getInt("key",0);
 
-        for (int i=0;i<z;i++){
+        for (int i=2;i<z;i++){
             String y = sharedPref.getString("notify"+i,"");
-            notif[i]=y;
+            notif[i-2]=y;
         }
     }
 }
