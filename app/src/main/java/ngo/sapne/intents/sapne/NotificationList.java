@@ -15,6 +15,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NotificationList extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,17 +28,22 @@ public class NotificationList extends Activity {
     }
     private void loadNotification() {
         String[] notif={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
-        ListAdapter yo = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,notif);
-        ListView yup = findViewById(R.id.list1);
-        yup.setAdapter(yo);
+        ListView listView = (ListView)findViewById(R.id.list1);
+        List<Notif> threeStringsList = new ArrayList<>();
 
-
-        SharedPreferences sharedPref = getSharedPreferences("notification1", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("notification1",Context.MODE_PRIVATE);
         int z = sharedPref.getInt("key",0);
 
-        for (int i=2;i<z;i++){
+        for (int i=1;i<z;i++){
             String y = sharedPref.getString("notify"+i,"");
-            notif[i-2]=y;
+            notif[i]=y;
+            Notif notfs = new Notif(y);
+            threeStringsList.add(notfs);
+
+
         }
+        NotifAdapter notifAdapter= new NotifAdapter(this, R.layout.list_items_notification, threeStringsList);
+        listView.setAdapter(notifAdapter);
+
     }
 }
