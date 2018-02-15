@@ -39,8 +39,6 @@ public class NotificationList extends Activity {
             notif[i]=y;
             Notif notfs = new Notif(y);
             threeStringsList.add(notfs);
-
-
         }
         NotifAdapter notifAdapter= new NotifAdapter(this, R.layout.list_items_notification, threeStringsList);
         listView.setAdapter(notifAdapter);
