@@ -284,13 +284,8 @@ public class BaseActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.notification:
-                Fragment notificationList = getSupportFragmentManager().findFragmentByTag("NotificationList");
-                if (notificationList == null) {
-                    getSupportFragmentManager().
-                            beginTransaction().
-                            replace(R.id.content_frame, new NotificationList(), "NotificationList")
-                            .commit();
-                }
+               Intent i = new Intent(this,NotificationList.class);
+               startActivity(i);
                 break;
         }
         return true;

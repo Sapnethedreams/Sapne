@@ -37,6 +37,7 @@
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
+            android:drawableLeft="@drawable/user"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
@@ -55,6 +56,7 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/lock"
             android:layout_margin="15dp"
             android:textColorHint="@color/black"
             android:hint="Enter password"
@@ -65,9 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorAccent"
+            android:background="#79a209df"
             android:text="SignIn"
-            android:textColor="@color/white"
+            android:textColor="#cccccc"
             android:textSize="15sp"
             android:textStyle="bold" />
 
