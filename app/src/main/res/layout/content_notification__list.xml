@@ -71,7 +71,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <ListView
-        android:id="@+id/notification_listview"
+        android:id="@+id/list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@null"

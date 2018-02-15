@@ -4,6 +4,7 @@ package ngo.sapne.intents.sapne;
  * Created by dell pc on 05/10/2017.
  */
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -167,8 +168,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void loadUserProfpic() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if(user!=null){
-
-            Picasso.with(getActivity()).load(user.getPhotoUrl()).into(profpic);
+            Uri user3 = Registration.profileImageUrl;
+            if (user3!=null) {
+                Picasso.with(getActivity()).load(user3).into(profpic);
+            }
             if (user.getDisplayName()!=null){
                 name.setText("Welcome   " +user.getDisplayName());
             }
