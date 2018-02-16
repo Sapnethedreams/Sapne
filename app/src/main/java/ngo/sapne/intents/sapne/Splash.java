@@ -9,6 +9,11 @@ import android.widget.VideoView;
 
 
 public class Splash extends Activity {
+
+
+    VideoView vView;
+    int length=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +21,7 @@ public class Splash extends Activity {
 
         //get the VideoView from the resources
 
-        VideoView vView = (VideoView)findViewById(R.id.videoView3);
+        vView = (VideoView)findViewById(R.id.videoView);
         //use this to get touch events
         vView.requestFocus();
         //now we have to load video from the resources folder
@@ -38,4 +43,23 @@ public class Splash extends Activity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (vView.isPlaying()) {
+            vView.pause();
+            length = vView.getCurrentPosition();
+
+        } else {
+            return;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        vView.start();
+        //seek to saved position.
+        vView.seekTo(length);
+    }
 }

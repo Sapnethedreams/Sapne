@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
 
     compileSdkVersion 26
-    buildToolsVersion '27.0.1'
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "ngo.sapne.intents.sapne"
@@ -19,6 +19,7 @@ android {
         aaptOptions {
             cruncherEnabled = false
         }
+
     }
     buildTypes {
         release {
@@ -72,8 +73,9 @@ dependencies {
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.sasidhar.smaps.payumoney:payumoney:0.0.3'
 
 }
 apply plugin: 'com.google.gms.google-services'
