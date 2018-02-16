@@ -44,7 +44,6 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:11.0.4'
     // this line must be included to use FCM
 
-
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'

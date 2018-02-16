@@ -284,8 +284,10 @@ public class BaseActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.notification:
-               Intent i = new Intent(this,NotificationList.class);
-               startActivity(i);
+                getSupportFragmentManager().
+                        beginTransaction().
+                        replace(R.id.content_frame, new NotificationList(), "NotificationList")
+                        .commit();
                 break;
         }
         return true;

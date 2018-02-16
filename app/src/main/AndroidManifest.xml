@@ -17,7 +17,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:label">
+        tools:replace="label">
         <activity
             android:name="ngo.sapne.intents.sapne.BaseActivity"
             android:screenOrientation="portrait">
@@ -35,23 +35,9 @@
         </activity>
         <activity android:name="ngo.sapne.intents.sapne.Notifications" />
 
-        <activity
-            android:name="ngo.sapne.intents.sapne.RegisterUser"
-            android:label="Sign up"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.ProfileActivity"
-            android:label="Sapne User Information"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="ngo.sapne.intents.sapne.LoginActivity"
-            android:label="Sign in"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".NotificationList"/>
         <service android:name=".MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT">
-
                 </action>
             </intent-filter>
 
