@@ -36,7 +36,7 @@ public class NotificationList extends Fragment {
         SharedPreferences sharedPref = getActivity().getSharedPreferences("notification1",Context.MODE_PRIVATE);
         int z = sharedPref.getInt("key",0);
 
-        for (int i=1;i<z;i++){
+        for (int i=1;i<=z+3;i++){
             String y = sharedPref.getString("notify"+i,"");
             notif[i]=y;
             Notif notfs = new Notif(y);
