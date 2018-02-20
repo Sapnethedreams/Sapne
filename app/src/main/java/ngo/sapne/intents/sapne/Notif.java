@@ -6,10 +6,16 @@ package ngo.sapne.intents.sapne;
 
 public class Notif {
     String notf;
-    public Notif(String notf){
+    String title;
+    public Notif(String notf,String title){
         this.notf=notf;
+        this.title=title;
     }
     public String getNotif(){
         return notf;
     }
+    public String getTitle(){
+        return title;
+    }
+
 }
