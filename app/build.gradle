@@ -9,8 +9,8 @@ android {
         applicationId "ngo.sapne.intents.sapne"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 13
-        versionName "13.0"
+        versionCode 14
+        versionName "14.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
