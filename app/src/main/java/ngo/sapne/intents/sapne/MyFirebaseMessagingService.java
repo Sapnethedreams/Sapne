@@ -15,10 +15,11 @@ import com.google.firebase.messaging.RemoteMessage;
  */
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-      String x;
+      String x,y;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         x = remoteMessage.getNotification().getBody();
+        y= remoteMessage.getNotification().getTitle();
         Intent intent = new Intent(this, NotificationList.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pi =  PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
@@ -42,6 +43,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         int count = sharedPref.getInt("key" , 0);
         count++;
         editor.putString("notify"+count,x);
+        editor.putString("notify3"+count,y);
         editor.putInt("key",count);
         editor.apply();
 
