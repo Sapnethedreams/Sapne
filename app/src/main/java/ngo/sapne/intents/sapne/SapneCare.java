@@ -142,7 +142,7 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
 
                                     name,
 
-                                    "anshul60198@gmail.com");
+                                    "Sapnethedreams@gmail.com");
 
                             //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
                             getActivity().finish();
