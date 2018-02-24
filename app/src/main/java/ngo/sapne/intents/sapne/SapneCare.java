@@ -14,8 +14,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -23,6 +25,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -37,6 +40,7 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
     ProgressDialog progressDialog;
     GoogleApiClient mLocationClient;
     Location mLastLocation;
+    Spinner spnjoin;
 
 
 
@@ -52,19 +56,31 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
         mLocationClient = builder.build();
 
         name_et=(EditText) view.findViewById(R.id.name_et);
-        pos_et=(EditText)view.findViewById(R.id.pos_et);
         depart_et=(EditText)view.findViewById(R.id.depart_et);
         no_et=(EditText)view.findViewById(R.id.no_et);
         description_et=(EditText)view.findViewById(R.id.description_et);
         send_button=(Button) view.findViewById(R.id.care_button);
         progressDialog = new ProgressDialog(getActivity());
+        spnjoin=(Spinner)view.findViewById(R.id.spnJoin);
+
+
+
+        final ArrayList<String> joinusas = new ArrayList<>();
+        joinusas.add("Intern");
+        joinusas.add("Volunteer");
+
+
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, joinusas);
+
+        spnjoin.setAdapter(adapter);
 
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String intStr="^[0-9*$]";
                 final String name= name_et.getText().toString();
-                String position=pos_et.getText().toString();
+                String sub = joinusas.get(spnjoin.getSelectedItemPosition());
                 String department= depart_et.getText().toString();
                 String number=no_et.getText().toString();
                 String Description=description_et.getText().toString();
@@ -80,12 +96,6 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
   //                  return;
   //              }
 
-                if(position.length()==0)
-                {
-                    Toast.makeText(getActivity(), "Positon Empty", Toast.LENGTH_LONG).show();
-                    pos_et.requestFocus();
-                    return;
-                }
 
                 if(department.length()==0)
                 {
@@ -97,7 +107,20 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
                     Toast.makeText(getActivity(), "Description field is empty", Toast.LENGTH_LONG).show();
                     description_et.requestFocus();
                 }
-                final String msg = "Name:\n" + name + "\nNumber:\n" + number + "\nPositon:\n" + position + "\nDepartment:\n" + department + "\nDescription:\n" + Description;
+                if(number.length()!=10)
+                {
+                    if(number.trim().matches(intStr))
+                    {
+                        Toast.makeText(getActivity(), "entered number is not valid", Toast.LENGTH_LONG).show();
+                        no_et.requestFocus();
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "number field is empty", Toast.LENGTH_LONG).show();
+                        description_et.requestFocus();
+                    }
+                    return;
+                }
+                final String msg = "Name:\n" + name + "\nNumber:\n" + number + "\nPositon:\n" + sub + "\nDepartment:\n" + department + "\nDescription:\n" + Description;
                 progressDialog.setMessage("Sending message Please Wait...");
                 progressDialog.show();
 
@@ -119,7 +142,7 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
 
                                     name,
 
-                                    "Sapnethedreams@gmail.com");
+                                    "anshul60198@gmail.com");
 
                             //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
                             getActivity().finish();
