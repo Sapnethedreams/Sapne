@@ -35,6 +35,7 @@
             android:weightSum="1">
 
             <EditText
+                android:id="@+id/name_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/pos_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -69,6 +71,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/depart_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -86,7 +89,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText9"
+                android:id="@+id/no_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -110,6 +113,7 @@
             android:textColor="@color/colorPrimaryDark"/>
 
         <EditText
+            android:id="@+id/description_et"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="5dp"
