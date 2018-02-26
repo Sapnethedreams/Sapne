@@ -88,13 +88,5 @@
             android:textAlignment="center"
             android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/textViewSignIn_Admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Admin Login"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
 
     </LinearLayout>

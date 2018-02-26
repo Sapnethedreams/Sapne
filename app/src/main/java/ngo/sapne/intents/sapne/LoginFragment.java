@@ -31,7 +31,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textViewSignup;
-    private  TextView textviewlogin_admin;
+
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -62,14 +62,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         editTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
         buttonSignIn = (Button) view.findViewById(R.id.buttonSignin);
         textViewSignup  = (TextView) view.findViewById(R.id.textViewSignUp);
-        textviewlogin_admin=(TextView)view.findViewById(R.id.textViewSignIn_Admin);
 
         progressDialog = new ProgressDialog(getActivity());
 
         //attaching click listener
         buttonSignIn.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
-        textviewlogin_admin.setOnClickListener(this);
+
 
         return view;
     }
@@ -128,11 +127,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     .commit();
         }
 
-        if(view == textviewlogin_admin){
-            getActivity().getSupportFragmentManager().beginTransaction().
-                    replace(R.id.content_frame, new Login_Admin_Fragment(), "Login_Admin_Fragment")
-                    .commit();
-        }
+
 
     }
 
