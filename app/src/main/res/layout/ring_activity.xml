@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                            android:layout_gravity="center"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             tools:context="com.example.intents.sapne.ngo.example.intents.sapne.Ring_contact_us">
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text="
+Devesh Mittal
++918 447 058 009
+Mon - Fri, 8:00-22:00"
+        android:textColor="#2c6094"
+
+        android:textStyle="bold"
+         />
+</RelativeLayout>

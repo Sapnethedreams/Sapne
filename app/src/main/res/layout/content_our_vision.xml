@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurVision"
+    tools:showIn="@layout/activity_our_vision"
+    android:background="@drawable/z1"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70000000"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center|start"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center|start"
+            android:textColor="#fff"
+            android:textAlignment="textStart"
+            android:text="@string/vision_0"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textAlignment="textStart"
+            android:layout_marginTop="7dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="17sp"
+            android:text="@string/vision_1"/>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

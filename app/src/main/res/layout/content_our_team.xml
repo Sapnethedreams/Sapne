@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurTeam"
+    tools:showIn="@layout/activity_our_team"
+    android:scrollbars="none"
+    android:background="#eee">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:background="@drawable/banner"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardUseCompatPadding="true"
+            android:layout_marginTop="90dp"
+            app:contentPadding="6dp"
+            app:cardElevation="12dp"
+            app:cardCornerRadius="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/devesh"
+                    android:layout_gravity="center_horizontal"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Devesh Mittal"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#212121"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="President"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#535353"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <ImageButton
+                        android:id="@+id/devesh_fb"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/fb"
+                        android:padding="2dp"
+                        android:scaleType="fitXY"
+                        android:background="?selectableItemBackgroundBorderless"/>
+
+                    <ImageButton
+                        android:id="@+id/devesh_insta"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/twitter"
+                        android:padding="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:scaleType="fitXY"
+                        android:background="?selectableItemBackgroundBorderless"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/team_devesh"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+</ScrollView>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scrollbars="none"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurMission"
+    tools:showIn="@layout/activity_our_mission"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5be25"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="first"
+                    app:timeline_type="item">
+
+
+
+                    <TextView
+                        android:id="@+id/textView0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="@string/mission_0"
+                        android:textSize="16sp"
+                        android:fontFamily="serif"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textAlignment="viewStart"
+                        tools:ignore="RtlHardcoded"
+                        />
+
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="line">
+
+
+
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:id="@+id/item_weather_timeline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_light"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="item">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="@string/mission_1"
+                        android:textSize="16sp"
+                        android:fontFamily="serif"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        tools:ignore="RtlHardcoded"
+                        />
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:padding="16dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="line">
+
+
+
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5be25"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="item">
+
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:text="@string/mission_2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="line">
+
+
+
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:id="@+id/item_weather_timeline1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_light"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="item">
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:fontFamily="serif"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:text="@string/mission_3"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:textAlignment="viewStart"
+                        tools:ignore="RtlHardcoded"
+                        />
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="middle"
+                    app:timeline_type="line">
+
+
+
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+
+            app:cardBackgroundColor="#50ffffff">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:timeline="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <pl.hypeapp.materialtimelineview.MaterialTimelineView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5be25"
+                    android:padding="16dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:timeline_margin_start="32dp"
+                    app:timeline_position="last"
+                    app:timeline_type="item">
+
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="@string/mission_4"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="7dp"
+                        android:textAlignment="viewStart"
+                        tools:ignore="RtlHardcoded"
+                        />
+                </pl.hypeapp.materialtimelineview.MaterialTimelineView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.example.intents.sapne.ngo.example.intents.sapne.Location_contact_us">
+
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+
+        android:onClick="loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/map"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="226dp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+
+        android:text="Rohini-Sector 16"
+        tools:layout_editor_absoluteY="59dp"
+        tools:layout_editor_absoluteX="35dp" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "961449336145",
+    "firebase_url": "https://sapne-241cc.firebaseio.com",
+    "project_id": "sapne-241cc",
+    "storage_bucket": "sapne-241cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961449336145:android:ed36cfbfa18586d4",
+        "android_client_info": {
+          "package_name": "ngo.sapne.intents.sapne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961449336145-9rjk3k479nn8ge928if3rshi9i3hqtp7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ngo.sapne.intents.sapne",
+            "certificate_hash": "ccc83e13bcc700a0d4dd20267aa669ef232f55d0"
+          }
+        },
+        {
+          "client_id": "961449336145-jfm4bkf5mmmu3u6kcf0vjeviu6pi4uc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjFebdUchvv77tDMQRQ6CfIjZn8bsresc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961449336145-jfm4bkf5mmmu3u6kcf0vjeviu6pi4uc1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
