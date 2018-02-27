@@ -154,7 +154,7 @@ public class BaseActivity extends AppCompatActivity {
                 if (groupPosition == 1 && childPosition == 1) {
                     getSupportFragmentManager().
                             beginTransaction().
-                            replace(R.id.content_frame, new activities_corner(), "Activities")
+                            replace(R.id.content_frame, new Activities(), "Activities")
                             .commit();
 
                     mDrawerLayout.closeDrawer(mCategoryList);

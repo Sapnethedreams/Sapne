@@ -235,6 +235,7 @@ public class RecyclerViewFragment extends Fragment {
                 sectionModelArrayList.add(new SectionModel("HR / ADMIN Team",textA51,textA52, itemA51,itemA52));
             }
 
+
         }
 
         SectionRecyclerViewAdapter adapter = new SectionRecyclerViewAdapter(getActivity(), recyclerViewType, sectionModelArrayList);
