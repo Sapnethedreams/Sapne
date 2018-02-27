@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Admin Registration"
+        android:text="Management Registration"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
 
@@ -162,7 +162,7 @@
         android:layout_height="45dp"
         android:layout_margin="15dp"
         android:drawableLeft="@drawable/ic_lock"
-        android:hint="Enter Admin password"
+        android:hint="Enter Management password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black" />
