@@ -9,8 +9,8 @@ android {
         applicationId "ngo.sapne.intents.sapne"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 13
-        versionName "13.0"
+        versionCode 14
+        versionName "14.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -48,7 +48,6 @@ dependencies {
     compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
-    compile 'com.romandanylyk:pageindicatorview:0.1.1@aar'
 
 
     compile 'com.github.mzelzoghbi:zgallery:0.3'

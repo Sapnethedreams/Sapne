@@ -1,6 +1,7 @@
 package ngo.sapne.intents.sapne;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,10 +23,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterUser extends Fragment implements View.OnClickListener {
 
+
+
+
     //defining view objects
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Button buttonSignup;
+    private  TextView textviewlogin_admin;
 
     private TextView textViewSignin;
 
@@ -39,6 +44,8 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.register_user, container, false);
+
+
 
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -59,12 +66,14 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
         textViewSignin = (TextView) view.findViewById(R.id.textViewSignin);
 
         buttonSignup = (Button) view.findViewById(R.id.buttonSignup);
+        textviewlogin_admin=(TextView)view.findViewById(R.id.textViewRegister_Admin);
 
         progressDialog = new ProgressDialog(getActivity());
 
         //attaching listener to button
         buttonSignup.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
+        textviewlogin_admin.setOnClickListener(this);
 
         return view;
     }
@@ -124,6 +133,12 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
             getActivity().getSupportFragmentManager().
                     beginTransaction().
                     replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
+                    .commit();
+        }
+
+        if(view == textviewlogin_admin){
+            getActivity().getSupportFragmentManager().beginTransaction().
+                    replace(R.id.content_frame, new Login_Admin_Fragment(), "Login_Admin_Fragment")
                     .commit();
         }
 

@@ -229,7 +229,6 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/custombutton"
-                        android:onClick="submitBut"
                         android:text="Submit"
                         android:textColor="@color/white"
                         android:textStyle="bold" />

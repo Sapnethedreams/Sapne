@@ -72,22 +72,40 @@ public class RecyclerViewFragment extends Fragment {
         ArrayList<Integer> itemA41 = new ArrayList<>();
         ArrayList<String> textA42 = new ArrayList<>();
         ArrayList<Integer> itemA42 = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
+        
+        ArrayList<String> textA51 = new ArrayList<>();
+        ArrayList<Integer> itemA51 = new ArrayList<>();
+        ArrayList<String> textA52 = new ArrayList<>();
+        ArrayList<Integer> itemA52 = new ArrayList<>();
 
-            if(i==1) {  //for loop for items
-                itemA11.add(R.drawable.neha);
-                itemA12.add(R.drawable.mohit);
-                textA11.add("Neha Kshirsagar ");
-                textA12.add("Mohit Ochani");
-                itemA11.add(R.drawable.shubham);
-                itemA12.add(R.drawable.pooja);
-                textA11.add("Shubham Pandey ");
-                textA12.add("Pooja Rai");
-                textA12.add("");
+        ArrayList<String> textA61 = new ArrayList<>();
+        ArrayList<Integer> itemA61 = new ArrayList<>();
+        ArrayList<String> textA62 = new ArrayList<>();
+        ArrayList<Integer> itemA62 = new ArrayList<>();
 
-                //add the section and items to array list
-                sectionModelArrayList.add(new SectionModel("Android Development Team", textA11,textA12, itemA11,itemA12));
-            }
+        ArrayList<String> textA71 = new ArrayList<>();
+        ArrayList<Integer> itemA71 = new ArrayList<>();
+        ArrayList<String> textA72 = new ArrayList<>();
+        ArrayList<Integer> itemA72 = new ArrayList<>();
+        for (int i = 1; i <= 7; i++) {
+
+          if(i==1) {  //for loop for items
+                  itemA11.add(R.drawable.neha);
+                  itemA12.add(R.drawable.mohit);
+                  textA11.add("Neha Kshirsagar ");
+                  textA12.add("Mohit Ochani");
+                  itemA11.add(R.drawable.shubham);
+                  itemA12.add(R.drawable.pooja);
+                  textA11.add("Shubham Pandey ");
+                  textA12.add("Pooja Rai");
+                  itemA11.add(R.drawable.naman10);
+                  itemA12.add(R.drawable.arjun10);
+                  textA11.add("Naman Rawat");
+                  textA12.add("Arjun");
+
+              //add the section and items to array list
+              sectionModelArrayList.add(new SectionModel("Android Development Team", textA11,textA12, itemA11,itemA12));
+          }
 
 
             if(i==2) {  //for loop for items
@@ -140,6 +158,10 @@ public class RecyclerViewFragment extends Fragment {
                 itemA42.add(R.drawable.shivi);
                 textA41.add("Prakhar Bajpai");
                 textA42.add("Shivi Goyal");
+                itemA41.add(R.drawable.piyush10);
+                itemA42.add(0);
+                textA41.add("Piyush Dubey");
+                textA42.add("");
 
 
 
@@ -148,6 +170,72 @@ public class RecyclerViewFragment extends Fragment {
             }
 
 
+
+
+            if(i==6) {  //for loop for items
+
+                itemA61.add(R.drawable.abhilasha10);
+                itemA62.add(R.drawable.ankur10);
+                textA61.add("Abhilasha Gupta");
+                textA62.add("Ankur Rai");
+                itemA61.add(R.drawable.megha10);
+                itemA62.add(R.drawable.suvasini10);
+                textA61.add("Megha Hemant Priti Desai");
+                textA62.add("Suvasini Sherchan");
+                itemA61.add(R.drawable.vishnupriya10);
+                itemA62.add(0);
+                textA61.add("Vishnupriya");
+                textA62.add("");
+
+
+                //add the section and items to array list
+                sectionModelArrayList.add(new SectionModel("Content Writing Team",textA61,textA62, itemA61,itemA62));
+            }
+
+            if(i==7) {  //for loop for items
+
+                itemA71.add(R.drawable.jennifer10);
+                itemA72.add(R.drawable.dhananjay10);
+                textA71.add("Jennifer");
+                textA72.add("Dhananjay Kumar");
+
+
+                //add the section and items to array list
+                sectionModelArrayList.add(new SectionModel("Teaching Team",textA71,textA72, itemA71,itemA72));
+            }
+
+            if(i==5) {  //for loop for items
+
+                itemA51.add(R.drawable.sanya10);
+                itemA52.add(R.drawable.ishika10);
+                textA51.add("Sanya Jain");
+                textA52.add("Ishika Jain");
+                itemA51.add(R.drawable.kiranjeet10);
+                itemA52.add(R.drawable.piyush20);
+                textA51.add("Kiranjeet Kaur");
+                textA52.add("Piyush Gupta");
+                itemA51.add(R.drawable.krishnaveni10);
+                itemA52.add(R.drawable.ashish10);
+                textA51.add("Krishnaveni Rathod");
+                textA52.add("Ashish Raipuria");
+                itemA51.add(R.drawable.saksham10);
+                itemA52.add(R.drawable.radhika10);
+                textA51.add("Saksham Jindal");
+                textA52.add("Radhika Saraf");
+                itemA51.add(R.drawable.namrata10);
+                itemA52.add(R.drawable.anirudh10);
+                textA51.add("Namrata Kushwaha");
+                textA52.add("Anirudh Garg");
+
+
+
+
+
+                //add the section and items to array list
+                sectionModelArrayList.add(new SectionModel("HR / ADMIN Team",textA51,textA52, itemA51,itemA52));
+            }
+
+>>>>>>> 5c76e90a20187c888c4c5d5e8396eef05d64205e
         }
 
         SectionRecyclerViewAdapter adapter = new SectionRecyclerViewAdapter(getActivity(), recyclerViewType, sectionModelArrayList);

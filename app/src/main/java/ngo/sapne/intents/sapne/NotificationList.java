@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,8 @@ public class NotificationList extends Fragment {
 
     private void loadNotification(View view) {
         String[] notif={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+        String[] title={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+
         ListView listView = (ListView) view.findViewById(R.id.list1);
         List<Notif> threeStringsList = new ArrayList<>();
 
@@ -38,8 +41,10 @@ public class NotificationList extends Fragment {
 
         for (int i=1;i<=z+3;i++){
             String y = sharedPref.getString("notify"+i,"");
+            String x = sharedPref.getString("notify3"+i,"");
+            title[i]=x;
             notif[i]=y;
-            Notif notfs = new Notif(y);
+            Notif notfs = new Notif(y,x);
             threeStringsList.add(notfs);
         }
         NotifAdapter notifAdapter= new NotifAdapter(getActivity(), R.layout.list_items_notification, threeStringsList);

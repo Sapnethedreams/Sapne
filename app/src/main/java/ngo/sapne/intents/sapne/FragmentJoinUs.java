@@ -1,20 +1,16 @@
 package ngo.sapne.intents.sapne;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -131,6 +127,37 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
                 String aadhar = etAadhar.getText().toString();
                 String address = etAddress.getText().toString();
                 String office = etOffice.getText().toString();
+                if (name.length() == 0) {
+                    Toast.makeText(getActivity(), "Name Empty", Toast.LENGTH_LONG).show();
+                    etName.requestFocus();
+                    return;
+                }
+                if (phone.length() != 10) {
+                    Toast.makeText(getActivity(), "Phone Number Empty", Toast.LENGTH_SHORT).show();
+                    etPhoneNumber.requestFocus();
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(getActivity(), "Invalid Email", Toast.LENGTH_LONG).show();
+                    etEmail.requestFocus();
+                    return;
+                }
+                if (address.length() == 0) {
+                    Toast.makeText(getActivity(), "Please Enter Address", Toast.LENGTH_SHORT).show();
+                    etAddress.requestFocus();
+                    return;
+                }
+
+                if (office.length() == 0) {
+                    Toast.makeText(getActivity(), "Please Enter Office/Institute", Toast.LENGTH_SHORT).show();
+                    etOffice.requestFocus();
+                    return;
+                }
+                if (aadhar.length() == 0) {
+                    Toast.makeText(getActivity(), "Aadhar No. Empty", Toast.LENGTH_SHORT).show();
+                    etAadhar.requestFocus();
+                    return;
+                }
 
 
                 final String msg = "Name:" + name + "\nPhone Number:" + phone + "\nEmail:" + email + "\nGender:" + gender + "\nAddress:" + address + "\nOffice/Institute:" + office + "\nAadhar No.:" + aadhar + "\nJoining As:" + sub;
@@ -144,16 +171,12 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
                     public void run() {
 
                         try {
-                            ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-                            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-                            Log.e("SendMail:Gmail beefore", networkInfo.toString());
 
                             Gmailsender sender = new Gmailsender(
 
-                                    "india20152015@gmail.com",
+                                    "sapneapp@gmail.com",
 
-                                    "india2015!!");
+                                    "sapne@delhi");
 
                             // sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
 
@@ -161,7 +184,7 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
 
                                     email,
 
-                                    "india20152015@gmail.com");
+                                    "pallavi.madan97@gmail.com");
 
                             //  Toast.makeText(getApplicationContext(),"Submitted Successfully...",Toast.LENGTH_LONG).show();
                             getActivity().finish();

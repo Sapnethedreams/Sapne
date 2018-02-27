@@ -1,6 +1,5 @@
 package ngo.sapne.intents.sapne;
 
-import android.util.Log;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -124,7 +123,6 @@ public class Gmailsender extends javax.mail.Authenticator {
 
         } catch (Exception e) {
 
-            Log.e("SendMail", "Inside:"+e.getMessage());
         }
 
     }

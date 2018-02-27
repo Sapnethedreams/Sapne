@@ -124,5 +124,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     replace(R.id.content_frame, new RegisterUser(), "RegisterUser")
                     .commit();
         }
+
+
+
     }
+
+
+
 }
