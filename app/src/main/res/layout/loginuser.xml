@@ -83,9 +83,10 @@
             android:id="@+id/textViewSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:text="Don't have an account? Signup Here"
             android:textAlignment="center"
             android:textColor="@color/black" />
+
 
     </LinearLayout>

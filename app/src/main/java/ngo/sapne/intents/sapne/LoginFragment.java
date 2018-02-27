@@ -32,6 +32,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private EditText editTextPassword;
     private TextView textViewSignup;
 
+
     //firebase auth object
     private FirebaseAuth firebaseAuth;
 
@@ -67,6 +68,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         //attaching click listener
         buttonSignIn.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
+
 
         return view;
     }
@@ -124,5 +126,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     replace(R.id.content_frame, new RegisterUser(), "RegisterUser")
                     .commit();
         }
+
+
+
     }
+
+
+
 }
