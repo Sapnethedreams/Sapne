@@ -224,7 +224,6 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
   //  }
 //}
 
->>>>>>> 5c76e90a20187c888c4c5d5e8396eef05d64205e
 
 
 
