@@ -3,6 +3,7 @@ package ngo.sapne.intents.sapne;
 /**
  * Created by dell pc on 05/10/2017.
  */
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
@@ -40,6 +41,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     //view objects,
     private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
     private Button buttonLogout;
+    ProgressDialog pd;
 
     @Nullable
     @Override
@@ -195,6 +197,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     .commit();
         }
         if(view==adm){
+         pd = new ProgressDialog(getContext());
+            pd.setMessage("Opening Amin Page");
+            pd.dismiss();
             openAdmin();
         }
     }
@@ -215,6 +220,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                             beginTransaction().
                             replace(R.id.content_frame, new AdminProfileFragment(), "ProfileFragment")
                             .commit();
+
                 }
             }
 
