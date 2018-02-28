@@ -8,6 +8,6 @@
                                                  tools:context="com.example.intents.sapne.ngo.example.intents.sapne.Activities">
 
 
-<include layout="@layout/content" />
+    <include layout="@layout/content" />
 
 </android.support.design.widget.CoordinatorLayout>

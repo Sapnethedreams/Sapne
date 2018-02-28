@@ -88,5 +88,4 @@
             android:textAlignment="center"
             android:textColor="@color/black" />
 
-
     </LinearLayout>

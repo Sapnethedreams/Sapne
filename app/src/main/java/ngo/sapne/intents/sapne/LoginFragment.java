@@ -20,34 +20,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-public class
-LoginFragment extends Fragment implements View.OnClickListener {
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
     //defining views
     private Button buttonSignIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textViewSignup;
-    private DatabaseReference db;
-    String admin1;
-    FirebaseUser user1;
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
 
     //progress dialog
-    private ProgressDialog progressDialog,progressDialog1;
+    private ProgressDialog progressDialog;
 
     @Nullable
     @Override
@@ -59,13 +48,14 @@ LoginFragment extends Fragment implements View.OnClickListener {
 
         //if the objects getcurrentuser method is not null
         //means user is already logged in
-        if(firebaseAuth.getCurrentUser() != null) {
-
+        if(firebaseAuth.getCurrentUser() != null){
+            //close this activity
             getActivity().getSupportFragmentManager().
                     beginTransaction().
                     replace(R.id.content_frame, new ProfileFragment(), "ProfileFragment")
                     .commit();
         }
+
         //initializing views
         editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
@@ -77,7 +67,6 @@ LoginFragment extends Fragment implements View.OnClickListener {
         //attaching click listener
         buttonSignIn.setOnClickListener(this);
         textViewSignup.setOnClickListener(this);
-
 
         return view;
     }
@@ -109,23 +98,17 @@ LoginFragment extends Fragment implements View.OnClickListener {
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
                         //if the task is successfull
-                        if(task.isSuccessful()) {
+                        if(task.isSuccessful()){
                             //start the profile activity
-
                             getActivity().getSupportFragmentManager().
                                     beginTransaction().
-                                    replace(R.id.content_frame, new ProfileFragment(), "ProfileFragment")
+                                    replace(R.id.content_frame, new Registration(), "Registration")
                                     .commit();
-                            progressDialog.dismiss();
-                        }}
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
-                Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
-            }
-        });
+                        }
+                    }
+                });
 
     }
 
@@ -135,9 +118,17 @@ LoginFragment extends Fragment implements View.OnClickListener {
             userLogin();
         }
 
-        if(view == textViewSignup) {
+        if(view == textViewSignup){
             getActivity().getSupportFragmentManager().
                     beginTransaction().
                     replace(R.id.content_frame, new RegisterUser(), "RegisterUser")
                     .commit();
-        }}}
+        }
+
+
+
+    }
+
+
+
+}
