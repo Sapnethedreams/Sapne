@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,7 +38,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private FirebaseUser user1;
     CircleImageView profpic;
     //view objects,
-    private TextView textViewUserEmail,name,dob,edu,vol,phone;
+    private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
     private Button buttonLogout;
 
     @Nullable
@@ -70,6 +71,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         dob= view.findViewById(R.id.dob1);
         phone= view.findViewById(R.id.phn1);
         edu= view.findViewById(R.id.edu1);
+        adm=view.findViewById(R.id.admin);
+        adm.setOnClickListener(this);
         //displaying logged in user name
         textViewUserEmail.setText(user.getEmail());
         loadUserDob();
@@ -191,8 +194,36 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     replace(R.id.content_frame, new LoginFragment(), "LoginFragment")
                     .commit();
         }
+        if(view==adm){
+            openAdmin();
+        }
     }
-}
+
+    private void openAdmin() {
+        db = FirebaseDatabase.getInstance().getReference().child("admin_users").child(firebaseAuth.getCurrentUser().getUid()).child("admin");
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
+                String admin1 = dataSnapshot.getValue().toString();
+                if (admin1.isEmpty()) {
+                    Toast.makeText(getContext(),"You are not privilaged to use this",Toast.LENGTH_LONG);
+                }else {
+                    getActivity().getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new AdminProfileFragment(), "ProfileFragment")
+                            .commit();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }}
 
 
 

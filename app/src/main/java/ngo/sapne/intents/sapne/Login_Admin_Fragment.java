@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -17,10 +19,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -28,9 +43,9 @@ import static android.app.Activity.RESULT_OK;
  * Created by Anshul on 26/02/2018.
  */
 
-public class Login_Admin_Fragment extends Fragment implements View.OnClickListener {
+public class Login_Admin_Fragment extends Fragment  implements View.OnClickListener{
 
-    private Button buttonSignIn;
+    private Button buttonSignup;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editText_repassword;
@@ -38,136 +53,197 @@ public class Login_Admin_Fragment extends Fragment implements View.OnClickListen
     private EditText name;
     private EditText mobno;
     public ImageView imgview;
-    private Button loadpic;
-
-    private static int RESULT_LOAD_IMAGE = 1;
-
-    private FirebaseAuth firebaseAuth;
-
+    private String name1,email1,pas1,pas2,adminPas,mob1;
+    Uri profileImageUrl;
+private static    String secret_code="123456";
+   int PICK_IMAGE_REQUEST=101;
+   private TextView t1;
+   Uri filePath;
     private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
+
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_admin, container, false);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-
 
         editTextEmail = (EditText) view.findViewById(R.id.editText_Admin_Email);
         editTextPassword = (EditText) view.findViewById(R.id.editText_Admin_Password);
-        buttonSignIn = (Button) view.findViewById(R.id.button_Admin_Signin);
+        buttonSignup = (Button) view.findViewById(R.id.button_Admin_Signup);
         editText_repassword=(EditText)view.findViewById(R.id.editText_Admin_rePassword);
         editText_adminpass =(EditText)view.findViewById(R.id.editText_Admin_adPassword);
         name=(EditText)view.findViewById(R.id.editText_admin_name);
         mobno=(EditText)view.findViewById(R.id.editText_adminno);
         imgview=(ImageView)view.findViewById(R.id.imgView);
-        loadpic=(Button)view.findViewById(R.id.buttonLoadPicture);
+        imgview.setOnClickListener(this);
+        buttonSignup.setOnClickListener(this);
+        t1=view.findViewById(R.id.t1);
 
         progressDialog = new ProgressDialog(getActivity());
-
-
-
-        loadpic.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent i = new Intent(
-                        Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
-            }
-        });
-
-
-
-        //attaching click listener
-        buttonSignIn.setOnClickListener(this);
 
         return view;
     }
 
-    //method for user login
-    private void adminLogin(){
-        String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
-        String repassword = editText_repassword.getText().toString().trim();
-        String adminpass = editText_adminpass.getText().toString().trim();
-        //checking if fields  are empty
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(getActivity(),"Please enter email",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(getActivity(),"Please enter password",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(adminpass)){
-            Toast.makeText(getActivity(),"Please enter admin password",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(password!=repassword){
-            Toast.makeText(getActivity(),"Please enter correct password",Toast.LENGTH_LONG).show();
-            return;
-        }
-        if(name.length()==0){
-            Toast.makeText(getActivity(),"Please enter name",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(mobno.length()==0){
-            Toast.makeText(getActivity(),"Please enter name",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        //if the email and password are not empty
-        //displaying a progress dialog
-
-        progressDialog.setMessage("Signing in Please Wait...");
-        progressDialog.show();
-
-        //logging in the admin
-
-
-    }
 
     @Override
     public void onClick(View view) {
-        if (view == buttonSignIn) {
-            adminLogin();
+        if (view==buttonSignup){
+            createUser();
+        }
+        if (view==imgview){
+            upLoadProfPic();
         }
     }
 
-
-
+    private void upLoadProfPic() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_PICK);
+        startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Admin_fragment_support ad;
-        ad = new Admin_fragment_support();
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            filePath = data.getData();
+            t1.setVisibility(View.INVISIBLE);
+            try {
+                //getting image from gallery
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
+                imgview.setImageBitmap(bitmap);
+                uploadImageToFirebase();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+    private void uploadImageToFirebase() {
+        StorageReference profileImageReference = FirebaseStorage.getInstance().getReference("profilepics/ " + System.currentTimeMillis() + ".jpg");
 
-            Cursor cursor = ad.method();
+        if(filePath!=null){
+            profileImageReference.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    profileImageUrl = taskSnapshot.getDownloadUrl();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getActivity() ,e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            cursor.close();
 
-            imgview.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+    private void createUser() {
+        firebaseAuth = FirebaseAuth.getInstance();
 
+
+        name1= name.getText().toString();
+       email1= editTextEmail.getText().toString();
+        pas1=editTextPassword.getText().toString();
+        pas2=editText_repassword.getText().toString();
+        adminPas=editText_adminpass.getText().toString();
+        mob1=mobno.getText().toString();
+        if(name1.isEmpty()){
+            name.setError("name required");
+            name.requestFocus();
+            return;
+        }
+        if(mob1.isEmpty()){
+            mobno.setError("name required");
+            mobno.requestFocus();
+            return;
+        }
+        if(email1.isEmpty()){
+            editTextEmail.setError("email required");
+            editTextEmail.requestFocus();
+            return;
+        }
+        if(pas1.isEmpty()){
+            editTextPassword.setError("password  required");
+            editTextPassword.requestFocus();
+            return;
+        }
+        if(pas2.isEmpty()){
+            editText_repassword.setError("name required");
+            editText_repassword.requestFocus();
+            return;
+        }
+        if(adminPas.isEmpty()){
+            editText_adminpass.setError("name required");
+            editText_adminpass.requestFocus();
+            return;
+        }
+        if (pas1.equals(pas2)){
+            if (adminPas.equals(secret_code)){
+                progressDialog.setMessage("Registering Please Wait...");
+                progressDialog.show();
+                firebaseAuth.createUserWithEmailAndPassword(email1,pas1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+                            saveUserInfo();
+                            getActivity().getSupportFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.content_frame, new ProfileFragment(), "Profile")
+                                    .commit();
+                        } else {
+                            //display some message here
+                            Toast.makeText(getActivity(), "Registration Error", Toast.LENGTH_LONG).show();
+                        }
+                        progressDialog.dismiss();
+                    }
+                });
+            }
+            else {
+                Toast.makeText(getContext(),"Enter correct admin password",Toast.LENGTH_LONG);
+
+            }
+        }
+        else {
+            Toast.makeText(getContext(),"Enter correct password in both fields",Toast.LENGTH_LONG);
         }
 
 
+
     }
+
+   private void saveUserInfo() {
+        FirebaseUser user= firebaseAuth.getCurrentUser();
+
+        if(user!=null) {
+
+
+            String displayName= name.getText().toString();
+            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(displayName)
+                    .setPhotoUri(profileImageUrl)
+                    .build();
+            user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                    }
+                }
+            });
+        }
+        String uid= user.getUid();
+      String mob2=mobno.getText().toString();
+       mDatabase = FirebaseDatabase.getInstance().getReference("admin_users");
+        String id = "privilaged_user";
+        UsersAdmin users = new UsersAdmin(id,mob2);
+        mDatabase.child(uid).setValue(users);
+    }
+
 }
 
 
