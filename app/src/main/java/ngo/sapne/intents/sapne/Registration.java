@@ -104,7 +104,7 @@ public class Registration extends Fragment {
             public void onClick(View view) {
                 getActivity().getSupportFragmentManager().
                         beginTransaction().
-                        replace(R.id.content_frame, new LoginFragment() )
+                        replace(R.id.content_frame, new ProfileFragment() )
                         .commit();
             }
         });

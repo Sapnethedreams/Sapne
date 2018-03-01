@@ -38,38 +38,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Management Registration"
+        android:text="Admin Registration"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
 
 
-
-    <android.support.design.widget.TextInputLayout
+    <EditText
+        android:id="@+id/editText_admin_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:layout_marginBottom="8dp">
-        <EditText
-            android:textColor="@color/black"
-            android:id="@+id/editText_admin_name"
-            android:textColorHint="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="Enter Name"
-            android:inputType="textEmailAddress" />
-    </android.support.design.widget.TextInputLayout>
+        android:layout_margin="15dp"
+        android:hint="Enter Name"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
 
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:layout_marginBottom="8dp">
         <EditText
             android:textColor="@color/black"
             android:id="@+id/editText_adminno"
@@ -79,15 +65,9 @@
             android:layout_margin="15dp"
             android:hint="Enter Mob no"
             android:inputType="textEmailAddress" />
-    </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:layout_marginBottom="8dp">
+
         <EditText
             android:textColor="@color/black"
             android:id="@+id/editText_Admin_Email"
@@ -97,23 +77,15 @@
             android:layout_margin="15dp"
             android:hint="Enter Email"
             android:inputType="textEmailAddress" />
-    </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:background="@color/grey">
+
 
         <EditText
             android:id="@+id/editText_Admin_Password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_margin="15dp"
-            android:drawableLeft="@drawable/ic_lock"
             android:hint="Enter password"
             android:inputType="textPassword"
             android:textColor="@color/black"
@@ -122,22 +94,11 @@
 
 
 
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:background="@color/grey">
-
         <EditText
             android:id="@+id/editText_Admin_rePassword"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_margin="15dp"
-            android:drawableLeft="@drawable/ic_lock"
             android:hint="Re-enter password"
             android:inputType="textPassword"
             android:textColor="@color/black"
@@ -146,53 +107,34 @@
 
 
 
-    </android.support.design.widget.TextInputLayout>
-
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/black"
-        android:background="@color/grey">
     <EditText
         android:id="@+id/editText_Admin_adPassword"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="15dp"
-        android:drawableLeft="@drawable/ic_lock"
-        android:hint="Enter Management password"
+        android:hint="Enter Admin password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black" />
 
-
-</android.support.design.widget.TextInputLayout>
-
-
+<TextView
+    android:id="@+id/t1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click on the camera icon to upload profile pic"/>
 
 
         <ImageView
             android:id="@+id/imgView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/camera"
             android:layout_weight="1">
         </ImageView>
 
-        <Button
-            android:id="@+id/buttonLoadPicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Load Profile Picture"
-            android:layout_margin="20dp"
-            android:layout_gravity="center"></Button>
-
-
 
     <Button
-        android:id="@+id/button_Admin_Signin"
+        android:id="@+id/button_Admin_Signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
