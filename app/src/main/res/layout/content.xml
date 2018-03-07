@@ -32,7 +32,7 @@
             android:layout_gravity="center_vertical|left"
             android:layout_weight="1"
             android:background="@color/cardview_shadow_start_color"
-            android:src="@drawable/redleftarrow" />
+            android:src="@drawable/ic_left_arrow" />
 
         <ImageButton
             android:id="@+id/right_nav"
@@ -41,7 +41,7 @@
             android:layout_gravity="center_vertical|right"
             android:layout_weight="1"
             android:background="@color/cardview_shadow_start_color"
-            android:src="@drawable/redrightarrow" />
+            android:src="@drawable/ic_right_arrow" />
 
     </FrameLayout>
 
