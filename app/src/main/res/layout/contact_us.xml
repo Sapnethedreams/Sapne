@@ -207,6 +207,19 @@
             />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+        <com.google.android.gms.maps.MapView
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom"
+            android:id="@+id/map_location_ngo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>
