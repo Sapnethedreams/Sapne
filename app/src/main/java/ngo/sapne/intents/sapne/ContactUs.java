@@ -2,9 +2,11 @@ package ngo.sapne.intents.sapne;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +16,23 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.Locale;
 
 public class ContactUs extends Fragment {
     Button button2, button4, button3;
     EditText editText5;
-    ImageButton ib1,ib3,ib2,ib4;
+    ImageButton ib1, ib3, ib2, ib4;
+    MapView mapView;
+    private GoogleMap googleMap;
 
     @Nullable
     @Override
@@ -28,10 +41,20 @@ public class ContactUs extends Fragment {
         button3 = view.findViewById(R.id.button3);
         button4 = view.findViewById(R.id.button4);
         button2 = view.findViewById(R.id.button2);
-        ib1=view.findViewById(R.id.imageButton);
-        ib2=view.findViewById(R.id.imageButton2);
-        ib3=view.findViewById(R.id.imageButton3);
-        ib4=view.findViewById(R.id.imageButton4);
+        ib1 = view.findViewById(R.id.imageButton);
+        ib2 = view.findViewById(R.id.imageButton2);
+        ib3 = view.findViewById(R.id.imageButton3);
+        ib4 = view.findViewById(R.id.imageButton4);
+        mapView = view.findViewById(R.id.map_location_ngo);
+        mapView.onCreate(savedInstanceState);
+
+        mapView.onResume();
+
+        try {
+            MapsInitializer.initialize(getActivity().getApplicationContext());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         ib1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +110,8 @@ public class ContactUs extends Fragment {
                 String url = "http://www.sapne.org.in/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
-                startActivity(i);            }
+                startActivity(i);
+            }
 
         });
 
@@ -99,11 +123,42 @@ public class ContactUs extends Fragment {
             }
 
         });
+
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap mMap) {
+                googleMap = mMap;
+
+                // For showing a move to my location button
+                if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                googleMap.setMyLocationEnabled(true);
+
+                // For dropping a marker at a point on the Map
+                LatLng delhi = new LatLng(28.7412106, 77.1213955);
+                googleMap.addMarker(new MarkerOptions().position(delhi).title("Sapne").snippet("Sapne the Dreams"));
+
+                // For zooming automatically to the location of the marker
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(delhi).zoom(12).build();
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            }
+        });
+
         return view;
     }
 
     public void location(View v) {
-        String uri = String.format(Locale.ENGLISH, "https://maps.google.com/maps?daddr=%f,%f(%s)", 28.735615, 77.117572, "Sapne Office");
+        String uri = String.format(Locale.ENGLISH,
+                "https://maps.google.com/maps?daddr=%f,%f(%s)",
+                28.735615, 77.117572, "Sapne Office");
 
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         myIntent.setPackage("com.google.android.apps.maps");
@@ -114,7 +169,7 @@ public class ContactUs extends Fragment {
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 startActivity(i);
             } catch (ActivityNotFoundException anex) {
-                Toast.makeText(getActivity(), "please insatll a map application", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "please install a map application", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -152,6 +207,29 @@ public class ContactUs extends Fragment {
         startActivity(myIntent);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
 
 }
 
