@@ -5,6 +5,8 @@ import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +23,9 @@ public class ActivitiesAdapter extends PagerAdapter {
 //        ,
     String[] names = {"On the occasion of it's first anniversary, Sapne is donating blankets and organizing a bhandara for the needy" +
             " people. Your donations, in form of blankets, clothing, food or finances, are welcome!.", "" +
-            "बालक मोम के समान होता है जिसे जैसे ढाला जाए उस पृकार का रूप ले लेता है।इसीलिए \"सपने\" सुनिश्चित करता है कि उन बच्चों को शिक्षा के माध्यम से ऐसे ढला" +
-            " जाए जिससे वो अपना हर सपना पूरा कर सके।",
-            "- एक बच्चा, एक शिक्षक, एक पुस्तक और एक कलम, दुनिया बदल सकता है |\n" +
-                    "इसी तरह यह गैर सरकारी संगठन \"सपने\" अपना योगदान देकर उन गरीब बच्चों के सपने पुरे कर उनकी छोटी सी दुनिया बदलना चाहता है |",
+            "Children are like Candle Wax. Just like Candle Wax, which can take form of anything. In the same way, Sapne ensures that these children get " +
+        "educated in the right way so that they can fulfill their dreams in the coming future",
+            "A child, A teacher, A book and A pen can change the whole world. In the same way, our NGO 'Sapne' wants to contribute something to these poor children and change their whole world.",
             "We are grateful to the BATRA family for extending their support to this noble cause by donating blankets." +
                     " We wish others too to come forward and be a part of this initiative.", "" +
             "At Sapne, we believe in investing in the future of the nation - \n" +
@@ -124,6 +125,7 @@ layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_S
 
         cornerText.setText(names[position]);
 
+
                         container.addView(item_view);
 
 
@@ -132,6 +134,6 @@ layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_S
 
     public void destroyItem(ViewGroup container, int position, Object object)
     {
-        container.removeView((ConstraintLayout) object);
+        container.removeView((CardView) object);
     }
 }
