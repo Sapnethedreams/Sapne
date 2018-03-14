@@ -194,7 +194,7 @@ private static    String secret_code="123456";
                             saveUserInfo();
                             getActivity().getSupportFragmentManager().
                                     beginTransaction().
-                                    replace(R.id.content_frame, new ProfileFragment(), "Profile")
+                                    replace(R.id.content_frame, new AdminProfileFragment(), "Admin Profile")
                                     .commit();
                         } else {
                             //display some message here
