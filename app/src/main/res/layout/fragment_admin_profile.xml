@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +10,70 @@
     android:text="Logout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-      android:layout_margin="40dp"/>
+      android:layout_margin="10dp"/>
 
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="textPersonName" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Details"
+        android:id="@+id/bDetails"
+        android:layout_below="@+id/etName"/>
 
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/bDetails"
+        android:id="@+id/etDob"
+        android:hint="DOB"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/bDetails"
+android:layout_toRightOf="@+id/etDob"
+        android:id="@+id/etEmail"
+        android:hint="Email"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/etDob"
+        android:id="@+id/etEdu"
+        android:hint="Edu"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/etDob"
+        android:layout_toRightOf="@+id/etEdu"
+        android:id="@+id/etIntern"
+        android:hint="Joined As"/>
 
-</FrameLayout>
+  <EditText
+      android:id="@+id/etMob"
+      android:layout_width="150dp"
+      android:layout_height="50dp"
+      android:layout_alignBottom="@+id/bModify"
+      android:layout_alignLeft="@+id/buttonLogout"
+      android:layout_alignStart="@+id/buttonLogout"
+      android:hint="Mobile No." />
+
+  <Button
+      android:id="@+id/bModify"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignEnd="@+id/etIntern"
+      android:layout_alignRight="@+id/etIntern"
+      android:layout_below="@+id/etIntern"
+      android:text="Modify" />
+</RelativeLayout>

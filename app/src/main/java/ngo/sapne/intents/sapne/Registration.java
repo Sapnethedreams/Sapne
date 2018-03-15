@@ -137,14 +137,14 @@ public class Registration extends Fragment {
                 }
             });
         }
-        String uid= user.getUid();
+        String name4 = name.getText().toString().toLowerCase();
         dob1 = dob.getText().toString();
         edu1 = edu.getText().toString();
         post1 = joinusas.get(spnJoin.getSelectedItemPosition());
         phn1 = phn.getText().toString();
-        String id = mDatabase.push().getKey();
-        Users users= new Users( id, name1, email1, post1, dob1, edu1, phn1);
-        mDatabase.child(uid).setValue(users);
+        email1= user.getEmail();
+        Users users= new Users(name1, email1, post1, dob1, edu1, phn1);
+        mDatabase.child(name4).setValue(users);
     }
 
 

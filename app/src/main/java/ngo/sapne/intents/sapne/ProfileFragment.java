@@ -35,8 +35,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference db;
-    private FirebaseUser user1;
+    private DatabaseReference db,db1,db2,db3,db4,db5;
     CircleImageView profpic;
     //view objects,
     private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
@@ -78,9 +77,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         //displaying logged in user name
         textViewUserEmail.setText(user.getEmail());
         loadUserDob();
-        loadUserPhone();
-        loadUserVol();
-        loadUserEdu();
         loadUserProfpic();
 
         //adding listener to button
@@ -88,12 +84,29 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         return view;
     }
+    private void loadUserProfpic() {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user!=null){
+            Uri user3 = Registration.profileImageUrl;
+            if (user3!=null) {
+                Picasso.with(getActivity()).load(user3).into(profpic);
+            }
+            if (user.getDisplayName()!=null){
+                name.setText("Welcome   " +user.getDisplayName());
+            }
 
+        }
+    }
+    private void loadUserDob() {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String name1 = firebaseUser.getDisplayName().toLowerCase();
+        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("edu");
+        db2= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("email");
+        db3= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("dob");
+        db4= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("volunteer");
+        db5= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("phn");
 
-    private void loadUserEdu() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("edu");
-        db.addValueEventListener(new ValueEventListener() {
+        db1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
@@ -108,19 +121,59 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             }
         });
-    }
-
-    private void loadUserVol() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("volunteer");
-        db.addValueEventListener(new ValueEventListener() {
+        db2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
                     return;
                 }
-                String vol1= dataSnapshot.getValue().toString();
-                vol.setText(vol1);
+                String edu1= dataSnapshot.getValue().toString();
+                textViewUserEmail.setText(edu1);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        db3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
+                String edu1= dataSnapshot.getValue().toString();
+                dob.setText(edu1);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        db4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
+                String edu1= dataSnapshot.getValue().toString();
+                vol.setText(edu1);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        db5.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    return;
+                }
+                String edu1= dataSnapshot.getValue().toString();
+                phone.setText(edu1);
             }
 
             @Override
@@ -130,59 +183,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void loadUserPhone() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("phn");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String phn1= dataSnapshot.getValue().toString();
-                phone.setText(phn1);
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void loadUserDob() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("dob");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String dob1= dataSnapshot.getValue().toString();
-                dob.setText(dob1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void loadUserProfpic() {
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        if(user!=null){
-            Uri user3 = Registration.profileImageUrl;
-            if (user3!=null) {
-                Picasso.with(getActivity()).load(user3).into(profpic);
-            }
-            if (user.getDisplayName()!=null){
-                name.setText("Welcome   " +user.getDisplayName());
-            }
-
-        }
-    }
 
     @Override
     public void onClick(View view) {
