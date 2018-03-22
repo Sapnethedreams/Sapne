@@ -85,19 +85,19 @@ public class AdminProfileFragment extends Fragment implements View.OnClickListen
     }
 
     private void ModifyUserDetails() {
-        String name4 = name.getText().toString().toLowerCase();
-        String dob1 = dob.getText().toString();
-       String edu1 = edu.getText().toString();
-       String post1 = intern.getText().toString();
-        String phn1 = mob.getText().toString();
-        String email1= email.getText().toString();
+        String name4 = name.getText().toString().toLowerCase().trim();
+        String dob1 = dob.getText().toString().trim();
+        String edu1 = edu.getText().toString().trim();
+        String post1 = intern.getText().toString().trim();
+        String phn1 = mob.getText().toString().trim();
+        String email1 = email.getText().toString().trim();
         Users users= new Users(name4, email1, post1, dob1, edu1, phn1);
         mDatabase.child(name4).setValue(users);
-        Toast.makeText(getContext(),"Values Modified Successfully",Toast.LENGTH_SHORT);
+        Toast.makeText(getContext(), "Values Modified Successfully", Toast.LENGTH_SHORT).show();
     }
 
     private void loadUserInfo() {
-        String name1 = name.getText().toString();
+        String name1 = name.getText().toString().toLowerCase().trim();
         db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("edu");
         db2= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("email");
         db3= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("dob");
@@ -107,6 +107,7 @@ public class AdminProfileFragment extends Fragment implements View.OnClickListen
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    Toast.makeText(getContext(), "Name not Available", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 String edu1= dataSnapshot.getValue().toString();

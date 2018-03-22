@@ -44,24 +44,24 @@ import static android.app.Activity.RESULT_OK;
 
 public class Registration extends Fragment {
 
+    public static Uri profileImageUrl;
     final ArrayList<String> joinusas = new ArrayList<>();
     EditText name, email, dob, edu, phn;
     String name1, email1, dob1, edu1, post1, phn1 ;
     Button GoToProf;
     int PICK_IMAGE_REQUEST = 111;
     Button uplod;
-
     TextView t1;
     ImageView prof;
     Uri filePath;
-    public static Uri profileImageUrl;
     ProgressDialog pd;
     Spinner spnJoin;
     FirebaseStorage
             storage = FirebaseStorage.getInstance();
     StorageReference storageRef = storage.getReferenceFromUrl("gs://sapne-241cc.appspot.com/");    //change the url according to your firebase app
-    private DatabaseReference mDatabase;
     FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -137,11 +137,11 @@ public class Registration extends Fragment {
                 }
             });
         }
-        String name4 = name.getText().toString().toLowerCase();
+        String name4 = name.getText().toString().toLowerCase().trim();
         dob1 = dob.getText().toString();
         edu1 = edu.getText().toString();
         post1 = joinusas.get(spnJoin.getSelectedItemPosition());
-        phn1 = phn.getText().toString();
+        phn1 = phn.getText().toString().trim();
         email1= user.getEmail();
         Users users= new Users(name1, email1, post1, dob1, edu1, phn1);
         mDatabase.child(name4).setValue(users);

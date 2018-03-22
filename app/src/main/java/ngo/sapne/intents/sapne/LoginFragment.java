@@ -106,6 +106,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                     beginTransaction().
                                     replace(R.id.content_frame, new ProfileFragment(), "ProfileUser")
                                     .commit();
+                        } else {
+                            Toast.makeText(getActivity(), "Incorrect Login Credentials", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
