@@ -114,7 +114,7 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
                                     .commit();
                         } else {
                             //display some message here
-                            Toast.makeText(getActivity(), "Registration Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Registration Error. You maybe already Registered or Credentials not correct", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }

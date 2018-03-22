@@ -1,8 +1,5 @@
 package ngo.sapne.intents.sapne;
 
-/**
- * Created by dell pc on 05/10/2017.
- */
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -33,14 +30,14 @@ import static ngo.sapne.intents.sapne.NetworkUtil.context;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
+    CircleImageView profpic;
+    ProgressDialog pd;
     //firebase auth object
     private FirebaseAuth firebaseAuth;
     private DatabaseReference db,db1,db2,db3,db4,db5;
-    CircleImageView profpic;
     //view objects,
     private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
     private Button buttonLogout;
-    ProgressDialog pd;
 
     @Nullable
     @Override
