@@ -98,20 +98,30 @@ public class AdminProfileFragment extends Fragment implements View.OnClickListen
 
     private void loadUserInfo() {
         String name1 = name.getText().toString().toLowerCase().trim();
-        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("edu");
-        db2= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("email");
-        db3= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("dob");
-        db4= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("volunteer");
-        db5= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("phn");
+        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1);
         db1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    Toast.makeText(getContext(), "Name not Available", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Name not found", Toast.LENGTH_SHORT).show();
+                    edu.setText("");
+                    email.setText("");
+                    dob.setText("");
+                    mob.setText("");
+                    intern.setText("");
                     return;
                 }
-                String edu1= dataSnapshot.getValue().toString();
+                String edu1 =dataSnapshot.child("edu").getValue().toString();
+                String email1 =dataSnapshot.child("email").getValue().toString();
+                String dob1 =dataSnapshot.child("dob").getValue().toString();
+                String vol1 =dataSnapshot.child("volunteer").getValue().toString();
+                String mob1 =dataSnapshot.child("phn").getValue().toString();
+
                 edu.setText(edu1);
+                email.setText(email1);
+                dob.setText(dob1);
+                intern.setText(vol1);
+                mob.setText(mob1);
             }
 
             @Override
@@ -119,66 +129,7 @@ public class AdminProfileFragment extends Fragment implements View.OnClickListen
 
             }
         });
-        db2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                email.setText(edu1);
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                dob.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db4.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                intern.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db5.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                mob.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 
 

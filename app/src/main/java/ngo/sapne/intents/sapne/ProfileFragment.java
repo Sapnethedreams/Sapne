@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     ProgressDialog pd;
     //firebase auth object
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference db,db1,db2,db3,db4,db5;
+    private DatabaseReference db,db1;
     //view objects,
     private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
     private Button buttonLogout;
@@ -73,7 +74,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         adm.setOnClickListener(this);
         //displaying logged in user name
         textViewUserEmail.setText(user.getEmail());
-        loadUserDob();
+        loadUserInfo();
         loadUserProfpic();
 
         //adding listener to button
@@ -94,83 +95,33 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         }
     }
-    private void loadUserDob() {
+    private void loadUserInfo() {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String name1 = firebaseUser.getDisplayName().toLowerCase();
-        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("edu");
-        db2= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("email");
-        db3= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("dob");
-        db4= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("volunteer");
-        db5= FirebaseDatabase.getInstance().getReference().child("users").child(name1).child("phn");
+        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1);
 
         db1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    Toast.makeText(getContext(),"User details not found",Toast.LENGTH_SHORT).show();
+                    phone.setVisibility(View.INVISIBLE);
+                    edu.setVisibility(View.INVISIBLE);
+                    vol.setVisibility(View.INVISIBLE);
+                    dob.setVisibility(View.INVISIBLE);
                     return;
                 }
-                String edu1= dataSnapshot.getValue().toString();
+                String edu1 =dataSnapshot.child("edu").getValue().toString();
+                String email1 =dataSnapshot.child("email").getValue().toString();
+                String dob1 =dataSnapshot.child("dob").getValue().toString();
+                String vol1 =dataSnapshot.child("volunteer").getValue().toString();
+                String mob1 =dataSnapshot.child("phn").getValue().toString();
+
                 edu.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                textViewUserEmail.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                dob.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db4.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                vol.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        db5.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                phone.setText(edu1);
+                textViewUserEmail.setText(email1);
+                dob.setText(dob1);
+                vol.setText(vol1);
+                phone.setText(mob1);
             }
 
             @Override
