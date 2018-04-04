@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapneb" />
+
+    <TextView
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BULLYING
+Negative impacts are such that they last a lifetime. Besides horrible memories they leave behind a trail of pain, fear and negativity to be dealt upon. This is what every bullied person faces.
+Bullying doesn’t have a definition because words are less to define what the person goes through. Repeated aggressive behavior traumatizes the victim, effects of which can stay for a lifetime.
+There are many ways in which these manipulative people find joy from. It can be physical bullying, verbal bullying or social bullying and in such forms that other people might not even realize it.
+Verbal bullying can be either in the form of name calling, teasing or passing unusual comments about the person.
+Social bullying is established when the bully leaves out the person on purpose, manipulates others to not talk to them or even spreading rumors about them whereas physical bullying is seen as the word says “physical” involving pushing and hitting the person.
+Starting at a younger age, this behavior can leave a deep impact on the person who is facing it.
+"/>
+
+</RelativeLayout>

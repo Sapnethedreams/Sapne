@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapnea" />
+
+
+
+    <TextView
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class activities
+Educational activities
+
+Sapne has been committed to undertaking fun and educational activities for our young and dynamic children. Sapne strongly believes that education goes beyond the classroom and a lot of things can be learnt via games and interactive sessions which leads to a more holistic style of teaching.
+
+In the past, Sapne has organized Draw your dreams, a painting competition several times to highlight the importance of art and craft in our daily lives. Art can teach kids to be patient and to appreciate the beauty in simple things. It can also teach kids to be more creative and think out-of-the-box.
+
+In 2016, SAPNE launched weekly Dance classes conducted by Piyush Sir! Dance is also a form of art where we can express ourselves and have fun at the same time. The kids thoroughly enjoyed sir’s classes.
+"/>
+
+</RelativeLayout>
+
+
+

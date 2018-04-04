@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapneh" />
+
+    <TextView
+
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="While moving on the roads , we see many children who have not worn proper clothes , who are deprived of the basic needs , who should study and play at this age , but due to their financial conditions , they can't even think of doing all these things because , for them , three-time meal is more than enough for survival. Now the question arrises , What do we , as responsible citizen of the country , do for them ? Except for showing concern , except for being sympathetic , we do nothing . But Sapne , our NGO , is proud to tell that , we are doing something , we have taken first step and it is the . First step that leads to the Final step . And we are sure that we will definitely reach till the final step with the support of our team and the children who want to make their future bright and satisfying .
+    "
+
+        />
+
+</RelativeLayout>
