@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="410dp"
+        android:background="@drawable/sapnec" />
+
+    <TextView
+        android:layout_marginTop="150dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developing an art is the search of the inquisitive mind for creativity.
+Music and drum have such a beautiful connection and at Sapne - Sagar creates the melodies to
+sync the amazing relation that these two make.
+The sticks hit on the drum creating a wave of happiness on our mind and this boy doesn't fail to
+do it.
+Sagar Shah - as humble his background is - his efforts are that collosal and commendable!!
+The world lacks passion and this boy serves the example of being an odd one out because he
+follows his heart and that is playing drum.
+Sagar - is a boy developing his skills at this NGO. And Team Sapne is indeed doing a
+phenomenal task by carving a masterpiece!
+Team Sapne has such a backing when it comes to his talents and giving confidence to
+someone to follow their passion is one of the most supreme things that anyone can ever do and
+Team Sapne serves his purpose.
+Music never has an end. Passion never does too. Sagar hopes to bring out his talent in front of
+people. He is an inspiration for all of them - To pursue their passion!
+A big applause to Sagar for his work and his dedication. This for sure shall shape a melodious
+future!!"/>
+
+
+</RelativeLayout>

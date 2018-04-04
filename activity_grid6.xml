@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapnef" />
+
+    <TextView
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We believe that Learning is not the product of teaching , Learning is the product of activities of learners . So we indulge the children in various kinds of activities of their own interest and also in other activities which can benefit them in future. We dance together , we sing together , we play together , we study together , we giggle together , we gossip together , we share our memories , our experiences in those two hours of regular camps organized by Sapne For us , every sapna , every dream is important and hence we try our best to accomplish that , if not accomplish , we try our best to give that dream , a direction. For this , we provide teachers , who are skilled in their field of work and accordingly they teach , they train the students . In this way teachers get the platform to teach and express or share their knowledge , moreover , increase their knowledge , and students get quality education"/>
+</RelativeLayout>

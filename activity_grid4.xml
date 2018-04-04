@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapned" />
+
+    <TextView
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                             Holi Celebration At Sapne Ngo
+Holi was celebrated at Sapne Ngo camp area on 1st march.  Mr. Devesh Mittal and some other volunteers celebrated Holi with NGO kids on 1st march.
+As we are aware about Water Conservation so to emphasize on that area Dry Holi was celebrated with underprivileged kids  With colors and flowers. All the Arrangements Were done by Volunteers with donation and every possible manner. Kids were given sweets in Form of gujiya and other eateries.
+Mr Devesh Gave a Speech Regarding Holi Festival and thanked all the people gathered there for making this event a success.  At the end all kids danced with volunteers on Holi themed songs and enjoyed a lot.
+"/>
+
+</RelativeLayout>

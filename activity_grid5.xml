@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/sapnee" />
+
+    <TextView
+        android:layout_marginTop="210dp"
+        android:textStyle="italic"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A teacher presents the past, reveals the present and creates the future, rightly said by John Holt. So, here at Sapne - our NGO, we are providing quality teachers, for the children who are willing to study and who want to make their future bright but due to some obstacles , they are unable to do so. Due to this reason, we are teaching them, making them capable for themselves and for the society too. We have organized regular camps in which we teach students, we provide the children with the academic education and apart from this, we play with them, we teach them how to live life to its fullest. And in the two hours of the camp, those children are so happy that their happiness, their joy, their cheer, cannot be expressed in words."
+        />
+
+</RelativeLayout>

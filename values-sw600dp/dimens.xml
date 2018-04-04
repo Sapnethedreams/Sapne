@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pic_size">450dp</dimen>
+    <dimen name="land_pic_size">300dp</dimen>
+</resources>
