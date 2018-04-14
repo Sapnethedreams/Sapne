@@ -8,9 +8,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.WRITE_GSERVICES"
+    <uses-permission
+        android:name="android.permission.WRITE_GSERVICES"
         tools:ignore="ProtectedPermissions" />
-
 
     <application
         android:allowBackup="true"
@@ -22,33 +22,31 @@
         android:theme="@style/AppTheme"
         tools:replace="label">
         <activity
-            android:name="ngo.sapne.intents.sapne.BaseActivity"
+            android:name=".BaseActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="ngo.sapne.intents.sapne.Splash">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ngo.sapne.intents.sapne.Notifications" />
+        <activity android:name=".Notifications" />
 
         <service android:name=".MyFirebaseInstanceIdService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT">
-                </action>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
             </intent-filter>
-
         </service>
-        <service
-            android:name=".MyFirebaseMessagingService">
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
@@ -56,6 +54,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDszxmV0Mg5b52LgAeY0XszjNZmuMy-mbs" />
 
+        <activity android:name=".NearbyNGO"></activity>
     </application>
 
 </manifest>
