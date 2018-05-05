@@ -79,6 +79,17 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/google_button"
+        android:layout_centerHorizontal="true">
+
+    </com.google.android.gms.common.SignInButton>
+
         <TextView
             android:id="@+id/textViewSignUp"
             android:layout_width="match_parent"
