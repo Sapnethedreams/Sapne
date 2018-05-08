@@ -8,7 +8,6 @@ public class Users {
         private String email;
         private String volunteer;
         private String dob;
-        private String id;
         private String edu,phn;
 
 
@@ -16,19 +15,13 @@ public class Users {
 
         }
 
-        public Users(String id,String name, String email, String volunteer,String dob,String edu,String phn) {
+        public Users(String name, String email, String volunteer,String dob,String edu,String phn) {
             this.name = name;
-            this.id=id;
             this.email = email;
             this.volunteer = volunteer;
             this.dob=dob;
             this.edu=edu;
             this.phn=phn;
-        }
-
-        public String getId()
-        {
-            return id;
         }
 
         public String getname() {

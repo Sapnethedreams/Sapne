@@ -78,7 +78,7 @@ public class BaseActivity extends AppCompatActivity {
                 .commit();
 
 
-checkLocationPermission();
+        checkLocationPermission();
 
         //defining the behavior when any group is clicked in expandable listview
         mCategoryList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
@@ -135,6 +135,13 @@ checkLocationPermission();
                     getSupportFragmentManager().
                             beginTransaction().
                             replace(R.id.content_frame, new SuccessStoriesFrag(), "SuccessStoriesFrag")
+                            .commit();
+                    mDrawerLayout.closeDrawer(mCategoryList);
+
+                } else if (groupPosition == 9) {
+                    getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.content_frame, new NearbyNGO(), "NearbyNGO")
                             .commit();
                     mDrawerLayout.closeDrawer(mCategoryList);
 
@@ -282,7 +289,7 @@ checkLocationPermission();
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
-    public boolean checkLocationPermission(){
+    public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(BaseActivity.this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -430,6 +437,11 @@ checkLocationPermission();
         categoryDetails.setCatName("Home");
         category_name.add(categoryDetails);
 
+        categoryDetails = new Category();
+        categoryDetails.setCatCode(100);
+        categoryDetails.setCatName("Nearby Sapne NGO");
+        category_name.add(categoryDetails);
+
 
         //----Populate Sub Category Codes
         subcategory_name.clear();
@@ -557,8 +569,7 @@ checkLocationPermission();
 
             ImageView indicator = (ImageView) view.findViewById(R.id.expicon);
 
-            if (groupPsition != 0 && groupPsition != 1)
-            {
+            if (groupPsition != 0 && groupPsition != 1) {
                 indicator.setVisibility(View.INVISIBLE);
             } else {
                 indicator.setVisibility(View.VISIBLE);

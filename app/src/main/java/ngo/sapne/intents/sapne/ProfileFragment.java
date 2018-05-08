@@ -1,8 +1,5 @@
 package ngo.sapne.intents.sapne;
 
-/**
- * Created by dell pc on 05/10/2017.
- */
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,15 +31,14 @@ import static ngo.sapne.intents.sapne.NetworkUtil.context;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
+    CircleImageView profpic;
+    ProgressDialog pd;
     //firebase auth object
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference db;
-    private FirebaseUser user1;
-    CircleImageView profpic;
+    private DatabaseReference db,db1;
     //view objects,
     private TextView textViewUserEmail,name,dob,edu,vol,phone,adm;
     private Button buttonLogout;
-    ProgressDialog pd;
 
     @Nullable
     @Override
@@ -77,10 +74,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         adm.setOnClickListener(this);
         //displaying logged in user name
         textViewUserEmail.setText(user.getEmail());
-        loadUserDob();
-        loadUserPhone();
-        loadUserVol();
-        loadUserEdu();
+        loadUserInfo();
         loadUserProfpic();
 
         //adding listener to button
@@ -88,88 +82,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         return view;
     }
-
-
-    private void loadUserEdu() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("edu");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String edu1= dataSnapshot.getValue().toString();
-                edu.setText(edu1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void loadUserVol() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("volunteer");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String vol1= dataSnapshot.getValue().toString();
-                vol.setText(vol1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void loadUserPhone() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("phn");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String phn1= dataSnapshot.getValue().toString();
-                phone.setText(phn1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void loadUserDob() {
-        user1=FirebaseAuth.getInstance().getCurrentUser();
-        db= FirebaseDatabase.getInstance().getReference().child("users").child(user1.getUid()).child("dob");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    return;
-                }
-                String dob1= dataSnapshot.getValue().toString();
-                dob.setText(dob1);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
     private void loadUserProfpic() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if(user!=null){
@@ -183,6 +95,43 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         }
     }
+    private void loadUserInfo() {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String name1 = firebaseUser.getDisplayName().toLowerCase();
+        db1= FirebaseDatabase.getInstance().getReference().child("users").child(name1);
+
+        db1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot == null || dataSnapshot.getValue() == null) {
+                    Toast.makeText(getContext(),"User details not found",Toast.LENGTH_SHORT).show();
+                    phone.setVisibility(View.INVISIBLE);
+                    edu.setVisibility(View.INVISIBLE);
+                    vol.setVisibility(View.INVISIBLE);
+                    dob.setVisibility(View.INVISIBLE);
+                    return;
+                }
+                String edu1 =dataSnapshot.child("edu").getValue().toString();
+                String email1 =dataSnapshot.child("email").getValue().toString();
+                String dob1 =dataSnapshot.child("dob").getValue().toString();
+                String vol1 =dataSnapshot.child("volunteer").getValue().toString();
+                String mob1 =dataSnapshot.child("phn").getValue().toString();
+
+                edu.setText(edu1);
+                textViewUserEmail.setText(email1);
+                dob.setText(dob1);
+                vol.setText(vol1);
+                phone.setText(mob1);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
 
     @Override
     public void onClick(View view) {

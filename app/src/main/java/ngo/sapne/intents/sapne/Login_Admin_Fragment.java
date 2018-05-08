@@ -45,6 +45,11 @@ import static android.app.Activity.RESULT_OK;
 
 public class Login_Admin_Fragment extends Fragment  implements View.OnClickListener{
 
+    private static String secret_code = "123456";
+    public ImageView imgview;
+    Uri profileImageUrl;
+    int PICK_IMAGE_REQUEST = 101;
+    Uri filePath;
     private Button buttonSignup;
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -52,13 +57,8 @@ public class Login_Admin_Fragment extends Fragment  implements View.OnClickListe
     private EditText editText_adminpass;
     private EditText name;
     private EditText mobno;
-    public ImageView imgview;
     private String name1,email1,pas1,pas2,adminPas,mob1;
-    Uri profileImageUrl;
-private static    String secret_code="123456";
-   int PICK_IMAGE_REQUEST=101;
    private TextView t1;
-   Uri filePath;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference mDatabase;
@@ -146,12 +146,12 @@ private static    String secret_code="123456";
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-        name1= name.getText().toString();
+        name1 = name.getText().toString().toLowerCase().trim();
        email1= editTextEmail.getText().toString();
-        pas1=editTextPassword.getText().toString();
-        pas2=editText_repassword.getText().toString();
+        pas1 = editTextPassword.getText().toString().trim();
+        pas2 = editText_repassword.getText().toString().trim();
         adminPas=editText_adminpass.getText().toString();
-        mob1=mobno.getText().toString();
+        mob1 = mobno.getText().toString().trim();
         if(name1.isEmpty()){
             name.setError("name required");
             name.requestFocus();
@@ -194,23 +194,23 @@ private static    String secret_code="123456";
                             saveUserInfo();
                             getActivity().getSupportFragmentManager().
                                     beginTransaction().
-                                    replace(R.id.content_frame, new ProfileFragment(), "Profile")
+                                    replace(R.id.content_frame, new AdminProfileFragment(), "Admin Profile")
                                     .commit();
                         } else {
                             //display some message here
-                            Toast.makeText(getActivity(), "Registration Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Registration Error. You maybe already Registered or Credentials not correct", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
                 });
             }
             else {
-                Toast.makeText(getContext(),"Enter correct admin password",Toast.LENGTH_LONG);
+                Toast.makeText(getContext(), "Enter correct admin password", Toast.LENGTH_LONG).show();
 
             }
         }
         else {
-            Toast.makeText(getContext(),"Enter correct password in both fields",Toast.LENGTH_LONG);
+            Toast.makeText(getContext(), "Enter correct password in both fields", Toast.LENGTH_LONG).show();
         }
 
 
