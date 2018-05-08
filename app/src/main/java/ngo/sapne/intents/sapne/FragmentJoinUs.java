@@ -32,6 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import ngo.sapne.intents.sapne.util.Gmailsender;
+
 public class FragmentJoinUs extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     EditText etAddress, etName, etPhoneNumber, etEmail, etAadhar, etOffice;
@@ -62,46 +64,16 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
         mLocationClient = builder.build();
 
 //        terms=(TextView)findViewById(R.id.terms);
-        etName = (EditText) v.findViewById(R.id.etName);
-        etPhoneNumber = (EditText) v.findViewById(R.id.etPhoneNumber);
-        etEmail = (EditText) v.findViewById(R.id.etEmail);
-        etAddress = (EditText) v.findViewById(R.id.etAddress);
-        etAadhar = (EditText) v.findViewById(R.id.etAadhar);
-        etOffice = (EditText) v.findViewById(R.id.etOffice);
-        btnSubmit = (Button) v.findViewById(R.id.btnSubmit);
-        spnJoin = (Spinner) v.findViewById(R.id.spnJoin);
+        etName = v.findViewById(R.id.etName);
+        etPhoneNumber = v.findViewById(R.id.etPhoneNumber);
+        etEmail = v.findViewById(R.id.etEmail);
+        etAddress = v.findViewById(R.id.etAddress);
+        etAadhar = v.findViewById(R.id.etAadhar);
+        etOffice = v.findViewById(R.id.etOffice);
+        btnSubmit = v.findViewById(R.id.btnSubmit);
+        spnJoin = v.findViewById(R.id.spnJoin);
         progressDialog = new ProgressDialog(getActivity());
-        rgSex = (RadioGroup) v.findViewById(R.id.rgSex);
-        //        terms.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-
-//                LinearLayout mainLayout = (LinearLayout) findViewById(R.id.activity_main);
-
-        // inflate the layout of the popup window
-//                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-//                View popupView = inflater.inflate(R.layout.activity_terms, null);
-
-        // create the popup window
-//                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-//                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-//                boolean focusable = true; // lets taps outside the popup also dismiss it
-//                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-        // show the popup window
-//                popupWindow.showAtLocation(mainLayout, Gravity.CENTER, 0, 0);
-
-        // dismiss the popup window when touched
-//                popupView.setOnTouchListener(new View.OnTouchListener() {
-//                    @Override
-//                    public boolean onTouch(View v, MotionEvent event) {
-//                        popupWindow.dismiss();
-//                        return true;
-//                    }
-//                });
-//            }
-
-//        });
+        rgSex = v.findViewById(R.id.rgSex);
 
         final ArrayList<String> joinusas = new ArrayList<>();
         joinusas.add("Intern");

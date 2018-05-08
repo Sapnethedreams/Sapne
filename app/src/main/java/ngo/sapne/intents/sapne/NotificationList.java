@@ -33,7 +33,7 @@ public class NotificationList extends Fragment {
         String[] notif={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
         String[] title={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
 
-        ListView listView = (ListView) view.findViewById(R.id.list1);
+        ListView listView = view.findViewById(R.id.list1);
         List<Notif> threeStringsList = new ArrayList<>();
 
         SharedPreferences sharedPref = getActivity().getSharedPreferences("notification1",Context.MODE_PRIVATE);

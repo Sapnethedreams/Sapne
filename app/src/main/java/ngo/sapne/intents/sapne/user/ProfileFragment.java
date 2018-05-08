@@ -1,21 +1,17 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.user;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,8 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static ngo.sapne.intents.sapne.NetworkUtil.context;
+import ngo.sapne.intents.sapne.R;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
@@ -62,8 +57,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //initializing views
-        textViewUserEmail = (TextView) view.findViewById(R.id.email1);
-        buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
+        textViewUserEmail = view.findViewById(R.id.email1);
+        buttonLogout = view.findViewById(R.id.buttonLogout);
         profpic= view.findViewById(R.id.iv8);
         name= view.findViewById(R.id.name1);
         vol= view.findViewById(R.id.vol1);

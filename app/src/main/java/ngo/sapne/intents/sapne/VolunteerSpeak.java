@@ -48,7 +48,7 @@ public class VolunteerSpeak extends android.support.v4.app.Fragment {
         View v=inflater.inflate(R.layout.activity_volunteer_speak,container,false);
 
         CustomListAdapter adapter=new CustomListAdapter(this.getActivity(),image_id,color_names);
-        lv=(ListView)v.findViewById(R.id.listView);
+        lv= v.findViewById(R.id.listView);
         lv.setAdapter(adapter);
         return v;
     }

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ngo.sapne.intents.sapne.AdminProfileFragment">
+    tools:context="ngo.sapne.intents.sapne.user.AdminProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
   <Button

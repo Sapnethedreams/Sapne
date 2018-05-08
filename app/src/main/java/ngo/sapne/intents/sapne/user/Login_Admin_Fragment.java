@@ -1,18 +1,14 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.user;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +32,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import ngo.sapne.intents.sapne.R;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -71,14 +69,14 @@ public class Login_Admin_Fragment extends Fragment  implements View.OnClickListe
         View view = inflater.inflate(R.layout.login_admin, container, false);
 
 
-        editTextEmail = (EditText) view.findViewById(R.id.editText_Admin_Email);
-        editTextPassword = (EditText) view.findViewById(R.id.editText_Admin_Password);
-        buttonSignup = (Button) view.findViewById(R.id.button_Admin_Signup);
-        editText_repassword=(EditText)view.findViewById(R.id.editText_Admin_rePassword);
-        editText_adminpass =(EditText)view.findViewById(R.id.editText_Admin_adPassword);
-        name=(EditText)view.findViewById(R.id.editText_admin_name);
-        mobno=(EditText)view.findViewById(R.id.editText_adminno);
-        imgview=(ImageView)view.findViewById(R.id.imgView);
+        editTextEmail = view.findViewById(R.id.editText_Admin_Email);
+        editTextPassword = view.findViewById(R.id.editText_Admin_Password);
+        buttonSignup = view.findViewById(R.id.button_Admin_Signup);
+        editText_repassword= view.findViewById(R.id.editText_Admin_rePassword);
+        editText_adminpass = view.findViewById(R.id.editText_Admin_adPassword);
+        name= view.findViewById(R.id.editText_admin_name);
+        mobno= view.findViewById(R.id.editText_adminno);
+        imgview= view.findViewById(R.id.imgView);
         imgview.setOnClickListener(this);
         buttonSignup.setOnClickListener(this);
         t1=view.findViewById(R.id.t1);

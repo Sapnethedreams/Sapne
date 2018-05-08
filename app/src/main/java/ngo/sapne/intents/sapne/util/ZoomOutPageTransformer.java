@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.util;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.util;
 
 
 import android.app.ProgressDialog;
@@ -16,6 +16,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import ngo.sapne.intents.sapne.util.Config;
 
 
 //Class is extending AsyncTask because this class is going to perform a networking operation

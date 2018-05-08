@@ -1,13 +1,10 @@
 package ngo.sapne.intents.sapne;
 
-import android.*;
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
-import android.media.audiofx.BassBoost;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -37,15 +34,16 @@ import com.mzelzoghbi.zgallery.entities.ZColor;
 import java.util.ArrayList;
 
 import ngo.sapne.intents.sapne.events.EventsFragment;
+import ngo.sapne.intents.sapne.user.LoginFragment;
 
 
 public class BaseActivity extends AppCompatActivity {
 
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public Button login;
     protected FrameLayout frameLayout;
-    private boolean doubleBackToExitPressedOnce = false;
-
     protected DrawerLayout mDrawerLayout;
+    private boolean doubleBackToExitPressedOnce = false;
     private Toolbar toolbar;
     private int previousGroup;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -53,8 +51,6 @@ public class BaseActivity extends AppCompatActivity {
     private ArrayList<Category> category_name = new ArrayList<Category>();
     private ArrayList<ArrayList<SubCategory>> subcategory_name = new ArrayList<ArrayList<SubCategory>>();
     private ArrayList<Integer> subCatCount = new ArrayList<Integer>();
-
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -494,6 +490,36 @@ public class BaseActivity extends AppCompatActivity {
         subCatCount.add(subCategoryMatches.size());
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // Permission was granted.
+                    if (ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            == PackageManager.PERMISSION_GRANTED) {
+
+
+                    }
+
+                } else {
+
+                    // Permission denied, Disable the functionality that depends on this permission.
+                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other permissions this app might request.
+            //You can add here other case statements according to your requirement.
+        }
+    }
+
     public class expandableListViewAdapter extends BaseExpandableListAdapter {
 
         ArrayList<ArrayList<SubCategory>> subCategoryName = new ArrayList<ArrayList<SubCategory>>();
@@ -563,11 +589,11 @@ public class BaseActivity extends AppCompatActivity {
                 view = layoutInflater.inflate(R.layout.expandablelistcategory, viewGroup, false);
             }
 
-            TextView textView = (TextView) view.findViewById(R.id.cat_desc_1);
+            TextView textView = view.findViewById(R.id.cat_desc_1);
             textView.setText(getGroup(groupPsition).toString());
             textView.setTypeface(type);
 
-            ImageView indicator = (ImageView) view.findViewById(R.id.expicon);
+            ImageView indicator = view.findViewById(R.id.expicon);
 
             if (groupPsition != 0 && groupPsition != 1) {
                 indicator.setVisibility(View.INVISIBLE);
@@ -588,7 +614,7 @@ public class BaseActivity extends AppCompatActivity {
 
             singleChild = getChild(i, i1);
 
-            TextView childSubCategoryName = (TextView) view.findViewById(R.id.subcat_name);
+            TextView childSubCategoryName = view.findViewById(R.id.subcat_name);
             childSubCategoryName.setTypeface(type);
             childSubCategoryName.setText(singleChild.getSubCatName());
             return view;
@@ -598,36 +624,6 @@ public class BaseActivity extends AppCompatActivity {
         @Override
         public boolean isChildSelectable(int groupPosition, int childPosition) {
             return true;
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // Permission was granted.
-                    if (ContextCompat.checkSelfPermission(this,
-                            Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED) {
-
-
-                    }
-
-                } else {
-
-                    // Permission denied, Disable the functionality that depends on this permission.
-                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show();
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other permissions this app might request.
-            //You can add here other case statements according to your requirement.
         }
     }
 }

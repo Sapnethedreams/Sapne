@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.user;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -33,8 +33,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.net.URI;
 import java.util.ArrayList;
+
+import ngo.sapne.intents.sapne.R;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -67,15 +68,15 @@ public class Registration extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
 
-        name = (EditText) view.findViewById(R.id.input_name);
-        dob = (EditText) view.findViewById(R.id.dob);
-        edu = (EditText) view.findViewById(R.id.edu);
-        phn = (EditText) view.findViewById(R.id.phn);
-        spnJoin = (Spinner) view.findViewById(R.id.spnJoin);
+        name = view.findViewById(R.id.input_name);
+        dob = view.findViewById(R.id.dob);
+        edu = view.findViewById(R.id.edu);
+        phn = view.findViewById(R.id.phn);
+        spnJoin = view.findViewById(R.id.spnJoin);
         prof = view.findViewById(R.id.iv7);
-        GoToProf = (Button) view.findViewById(R.id.btn_regi);
+        GoToProf = view.findViewById(R.id.btn_regi);
         t1= view.findViewById(R.id.tv77);
-        uplod = (Button) view.findViewById(R.id.bws);
+        uplod = view.findViewById(R.id.bws);
 
         joinusas.add("Intern");
         joinusas.add("Volunteer");

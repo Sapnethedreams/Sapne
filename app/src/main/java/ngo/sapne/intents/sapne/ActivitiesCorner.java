@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-public class activities_corner extends Fragment {
+public class ActivitiesCorner extends Fragment {
 
 
     String[] names = {"One year has passed giving thousands of smiles to people. Thanks to all " +
@@ -101,7 +101,7 @@ public class activities_corner extends Fragment {
         View v=inflater.inflate(R.layout.activity_activities_corner,container,false);
 
         CustomListAdapter adapter=new CustomListAdapter(this.getActivity(),images,names);
-        lv=(ListView)v.findViewById(R.id.listView);
+        lv= v.findViewById(R.id.listView);
         lv.setAdapter(adapter);
         return v;
     }

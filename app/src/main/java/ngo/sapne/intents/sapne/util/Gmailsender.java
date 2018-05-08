@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.util;
 
 
 import java.io.ByteArrayInputStream;
@@ -27,7 +27,7 @@ public class Gmailsender extends javax.mail.Authenticator {
 
     static {
 
-        Security.addProvider(new ngo.sapne.intents.sapne.JSSEProvider());
+        Security.addProvider(new JSSEProvider());
 
     }
 
@@ -80,7 +80,7 @@ public class Gmailsender extends javax.mail.Authenticator {
 
     public synchronized void sendMail(String subject, String body,
 
-                                      String sender, String recipients) throws Exception {
+                                      String sender, String recipients) {
 
         try {
 
@@ -191,7 +191,7 @@ public class Gmailsender extends javax.mail.Authenticator {
         }
 
 
-        public InputStream getInputStream() throws IOException {
+        public InputStream getInputStream() {
 
             return new ByteArrayInputStream(data);
 

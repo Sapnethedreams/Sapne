@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.util;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -9,6 +9,9 @@ import android.support.v4.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import ngo.sapne.intents.sapne.NotificationList;
+import ngo.sapne.intents.sapne.R;
 
 /**
  * Created by Naruto on 2/5/2018.

@@ -1,4 +1,4 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.user;
 
 /**
  * Created by Naruto on 2/28/2018.

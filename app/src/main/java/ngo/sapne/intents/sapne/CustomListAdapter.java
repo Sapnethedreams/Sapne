@@ -25,8 +25,8 @@ public class CustomListAdapter extends ArrayAdapter {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View single_row = inflater.inflate(R.layout.list_row, null,
                 true);
-        TextView textView = (TextView) single_row.findViewById(R.id.textView);
-        ImageView imageView = (ImageView) single_row.findViewById(R.id.imageView);
+        TextView textView = single_row.findViewById(R.id.textView);
+        ImageView imageView = single_row.findViewById(R.id.imageView);
         textView.setText(""+color_names[position]);
         imageView.setImageResource(image_id[position]);
         return single_row;

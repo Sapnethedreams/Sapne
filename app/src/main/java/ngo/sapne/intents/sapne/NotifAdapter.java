@@ -33,8 +33,8 @@ public class NotifAdapter extends ArrayAdapter<Notif> {
         Notif notif = getItem(position);
 
         if (notif != null) {
-            TextView leftTextView = (TextView) view.findViewById(R.id.txtNotif);
-            TextView rightTextView = (TextView) view.findViewById(R.id.txtTitle);
+            TextView leftTextView = view.findViewById(R.id.txtNotif);
+            TextView rightTextView = view.findViewById(R.id.txtTitle);
 
             leftTextView.setText(notif.getNotif());
             rightTextView.setText(notif.getTitle());

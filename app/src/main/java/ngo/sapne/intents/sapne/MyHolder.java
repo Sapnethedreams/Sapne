@@ -14,8 +14,8 @@ public class MyHolder extends RecyclerView.ViewHolder {
     public MyHolder(View itemView) {
         super(itemView);
         //ASSIGNING VIEWS
-        img= (ImageView) itemView.findViewById(R.id.playerImage);
-        nameTxt= (TextView) itemView.findViewById(R.id.nameTxt);
+        img= itemView.findViewById(R.id.playerImage);
+        nameTxt= itemView.findViewById(R.id.nameTxt);
 
     }
 

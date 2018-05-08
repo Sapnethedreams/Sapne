@@ -175,7 +175,7 @@ public class ContactUs extends Fragment {
     }
 
     public void ring(View v) {
-        Intent myIntent = new Intent(getActivity(), ringContactUs.class);
+        Intent myIntent = new Intent(getActivity(), RingContactUs.class);
 
         startActivity(myIntent);
     }
@@ -216,19 +216,25 @@ public class ContactUs extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        mapView.onPause();
+        if (mapView != null) {
+            mapView.onPause();
+        }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mapView.onDestroy();
+        if (mapView != null) {
+            mapView.onDestroy();
+        }
     }
 
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        mapView.onLowMemory();
+        if (mapView != null) {
+            mapView.onLowMemory();
+        }
     }
 
 }

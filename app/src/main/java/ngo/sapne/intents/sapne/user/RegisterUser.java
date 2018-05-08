@@ -1,8 +1,6 @@
-package ngo.sapne.intents.sapne;
+package ngo.sapne.intents.sapne.user;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,6 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import ngo.sapne.intents.sapne.R;
 
 public class RegisterUser extends Fragment implements View.OnClickListener {
 
@@ -61,12 +61,12 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
         }
 
         //initializing views
-        editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) view.findViewById(R.id.textViewSignin);
+        editTextEmail = view.findViewById(R.id.editTextEmail);
+        editTextPassword = view.findViewById(R.id.editTextPassword);
+        textViewSignin = view.findViewById(R.id.textViewSignin);
 
-        buttonSignup = (Button) view.findViewById(R.id.buttonSignup);
-        textviewlogin_admin=(TextView)view.findViewById(R.id.textViewRegister_Admin);
+        buttonSignup = view.findViewById(R.id.buttonSignup);
+        textviewlogin_admin= view.findViewById(R.id.textViewRegister_Admin);
 
         progressDialog = new ProgressDialog(getActivity());
 

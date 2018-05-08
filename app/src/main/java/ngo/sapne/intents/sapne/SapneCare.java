@@ -2,8 +2,6 @@ package ngo.sapne.intents.sapne;
 
 import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,10 +23,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+
+import ngo.sapne.intents.sapne.util.Gmailsender;
 
 public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -56,13 +53,13 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
         builder.addOnConnectionFailedListener(this);
         mLocationClient = builder.build();
 
-        name_et=(EditText) view.findViewById(R.id.name_et);
-        depart_et=(EditText)view.findViewById(R.id.depart_et);
-        no_et=(EditText)view.findViewById(R.id.no_et);
-        description_et=(EditText)view.findViewById(R.id.description_et);
-        send_button=(Button) view.findViewById(R.id.care_button);
+        name_et= view.findViewById(R.id.name_et);
+        depart_et= view.findViewById(R.id.depart_et);
+        no_et= view.findViewById(R.id.no_et);
+        description_et= view.findViewById(R.id.description_et);
+        send_button= view.findViewById(R.id.care_button);
         progressDialog = new ProgressDialog(getActivity());
-        spnjoin=(Spinner)view.findViewById(R.id.spnJoin);
+        spnjoin= view.findViewById(R.id.spnJoin);
 
 
 

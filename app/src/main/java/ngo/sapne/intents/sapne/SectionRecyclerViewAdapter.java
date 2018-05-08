@@ -25,8 +25,8 @@ public class SectionRecyclerViewAdapter extends RecyclerView.Adapter<SectionRecy
 
         public SectionViewHolder(View itemView) {
             super(itemView);
-            sectionLabel = (TextView) itemView.findViewById(R.id.section_label);
-            itemRecyclerView = (RecyclerView) itemView.findViewById(R.id.item_recycler_view);
+            sectionLabel = itemView.findViewById(R.id.section_label);
+            itemRecyclerView = itemView.findViewById(R.id.item_recycler_view);
         }
     }
 

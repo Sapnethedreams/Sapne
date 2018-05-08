@@ -26,11 +26,11 @@ ImageButton rightNav;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activities, container, false);
-        activity_slider = (ViewPager) view.findViewById(R.id.activity_slider);
+        activity_slider = view.findViewById(R.id.activity_slider);
         adapter = new ActivitiesAdapter( getActivity());
         activity_slider.setAdapter(adapter);
-        leftNav = (ImageButton) view.findViewById(R.id.left_nav);
-        rightNav = (ImageButton) view.findViewById(R.id.right_nav);
+        leftNav = view.findViewById(R.id.left_nav);
+        rightNav = view.findViewById(R.id.right_nav);
 //        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
 //
 //        leftNav = (ImageButton) view.findViewById(R.id.left_nav);

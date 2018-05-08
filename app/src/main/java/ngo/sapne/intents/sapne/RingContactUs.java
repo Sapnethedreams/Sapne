@@ -10,7 +10,7 @@ package ngo.sapne.intents.sapne;
         import android.view.View;
         import android.view.ViewGroup;
 
-public class ringContactUs extends Fragment {
+public class RingContactUs extends Fragment {
 
     @Nullable
     @Override

@@ -38,7 +38,7 @@ public ViewPagerAdapter(Context ctx)
       inflate=(LayoutInflater)ctx.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemview=inflate.inflate(R.layout.viewpager_item,container,false);
         ImageView img;
-        img=(ImageView)itemview.findViewById(R.id.imgview);
+        img= itemview.findViewById(R.id.imgview);
         img.setImageResource(image_resources[position]);
 
 

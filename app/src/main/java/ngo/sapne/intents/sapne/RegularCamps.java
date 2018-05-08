@@ -1,6 +1,5 @@
 package ngo.sapne.intents.sapne;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -30,7 +29,7 @@ public class RegularCamps extends Fragment{
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView1);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        RegularCamp_RecyclerAdapter myAdapter = new RegularCamp_RecyclerAdapter(listData);
+        RegularCampRecyclerAdapter myAdapter = new RegularCampRecyclerAdapter(listData);
         recyclerView.setAdapter(myAdapter);
         return view;
     }

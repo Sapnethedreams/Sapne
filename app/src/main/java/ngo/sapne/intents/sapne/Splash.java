@@ -21,7 +21,7 @@ public class Splash extends Activity {
 
         //get the VideoView from the resources
 
-        vView = (VideoView)findViewById(R.id.videoView);
+        vView = findViewById(R.id.videoView);
         //use this to get touch events
         vView.requestFocus();
         //now we have to load video from the resources folder

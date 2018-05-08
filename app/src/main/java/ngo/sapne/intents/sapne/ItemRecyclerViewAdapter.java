@@ -24,10 +24,10 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            itemLabel = (TextView) itemView.findViewById(R.id.item_label);
-            itemLabel1 = (TextView) itemView.findViewById(R.id.item_label2);
-            imageView=(ImageView)itemView.findViewById(R.id.img);
-            imageView1=(ImageView)itemView.findViewById(R.id.img2);
+            itemLabel = itemView.findViewById(R.id.item_label);
+            itemLabel1 = itemView.findViewById(R.id.item_label2);
+            imageView= itemView.findViewById(R.id.img);
+            imageView1= itemView.findViewById(R.id.img2);
         }
     }
 

@@ -117,10 +117,10 @@ public class ActivitiesAdapter extends PagerAdapter {
         final int totalItems = names.length;
 layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
        final View item_view = layoutInflater.inflate(R.layout.activity_corner_pictures,container,false);
-       final ImageView imageView = (ImageView) item_view.findViewById(R.id.imageViewCornerText);
+       final ImageView imageView = item_view.findViewById(R.id.imageViewCornerText);
 
 
-        final TextView cornerText = (TextView) item_view.findViewById(R.id.cornerText) ;
+        final TextView cornerText = item_view.findViewById(R.id.cornerText);
         imageView.setImageResource(images[position]);
 
         cornerText.setText(names[position]);
