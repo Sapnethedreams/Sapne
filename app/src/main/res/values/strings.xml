@@ -3,6 +3,8 @@
     <string name="all_volunteers_page">All Volunteers</string>
     <string name="linear_sectioned_recyclerview_vertical">linear sectioned recycler view</string>
 
+    <string name="facebook_app_id">2043646535858638</string>
+    <string name="fb_login_protocol_scheme">fb2043646535858638</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
