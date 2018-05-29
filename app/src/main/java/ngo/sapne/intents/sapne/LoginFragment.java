@@ -116,7 +116,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
+//functions of google login start
 
     @Override
     public void onStart() {
@@ -136,12 +136,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mgoogleApiclient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
-
-
-
-
-
 
 
 
@@ -166,17 +160,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
 
 
@@ -190,6 +173,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+
+                            getActivity().getSupportFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.content_frame, new ProfileFragment(), "ProfileUser")
+                                    .commit();
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -201,7 +191,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
+// end of functions for google login
 
 
 

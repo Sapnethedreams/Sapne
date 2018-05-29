@@ -131,7 +131,7 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
 
 
 
-//methods to check authenticate user
+//methods for google login
 
 
     @Override
@@ -190,6 +190,13 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+
+                            getActivity().getSupportFragmentManager().
+                                    beginTransaction().
+                                    replace(R.id.content_frame, new Registration(), "Registration")
+                                    .commit();
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -200,7 +207,7 @@ public class RegisterUser extends Fragment implements View.OnClickListener {
                 });
     }
 
-    //
+    //end of funcitons for google login
 
 
 
