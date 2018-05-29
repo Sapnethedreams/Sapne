@@ -64,12 +64,24 @@
             android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="20dp"
             android:textSize="15sp"
             android:background="@color/colorAccent"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Signup" />
+
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/google_reg__btn"
+            android:layout_centerHorizontal="true">
+
+        </com.google.android.gms.common.SignInButton>
+
+
         <TextView
             android:text="Already Registered? SignIn Here"
             android:id="@+id/textViewSignin"

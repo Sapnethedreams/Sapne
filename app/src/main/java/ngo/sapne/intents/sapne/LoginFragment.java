@@ -125,6 +125,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         firebaseAuth.addAuthStateListener(mAuthListner);
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        mgoogleApiclient.stopAutoManage(getActivity());
+        mgoogleApiclient.disconnect();
+    }
+
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mgoogleApiclient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
