@@ -114,6 +114,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        checkInternetConnection();
         if(view == buttonSignIn){
             userLogin();
         }
@@ -124,5 +125,30 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     replace(R.id.content_frame, new RegisterUser(), "RegisterUser")
                     .commit();
         }
+         private boolean checkInternetConenction() {
+      // get Connectivity Manager object to check connection
+      ConnectivityManager connec
+         =(ConnectivityManager)getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+      // Check for network connections
+      if ( connec.getNetworkInfo(0).getState() == 
+         android.net.NetworkInfo.State.CONNECTED ||
+         connec.getNetworkInfo(0).getState() == 
+         android.net.NetworkInfo.State.CONNECTING ||
+         connec.getNetworkInfo(1).getState() == 
+         android.net.NetworkInfo.State.CONNECTING ||
+         connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED ) {
+            Toast.makeText(this, " Connected ", Toast.LENGTH_LONG).show();
+            return true;
+         }else if (
+            connec.getNetworkInfo(0).getState() == 
+            android.net.NetworkInfo.State.DISCONNECTED ||
+            connec.getNetworkInfo(1).getState() == 
+            android.net.NetworkInfo.State.DISCONNECTED  ) {
+               Toast.makeText(this, " Not Connected ", Toast.LENGTH_LONG).show();
+               return false;
+            }
+         return false;
+   }
     }
 }
