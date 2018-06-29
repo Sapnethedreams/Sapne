@@ -27,8 +27,10 @@ import java.util.ArrayList;
 
 import ngo.sapne.intents.sapne.util.Gmailsender;
 
-public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+import static android.R.layout.simple_spinner_item;
 
+public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+String names []={"APP_DEVELOPMENT", "WEB_DEVELOPMENT","GRAPHICS_DEPARTMENT","CAMP"};
     Button send_button;
     EditText description_et;
     EditText no_et;
@@ -38,9 +40,9 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
     ProgressDialog progressDialog;
     GoogleApiClient mLocationClient;
     Location mLastLocation;
-    Spinner spnjoin;
+    Spinner sp,spnjoin;
 
-
+ArrayAdapter <String> adapter;
 
 
 
@@ -60,16 +62,16 @@ public class SapneCare extends Fragment implements GoogleApiClient.ConnectionCal
         send_button= view.findViewById(R.id.care_button);
         progressDialog = new ProgressDialog(getActivity());
         spnjoin= view.findViewById(R.id.spnJoin);
-
+sp=view.findViewById(R.id.spinner);
 
 
         final ArrayList<String> joinusas = new ArrayList<>();
         joinusas.add("Intern");
         joinusas.add("Volunteer");
 
-
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, joinusas);
-
+        ArrayAdapter adaptera = new ArrayAdapter(getActivity(), simple_spinner_item, names);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), simple_spinner_item, joinusas);
+        sp.setAdapter(adapter);
         spnjoin.setAdapter(adapter);
 
         send_button.setOnClickListener(new View.OnClickListener() {
