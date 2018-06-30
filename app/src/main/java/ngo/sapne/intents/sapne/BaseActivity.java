@@ -201,11 +201,8 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (groupPosition == 1 && childPosition == 0) {
-                    getSupportFragmentManager().
-                            beginTransaction().
-                            replace(R.id.content_frame, new RegularCamps(), "RegularCamps")
-                            .commit();
-
+                Intent intent = new Intent(BaseActivity.this, GridActivity.class);
+                    startActivity(intent);
                     mDrawerLayout.closeDrawer(mCategoryList);
                 }
 
