@@ -60,7 +60,7 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Phone"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:textColorHint="#939393"
                 android:textColor="#3989f1" />
 
@@ -76,7 +76,7 @@
                 android:padding="5dp"
                 android:layout_margin="5dp"
                 android:hint="Email Address"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 android:textColorHint="#939393"
                 android:textColor="#3989f1" />
 
