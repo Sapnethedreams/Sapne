@@ -55,6 +55,8 @@
             android:value="AIzaSyDszxmV0Mg5b52LgAeY0XszjNZmuMy-mbs" />
 
         <activity android:name=".NearbyNGO"></activity>
+         <activity android:name=".GridActivity"></activity>
+        <activity android:name=".events.Gridintent"/>
     </application>
 
 </manifest>
