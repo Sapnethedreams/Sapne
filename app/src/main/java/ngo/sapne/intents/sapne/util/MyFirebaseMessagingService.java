@@ -18,7 +18,7 @@ import ngo.sapne.intents.sapne.R;
  */
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-      String x,y;
+    String x,y;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         x = remoteMessage.getNotification().getBody();
