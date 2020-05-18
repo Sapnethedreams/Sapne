@@ -100,4 +100,6 @@
 
     <string name="title_activity_notification__list">Notification_List</string>
     <string name="sap_care_message">Sapne care intends to act as an interface between the volunteers and organisation. \n\nFeel free to tell us anything and our management team will get back to you.</string>
+    <string name="firebase_channel_name">Firebase Notification</string>
+    <string name="firebase_channel_description">firebase notification desciption</string>
 </resources>

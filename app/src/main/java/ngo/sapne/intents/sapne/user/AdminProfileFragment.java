@@ -2,7 +2,7 @@ package ngo.sapne.intents.sapne.user;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import ngo.sapne.intents.sapne.R;
-import ngo.sapne.intents.sapne.user.LoginFragment;
-import ngo.sapne.intents.sapne.user.Users;
 
 
 /**

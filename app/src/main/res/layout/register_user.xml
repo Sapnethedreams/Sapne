@@ -28,7 +28,7 @@
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -43,8 +43,8 @@
             android:layout_margin="15dp"
             android:hint="Enter email"
             android:inputType="textEmailAddress" />
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -59,7 +59,7 @@
             android:textColorHint="@color/black"
             android:hint="Enter password"
             android:inputType="textPassword" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
@@ -77,7 +77,8 @@
             android:layout_margin="15dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
 
 
         <TextView
@@ -87,7 +88,8 @@
             android:layout_margin="10dp"
             android:text="Management Registration"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 

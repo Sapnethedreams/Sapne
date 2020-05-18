@@ -1,24 +1,21 @@
 package ngo.sapne.intents.sapne;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
+import androidx.annotation.Nullable;
+
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.List;
+import androidx.fragment.app.Fragment;
 
 /**
  *  Created by itsmeemohit on 30-11-2017.
  */
 
-public class VolunteerSpeak extends android.support.v4.app.Fragment {
+public class VolunteerSpeak extends Fragment {
 
     String color_names[] = {"Suprabhat Das\nGraphic Designer\nMy experience with the SAPNE family has been incredible.The members are extremely co-operative and supportive.Being a novice in the field,I used to have a lot of queries but they were always there to help me out.I learnt to work under a stipulated time frame and always tried to give my best.\n\nAfter my long association" +
             "with this organisation, the people and the kids feels like my own family more than friends.Every time, I get oppurtunity to serve,I do it with 100% effort.Overall,this is one of the best organisation,I have been associated with so far.\n\nI am PROUD member of SAPNE family.", "Vaibhav Bisht(Intellectual Property Associate at LakshmiSri Attorneys)\n'Head of Digital Marketing/Management'\n at Sapne\n" +
