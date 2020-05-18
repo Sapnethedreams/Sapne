@@ -25,7 +25,7 @@
                    android:layout_gravity="center_horizontal" />
 
         <!--  Name Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
@@ -37,15 +37,15 @@
                       android:layout_height="wrap_content"
                       android:inputType="textCapWords"
                       android:hint="Name" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Email Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"></android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
+            android:layout_marginBottom="8dp"></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
@@ -56,10 +56,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Phone number"/>
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -71,9 +71,9 @@
                 android:textColor="@color/black"
                 android:inputType="date"
                       android:hint="Date of Birth(dd/mm/yyyy)"/>
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
         <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -84,9 +84,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Education"/>
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
         <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -110,7 +110,7 @@
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
 
 </RelativeLayout>
         <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_regi"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

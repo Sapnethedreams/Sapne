@@ -21,7 +21,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/main_border">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -57,7 +57,7 @@
                 android:background="#70000000"
                 android:layout_gravity="center_horizontal|bottom">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -67,9 +67,10 @@
                     android:layout_marginStart="-30dp"
                     android:fontFamily="cursive"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:layout_marginLeft="-30dp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -77,7 +78,8 @@
                     android:text="for every child"
                     android:fontFamily="cursive"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:layout_marginLeft="20dp" />
 
             </LinearLayout>
 
@@ -103,7 +105,8 @@
                 android:onClick="explore"
                 android:text="Explore our Journey"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:gravity="center_horizontal" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -119,7 +122,8 @@
                     android:text="Donate Us"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal" />
 
                 <Button
                     android:id="@+id/btnJoinUs1"

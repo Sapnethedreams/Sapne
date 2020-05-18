@@ -23,9 +23,10 @@
             android:textAlignment="center"
             android:padding="5dp"
             android:textColor="#feffff"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:gravity="center_horizontal" />
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -33,7 +34,8 @@
             app:cardCornerRadius="3dp"
             app:cardElevation="5dp"
             app:contentPadding="5dp"
-            tools:layout_editor_absoluteY="0dp">
+            tools:layout_editor_absoluteY="0dp"
+            android:gravity="center_horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,7 +62,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -72,7 +75,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
                 </LinearLayout>
 
                 <ImageView
@@ -89,9 +93,9 @@
                     app:srcCompat="@drawable/falguni" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -125,7 +129,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -137,7 +142,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -154,10 +160,10 @@
                     app:srcCompat="@drawable/piyush" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -191,7 +197,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,7 +210,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -220,10 +228,10 @@
                     app:srcCompat="@drawable/gurleen" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -257,7 +265,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -269,7 +278,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -286,10 +296,10 @@
                     app:srcCompat="@drawable/gurleen_kaur" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -323,7 +333,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -335,7 +346,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -352,10 +364,10 @@
                     app:srcCompat="@drawable/harleen" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -389,7 +401,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -401,7 +414,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -419,10 +433,10 @@
                     app:srcCompat="@drawable/nishant" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -456,7 +470,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -468,7 +483,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -486,10 +502,10 @@
                     app:srcCompat="@drawable/pallavi" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -523,7 +539,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -535,7 +552,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -552,10 +570,10 @@
                     app:srcCompat="@drawable/richa" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -587,7 +605,8 @@
                         android:textColor="#000000"
                         android:fontFamily="serif"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -599,7 +618,8 @@
                         android:textAlignment="textStart"
                         android:textColor="#808080"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="start" />
 
                 </LinearLayout>
 
@@ -616,7 +636,7 @@
                     app:srcCompat="@drawable/lakshita" />
             </RelativeLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:layout_width="match_parent"
@@ -628,7 +648,8 @@
             android:layout_marginBottom="20dp"
             android:textAlignment="center"
             android:textColor="#feffff"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 </ScrollView>
