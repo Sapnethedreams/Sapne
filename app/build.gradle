@@ -6,11 +6,11 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "ngo.sapne.intents.sapne.test"
+        applicationId "ngo.sapne.intents.sapne"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 15
-        versionName "15.0"
+        versionCode 16
+        versionName "16.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

@@ -6,7 +6,7 @@
     android:scrollbars="none"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurMission"
+    tools:context="ngo.sapne.intents.sapne.OurMission"
     tools:showIn="@layout/activity_our_mission"
     android:clipChildren="false"
     android:clipToPadding="false">
@@ -205,7 +205,7 @@
                         android:fontFamily="serif"
                         android:gravity="center"
                         android:text="@string/mission_2"
-                        android:textAlignment="viewStart"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:ignore="RtlHardcoded" />
@@ -279,7 +279,7 @@
                         android:text="@string/mission_3"
                         android:layout_marginTop="7dp"
                         android:layout_marginBottom="7dp"
-                        android:textAlignment="viewStart"
+                        android:textAlignment="center"
                         tools:ignore="RtlHardcoded"
                         />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
