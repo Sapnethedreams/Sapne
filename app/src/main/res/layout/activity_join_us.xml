@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:padding="10sp">
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10sp"
+        android:gravity="center"
+        tools:context="com.example.intents.sapne.ngo.example.intents.sapne.MainActivity">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome To Sapne"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+            android:layout_marginTop="10dp"
+
+
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Enter Phone Number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <RadioGroup
+            android:id="@+id/rgSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Female" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etAddress"
+
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:lines="3"
+            android:hint="Enter address"
+            android:inputType="textMultiLine"
+            android:text="" />
+
+
+        <EditText
+            android:id="@+id/etOffice"
+
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+
+
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:lines="3"
+            android:hint="Office/Institute"
+            android:inputType="text"
+            android:text="" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="Join Sapne As"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spnJoin"
+            android:layout_width="200sp"
+            android:layout_height="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etAadhar"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
+
+
+            android:hint="Enter Aadhar No."
+            android:inputType="text|textPersonName"
+            />
+
+
+
+     
+<!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/terms"-->
+         <!--/   android:textColor="@color/red"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:text="Terms and Conditions"-->
+            <!--/>-->
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/solidbtn"
+            android:layout_width="350sp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</ScrollView>

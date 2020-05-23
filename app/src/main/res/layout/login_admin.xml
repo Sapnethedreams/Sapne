@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,10 +14,10 @@
         tools:context="ngo.sapne.intents.sapne.user.RegisterUser">
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:padding="5sp"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
@@ -46,7 +46,9 @@
     <EditText
         android:id="@+id/editText_admin_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
+        android:padding="10sp"
+        android:background="@drawable/stroke5sp"
         android:layout_margin="15dp"
         android:hint="Enter Name"
         android:inputType="textEmailAddress"
@@ -61,31 +63,34 @@
             android:id="@+id/editText_adminno"
             android:textColorHint="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_height="40sp"
+            android:padding="10sp"
+            android:background="@drawable/stroke5sp"
+            android:layout_margin="15sp"
             android:hint="Enter Mob no"
             android:inputType="textEmailAddress" />
 
 
+    <EditText
+        android:id="@+id/editText_Admin_Email"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_margin="15dp"
+        android:background="@drawable/stroke5sp"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
-        <EditText
-            android:textColor="@color/black"
-            android:id="@+id/editText_Admin_Email"
-            android:textColorHint="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="Enter Email"
-            android:inputType="textEmailAddress" />
-
-
-
-
-        <EditText
+    <EditText
             android:id="@+id/editText_Admin_Password"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="15dp"
+            android:layout_height="40sp"
+            android:padding="10sp"
+            android:background="@drawable/stroke5sp"
+        android:layout_margin="15dp"
+
             android:hint="Enter password"
             android:inputType="textPassword"
             android:textColor="@color/black"
@@ -97,7 +102,9 @@
         <EditText
             android:id="@+id/editText_Admin_rePassword"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="40sp"
+            android:padding="10sp"
+            android:background="@drawable/stroke5sp"
             android:layout_margin="15dp"
             android:hint="Re-enter password"
             android:inputType="textPassword"
@@ -110,7 +117,9 @@
     <EditText
         android:id="@+id/editText_Admin_adPassword"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40sp"
+        android:background="@drawable/stroke5sp"
+        android:padding="10sp"
         android:layout_margin="15dp"
         android:hint="Enter Admin password"
         android:inputType="textPassword"
@@ -138,7 +147,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/solidbtn"
         android:text="SignUp"
         android:textColor="@color/white"
         android:textSize="15sp"

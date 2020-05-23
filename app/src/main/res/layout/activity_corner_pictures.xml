@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    card_view:cardBackgroundColor="@color/colorPrimary"
+    card_view:cardBackgroundColor="#ffffff"
     card_view:cardCornerRadius="5dp"
+    android:background="@drawable/stroke5sp"
     card_view:cardElevation="15dp"
     card_view:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <TextView
@@ -20,13 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
-            android:textColor="@color/white"
+            android:textColor="#000000"
 
             android:padding="10dp"
             android:text="TextView"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="start" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageViewCornerText"
@@ -45,4 +45,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</android.support.v7.widget.CardView>

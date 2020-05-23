@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ngo.sapne.intents.sapne.OurVision"
+    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurVision"
     tools:showIn="@layout/activity_our_vision"
     android:background="@drawable/z1"
     android:orientation="vertical">
@@ -31,8 +31,7 @@
             android:textColor="#fff"
             android:textAlignment="textStart"
             android:text="@string/vision_0"
-            android:fontFamily="sans-serif-condensed"
-            tools:ignore="RtlCompat" />
+            android:fontFamily="sans-serif-condensed"/>
 
         <TextView
             android:layout_width="200dp"
@@ -43,10 +42,9 @@
             android:layout_marginTop="7dp"
             android:fontFamily="sans-serif-condensed"
             android:textSize="17sp"
-            android:text="@string/vision_1"
-            tools:ignore="RtlCompat" />
+            android:text="@string/vision_1"/>
 
     </LinearLayout>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

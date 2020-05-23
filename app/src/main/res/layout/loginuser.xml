@@ -26,13 +26,13 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:textColorHint="@color/grey"
-            android:background="@color/grey">
+
+            >
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -41,40 +41,46 @@
                 android:layout_margin="15dp"
                 android:drawableLeft="@drawable/ic_user"
                 android:hint="Enter email"
+                android:padding="10sp"
+                android:background="@drawable/stroke5sp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
+
                 android:textColorHint="@color/black" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:textColorHint="@color/black"
-            android:background="@color/grey">
+
+            >
 
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_margin="15dp"
+                android:background="@drawable/stroke5sp"
                 android:drawableLeft="@drawable/ic_lock"
                 android:hint="Enter password"
+                android:padding="10sp"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/buttonSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/solidbtn"
             android:text="SignIn"
+
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -84,9 +90,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="20sp"
             android:text="Don't have an account? Signup Here"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/black" />
 
     </LinearLayout>

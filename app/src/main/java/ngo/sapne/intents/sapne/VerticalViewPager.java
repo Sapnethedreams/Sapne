@@ -1,7 +1,7 @@
 package ngo.sapne.intents.sapne;
 
 import android.content.Context;
-import androidx.viewpager.widget.ViewPager;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,7 +29,7 @@ public class VerticalViewPager extends ViewPager {
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 
-    private class VerticalPageTransformer implements ViewPager.PageTransformer {
+    private class VerticalPageTransformer implements PageTransformer {
         private static final float MIN_SCALE = 0.75f;
         @Override
         public void transformPage(View view, float position) {

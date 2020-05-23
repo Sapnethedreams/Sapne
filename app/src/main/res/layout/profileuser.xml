@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0">
+    android:background="#E0E0E0"
 
-    <com.google.android.material.appbar.AppBarLayout
+    tools:context="net.simplifiedcoding.firebaseauthdemo.ProfileActivity">
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -24,7 +26,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/sunset" />
 
-            <androidx.appcompat.widget.Toolbar
+            <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -79,7 +81,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <androidx.cardview.widget.CardView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="#FFFFFFFF"
@@ -115,9 +117,9 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="#FFFFFFFF"
@@ -153,9 +155,9 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="#FFFFFFFF"
@@ -191,9 +193,9 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="#FFFFFFFF"
@@ -229,9 +231,9 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="#FFFFFFFF"
@@ -267,7 +269,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </android.support.v7.widget.CardView>
 
             <Space
                 android:layout_width="match_parent"
@@ -283,8 +285,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:paddingStart="10dp"
-                    android:text="Admin"
-                    android:paddingLeft="10dp" />
+                    android:text="Admin" />
 
 
                 <Button
@@ -295,13 +296,12 @@
                     android:background="@drawable/custombutton"
                     android:text="Logout"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="130dp" />
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
 
         </LinearLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+    </android.support.design.widget.AppBarLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

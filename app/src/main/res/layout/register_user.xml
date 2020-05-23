@@ -28,7 +28,7 @@
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -37,14 +37,18 @@
         <EditText
             android:textColor="@color/black"
             android:id="@+id/editTextEmail"
+            android:background="@drawable/stroke5sp"
+
+            android:padding="10sp"
+
             android:textColorHint="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45sp"
             android:layout_margin="15dp"
             android:hint="Enter email"
             android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -54,19 +58,21 @@
             android:textColor="@color/black"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
             android:layout_margin="15dp"
             android:textColorHint="@color/black"
             android:hint="Enter password"
             android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
         <Button
             android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="40dp"
             android:textSize="15sp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/solidbtn"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Signup" />
@@ -75,10 +81,10 @@
             android:id="@+id/textViewSignin"
             android:textAlignment="center"
             android:layout_margin="15dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
+            android:layout_height="wrap_content" />
 
 
         <TextView
@@ -86,10 +92,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="15sp"
             android:text="Management Registration"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

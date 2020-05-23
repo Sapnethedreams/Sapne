@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10sp"
+        android:gravity="center">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+
+            android:padding="10sp"
+            android:orientation="vertical"
+            android:gravity="center"
+
+            >
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+
+
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:text="Send Us A Message:"
                 android:textColor="@color/colorPrimaryDark"
@@ -34,99 +41,105 @@
             <EditText
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_height="40sp"
                 android:layout_below="@id/textView"
-                android:layout_marginTop="47dp"
-                android:background="@color/grey"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+
+
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/stroke5sp"
                 android:ems="10"
                 android:hint="Your Name"
-                android:textColorHint="#939393"
                 android:inputType="textPersonName"
-                android:textColor="#3989f1" />
+                android:padding="10dp"
+                android:textColor="#3989f1"
+                android:textColorHint="#939393" />
 
             <EditText
                 android:id="@+id/editText3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_height="40sp"
                 android:layout_below="@+id/editText"
-                android:background="@color/grey"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/stroke5sp"
                 android:ems="10"
+
+                android:layout_marginBottom="20sp"
+
                 android:hint="Phone"
                 android:inputType="phone"
-                android:textColorHint="#939393"
-                android:textColor="#3989f1" />
+                android:padding="10dp"
+                android:textColor="#3989f1"
+                android:textColorHint="#939393" />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_height="40sp"
                 android:layout_below="@+id/editText3"
-                android:ems="10"
-                android:background="@color/grey"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/stroke5sp"
+                android:layout_marginBottom="20sp"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"
-                android:textColorHint="#939393"
-                android:textColor="#3989f1" />
+                android:padding="10dp"
+                android:textColor="#3989f1"
+                android:textColorHint="#939393" />
 
             <EditText
                 android:id="@+id/editText5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_height="40sp"
                 android:layout_below="@+id/editText2"
-                android:background="@color/grey"
-                android:padding="5dp"
-                android:layout_margin="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/stroke5sp"
                 android:ems="10"
+                android:layout_marginBottom="20sp"
                 android:hint="Your Message"
                 android:inputType="textPersonName"
-                android:textColorHint="#939393"
-                android:textColor="#3989f1" />
+                android:padding="10dp"
+                android:textColor="#3989f1"
+                android:textColorHint="#939393" />
 
             <EditText
                 android:id="@+id/editText4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:background="@color/grey"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                android:layout_alignParentStart="true"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
                 android:layout_below="@+id/editText5"
-                android:textColorHint="#939393"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/stroke5sp"
                 android:ems="10"
+
                 android:hint="City"
                 android:inputType="textPersonName"
-                android:textColor="#3989f1" />
+                android:padding="10sp"
+                android:textColor="#3989f1"
+                android:textColorHint="#939393" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="221dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editText4"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/custombutton"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/solidbtn"
                 android:onClick="Message"
+                android:gravity="center"
+
                 android:text="Send Message"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -161,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp">
 
             <ImageButton
@@ -209,16 +222,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_width="wrap_content"
+            android:layout_height="180dp">
 
-        <com.google.android.gms.maps.MapView
-            android:layout_margin="10dp"
-            android:layout_gravity="bottom"
-            android:id="@+id/map_location_ngo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_location_ngo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom" />
         </RelativeLayout>
     </LinearLayout>
 

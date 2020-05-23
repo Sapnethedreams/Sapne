@@ -1,6 +1,6 @@
 package ngo.sapne.intents.sapne.util;
 
-import androidx.viewpager.widget.ViewPager;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 
 public class ZoomOutPageTransformer implements ViewPager.PageTransformer {

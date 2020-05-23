@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#faf0e6" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/gaming" />
+
+    <TextView
+        android:id="@+id/tvFragFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="197dp"
+        android:text="PLAYGROUND"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+
+        android:paddingRight="16dp"
+
+        android:layout_below="@+id/tvFragFirst"
+        android:layout_marginTop="24dp"
+        android:text="Our playground is the place where we provide the children to learn in the most innovative ways. Getting them involved in team sports/games helps in enhancing their team building skills, social harmonization skills, and shows them the power of unity and group learning. The added advantage of improvement in their motor skills is present as well." />
+
+</RelativeLayout>

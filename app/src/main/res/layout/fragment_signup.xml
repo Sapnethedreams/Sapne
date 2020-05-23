@@ -25,7 +25,7 @@
                    android:layout_gravity="center_horizontal" />
 
         <!--  Name Label -->
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
@@ -37,15 +37,15 @@
                       android:layout_height="wrap_content"
                       android:inputType="textCapWords"
                       android:hint="Name" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <!-- Email Label -->
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"></com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginBottom="8dp"></android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
@@ -56,10 +56,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Phone number"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -71,9 +71,9 @@
                 android:textColor="@color/black"
                 android:inputType="date"
                       android:hint="Date of Birth(dd/mm/yyyy)"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
         <!-- Password Label -->
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -84,9 +84,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Education"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
         <!-- Password Label -->
-        <com.google.android.material.textfield.TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -110,7 +110,7 @@
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -139,13 +139,13 @@
         android:layout_alignEnd="@+id/iv7"
         android:layout_alignRight="@+id/iv7"
         android:layout_below="@+id/iv7"
-        android:background="@color/colorAccent"
+        android:background="@drawable/solidbtn"
         android:text="Save"
         android:textColor="@color/white" />
 
 </RelativeLayout>
         <!-- Signup Button -->
-        <androidx.appcompat.widget.AppCompatButton
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_regi"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#faf0e6" >
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/skilldevelopment" />
+
+    <TextView
+        android:id="@+id/tvFragThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:text="SKILL DEVELOPMENT"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="221dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+
+        android:paddingRight="16dp"
+
+        android:layout_below="@+id/tvFragThird"
+        android:layout_marginTop="12dp"
+        android:text="Knowledge is a necessity, but so is skill development . Skill development courses not just enhance a variety of skills in a child but they also increase their self confidence. A child without life skills is like a bird who is unaware of how to use its wings. Thus, our skill building courses provide these kids with an optimum platform to launch their dreams!" />
+
+</RelativeLayout>
+
+
