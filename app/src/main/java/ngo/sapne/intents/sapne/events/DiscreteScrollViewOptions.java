@@ -1,17 +1,22 @@
 package ngo.sapne.intents.sapne.events;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
-import androidx.appcompat.widget.PopupMenu;
-import androidx.recyclerview.widget.RecyclerView;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
 import com.yarolegovich.discretescrollview.InfiniteScrollAdapter;
+
+import java.lang.ref.WeakReference;
+
+import ngo.sapne.intents.sapne.R;
 
 public class DiscreteScrollViewOptions {
 

@@ -2,14 +2,17 @@ package ngo.sapne.intents.sapne;
 
 
 import android.content.Context;
-
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.cardview.widget.CardView;
-
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ActivitiesAdapter extends PagerAdapter {

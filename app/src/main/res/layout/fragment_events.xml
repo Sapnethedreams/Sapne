@@ -76,7 +76,7 @@
             android:layout_width="16dp"
             android:layout_height="wrap_content" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/item_btn_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

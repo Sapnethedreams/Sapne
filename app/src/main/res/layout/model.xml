@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="6dp"
+    app:cardElevation="12dp"
+    app:cardCornerRadius="3dp"
+    android:layout_height="100dp"
+    android:layout_margin="0dp"
+    app:cardPreventCornerOverlap="false"
+    >
+    <LinearLayout        android:orientation="vertical"
+                         android:layout_width="wrap_content"
+                         android:padding="15dp"
+                         android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:elevation="15dp"
+            android:id="@+id/playerImage"
+            android:padding="25dp"
+            android:src="@drawable/lo" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:id="@+id/nameTxt"
+            android:padding="10dp"
+            android:layout_toRightOf="@+id/playerImage"
+            />
+
+
+
+
+
+
+               />    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
+
+

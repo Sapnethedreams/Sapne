@@ -12,12 +12,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="#05d5f5"
+        android:background="#1A237E"
         android:textAlignment="center"
         android:padding="5dp"
-        android:textColor="#feffff"
+        android:textColor="#ffffff"
         android:textSize="26dp"
         android:ems="20"
+
         android:gravity="center"
 
 
@@ -26,7 +27,7 @@
 
 
     <!--  recycler view for items -->
-    <androidx.recyclerview.widget.RecyclerView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/item_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

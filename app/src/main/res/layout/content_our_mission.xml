@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp"
         >
 
-        <androidx.cardview.widget.CardView
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -61,14 +61,14 @@
                         android:layout_marginBottom="10dp"
                         android:textColor="@color/white"
                         android:textAlignment="viewStart"
-                        tools:ignore="RtlCompat,RtlHardcoded"
+                        tools:ignore="RtlHardcoded"
                         />
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -96,8 +96,8 @@
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -134,13 +134,13 @@
                         android:fontFamily="serif"
                         android:textAlignment="viewStart"
                         android:textColor="@color/white"
-                        tools:ignore="RtlCompat,RtlHardcoded"
+                        tools:ignore="RtlHardcoded"
                         />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -168,8 +168,8 @@
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -205,15 +205,15 @@
                         android:fontFamily="serif"
                         android:gravity="center"
                         android:text="@string/mission_2"
-                        android:textAlignment="viewStart"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        tools:ignore="RtlCompat,RtlHardcoded" />
+                        tools:ignore="RtlHardcoded" />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -241,8 +241,8 @@
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -279,14 +279,14 @@
                         android:text="@string/mission_3"
                         android:layout_marginTop="7dp"
                         android:layout_marginBottom="7dp"
-                        android:textAlignment="viewStart"
-                        tools:ignore="RtlCompat,RtlHardcoded"
+                        android:textAlignment="center"
+                        tools:ignore="RtlHardcoded"
                         />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -314,8 +314,8 @@
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteY="0dp"
@@ -357,12 +357,12 @@
                         android:textSize="16sp"
                         android:layout_marginBottom="7dp"
                         android:textAlignment="viewStart"
-                        tools:ignore="RtlCompat,RtlHardcoded"
+                        tools:ignore="RtlHardcoded"
                         />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

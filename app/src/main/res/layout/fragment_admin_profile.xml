@@ -1,79 +1,166 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ngo.sapne.intents.sapne.user.AdminProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="ADMIN PROFILE"
+      android:textSize="30sp"
+      app:layout_constraintBottom_toTopOf="@+id/etName"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
   <Button
-    android:id="@+id/buttonLogout"
-    android:text="Logout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-      android:layout_margin="10dp"/>
+      android:id="@+id/buttonLogout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:background="@drawable/solidbtn"
 
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLogout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="27dp"
-        android:ems="10"
-        android:hint="Enter Name"
-        android:inputType="textPersonName" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Details"
-        android:id="@+id/bDetails"
-        android:layout_below="@+id/etName"/>
+      android:padding="10sp"
+      android:text="Logout"
+      android:textColor="#ffffff"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etMob"
+      app:layout_constraintVertical_bias="0.608" />
 
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/bDetails"
-        android:id="@+id/etDob"
-        android:hint="DOB"/>
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/bDetails"
-android:layout_toRightOf="@+id/etDob"
-        android:id="@+id/etEmail"
-        android:hint="Email"/>
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/etDob"
-        android:id="@+id/etEdu"
-        android:hint="Edu"/>
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/etDob"
-        android:layout_toRightOf="@+id/etEdu"
-        android:id="@+id/etIntern"
-        android:hint="Joined As"/>
+  <EditText
+      android:id="@+id/etName"
+      android:layout_width="350sp"
+      android:layout_height="40sp"
+      android:layout_below="@+id/buttonLogout"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentLeft="true"
+      android:background="@drawable/stroke5sp"
+      android:ems="10"
+      android:hint="Enter Name"
+      android:inputType="textPersonName"
+      android:padding="10sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.157" />
+
+  <Button
+      android:id="@+id/bDetails"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/etName"
+      android:layout_marginStart="36dp"
+      android:layout_marginLeft="36dp"
+      android:background="@drawable/solidbtn"
+      android:padding="10sp"
+      android:text="Get Details"
+      android:textColor="#ffffff"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/bModify"
+      app:layout_constraintHorizontal_bias="0.285"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etMob"
+      app:layout_constraintVertical_bias="0.297" />
+
+  <EditText
+      android:id="@+id/etDob"
+      android:layout_width="350dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/bDetails"
+      android:layout_marginTop="24dp"
+      android:background="@drawable/stroke5sp"
+      android:hint="DOB"
+      android:padding="10sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+  <EditText
+      android:id="@+id/etEmail"
+      android:layout_width="350dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/bDetails"
+      android:layout_marginTop="20dp"
+      android:layout_toRightOf="@+id/etDob"
+      android:background="@drawable/stroke5sp"
+      android:hint="Email"
+      android:padding="10sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etDob" />
+
+  <EditText
+      android:id="@+id/etEdu"
+      android:layout_width="350dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/etDob"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/stroke5sp"
+      android:hint="Edu"
+      android:padding="10sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+  <EditText
+      android:id="@+id/etIntern"
+      android:layout_width="350dp"
+      android:layout_height="40dp"
+      android:layout_below="@+id/etDob"
+      android:layout_marginTop="16dp"
+      android:layout_toRightOf="@+id/etEdu"
+      android:background="@drawable/stroke5sp"
+      android:hint="Joined As"
+      android:padding="10sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etEdu" />
 
   <EditText
       android:id="@+id/etMob"
-      android:layout_width="150dp"
-      android:layout_height="50dp"
-      android:layout_alignBottom="@+id/bModify"
-      android:layout_alignLeft="@+id/buttonLogout"
+      android:layout_width="350dp"
+      android:layout_height="40dp"
       android:layout_alignStart="@+id/buttonLogout"
-      android:hint="Mobile No." />
+      android:layout_alignLeft="@+id/buttonLogout"
+      android:layout_alignBottom="@+id/bModify"
+      android:layout_marginTop="24dp"
+      android:background="@drawable/stroke5sp"
+      android:hint="Mobile No."
+      android:padding="10sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etIntern" />
 
   <Button
       android:id="@+id/bModify"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_below="@+id/etIntern"
+
       android:layout_alignEnd="@+id/etIntern"
       android:layout_alignRight="@+id/etIntern"
-      android:layout_below="@+id/etIntern"
-      android:text="Modify" />
-</RelativeLayout>
+      android:layout_marginEnd="60dp"
+      android:layout_marginRight="60dp"
+      android:background="@drawable/solidbtn"
+      android:padding="10sp"
+      android:text="Modify"
+      android:textColor="#ffffff"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etMob"
+      app:layout_constraintVertical_bias="0.297" />
+</android.support.constraint.ConstraintLayout>
