@@ -26,7 +26,6 @@
             app:cardBackgroundColor="#50ffffff">
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:timeline="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +60,7 @@
                         android:layout_marginBottom="10dp"
                         android:textColor="@color/white"
                         android:textAlignment="viewStart"
-                        tools:ignore="RtlHardcoded"
+                        tools:ignore="RtlCompat,RtlHardcoded"
                         />
 
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
@@ -357,7 +356,7 @@
                         android:textSize="16sp"
                         android:layout_marginBottom="7dp"
                         android:textAlignment="viewStart"
-                        tools:ignore="RtlHardcoded"
+                        tools:ignore="RtlCompat,RtlHardcoded"
                         />
                 </pl.hypeapp.materialtimelineview.MaterialTimelineView>
             </LinearLayout>
