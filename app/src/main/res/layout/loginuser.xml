@@ -97,9 +97,9 @@
             android:textColor="@color/black"
             android:gravity="center_horizontal" />
 
-<!--    <com.google.android.gms.common.SignInButton-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/btn_gmail"/>-->
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_gmail"/>
 
     </LinearLayout>
