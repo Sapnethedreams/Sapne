@@ -1,6 +1,7 @@
 package ngo.sapne.intents.sapne.user;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -36,11 +37,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private TextView textViewUserEmail, name, dob, edu, vol, phone, adm;
     private Button buttonLogout;
 
+    private Context mContext;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profileuser, container, false);
 
+        mContext = view.getContext();
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -103,7 +107,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot == null || dataSnapshot.getValue() == null) {
-                    Toast.makeText(getActivity(), "User details not found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "User details not found", Toast.LENGTH_SHORT).show();
                     phone.setVisibility(View.INVISIBLE);
                     edu.setVisibility(View.INVISIBLE);
                     vol.setVisibility(View.INVISIBLE);
@@ -166,7 +170,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 }
                 String admin1 = dataSnapshot.getValue().toString();
                 if (admin1.isEmpty()) {
-                    Toast.makeText(getContext(), "You are not privilaged to use this", Toast.LENGTH_LONG);
+                    Toast.makeText(mContext, "You are not privilaged to use this", Toast.LENGTH_LONG);
                 } else {
                     getActivity().getSupportFragmentManager().
                             beginTransaction().

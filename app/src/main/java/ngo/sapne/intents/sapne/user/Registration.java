@@ -63,9 +63,6 @@ public class Registration extends Fragment {
     private Spinner spnJoin;
     private FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    //earlier firebase url --- https://sapne-241cc.firebaseio.com/
-
-    //    StorageReference storageRef = storage.getReferenceFromUrl("https://sapne-241cc.firebaseio.com/");  //change the url according to your firebase app
     FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
