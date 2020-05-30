@@ -58,6 +58,7 @@
 
             >
 
+
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
@@ -93,6 +94,12 @@
             android:textSize="20sp"
             android:text="Don't have an account? Signup Here"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
+
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/btn_gmail"/>-->
 
     </LinearLayout>
