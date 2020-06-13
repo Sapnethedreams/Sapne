@@ -312,7 +312,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
         return true;
     }
 
