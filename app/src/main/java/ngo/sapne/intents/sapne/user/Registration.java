@@ -3,6 +3,7 @@ package ngo.sapne.intents.sapne.user;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ import java.util.Map;
 import ngo.sapne.intents.sapne.R;
 
 import static android.app.Activity.RESULT_OK;
+import static android.content.Context.MODE_APPEND;
 
 /**
  * Created by user on 22/11/2017.
@@ -92,7 +94,25 @@ public class Registration extends Fragment {
         spnJoin.setAdapter(adapter);
 
 
+        // Retrieving the value using its keys
+        // the file name must be same in both saving
+        // and retrieving the data
+        SharedPreferences sh
+                = getSharedPreferences("MySharedPref",
+                MODE_APPEND);
+
+        // The value will be default as empty string
+        // because for the very first time
+        // when the app is opened,
+        // there is nothing to show
+        String s1 = sh.getString("name", "");
+        name.setText(s1);
+
         return view;
+    }
+
+    private SharedPreferences getSharedPreferences(String mySharedPref, int modeAppend) {
+        return null;
     }
 
     @Override

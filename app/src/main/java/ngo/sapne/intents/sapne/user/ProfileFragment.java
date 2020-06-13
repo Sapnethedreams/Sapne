@@ -2,6 +2,7 @@ package ngo.sapne.intents.sapne.user;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,8 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import ngo.sapne.intents.sapne.R;
+
+import static android.content.Context.MODE_APPEND;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
@@ -80,8 +83,32 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         //adding listener to button
         buttonLogout.setOnClickListener(this);
 
+        try {
+            // Retrieving the value using its keys
+            // the file name must be same in both saving
+            // and retrieving the data
+            SharedPreferences sh
+                    = getSharedPreferences("MySharedPref",
+                    MODE_APPEND);
+
+            // The value will be default as empty string
+            // because for the very first time
+            // when the app is opened,
+            // there is nothing to show
+            String s1 = sh.getString("email", "");
+            String s2 = sh.getString("name", "");
+            textViewUserEmail.setText(s1);
+            name.setText(s2);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return view;
     }
+
+    private SharedPreferences getSharedPreferences(String mySharedPref, int modeAppend) {
+        return null;
+    }
+
 
     private void loadUserProfpic() {
         FirebaseUser user = firebaseAuth.getCurrentUser();

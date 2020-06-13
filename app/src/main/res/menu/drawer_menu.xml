@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+
+        <item android:title="Events"
+            android:icon="@drawable/ic_events"
+            android:id="@+id/nav_events"/>
+
+        <item android:id="@+id/nav_success_stories"
+            android:icon="@drawable/ic_stories"
+            android:title="Success Stories"/>
+
+        <item android:id="@+id/nav_volunteer_speak"
+            android:icon="@drawable/ic_speak"
+            android:title="Volunteer Speak"/>
+
+        <item android:id="@+id/nav_care"
+            android:icon="@drawable/ic_care"
+            android:title="Sapne Care"/>
+
+        <item android:title="About Us"
+            android:id="@+id/nav_about_us">
+
+            <menu>
+                <item android:id="@+id/nav_our_mission"
+                    android:title="Our Mission"
+                    android:icon="@drawable/ic_mission"/>
+
+                <item android:id="@+id/nav_our_vision"
+                    android:title="Our Vision"
+                    android:icon="@drawable/ic_vision"/>
+
+                <item android:id="@+id/nav_our_team"
+                    android:title="Our Team"
+                    android:icon="@drawable/ic_team"/>
+
+            </menu>
+
+        </item>
+
+        <item android:title="Our Bit"
+            android:id="@+id/nav_our_bit">
+
+            <menu>
+                <item android:id="@+id/nav_regular_camps"
+                    android:title="Regular Camps"/>
+
+                <item android:id="@+id/nav_activities_corner"
+                    android:title="Activities Corner"/>
+
+            </menu>
+
+        </item>
+
+        <item android:title="Get in Touch"
+            android:id="@+id/nav_get_in_touch">
+
+            <menu>
+                <item android:id="@+id/nav_contact_us"
+                    android:title="Contact Us"/>
+
+                <item android:id="@+id/nav_nearby_ngo"
+                    android:title="Nearby NGO"/>
+
+            </menu>
+
+        </item>
+
+    </group>
+
+</menu>
