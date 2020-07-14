@@ -21,7 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="label">
-        <activity android:name=".getHelpActivity"></activity>
+        <activity android:name=".websites"></activity>
+        <activity android:name=".dialoglist" />
+        <activity android:name=".getHelpActivity" />
         <activity
             android:name=".BaseActivity"
             android:screenOrientation="portrait">
