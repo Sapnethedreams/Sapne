@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="label">
+        <activity android:name=".websites"></activity>
+        <activity android:name=".dialoglist" />
+        <activity android:name=".getHelpActivity" />
         <activity
             android:name=".BaseActivity"
             android:screenOrientation="portrait">
@@ -39,11 +42,6 @@
         </activity>
         <activity android:name=".Notifications" />
 
-        <service android:name=".util.MyFirebaseInstanceIdService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
-            </intent-filter>
-        </service>
         <service android:name=".util.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -54,7 +52,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDszxmV0Mg5b52LgAeY0XszjNZmuMy-mbs" />
 
-        <activity android:name=".NearbyNGO"></activity>
+        <activity android:name=".NearbyNGO" />
     </application>
 
 </manifest>

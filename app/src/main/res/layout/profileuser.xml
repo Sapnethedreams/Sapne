@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E0E0E0"
 
-    tools:context="net.simplifiedcoding.firebaseauthdemo.ProfileActivity">
+    tools:context="ngo.sapne.intents.sapne.user.ProfileFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -285,7 +285,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:paddingStart="10dp"
-                    android:text="Admin" />
+                    android:text="Admin"
+                    android:paddingLeft="10dp" />
 
 
                 <Button
@@ -296,7 +297,8 @@
                     android:background="@drawable/custombutton"
                     android:text="Logout"
                     android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginLeft="130dp" />
 
             </RelativeLayout>
 

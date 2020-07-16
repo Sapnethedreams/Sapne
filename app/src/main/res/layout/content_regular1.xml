@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.RegularCamps"
+    tools:context="ngo.sapne.intents.sapne.RegularCamps"
     tools:showIn="@layout/activity_regular_camps"
     android:orientation="vertical">
    

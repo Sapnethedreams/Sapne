@@ -37,9 +37,13 @@
         <EditText
             android:textColor="@color/black"
             android:id="@+id/editTextEmail"
+            android:background="@drawable/stroke5sp"
+
+            android:padding="10sp"
+
             android:textColorHint="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45sp"
             android:layout_margin="15dp"
             android:hint="Enter email"
             android:inputType="textEmailAddress" />
@@ -54,7 +58,9 @@
             android:textColor="@color/black"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45sp"
+            android:background="@drawable/stroke5sp"
+            android:padding="10sp"
             android:layout_margin="15dp"
             android:textColorHint="@color/black"
             android:hint="Enter password"
@@ -66,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="40dp"
             android:textSize="15sp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/solidbtn"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Signup" />
@@ -75,6 +81,7 @@
             android:id="@+id/textViewSignin"
             android:textAlignment="center"
             android:layout_margin="15dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -85,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="15sp"
             android:text="Management Registration"
             android:textAlignment="center"
             android:textColor="@color/black" />

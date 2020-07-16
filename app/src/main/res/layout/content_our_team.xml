@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.intents.sapne.ngo.example.intents.sapne.OurTeam"
+    tools:context="ngo.sapne.intents.sapne.OurTeam"
     tools:showIn="@layout/activity_our_team"
     android:scrollbars="none"
     android:background="#eee">
@@ -102,7 +102,8 @@
                     android:text="@string/team_devesh"
                     android:layout_marginTop="20dp"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:gravity="start" />
 
             </LinearLayout>
 

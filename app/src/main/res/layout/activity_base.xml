@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -13,7 +16,8 @@
         <include
             layout="@layout/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
 
         <FrameLayout
             android:id="@+id/content_frame"
@@ -22,14 +26,11 @@
 
     </LinearLayout>
 
-    <ExpandableListView
-        android:id="@+id/left_drawer"
-        android:layout_width="235dp"
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="left|start"
-        android:background="#ffffff"
-        android:divider="@color/colorPrimary"
-        android:dividerHeight="0.5dp"
-        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"/>
 
 </android.support.v4.widget.DrawerLayout>

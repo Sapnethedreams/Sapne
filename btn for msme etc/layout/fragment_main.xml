@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10sp"
+        android:weightSum="1"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+
+
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-light"
+
+            android:gravity="center"
+            android:text="WE WHISPER HOPE"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/strokesolid"
+            android:weightSum="1"
+            >
+
+            <ImageView
+                android:id="@+id/mainimgview"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p3"
+                android:background="@drawable/strokesolid"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#70000000"
+                android:layout_gravity="center_horizontal|bottom">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="A bright future"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="-30dp"
+                    android:fontFamily="cursive"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:text="for every child"
+                    android:fontFamily="cursive"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:minHeight="100dp"
+
+            android:padding="10sp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/explore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:elevation="3dp"
+
+                android:fontFamily="sans-serif-light"
+                android:onClick="explore"
+                android:text="Explore our Journey"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10sp">
+
+                <Button
+                    android:id="@+id/btnDonate1"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stroke5sp"
+                    android:onClick="donate1"
+                    android:text="Donate Us"
+
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                     />
+
+                <Button
+                    android:id="@+id/btnJoinUs1"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/btnDonate1"
+                    android:background="@drawable/stroke5sp"
+                    android:onClick="join1"
+                    android:padding="10sp"
+                    android:text="Join Us"
+                    android:textColor="#000000"
+                    >
+
+                </Button>
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="200sp"
+                android:layout_height="40sp"
+                android:text="Govt. Services"
+                android:onClick="govt"
+                android:id="@+id/govtbtn"
+                android:background="@drawable/newgradientbtn"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

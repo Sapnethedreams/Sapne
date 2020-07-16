@@ -1,5 +1,6 @@
 package ngo.sapne.intents.sapne;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -18,6 +19,8 @@ import ngo.sapne.intents.sapne.events.ExtraEventsFragment;
 public class MainFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
 
     private ImageView img;
+    private Button govtBtn;
+    private Context mContext;
 
     @Nullable
     @Override
@@ -25,6 +28,8 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         img = view.findViewById(R.id.mainimgview);
 
+        govtBtn = view.findViewById(R.id.govtBtn);
+        mContext = view.getContext();
         final int[] imageArray = {R.drawable.p8, R.drawable.p5, R.drawable.p1, R.drawable.p3, R.drawable.p11, R.drawable.p12, R.drawable.p7};
 
         try {
@@ -59,6 +64,8 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
         explore.setOnClickListener(this);
         btnJoinUs.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+
+        govtBtn.setOnClickListener(this);
 
         getActivity().findViewById(R.id.appBarAnim).setBackgroundColor(Color.parseColor("#1DE9B6"));
     }
@@ -98,7 +105,17 @@ public class MainFragment extends android.support.v4.app.Fragment implements Vie
             case R.id.btnDonate1:
                 donate();
                 break;
+
+            case R.id.govtBtn:
+                govtmethod();
+                break;
         }
+    }
+
+    public void govtmethod()
+    {
+        Intent intent =new Intent(mContext,dialoglist.class);
+        startActivity(intent);
     }
 
     @Override

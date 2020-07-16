@@ -212,7 +212,7 @@ public class FragmentJoinUs extends Fragment implements GoogleApiClient.Connecti
                 List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
                 if (addresses != null) {
 
-                    android.location.Address fetchedAddress = addresses.get(0);
+                    Address fetchedAddress = addresses.get(0);
                     etAddress.setText(fetchedAddress.getFeatureName() + "," + fetchedAddress.getSubLocality() + "," + fetchedAddress.getLocality() + "-" + fetchedAddress.getPostalCode() + "," + fetchedAddress.getAdminArea() + "," + fetchedAddress.getCountryName());
 
                 } else
